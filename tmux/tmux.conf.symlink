@@ -1,0 +1,155 @@
+# -- prefix key -------------------------------------------------------------------
+# remap prefix to Control + a
+set -g prefix C-k
+# bind 'C-a C-a' to type 'C-a'
+bind C-k send-prefix
+unbind C-b
+
+
+# -- display -------------------------------------------------------------------
+
+set -g base-index 1         # start windows numbering at 1
+setw -g pane-base-index 1   # make pane numbering consistent with windows
+
+setw -g automatic-rename on # rename window to reflect current program
+set -g renumber-windows on  # renumber windows when a window is closed
+
+set -g set-titles on                        # set terminal title
+set -g set-titles-string '#h ❐ #S ● #I #W'
+
+# activity
+set -g monitor-activity on
+set -g visual-activity on
+
+# color
+set -g default-terminal "screen-256color"
+
+
+
+
+# -- mouse -------------------------------------------------------------------
+
+# enable mouse by default
+set-option -g mouse on
+# turn off with prefix M
+bind-key M set-option -g mouse off \; display "Mouse: Off"
+# turn on with prefix m
+bind-key m set-option -g mouse on \; display "Mouse: On"
+
+
+# -- keybinding -------------------------------------------------------------------
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf \; display "Reloaded Config"
+
+# pane traversal ijkl
+bind-key i select-pane -U
+bind-key j select-pane -L
+bind-key k select-pane -D
+bind-key l select-pane -R
+
+# resize panes with IJKL
+bind-key I resize-pane -U 5
+bind-key J resize-pane -L 5
+bind-key K resize-pane -D 5
+bind-key L resize-pane -R 5
+
+# split windows
+bind-key h split-window -h -c '#{pane_current_path}'
+bind-key v split-window -v -c '#{pane_current_path}'
+
+bind-key W kill-pane
+
+
+# -- functions -------------------------------------------------------------------
+
+bind-key H run "update_ls"
+
+
+# -- theme -------------------------------------------------------------------
+##### Colors
+# light green colors
+# 114
+# 150
+
+
+#set inactive/active window styles
+set -g window-style 'bg=colour235'
+
+# Split
+set-option -g pane-active-border-fg green
+set-option -g pane-active-border-bg default
+set-option -g pane-border-fg red
+set-option -g pane-border-bg colour235
+
+# POWERLINE THEME
+#
+# Powerline Green Block - Tmux Theme
+# Created by Jim Myhrberg <contact@jimeh.me>.
+#
+# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
+#
+# Requires terminal to be using a powerline compatible font, find one here:
+# https://github.com/Lokaltog/powerline-fonts
+#
+
+# Status update interval
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-fg colour240
+set -g status-bg colour233
+
+# Left side of status bar
+set -g status-left-bg colour233
+set -g status-left-fg colour243
+set -g status-left-length 150
+set -g status-left "#[fg=colour232,bg=colour150,bold] #S #[fg=colour150,bg=colour240,nobold]#[fg=colour233,bg=colour240] #{pane_current_path} #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+
+# Right side of status bar
+set -g status-right-bg colour233
+set -g status-right-fg colour243
+set -g status-right-length 150
+set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
+
+# Window status
+set -g window-status-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
+
+# Current window status
+set -g window-status-current-bg colour150
+set -g window-status-current-fg colour232
+
+# Window with activity status
+set -g window-status-activity-bg colour150 # fg and bg are flipped here due to
+set -g window-status-activity-fg colour233 # a bug in tmux
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify centre
+
+# Active pane border
+set -g pane-active-border-bg default
+set -g pane-active-border-fg colour150
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour150
+set -g clock-mode-style 24
+
+# Message
+set -g message-bg colour150
+set -g message-fg black
+
+# Command message
+set -g message-command-bg colour233
+set -g message-command-fg black
+
+# Mode
+set -g mode-bg colour150
+set -g mode-fg colour235

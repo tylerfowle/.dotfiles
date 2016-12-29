@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# gulp - install gulp and update npm
+echo -e "\033[92m";echo "==> installing gulp";echo -e "\033[39m"
+npm install gulp --no-progress;
+echo -e "\033[92m";echo "==> updating npm";echo -e "\033[39m"
+npm update --no-progress;
+echo -e "\033[92m";echo "==> starting gulp in background";echo -e "\033[39m"
+gulp &
