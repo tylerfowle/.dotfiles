@@ -15,6 +15,9 @@ brew tap caskroom/versions
 echo "==> Installing git"
 brew install git
 
+echo "==> Installing vim"
+brew install vim
+
 echo "==> Installing wget"
 brew install wget
 
