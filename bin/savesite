@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# FOR COLOR CUSTOMIZATIONS
 # save the active Chrome window source to file
 # usage
 # savesite filename.html
 #
+function savesite() {
+
 IFS='%'
 appName="Google Chrome"
 
@@ -19,11 +22,69 @@ EOT)
 
 FILENAME=${1:-"live.html"}
 
+if [ -f $FILENAME ]; then
+  echo "==> file $FILENAME already exists..."
+  echo "==> deleting original file"
+  rm $FILENAME
+fi
+
 echo ""
-echo "saving ${URL} as ${FILENAME}"
+echo "==> saving ${URL} as ${FILENAME}"
 echo ""
 
 curl $URL > $FILENAME
 
-sed -i '' '/<!-- jQuery -->/i\
-<link rel="stylesheet" href="css/stylesheet.css">' $FILENAME
+sed -i '' '/<\/head>/i\
+<link rel="stylesheet" href="css/stylesheet.css">\
+' $FILENAME
+
+}
+
+# FOR THEMES
+# save the active Chrome window source to file
+# usage
+# savetheme filename.html
+#
+function savetheme() {
+
+IFS='%'
+appName="Google Chrome"
+
+URL=$(/usr/bin/osascript << EOT
+tell application "System Events"
+  try
+    tell application "Google Chrome"
+      return URL of active tab of front window
+    end tell
+  end try
+end tell
+EOT)
+
+FILENAME=${1:-"live.html"}
+
+if [ -f $FILENAME ]; then
+  echo "==> file $FILENAME already exists..."
+  echo "==> deleting original file"
+  rm $FILENAME
+fi
+
+echo ""
+echo "==> saving ${URL} as ${FILENAME}"
+echo ""
+
+curl $URL > $FILENAME
+
+# add stylesheet for theme right before </head>
+sed -i '' '/<\/head>/i\
+<link rel="stylesheet" href="../css/stylesheet.css">\
+' $FILENAME
+
+# remove script * designs * .js in FILENAME
+sed -i '' '/script.*designs.*.js/d' $FILENAME.tmp
+
+# add theme js right before </body>
+sed -i '' '/<\/body>/i\
+<script src="site.inc.js" type="text/javascript"></script>\
+' $FILENAME
+
+}
