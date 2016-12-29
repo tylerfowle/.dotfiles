@@ -38,3 +38,5 @@ tmux will be installed but will be lacking an appropriate font for the 'powerlin
 
 install font from here:https://github.com/powerline/fonts/tree/master/Hack
 
+theme is a modified version of powerline block from [tmux-themepack](https://github.com/jimeh/tmux-themepack)
+
