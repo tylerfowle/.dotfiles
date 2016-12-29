@@ -34,6 +34,7 @@ brew cask install atom
 brew cask install slack
 brew cask install dropbox
 brew cask install virtualbox
+brew cask install 1password
 
 # browsers
 brew cask install firefox
