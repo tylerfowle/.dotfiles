@@ -1,5 +1,5 @@
 # .dotfiles
-My .dotfiles influenced by the highly popular [Holman](https://github.com/holman/dotfiles)
+My .dotfiles influenced by the highly popular [holman does dotfiles](https://github.com/holman/dotfiles)
 
 
 ## components
