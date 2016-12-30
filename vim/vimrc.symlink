@@ -1,4 +1,37 @@
 syntax on
 
+" override terminal colors
+:set t_Co=256
+
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+" open NERDtree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
+call plug#begin('~/.vim/plugged')
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" molokai theme
+Plug 'tomasr/molokai'
+
+" lightline - status bars
+Plug 'itchyny/lightline.vim'
+
+" emmet
+Plug 'mattn/emmet-vim'
+
+
+
+call plug#end()
+
+
+set laststatus=2
+" Lightline settings {{{
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
