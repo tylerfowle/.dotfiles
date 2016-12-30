@@ -23,7 +23,8 @@ Plug 'itchyny/lightline.vim'
 " emmet
 Plug 'mattn/emmet-vim'
 
-
+" fuzzy finder
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 

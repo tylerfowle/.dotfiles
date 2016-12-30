@@ -27,7 +27,7 @@ alias dup='mkdir html && ditto ~/Repos/fdp-misc-design/gulp2/ ./html'
 
 # Positioning Aliases
 alias chrome="bounds Chrome 1760 1440 && pos Chrome 800 0 && bounds Chrome 1760 1440 && pos Chrome 800 0"
-alias tp="bounds Terminal 800 825 && pos Terminal 0 0"
+alias tp="bounds Terminal 900 1410 && pos Terminal 0 0"
 alias fp="fin Finder 0 960 && bounds Finder 800 592"
 alias codekit="pos CodeKit 4320 840"
 alias slack="bounds Slack 1200 820 && pos Slack 2560 0"
