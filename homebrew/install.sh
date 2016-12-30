@@ -12,6 +12,9 @@ brew install brew-cask
 brew tap caskroom/versions
 
 
+echo "==> Installing ruby"
+brew install ruby
+
 echo "==> Installing git"
 brew install git
 

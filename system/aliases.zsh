@@ -9,12 +9,15 @@ alias repos='cd ~/Repos'
 alias la="ls -Ga"
 alias ..="cd .."
 alias list="ls -1"
-alias editbash="atom ~/.bash_profile"
+alias sassvars='grep -Rnco "\$.*:" .'
+alias editbash="e ~/.bash_profile"
+alias editdot="e ~/.dotfiles"
 
+# reload config
 alias reload!='. ~/.zshrc'
 
 # gitline - github api script
-alias editgitline='atom /usr/local/bin/gitline.sh'
+alias editgitline='e /usr/local/bin/gitline.sh'
 alias gitline='/usr/local/bin/gitline.sh'
 alias gl='/usr/local/bin/gitline.sh'
 
