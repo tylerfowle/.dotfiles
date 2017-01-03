@@ -46,17 +46,21 @@ function colorcodes() {
 # run whenever cd'ing
 # set the first pane to show ls
 function chpwd() {
-  session=0
-  window=${session}:1
-  pane=${window}.1
 
-  current_path=$PWD
-  active_pane=$(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}")
+  if [[ $TMUX ]]; then
+    session=0
+    window=${session}:1
+    pane=${window}.1
 
-  # dont run if in pane 1
-  if [[ "$active_pane" -ne 1 ]]; then
-    tmux select-pane -t "$pane"
-    tmux send-keys -t "$pane" "cd $current_path;clear;list" Enter
-    tmux select-pane -t "$active_pane"
+    current_path=$PWD
+    active_pane=$(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}")
+
+    # dont run if in pane 1
+    if [[ "$active_pane" -ne 1 ]]; then
+      tmux select-pane -t "$pane"
+      tmux send-keys -t "$pane" "cd $current_path;clear;list" Enter
+      tmux select-pane -t "$active_pane"
+    fi
   fi
+
 }
