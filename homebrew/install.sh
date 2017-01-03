@@ -34,6 +34,9 @@ brew install jq
 brew install htop
 brew install tmux
 
+echo "==> Installing fun"
+brew install archey
+
 echo "==> Installing apps"
 # productivity
 brew cask install atom
