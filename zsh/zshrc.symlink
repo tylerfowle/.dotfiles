@@ -38,5 +38,8 @@ done
 unset config_files
 
 
-# add z - quickly jump to directorys
-source /usr/local/etc/profile.d/z.sh
+# add z - quickly jump to directories
+if [[ -a /usr/local/etc/profile.d/z.sh ]]
+then
+  source /usr/local/etc/profile.d/z.sh
+fi
