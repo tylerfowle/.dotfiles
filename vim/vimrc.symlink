@@ -3,6 +3,10 @@ syntax on
 " override terminal colors
 :set t_Co=256
 
+" set colorscheme
+colorscheme molokai
+let g:molokai_original = 1
+
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
 
@@ -30,7 +34,7 @@ call plug#end()
 
 
 set laststatus=2
-" Lightline settings {{{
+" Lightline settings
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'separator': { 'left': '', 'right': '' },
