@@ -15,7 +15,7 @@ setw -g automatic-rename on # rename window to reflect current program
 set -g renumber-windows on  # renumber windows when a window is closed
 
 set -g set-titles on                        # set terminal title
-set -g set-titles-string '#h ❐ #S ● #I #W'
+set -g set-titles-string '#h'
 
 # activity
 set -g monitor-activity on
@@ -58,6 +58,7 @@ bind-key L resize-pane -R 10
 bind-key h split-window -h -c '#{pane_current_path}'
 bind-key v split-window -v -c '#{pane_current_path}'
 
+# easier to remember than x
 bind-key W kill-pane
 
 
@@ -74,17 +75,17 @@ bind-key H run "cd ."
 
 
 #set inactive/active window styles
-set -g window-style 'bg=colour235'
+set -g window-style 'bg=colour0'
 
 # Split
 set-option -g pane-active-border-fg green
 set-option -g pane-active-border-bg default
 set-option -g pane-border-fg red
-set-option -g pane-border-bg colour235
+# set-option -g pane-border-bg colour235
 
 # POWERLINE THEME
 #
-# Powerline Green Block - Tmux Theme
+# Powerline Block - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
 #
 # Inspired by vim-powerline: https://github.com/Lokaltog/powerline
@@ -131,7 +132,7 @@ set -g window-status-activity-bg $theme_primary_color # fg and bg are flipped he
 set -g window-status-activity-fg colour233 # a bug in tmux
 
 # Window separator
-set -g window-status-separator "#[fg=$theme_primary_color,bg=colour235]"
+set -g window-status-separator "#[fg=$theme_primary_color,bg=colour235]"
 
 # Window status alignment
 set -g status-justify right

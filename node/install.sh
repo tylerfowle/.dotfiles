@@ -1,3 +1,3 @@
 
-echo "  Installing node"
+echo "==> Installing node"
 brew install node

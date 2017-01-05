@@ -15,7 +15,6 @@ alias editdot="e ~/.dotfiles"
 
 # reload config
 alias reload!='. ~/.zshrc'
-alias treload!='tmux source-file ~/.tmux.conf'
 
 # gitline - github api script
 alias editgitline='e /usr/local/bin/gitline.sh'
