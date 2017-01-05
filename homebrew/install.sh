@@ -27,12 +27,17 @@ brew install wget
 echo "==> Installing z"
 brew install z
 
+echo "==> Installing tmux"
+brew install tmux
+
+echo "==> Installing ranger"
+brew install ranger
+
 echo "==> Installing utils"
 brew install ack
 brew install coreutils
 brew install jq
 brew install htop
-brew install tmux
 
 echo "==> Installing fun"
 brew install archey
