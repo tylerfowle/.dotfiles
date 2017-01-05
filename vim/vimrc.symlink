@@ -13,6 +13,7 @@ filetype indent plugin on
 " open NERDtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
+" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 call plug#begin('~/.vim/plugged')
 
 " On-demand loading
@@ -31,7 +32,7 @@ Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 
 call plug#end()
-
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 set laststatus=2
 " Lightline settings
