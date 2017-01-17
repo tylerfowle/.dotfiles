@@ -18,7 +18,7 @@ if [ $gulp == true ]; then
   if [ -d "$PWD/node_modules/gulp" ]; then
     echo -e "\033[92m==> success - starting gulp in background \033[39m"
     ## start default gulp task as a background process
-    gulp &
+    gulp
   else
     echo -e "\033[0;31m==> failed - gulp not installed \033[39m"
     echo -e "\033[92m==> running gup... \033[39m"

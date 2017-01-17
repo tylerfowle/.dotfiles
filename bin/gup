@@ -6,4 +6,4 @@ npm install gulp --no-progress --quite --silent;
 echo -e "\033[92m==> updating npm\033[39m"
 npm update --no-progress --quite;
 echo -e "\033[92m==> starting gulp in background\033[39m"
-gulp &
+gulp

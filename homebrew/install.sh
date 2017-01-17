@@ -30,6 +30,9 @@ brew install z
 echo "==> Installing tmux"
 brew install tmux
 
+echo "==> Installing fzf"
+brew install fzf
+
 echo "==> Installing ranger"
 brew install ranger
 

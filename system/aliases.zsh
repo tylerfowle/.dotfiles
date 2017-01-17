@@ -48,17 +48,16 @@ function colorcodes() {
 function chpwd() {
 
   if [[ $TMUX ]]; then
-    session=0
-    window=${session}:1
-    pane=${window}.1
-
+    # get currently active items
+    session=$(tmux display -p '#S')
+    window=$(tmux display -p '#I')
+    pane=$(tmux display -p '#P')
     current_path=$PWD
     active_pane=$(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}")
 
     # dont run if in pane 1
     if [[ "$active_pane" -ne 1 ]]; then
-      tmux select-pane -t "$pane"
-      tmux send-keys -t "$pane" "cd $current_path;clear;list" Enter
+      tmux send-keys -t "$session:$window.1" "cd $current_path;clear;list" Enter
       tmux select-pane -t "$active_pane"
     fi
   fi

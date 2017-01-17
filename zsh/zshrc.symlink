@@ -9,6 +9,11 @@ then
   source ~/.localrc
 fi
 
+if [[ -a ~/.fzf.zsh ]]
+then
+  source ~/.fzf.zsh
+fi
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
