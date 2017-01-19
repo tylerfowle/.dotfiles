@@ -11,8 +11,8 @@ echo ""
 
 # start atom
 echo -e "\033[92m==> starting atom \033[39m"
-# exec e - start editor
-exec e
+# run e to start editor
+e
 
 if [ $gulp == true ]; then
   echo -e "\033[92m==> gulp found \033[39m"
