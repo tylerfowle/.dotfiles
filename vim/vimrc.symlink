@@ -39,6 +39,9 @@ Plug 'mattn/emmet-vim'
 " fuzzy finder
 Plug 'kien/ctrlp.vim'
 
+" twig syntax
+Plug 'evidens/vim-twig'
+
 call plug#end()
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

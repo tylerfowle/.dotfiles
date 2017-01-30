@@ -29,6 +29,8 @@ brew install z
 
 echo "==> Installing tmux"
 brew install tmux
+# fix gulp notify in tmux
+brew install reattach-to-user-namespace
 
 echo "==> Installing fzf"
 brew install fzf
@@ -44,6 +46,9 @@ brew install htop
 
 echo "==> Installing fun"
 brew install archey
+
+echo "==> Installing hyper"
+brew cask install hyper
 
 echo "==> Installing apps"
 # productivity
