@@ -47,6 +47,9 @@ brew install htop
 echo "==> Installing fun"
 brew install archey
 
+echo "==> Installing hyper"
+brew cask install hyper
+
 echo "==> Installing apps"
 # productivity
 brew cask install atom
