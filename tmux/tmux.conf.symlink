@@ -6,6 +6,12 @@ bind C-k send-prefix
 unbind C-b
 
 
+# -- fix gulp notify -------------------------------------------------------------------
+# https://github.com/mikaelbr/gulp-notify/issues/73
+
+set-option -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+
+
 # -- display -------------------------------------------------------------------
 
 set -g base-index 1         # start windows numbering at 1

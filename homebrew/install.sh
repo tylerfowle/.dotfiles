@@ -29,6 +29,8 @@ brew install z
 
 echo "==> Installing tmux"
 brew install tmux
+# fix gulp notify in tmux
+brew install reattach-to-user-namespace
 
 echo "==> Installing fzf"
 brew install fzf
