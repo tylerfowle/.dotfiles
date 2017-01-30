@@ -44,22 +44,22 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: '#c5c8c6',
-      red: '#a54242',
-      green: '#8c9440',
-      yellow: '#de935f',
-      blue: '#5f819d',
-      magenta: '#85678f',
-      cyan: '#5e8d87',
-      white: '#707880',
-      lightBlack: '#373b41',
-      lightRed: '#cc6666',
-      lightGreen: '#b5bd68',
-      lightYellow: '#f0c674',
-      lightBlue: '#81a2be',
-      lightMagenta: '#b294bb',
-      lightCyan: '#8abeb7',
-      lightWhite: '#c5c8c6'
+      black: '#2d2d2d',
+      red: '#f2777a',
+      green: '#99cc99',
+      yellow: '#ffcc66',
+      blue: '#6699cc',
+      magenta: '#cc99cc',
+      cyan: '#66cccc',
+      white: '#d3d0c8',
+      lightBlack: '#747369',
+      lightRed: '#f2777a',
+      lightGreen: '#99cc99',
+      lightYellow: '#ffcc66',
+      lightBlue: '#6699cc',
+      lightMagenta: '#cc99cc',
+      lightCyan: '#66cccc',
+      lightWhite: '#f2f0ec'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -94,7 +94,9 @@ module.exports = {
   plugins: [
     "hypercwd",
     "hyperminimal",
-    "hyper-statusline"
+    "hyper-statusline",
+    "hyperterm-alternatescroll",
+    "hyperterm-dibdabs"
   ],
 
 

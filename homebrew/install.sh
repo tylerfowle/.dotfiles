@@ -11,7 +11,6 @@ brew tap caskroom/cask
 brew install brew-cask
 brew tap caskroom/versions
 
-
 echo "==> Installing ruby"
 brew install ruby
 
@@ -57,10 +56,8 @@ brew cask install slack
 brew cask install dropbox
 brew cask install virtualbox
 brew cask install 1password
-
 # browsers
 brew cask install firefox
 brew cask install google-chrome
-
 # extras
 brew cask install spotify
