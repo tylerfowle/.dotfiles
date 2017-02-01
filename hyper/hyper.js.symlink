@@ -22,7 +22,15 @@ module.exports = {
     borderColor: '#3e3e3e',
 
     // custom css to embed in the main window
-    css: '',
+    css: `
+      li.tab_tab {
+        background: #0d1112;
+      }
+
+      li.tab_active {
+        background: #1d1f21
+      }
+    `,
 
     // custom css to embed in the terminal window
     termCSS: '',
@@ -96,6 +104,7 @@ module.exports = {
     "hyperminimal",
     "hyper-statusline",
     "hyperterm-alternatescroll",
+    "hyperterm-tab-icons",
     "hyperterm-dibdabs"
   ],
 
