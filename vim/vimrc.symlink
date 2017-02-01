@@ -13,14 +13,6 @@ filetype indent plugin on
 " open NERDtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-" remap h to insert and use ijkl for inverse T cursor movement
-noremap h i
-map i <Up>
-map j <Left>
-map k <Down>
-
-
-
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 call plug#begin('~/.vim/plugged')
 
