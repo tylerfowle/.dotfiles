@@ -69,6 +69,9 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# hide everything on the desktop
+defaults write com.apple.finder CreateDesktop false
+
 
 
 ###############################################################################
