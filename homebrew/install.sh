@@ -56,6 +56,8 @@ brew cask install slack
 brew cask install dropbox
 brew cask install virtualbox
 brew cask install 1password
+# customization
+brew cask install ubersicht
 # browsers
 brew cask install firefox
 brew cask install google-chrome
