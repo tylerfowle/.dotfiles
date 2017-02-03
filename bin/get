@@ -12,7 +12,4 @@ osascript -e 'tell application "System Events"
 		display dialog c & d
 	end tell
 end tell
-
-tell application "Terminal"
-	activate
-end tell'
+'

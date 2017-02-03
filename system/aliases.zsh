@@ -33,7 +33,7 @@ alias chrome="bounds Chrome 1760 1440 && pos Chrome 800 0 && bounds Chrome 1760 
 alias tp="bounds Terminal 900 1410 && pos Terminal 0 0"
 alias fp="fin Finder 0 960 && bounds Finder 800 592"
 alias codekit="pos CodeKit 4320 840"
-alias slack="bounds Slack 1200 820 && pos Slack 2560 0"
+alias slack="bounds Slack 1221 660 && pos Slack 40 750"
 alias harvest="starter Harvest && bounds Harvest 340 600 && pos Harvest 4209 843"
 alias startup='tp; fp; starter Chrome; chrome; starter Slack; slack;'
 
