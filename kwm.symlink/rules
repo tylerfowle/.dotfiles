@@ -1,0 +1,3 @@
+kwmc rule owner="Finder" properties={role="AXDialog"}
+kwmc rule owner="Finder" role="AXDialog" properties={float="true"}
+kwmc rule owner="System Preferences" properties={float="true"}

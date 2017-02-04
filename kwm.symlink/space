@@ -1,0 +1,3 @@
+kwmc config space 0 1 mode bsp
+kwmc config space 0 1 padding 40 20 40 20
+kwmc config space 0 1 gap 20 20
