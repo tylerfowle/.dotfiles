@@ -20,7 +20,4 @@
 			end tell
 		end try
 	end tell
-
-	tell application "Terminal"
-		activate
-	end tell'
+'

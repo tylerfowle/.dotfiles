@@ -14,7 +14,4 @@ osascript -e 'repeat 4 times
 		end try
 	end tell
 end repeat
-
-tell application "Terminal"
-	activate
-end tell'
+'
