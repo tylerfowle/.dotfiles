@@ -14,8 +14,7 @@ khd mode prefix color 0xFFCC6666
 ctrl - s                 :    khd -e "mode activate prefix"
 
 # reload config
-prefix - r               :    khd -e "reload"
-prefix - r               :    brew services restart kwm
+prefix - r               :    khd -e "reload" && brew services restart kwm
 
 # Quit Kwm
 cmd + alt + ctrl - q     :    kwmc quit
