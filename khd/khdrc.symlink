@@ -36,13 +36,13 @@ prefix - 0x32            :    kwmc window -c type toggle
 
 prefix - h               :    kwmc window -c expand 0.05 west
 prefix - j               :    kwmc window -c expand 0.05 south
-prefix - k               :    kwmc window -c expand 0.05 north
-prefix - l               :    kwmc window -c expand 0.05 east
+prefix - k               :    kwmc window -c reduce 0.05 south
+prefix - l               :    kwmc window -c reduce 0.05 west
 
-prefix + shift - h       :    kwmc window -c reduce 0.05 west
-prefix + shift - j       :    kwmc window -c reduce 0.05 south
-prefix + shift - k       :    kwmc window -c reduce 0.05 north
-prefix + shift - l       :    kwmc window -c reduce 0.05 east
+# prefix + shift - h       :    kwmc window -c reduce 0.05 west
+# prefix + shift - j       :    kwmc window -c reduce 0.05 south
+# prefix + shift - k       :    kwmc window -c reduce 0.05 north
+# prefix + shift - l       :    kwmc window -c reduce 0.05 east
 
 # Set Temporary Window Container
 prefix - f               :    kwmc window -z fullscreen
