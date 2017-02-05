@@ -27,6 +27,9 @@ Plug 'kien/ctrlp.vim'
 " twig syntax
 Plug 'evidens/vim-twig'
 
+" coffeescript syntax
+Plug 'kchmck/vim-coffee-script'
+
 call plug#end()
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

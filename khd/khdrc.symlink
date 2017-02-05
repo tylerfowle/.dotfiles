@@ -75,7 +75,6 @@ ctrl + alt - h           :    kwmc window -s west
 ctrl + alt - j           :    kwmc window -s south
 ctrl + alt - k           :    kwmc window -s north
 ctrl + alt - l           :    kwmc window -s east
-ctrl + alt - m           :    kwmc window -s mark
 
 # Pseudo containers
 cmd + ctrl + alt - p     :    kwmc tree -pseudo create
@@ -88,9 +87,6 @@ ctrl + shift - k         :    kwmc window -m north
 ctrl + shift - l         :    kwmc window -m east
 ctrl + shift - j         :    kwmc window -m south
 ctrl + shift - h         :    kwmc window -m west
-
-# Detach Marked Window And Reinsert At Focused Window
-ctrl + shift - x         :    kwmc window -m mark
 
 # Move Focused Window To Space
 ctrl + alt - left        :    kwmc window -m space left
