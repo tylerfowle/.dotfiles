@@ -3,10 +3,6 @@ syntax on
 " override terminal colors
 :set t_Co=256
 
-" set colorscheme
-colorscheme molokai
-let g:molokai_original = 1
-
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
 
@@ -18,9 +14,6 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" molokai theme
-Plug 'tomasr/molokai'
 
 " lightline - status bars
 Plug 'itchyny/lightline.vim'
@@ -40,7 +33,7 @@ call plug#end()
 set laststatus=2
 " Lightline settings
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'wombat',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
