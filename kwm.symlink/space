@@ -1,3 +1,11 @@
 kwmc config space 0 1 mode bsp
 kwmc config space 0 1 padding 40 5 5 5
 kwmc config space 0 1 gap 10 10
+kwmc config space 0 1 name left
+kwmc config space 0 1 tree leftscreen
+
+kwmc config space 0 2 mode bsp
+kwmc config space 0 2 padding 40 5 5 5
+kwmc config space 0 2 gap 10 10
+kwmc config space 0 2 name right
+kwmc config space 0 2 tree dev
