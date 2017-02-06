@@ -106,7 +106,6 @@ module.exports = {
   plugins: [
     "hypercwd",
     "hyperminimal",
-    "hyper-statusline",
     "hyperterm-alternatescroll",
     "hyperterm-tab-icons",
     "hyperterm-dibdabs"
