@@ -37,6 +37,10 @@ brew install fzf
 echo "==> Installing ranger"
 brew install ranger
 
+echo "==> Installing kwm and khd"
+brew install koekeishiya/formulae/kwm
+brew install koekeishiya/formulae/khd
+
 echo "==> Installing utils"
 brew install ack
 brew install coreutils
