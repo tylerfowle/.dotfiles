@@ -3,4 +3,6 @@ kwmc rule owner="Finder" role="AXDialog" properties={float="true"}
 kwmc rule owner="System Preferences" properties={float="true"}
 
 kwmc rule properties={display="1"} owner="Atom"
-kwmc rule properties={display="0"} owner="Google Chrome"
+kwmc rule properties={display="0", space="0"} owner="Hyper"
+kwmc rule properties={display="0", space="2"} owner="Google Chrome"
+kwmc rule properties={display="0", space="1"} owner="Slack"

@@ -13,16 +13,13 @@ khd mode prefix color 0xFFCC6666
 # Activate prefix mode
 ctrl - s                 :    khd -e "mode activate prefix"
 
+
+################################################################################
+# prefixed shortcuts
+################################################################################
+
 # reload config
 prefix + cmd - r         :    khd -e "reload" && brew services restart kwm
-
-# Launch iTerm2
-cmd - return             :    open -na /Applications/Hyper.app
-
-# Set Space Tiling Mode To BSP, Monocle, Float
-cmd + ctrl - a           :    kwmc space -t bsp
-cmd + ctrl - s           :    kwmc space -t monocle
-cmd + ctrl - d           :    kwmc space -t float
 
 # Rotate Window-Tree By 90degrees (Clockwise)
 prefix - r               :    kwmc tree rotate 90
@@ -41,14 +38,6 @@ prefix - f               :    kwmc window -z fullscreen
 prefix - d               :    kwmc window -z parent
 prefix - t               :    kwmc window -t focused
 
-# Change Focused Window in a Rotation
-ctrl + alt - p           :    kwmc window -s prev
-ctrl + alt - o           :    kwmc window -s next
-
-# Move Focused Window in a Rotation
-cmd + alt - p            :    kwmc window -f prev
-cmd + alt - o            :    kwmc window -f next
-
 # Give Focus To Screen
 prefix - 1               :    kwmc display -f 0
 prefix - 2               :    kwmc display -f 1
@@ -60,6 +49,27 @@ prefix + shift - 1       :    kwmc window -m display 0
 prefix + shift - 2       :    kwmc window -m display 1
 prefix + shift - 3       :    kwmc window -m display 2
 prefix + shift - 4       :    kwmc window -m display 3
+
+
+################################################################################
+# straight up shortcuts
+################################################################################
+
+# Launch Hyper
+cmd - return             :    open -na /Applications/Hyper.app
+
+# Set Space Tiling Mode To BSP, Monocle, Float
+cmd + ctrl - a           :    kwmc space -t bsp
+cmd + ctrl - s           :    kwmc space -t monocle
+cmd + ctrl - d           :    kwmc space -t float
+
+# Change Focused Window in a Rotation
+ctrl + alt - p           :    kwmc window -s prev
+ctrl + alt - o           :    kwmc window -s next
+
+# Move Focused Window in a Rotation
+cmd + alt - p            :    kwmc window -f prev
+cmd + alt - o            :    kwmc window -f next
 
 # Give Focus To Window
 cmd + alt - h            :    kwmc window -f west
