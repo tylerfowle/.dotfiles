@@ -1,0 +1,41 @@
+.client_channels_list_container {
+    display: none;
+}
+
+div#msgs_div {
+    background:  #1d1f21;
+}
+
+ts-message {
+    color: white
+}
+
+.light_theme ts-message .message_content .message_sender {
+    color: #cc99cc !important;
+}
+
+ts-message.active:not(.standalone):not(.multi_delete_mode):not(.highlight):not(.new_reply), ts-message:hover:not(.standalone):not(.multi_delete_mode):not(.highlight):not(.new_reply) {
+    background: #17171a;
+}
+
+div#footer_msgs {
+    background: #1d1f21;
+}
+
+.day_container .day_divider {
+    color: white;
+    background: #1d1f21;
+}
+
+.day_container .day_divider .day_divider_label {
+    background: black;
+    color: white;
+}
+
+.client_container #messages_container {
+    width: 101%;
+}
+
+#msg_input {
+    min-height: 2.7rem;
+}

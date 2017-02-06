@@ -59,9 +59,16 @@ cmd + alt - p            :    kwmc window -f prev
 cmd + alt - o            :    kwmc window -f next
 
 # Give Focus To Screen
-cmd + alt - 1            :    kwmc display -f 0
-cmd + alt - 2            :    kwmc display -f 1
-cmd + alt - 3            :    kwmc display -f 2
+prefix - 1               :    kwmc display -f 0
+prefix - 2               :    kwmc display -f 1
+prefix - 3               :    kwmc display -f 2
+prefix - 4               :    kwmc display -f 3
+
+# Move Focused Window To Screen
+prefix + shift - 1       :    kwmc window -m display 0
+prefix + shift - 2       :    kwmc window -m display 1
+prefix + shift - 3       :    kwmc window -m display 2
+prefix + shift - 4       :    kwmc window -m display 3
 
 # Swap Focused Window
 ctrl + alt - h           :    kwmc window -s west
@@ -76,8 +83,3 @@ cmd + ctrl + alt - o     :    kwmc tree -pseudo destroy
 # Move Focused Window To Space
 ctrl + alt - left        :    kwmc window -m space left
 ctrl + alt - right       :    kwmc window -m space right
-
-# Move Focused Window To Screen
-ctrl + alt - 1           :    kwmc window -m display 0
-ctrl + alt - 2           :    kwmc window -m display 1
-ctrl + alt - 3           :    kwmc window -m display 2

@@ -13,6 +13,8 @@ alias sassvars='grep -Rnco "\$.*:" .'
 alias editbash="e ~/.bash_profile"
 alias editdot="e ~/.dotfiles"
 
+alias hangouts="https://hangouts.google.com"
+
 # reload config
 alias reload!='. ~/.zshrc'
 
