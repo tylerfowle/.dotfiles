@@ -15,12 +15,12 @@ kwmc config cycle-focus on
 kwmc config optimal-ratio 1.605
 
 kwmc config border focused on
-kwmc config border focused size 2
+kwmc config border focused size 3
 kwmc config border focused color 0xFFB294BB
 kwmc config border focused radius 6
 
 kwmc config border marked on
-kwmc config border marked size 2
+kwmc config border marked size 3
 kwmc config border marked color 0xFF85678F
 kwmc config border marked radius 6
 
