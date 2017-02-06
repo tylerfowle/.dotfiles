@@ -72,6 +72,11 @@ defaults write com.apple.dock autohide -bool true
 # hide everything on the desktop
 defaults write com.apple.finder CreateDesktop false
 
+# hide the menubar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 
 ###############################################################################
