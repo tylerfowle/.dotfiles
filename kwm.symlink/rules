@@ -10,5 +10,5 @@ kwmc rule properties={display="0"} owner="Hyper"
 kwmc rule properties={display="0"} owner="Slack"
 
 
-kwmc rule properties={display="1"} owner="Google Chrome" name=".*Developer Tools.*"
-kwmc rule properties={display="1"} owner="Google Chrome" name="/Developer.*/g"
+kwmc rule properties={display="1"} name=".*Developer Tools.*"
+kwmc rule properties={display="1"} name="/Developer.*/g"

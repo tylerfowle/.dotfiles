@@ -58,6 +58,9 @@ prefix + shift - 4       :    kwmc window -m display 3
 # Launch Hyper
 cmd - return             :    open -na /Applications/Hyper.app
 
+alt - 1                  :    kwmc space -fExperimental left && killall Dock
+alt - 2                  :    kwmc space -fExperimental right && killall Dock
+
 # Set Space Tiling Mode To BSP, Monocle, Float
 cmd + ctrl - a           :    kwmc space -t bsp
 cmd + ctrl - s           :    kwmc space -t monocle
