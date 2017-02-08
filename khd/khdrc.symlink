@@ -5,13 +5,15 @@ khd kwm on
 khd mode default color 0xFF85678F
 
 # Enable the prefix mode
-khd mode prefix prefix on
-khd mode prefix timeout 2
-khd mode prefix restore default
+# khd mode prefix prefix on
+# khd mode prefix timeout 2
+# khd mode prefix restore default
 khd mode prefix color 0xFFCC6666
 
 # Activate prefix mode
-ctrl - s                 :    khd -e "mode activate prefix"
+- f20                    :    khd -e "mode activate prefix"
+prefix - f20             :    khd -e "mode activate default"
+# prefix - enter           :    khd -e "mode activate default"
 
 
 ################################################################################
@@ -23,6 +25,7 @@ prefix + cmd - r         :    khd -e "reload" && brew services restart kwm
 
 # Rotate Window-Tree By 90degrees (Clockwise)
 prefix - r               :    kwmc tree rotate 90
+prefix + shift - r       :    kwmc tree rotate 270
 
 # Modify Container
 prefix - s               :    kwmc window -c split-mode toggle
