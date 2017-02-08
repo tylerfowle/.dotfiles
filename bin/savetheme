@@ -41,5 +41,5 @@ sed -i '' '/script.*designs.*.js/d' $FILENAME
 
 # add theme js right before </body>
 sed -i '' '/<\/body>/i\
-<script src="js/site.inc.js" type="text/javascript"></script>\
+<script src="js/site.min.js" type="text/javascript"></script>\
 ' $FILENAME
