@@ -9,6 +9,18 @@ khd mode default color 0xFF85678F
 # khd mode prefix timeout 2
 # khd mode prefix restore default
 khd mode prefix color 0xFFCC6666
+khd mode prefix color 0xFFAAEd37
+
+
+# nebula colors ##############################################
+# red: #f04180;
+# yellow: #f5cd73;
+# green: #aaed37;
+# cyan: #23dec5;
+# blue: #7ac3ff;
+# magenta: #b57eed;
+##############################################################
+
 
 # Activate prefix mode
 - f20                    :    khd -e "mode activate prefix"

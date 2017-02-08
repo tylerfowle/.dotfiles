@@ -21,8 +21,18 @@ kwmc config border focused radius 6
 
 kwmc config border marked on
 kwmc config border marked size 3
-kwmc config border marked color 0xFF85678F
+kwmc config border marked color 0xFFB57EED
 kwmc config border marked radius 6
 
 include space
 include rules
+
+
+
+# nebula colors
+# red: #f04180;
+# yellow: #f5cd73;
+# green: #aaed37;
+# cyan: #23dec5;
+# blue: #7ac3ff;
+# magenta: #b57eed;
