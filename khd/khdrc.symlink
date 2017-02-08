@@ -8,8 +8,11 @@ khd mode default color 0xFFB57EED
 # khd mode prefix prefix on
 # khd mode prefix timeout 2
 # khd mode prefix restore default
-khd mode prefix color 0xFFCC6666
+# khd mode prefix color 0xFFCC6666
 khd mode prefix color 0xFFAAEd37
+
+
+khd mode launcher color 0xFF23DEC5
 
 
 # nebula colors ##############################################
@@ -26,6 +29,12 @@ khd mode prefix color 0xFFAAEd37
 - f20                    :    khd -e "mode activate prefix"
 prefix - f20             :    khd -e "mode activate default"
 # prefix - enter           :    khd -e "mode activate default"
+
+- f19                    :    khd -e "mode activate launcher"
+launcher - f19           :    khd -e "mode activate default"
+
+launcher - a             :    open -na /Applications/Atom.app
+launcher - h             :    open -na /Applications/Hyper.app
 
 
 ################################################################################
