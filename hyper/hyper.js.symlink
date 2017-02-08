@@ -13,10 +13,12 @@ module.exports = {
     cursorShape: 'BLOCK',
 
     // color of the text
-    foregroundColor: '#c5c8c6',
+    // foregroundColor: '#c5c8c6',
+    foregroundColor: '#e0e2e5',
 
     // terminal background color
-    backgroundColor: '#1d1f21',
+    // backgroundColor: '#1d1f21',
+    backgroundColor: '#1d222a',
 
     // border color (window, tabs)
     borderColor: '#3e3e3e',
@@ -24,11 +26,11 @@ module.exports = {
     // custom css to embed in the main window
     css: `
       li.tab_tab {
-        background: #0d1112;
+        background: #1d1f21;
       }
 
       li.tab_active {
-        background: #1d1f21
+        background: #1d222a
       }
     `,
 
@@ -55,14 +57,44 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
+
+    // # nebula colors
+    // # red: #f04180;
+    // # yellow: #f5cd73;
+    // # green: #aaed37;
+    // # cyan: #23dec5;
+    // # blue: #7ac3ff;
+    // # magenta: #b57eed;
+    // # white: #e0e2e5;
+    // # black: ;
+    // # background: ;
+    // # foreground: ;
+
     colors: {
+      // black: '#2d2d2d',
+      // red: '#f2777a',
+      // green: '#99cc99',
+      // yellow: '#ffcc66',
+      // blue: '#6699cc',
+      // magenta: '#cc99cc',
+      // cyan: '#66cccc',
+      // white: '#d3d0c8',
+      // lightBlack: '#747369',
+      // lightRed: '#f2777a',
+      // lightGreen: '#99cc99',
+      // lightYellow: '#ffcc66',
+      // lightBlue: '#6699cc',
+      // lightMagenta: '#cc99cc',
+      // lightCyan: '#66cccc',
+      // lightWhite: '#f2f0ec'
+
       black: '#2d2d2d',
-      red: '#f2777a',
-      green: '#99cc99',
-      yellow: '#ffcc66',
-      blue: '#6699cc',
-      magenta: '#cc99cc',
-      cyan: '#66cccc',
+      red: '#f04180',
+      green: '#aaed37',
+      yellow: '#f5cd73',
+      blue: '#7ac3ff',
+      magenta: '#b57eed',
+      cyan: '#23dec5',
       white: '#d3d0c8',
       lightBlack: '#747369',
       lightRed: '#f2777a',
