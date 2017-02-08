@@ -39,16 +39,15 @@ prefix - d               :    kwmc window -z parent
 prefix - t               :    kwmc window -t focused
 
 # Give Focus To Screen
-prefix - 1               :    kwmc display -f 0
-prefix - 2               :    kwmc display -f 1
-prefix - 3               :    kwmc display -f 2
-prefix - 4               :    kwmc display -f 3
+prefix - left            :    kwmc display -f prev
+prefix - right           :    kwmc display -f next
 
 # Move Focused Window To Screen
-prefix + shift - 1       :    kwmc window -m display 0
-prefix + shift - 2       :    kwmc window -m display 1
-prefix + shift - 3       :    kwmc window -m display 2
-prefix + shift - 4       :    kwmc window -m display 3
+prefix + shift - left    :    kwmc window -m display prev
+prefix + shift - right   :    kwmc window -m display next
+
+# Toggle focus follows mouse
+prefix - m               :    kwmc config focus-follows-mouse toggle
 
 
 ################################################################################
@@ -58,6 +57,7 @@ prefix + shift - 4       :    kwmc window -m display 3
 # Launch Hyper
 cmd - return             :    open -na /Applications/Hyper.app
 
+# Switch spaces left and right
 alt - 1                  :    kwmc space -fExperimental left && killall Dock
 alt - 2                  :    kwmc space -fExperimental right && killall Dock
 

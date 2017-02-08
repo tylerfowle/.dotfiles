@@ -5,18 +5,18 @@ kwmc config spawn left
 kwmc config padding 55 10 20 20
 kwmc config gap 10 10
 
-kwmc config focus-follows-mouse on
+kwmc config focus-follows-mouse off
 kwmc config mouse-follows-focus on
 kwmc config standby-on-float on
 kwmc config center-on-float on
 kwmc config float-non-resizable on
-kwmc config lock-to-container on
+kwmc config lock-to-container off
 kwmc config cycle-focus on
 kwmc config optimal-ratio 1.618
 
 kwmc config border focused on
 kwmc config border focused size 3
-kwmc config border focused color 0xFFB294BB
+kwmc config border focused color 0xFFB57EED
 kwmc config border focused radius 6
 
 kwmc config border marked on
