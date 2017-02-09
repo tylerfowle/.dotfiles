@@ -73,6 +73,15 @@ prefix + shift - right   :    kwmc window -m display next
 # Toggle focus follows mouse
 prefix - m               :    kwmc config focus-follows-mouse toggle
 
+# Move Focused Window in a Rotation
+prefix + shift - p       :    kwmc window -s prev
+prefix + shift - o       :    kwmc window -s next
+
+# Change Focused Window in a Rotation
+prefix - p               :    kwmc window -f prev
+prefix - o               :    kwmc window -f next
+
+
 
 ################################################################################
 # straight up shortcuts
@@ -90,11 +99,11 @@ cmd + ctrl - a           :    kwmc space -t bsp
 cmd + ctrl - s           :    kwmc space -t monocle
 cmd + ctrl - d           :    kwmc space -t float
 
-# Change Focused Window in a Rotation
+# Move Focused Window in a Rotation
 ctrl + alt - p           :    kwmc window -s prev
 ctrl + alt - o           :    kwmc window -s next
 
-# Move Focused Window in a Rotation
+# Change Focused Window in a Rotation
 cmd + alt - p            :    kwmc window -f prev
 cmd + alt - o            :    kwmc window -f next
 

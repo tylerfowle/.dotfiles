@@ -9,7 +9,6 @@ kwmc rule properties={display="1"} owner="Atom"
 kwmc rule properties={display="0"} owner="Hyper"
 kwmc rule properties={display="0"} owner="Slack"
 
-
 kwmc rule properties={display="1"} name=".*Developer Tools.*"
 kwmc rule properties={display="1"} name="/.*Developer Tools.*/g"
 kwmc rule properties={display="1"} name="/Developer.*/g"

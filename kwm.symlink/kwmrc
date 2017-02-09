@@ -27,8 +27,6 @@ kwmc config border marked radius 6
 include space
 include rules
 
-
-
 # nebula colors
 # red: #f04180;
 # yellow: #f5cd73;
