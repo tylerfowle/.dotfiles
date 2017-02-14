@@ -10,9 +10,7 @@ khd mode default color 0xFFB57EED
 # khd mode prefix restore default
 # khd mode prefix color 0xFFCC6666
 khd mode prefix color 0xFFAAEd37
-
-
-khd mode launcher color 0xFF23DEC5
+khd mode scratch color 0xFF23DEC5
 
 
 # nebula colors ##############################################
@@ -28,13 +26,31 @@ khd mode launcher color 0xFF23DEC5
 # Activate prefix mode
 - f20                    :    khd -e "mode activate prefix"
 prefix - f20             :    khd -e "mode activate default"
-# prefix - enter           :    khd -e "mode activate default"
 
-- f19                    :    khd -e "mode activate launcher"
-launcher - f19           :    khd -e "mode activate default"
+- f19                    :    khd -e "mode activate scratch"
+scratch - f19            :    khd -e "mode activate default"
 
-launcher - a             :    open -na /Applications/Atom.app
-launcher - h             :    open -na /Applications/Hyper.app
+
+################################################################################
+# scratch shortcuts
+################################################################################
+
+# Toggle visibility of scratchpad space 1
+scratch - q               :    kwmc scratchpad toggle 0
+scratch - w               :    kwmc scratchpad toggle 1
+scratch - e               :    kwmc scratchpad toggle 2
+scratch - r               :    kwmc scratchpad toggle 3
+scratch - a               :    kwmc scratchpad toggle 4
+scratch - s               :    kwmc scratchpad toggle 5
+scratch - d               :    kwmc scratchpad toggle 6
+scratch - f               :    kwmc scratchpad toggle 7
+
+# add active window to scratchpad
+scratch - o               :    kwmc scratchpad add
+
+# remove active window to scratchpad
+scratch - p               :    kwmc scratchpad remove
+
 
 
 ################################################################################
@@ -81,17 +97,13 @@ prefix + shift - o       :    kwmc window -s next
 prefix - p               :    kwmc window -f prev
 prefix - o               :    kwmc window -f next
 
-# Toggle visibility of scratchpad space 1
-prefix - z               :    kwmc scratchpad toggle 1
+
 
 
 
 ################################################################################
 # straight up shortcuts
 ################################################################################
-
-# Launch Hyper
-cmd - return             :    open -na /Applications/Hyper.app
 
 # Switch spaces left and right
 alt - 1                  :    kwmc space -fExperimental left && killall Dock
