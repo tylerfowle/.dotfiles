@@ -81,6 +81,9 @@ prefix + shift - o       :    kwmc window -s next
 prefix - p               :    kwmc window -f prev
 prefix - o               :    kwmc window -f next
 
+# Toggle visibility of scratchpad space 1
+prefix - z               :    kwmc scratchpad toggle 1
+
 
 
 ################################################################################
