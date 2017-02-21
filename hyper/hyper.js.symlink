@@ -58,26 +58,14 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
 
-    // # nebula colors
-    // # red: #f04180;
-    // # yellow: #f5cd73;
-    // # green: #aaed37;
-    // # cyan: #23dec5;
-    // # blue: #7ac3ff;
-    // # magenta: #b57eed;
-    // # white: #e0e2e5;
-    // # black: ;
-    // # background: ;
-    // # foreground: ;
-
     colors: {
       // black: '#2d2d2d',
-      // red: '#f2777a',
-      // green: '#99cc99',
-      // yellow: '#ffcc66',
-      // blue: '#6699cc',
-      // magenta: '#cc99cc',
-      // cyan: '#66cccc',
+      // red: '#f04180',
+      // green: '#aaed37',
+      // yellow: '#f5cd73',
+      // blue: '#7ac3ff',
+      // magenta: '#b57eed',
+      // cyan: '#23dec5',
       // white: '#d3d0c8',
       // lightBlack: '#747369',
       // lightRed: '#f2777a',
@@ -86,24 +74,23 @@ module.exports = {
       // lightBlue: '#6699cc',
       // lightMagenta: '#cc99cc',
       // lightCyan: '#66cccc',
-      // lightWhite: '#f2f0ec'
+      // lightWhite: '#f2f0ec',
 
-      black: '#2d2d2d',
-      red: '#f04180',
-      green: '#aaed37',
-      yellow: '#f5cd73',
-      blue: '#7ac3ff',
-      magenta: '#b57eed',
-      cyan: '#23dec5',
-      white: '#d3d0c8',
-      lightBlack: '#747369',
-      lightRed: '#f2777a',
-      lightGreen: '#99cc99',
-      lightYellow: '#ffcc66',
-      lightBlue: '#6699cc',
-      lightMagenta: '#cc99cc',
-      lightCyan: '#66cccc',
-      lightWhite: '#f2f0ec'
+      black       : '#282c34',
+      red         : '#e06c75', // red
+      green       : '#98c379', // green
+      yellow      : '#d19a66', // yellow
+      blue        : '#56b6c2', // blue
+      magenta     : '#c678dd', // pink
+      cyan        : '#56b6c2', // cyan
+      white       : '#d0d0d0', // light gray
+      lightBlack  : '#808080', // medium gray
+      lightRed    : '#e06c75', // red
+      lightGreen  : '#98c379', // green
+      lightYellow : '#d19a66', // yellow
+      lightBlue   : '#56b6c2', // blue
+      lightMagenta: '#c678dd', // pink
+      lightCyan   : '#56b6c2', // cyan
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
