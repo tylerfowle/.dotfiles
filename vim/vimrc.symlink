@@ -1,13 +1,3 @@
-syntax on
-
-" override terminal colors
-:set t_Co=256
-
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
-
-" open NERDtree with ctrl+n
-map <C-n> :NERDTreeToggle<CR>
 
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 call plug#begin('~/.vim/plugged')
@@ -30,8 +20,25 @@ Plug 'evidens/vim-twig'
 " coffeescript syntax
 Plug 'kchmck/vim-coffee-script'
 
+" Spacemacs color scheme
+Plug 'colepeters/spacemacs-theme.vim'
+
+" syntax checking
+Plug 'scrooloose/syntastic'
+
 call plug#end()
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+syntax on
+
+" override terminal colors
+:set t_Co=256
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
+
+" open NERDtree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
 set laststatus=2
 " Lightline settings
@@ -40,3 +47,17 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+
+" syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" color scheme
+set background=dark
+colorscheme spacemacs-theme
