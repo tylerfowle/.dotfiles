@@ -27,8 +27,8 @@ alias gl='/usr/local/bin/gitline.sh'
 alias editgpm='atom /usr/local/bin/gpm.sh'
 alias gpm='/usr/local/bin/gpm.sh'
 
-# New Projects copy gulp2
-alias dup='mkdir html && ditto ~/Repos/fdp-misc-design/gulp2/ ./html'
+# New Projects copy gulp3
+alias dup='mkdir html && ditto ~/Repos/fdp-misc-design/gulp3/ ./html'
 
 # Positioning Aliases
 alias chrome="bounds Chrome 1760 1440 && pos Chrome 800 0 && bounds Chrome 1760 1440 && pos Chrome 800 0"
