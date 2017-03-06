@@ -1,6 +1,6 @@
 # Jump to locations
 alias cdn='cd ~/Repos/fdp_cdn'
-alias misc='cd ~/Repos/fdp-misc-design'
+alias misc='cd ~/Repos/fed-framework'
 alias docker='cd ~/Repos/fdp-design-container'
 alias sites='cd ~/Sites'
 alias repos='cd ~/Repos'
@@ -28,7 +28,7 @@ alias editgpm='atom /usr/local/bin/gpm.sh'
 alias gpm='/usr/local/bin/gpm.sh'
 
 # New Projects copy gulp3
-alias dup='mkdir html && ditto ~/Repos/fdp-misc-design/gulp3/ ./html'
+alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
 
 # Positioning Aliases
 alias chrome="bounds Chrome 1760 1440 && pos Chrome 800 0 && bounds Chrome 1760 1440 && pos Chrome 800 0"
