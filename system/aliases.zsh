@@ -23,10 +23,6 @@ alias editgitline='e /usr/local/bin/gitline.sh'
 alias gitline='/usr/local/bin/gitline.sh'
 alias gl='/usr/local/bin/gitline.sh'
 
-# github package manager
-alias editgpm='atom /usr/local/bin/gpm.sh'
-alias gpm='/usr/local/bin/gpm.sh'
-
 # New Projects copy gulp3
 alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
 
