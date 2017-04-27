@@ -1,44 +1,19 @@
 
-" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+" #######################################################################
 call plug#begin('~/.vim/plugged')
 
-" On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" lightline - status bars
 Plug 'itchyny/lightline.vim'
-
-" emmet
-Plug 'mattn/emmet-vim'
-
-" fuzzy finder
 Plug 'kien/ctrlp.vim'
-
-" twig syntax
-Plug 'evidens/vim-twig'
-
-" coffeescript syntax
-Plug 'kchmck/vim-coffee-script'
-
-" Spacemacs color scheme
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
 Plug 'colepeters/spacemacs-theme.vim'
 
-" syntax checking
-Plug 'scrooloose/syntastic'
-
 call plug#end()
-" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-syntax on
+" #######################################################################
 
 " override terminal colors
 :set t_Co=256
-
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
-
-" open NERDtree with ctrl+n
-map <C-n> :NERDTreeToggle<CR>
 
 set laststatus=2
 " Lightline settings
@@ -58,6 +33,4 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" color scheme
-set background=dark
 colorscheme spacemacs-theme
