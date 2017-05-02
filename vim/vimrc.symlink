@@ -1,8 +1,21 @@
+" options
+" dont be compatible with vi
 set nocompatible
+" enable syntax colors
 syntax enable
+
 filetype plugin on
+
+" for searching 
 set path+=
 set wildmenu
+
+" show current command in bottom right
+set showcmd
+
+" show line numbers and use relative lines
+set number
+set relativenumber
 
 " start plugins =================================================== "
 call plug#begin('~/.vim/plugged')
@@ -10,9 +23,11 @@ call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'colepeters/spacemacs-theme.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 " end plugins   =================================================== "
@@ -20,7 +35,9 @@ call plug#end()
 " override terminal colors
 :set t_Co=256
 
+" make space for lightline
 set laststatus=2
+
 " Lightline settings
 let g:lightline = {
       \ 'colorscheme': 'default',
@@ -41,6 +58,9 @@ let g:syntastic_check_on_wq = 0
 " colorscheme =================================================== "
 colorscheme spacemacs-theme
 
+colorscheme materialtheme
+
 " ctrl p settings =================================================== "
 let g:ctrlp_working_path_mode = '0'
+
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
