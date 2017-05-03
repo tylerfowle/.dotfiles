@@ -26,11 +26,12 @@ call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'colepeters/spacemacs-theme.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 " end plugins   =================================================== "
