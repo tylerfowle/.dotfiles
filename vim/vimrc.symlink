@@ -1,7 +1,63 @@
-" options
-" dont be compatible with vi
+" check whether vim-plug is installed and install it if necessary "
+let plugpath = expand('<sfile>:p:h'). '/autoload/plug.vim'
+if !filereadable(plugpath)
+    if executable('curl')
+        let plugurl = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        call system('curl -fLo ' . shellescape(plugpath) . ' --create-dirs ' . plugurl)
+        if v:shell_error
+            echom "Error downloading vim-plug. Please install it manually.\n"
+            exit
+        endif
+    else
+        echom "vim-plug not installed. Please install it manually or install curl.\n"
+        exit
+    endif
+endif
+
+
+" ====================================================================================================== "
+" start plugins "
+call plug#begin('~/.vim/plugged')
+
+" colorscheme "
+Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'colepeters/spacemacs-theme.vim'
+Plug 'exitface/synthwave.vim'
+
+" utilities "
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer "
+Plug 'vim-airline/vim-airline' " fancy statusline "
+Plug 'kien/ctrlp.vim'
+Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality "
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more "
+Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command "
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab "
+
+" html / templates "
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'marcweber/vim-addon-mw-utils' " interpret a file by function and cache file automatically - snipmate dependancies "
+Plug 'tomtom/tlib_vim' " utility functions for vim "
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+" scss "
+Plug 'cakebaker/scss-syntax.vim'
+
+
+
+call plug#end()
+" end plugins "
+" ====================================================================================================== "
+
+
+" options "
+" dont be compatible with vi "
 set nocompatible
-" enable syntax colors
+" enable syntax colors "
 syntax enable
 
 filetype plugin on
@@ -9,46 +65,21 @@ set tabstop=4
 set shiftwidth=2
 set expandtab
 
-" for searching 
+" for searching "
 set path+=
 set wildmenu
 
-" show current command in bottom right
+" show current command in bottom right "
 set showcmd
 
-" show line numbers and use relative lines
+" show line numbers and use relative lines "
 set number
 set relativenumber
 
-" start plugins =================================================== "
-call plug#begin('~/.vim/plugged')
-
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'itchyny/lightline.vim'
-Plug 'kien/ctrlp.vim'
-"Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'colepeters/spacemacs-theme.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'honza/vim-snippets'
-
-call plug#end()
-" end plugins   =================================================== "
-
-" override terminal colors
+" override terminal colors =================================================== "
 :set t_Co=256
 
-" make space for lightline
 set laststatus=2
-
-" Lightline settings
-let g:lightline = {
-      \ 'colorscheme': 'default',
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
 " syntastic recommended settings =================================================== "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -60,11 +91,33 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " colorscheme =================================================== "
-colorscheme spacemacs-theme
+set background=dark
+color synthwave
+if has('termguicolors')
+  set termguicolors " 24-bit terminal
+else
+  let g:synthwave_termcolors=256 " 256 color mode
+endif
 
-colorscheme materialtheme
+
+" NERDTree settings =================================================== "
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
 
 " ctrl p settings =================================================== "
 let g:ctrlp_working_path_mode = '0'
-
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+
+" Custom Mappings ============================= "
+" set a map leader for more key combos "
+let mapleader = ','
+
+" shortcut to save "
+nmap <leader>, :w<cr>
+
+" scroll the viewport faster "
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
