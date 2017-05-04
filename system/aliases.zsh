@@ -12,6 +12,7 @@ alias list="ls -1"
 alias sassvars='grep -Rnco "\$.*:" .'
 alias editbash="e ~/.bash_profile"
 alias editdot="e ~/.dotfiles"
+alias vim=nvim 
 
 alias hangouts="https://hangouts.google.com"
 
