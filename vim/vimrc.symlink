@@ -79,6 +79,9 @@ set showcmd
 set number
 set relativenumber
 
+" enable mouse for scrolling =================================================== "
+set mouse=a
+
 " override terminal colors =================================================== "
 set t_Co=256
 
