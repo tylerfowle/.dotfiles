@@ -168,3 +168,9 @@ nmap <leader>, :w<cr>
 " scroll the viewport faster "
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" clear highlighted search term, but keep in register
+nnoremap <leader><esc> :noh<cr>
+
+" select all and yank
+map <leader>a :%y+<CR> 
