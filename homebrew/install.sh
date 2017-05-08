@@ -20,6 +20,9 @@ brew install git
 echo "==> Installing vim"
 brew install vim
 
+echo "==> Installing iterm2"
+brew cask install iterm2
+
 echo "==> Installing wget"
 brew install wget
 
