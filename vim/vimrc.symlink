@@ -45,6 +45,9 @@ Plug 'ryanoasis/vim-devicons' " file drawer "
 
 Plug 'ervandew/supertab'
 
+" Auto close tags
+Plug 'raimondi/delimitmate'
+
 " Shows a git diff in the gutter (sign column) and stages/undoes hunks. "
 Plug 'airblade/vim-gitgutter'
 
