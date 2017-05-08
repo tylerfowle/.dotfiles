@@ -30,7 +30,10 @@ Plug 'vim-airline/vim-airline' " fancy statusline "
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality "
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more "
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command "
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -40,8 +43,27 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'ryanoasis/vim-devicons' " file drawer "
 
+Plug 'ervandew/supertab'
+
+" Shows a git diff in the gutter (sign column) and stages/undoes hunks. "
+Plug 'airblade/vim-gitgutter'
+
+" This plugin causes all trailing whitespace to be highlighted in red. "
+Plug 'bronson/vim-trailing-whitespace'
+
+" Custom bundles "
+Plug 'michalliu/sourcebeautify.vim'
+
+" Display the indention levels with thin vertical lines "
+Plug 'Yggdroot/indentLine'
+
+Plug 'valloric/youcompleteme'
+
+" HTML
+Plug 'vim-scripts/HTML-AutoCloseTag'
+
 " html / templates "
-Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'mattn/emmet-vim'
 Plug 'marcweber/vim-addon-mw-utils' " interpret a file by function and cache file automatically - snipmate dependancies "
 Plug 'tomtom/tlib_vim' " utility functions for vim "
 Plug 'garbas/vim-snipmate'
@@ -49,6 +71,8 @@ Plug 'honza/vim-snippets'
 
 " scss "
 Plug 'cakebaker/scss-syntax.vim'
+
+Plug 'scrooloose/syntastic'
 
 
 
@@ -87,15 +111,19 @@ set t_Co=256
 
 set laststatus=2
 
-" syntastic recommended settings =================================================== "
+" Lightline recommended settings =================================================== "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Syntastic ================================ "
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
 
 
 " airline options ================================ "
@@ -131,10 +159,10 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 
 " NERDTress File highlighting
-" function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-"  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-"  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-" endfunction
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
 
 " call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 " call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
@@ -158,19 +186,60 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 
 
-" Custom Mappings ============================= "
+" ============================================= "
+" Leader Mappings ============================= "
+" ============================================= "
+
 " set a map leader for more key combos "
 let mapleader = ','
 
 " shortcut to save "
 nmap <leader>, :w<cr>
 
-" scroll the viewport faster "
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
 " clear highlighted search term, but keep in register
 nnoremap <leader><esc> :noh<cr>
 
 " select all and yank
-map <leader>a :%y+<CR> 
+map <leader>a :%y+<cr>
+
+" CtrlP ============================= "
+" search through tags and jump to file with with ctrl-p
+nnoremap <leader>t :CtrlPTag<cr>
+" search buffers
+nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>f :CtrlP<cr>
+
+" Set working directory
+nnoremap <leader>. :lcd %:p:h<cr>
+
+
+" ============================================= "
+" Custom Mappings ============================= "
+" ============================================= "
+
+" FZF Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" FZF Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" scroll the viewport faster "
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" copy to clipboard
+noremap YY "+y<CR>
+
+" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>x :bn<CR>
+nnoremap <space>b :Buffers<cr>
+nnoremap <space>f :Files<cr>
+
+" Emmet remap
+let g:user_emmet_leader_key='<tab>'
