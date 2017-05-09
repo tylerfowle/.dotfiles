@@ -57,9 +57,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " Custom bundles "
 Plug 'michalliu/sourcebeautify.vim'
 
-" Display the indention levels with thin vertical lines "
-Plug 'Yggdroot/indentLine'
-
+" Autocompletion engine "
 Plug 'valloric/youcompleteme'
 
 " HTML
@@ -97,7 +95,11 @@ set expandtab
 
 " for searching "
 set path+=
+
+" Extended autocmpletion for commands
 set wildmenu
+" Autocmpletion hotkey
+set wildcharm=<TAB>
 
 " show current command in bottom right "
 set showcmd
@@ -106,15 +108,36 @@ set showcmd
 set number
 set relativenumber
 
-" enable mouse for scrolling =================================================== "
+" enable mouse for scrolling "
 set mouse=a
 
-" override terminal colors =================================================== "
+" Auto reload changed files
+set autoread
+
+" Show file name in window title
+set title
+
+" Highlight line with cursor
+set cursorline
+
+" Ignore case in search patterns
+set ignorecase
+
+" Override the 'ignorecase' option if the search patter ncontains upper case characters
+set smartcase
+
+" Show matching brackets
+set showmatch
+
+" Make < and > match as well
+set matchpairs+=<:>
+
+" override terminal colors "
 set t_Co=256
 
 set laststatus=2
 
-" Lightline recommended settings =================================================== "
+" Lightline recommended settings "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -155,6 +178,8 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
+" Disable bookmarks label, and hint about '?'
+let NERDTreeMinimalUI=1
 
 " ctrl p settings =================================================== "
 let g:ctrlp_working_path_mode = '0'
@@ -176,7 +201,7 @@ endfunction
 " call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
 " call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
 " call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-" call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', '#c6538c', 'none')
 " call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 " call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 " call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
@@ -215,6 +240,8 @@ nnoremap <leader>f :CtrlP<cr>
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<cr>
 
+" Display current file in the NERDTree ont the left
+nmap <silent> <leader>n :NERDTreeFind<CR>
 
 " ============================================= "
 " Custom Mappings ============================= "
