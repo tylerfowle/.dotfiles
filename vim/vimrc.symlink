@@ -77,7 +77,8 @@ Plug 'scrooloose/syntastic'
 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-
+" twig syntax, snipmate
+Plug 'evidens/vim-twig'
 
 
 call plug#end()

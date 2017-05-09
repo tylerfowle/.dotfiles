@@ -144,6 +144,8 @@ prompt_agnoster_main() {
   prompt_status
   prompt_virtualenv
   prompt_dir
+  prompt_end
+  print ''
   prompt_git
   prompt_end
 }
@@ -168,3 +170,5 @@ prompt_agnoster_setup() {
 }
 
 prompt_agnoster_setup "$@"
+
+
