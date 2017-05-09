@@ -243,6 +243,9 @@ nnoremap <leader>f :CtrlP<cr>
 " reload config file
 nnoremap <leader>r :so ~/.config/nvim/init.vim<cr>
 
+" leader w, for pane control
+nnoremap <leader>w <C-w>
+
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<cr>
 
