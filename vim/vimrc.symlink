@@ -241,7 +241,10 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>f :CtrlP<cr>
 
 " reload config file
-nnoremap <leader>r :so ~/.config/nvim/init.vim<cr>
+nnoremap <leader>! :so $MYVIMRC<cr>
+
+" reindent entire file
+nnoremap <leader>R gg=G
 
 " leader w, for pane control
 nnoremap <leader>w <C-w>
