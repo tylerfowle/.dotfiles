@@ -17,6 +17,7 @@ alias vim=nvim
 
 # tag
 alias taglist="tag -RNt"
+alias ts="taglist|fzf"
 
 alias hangouts="https://hangouts.google.com"
 
