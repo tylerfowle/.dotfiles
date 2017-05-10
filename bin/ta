@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# tag add
+
+tag -a $1 .

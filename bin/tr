@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# tag replace
+
+tag -r $1 .

@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# tag find
+
+tag -f $1 .

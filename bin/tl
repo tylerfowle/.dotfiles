@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# tag list
+
+tag -l .
