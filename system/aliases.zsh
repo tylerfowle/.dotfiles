@@ -13,7 +13,7 @@ alias sassvars='grep -Rnco "\$.*:" .'
 alias editbash="e ~/.bash_profile"
 alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
-alias vim=nvim 
+alias vim=nvim
 
 # tag
 alias taglist="tag -RNt"

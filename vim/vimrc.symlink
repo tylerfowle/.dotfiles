@@ -1,4 +1,4 @@
-" check whether vim-plug is installed and install it if necessary "
+" check whether vim-plug is installed and install it if necessary
 let plugpath = expand('<sfile>:p:h'). '/autoload/plug.vim'
 if !filereadable(plugpath)
   if executable('curl')
@@ -15,81 +15,90 @@ if !filereadable(plugpath)
 endif
 
 
-" ====================================================================================================== "
+" ======================================================================================================
 " start plugins "
 call plug#begin('~/.vim/plugged')
 
 " colorscheme "
-Plug 'joshdick/onedark.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'colepeters/spacemacs-theme.vim'
 Plug 'exitface/synthwave.vim'
 
 " utilities "
-Plug 'vim-airline/vim-airline' " fancy statusline "
+Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality "
+
+" Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
+" Plug 'scrooloose/syntastic'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command "
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab "
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } 
-Plug 'Xuyuanp/nerdtree-git-plugin' 
-Plug 'ryanoasis/vim-devicons' " file drawer "
+Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 
-Plug 'ervandew/supertab'
+" Plug 'tpope/vim-fugitive'
+"
+Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-commentary'
+
+Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
+
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons' " file drawer "
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Auto close tags
-Plug 'raimondi/delimitmate'
+" Plug 'raimondi/delimitmate'
 
-" Shows a git diff in the gutter (sign column) and stages/undoes hunks. "
+" Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'airblade/vim-gitgutter'
 
-" This plugin causes all trailing whitespace to be highlighted in red. "
+" This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'bronson/vim-trailing-whitespace'
 
-" Custom bundles "
+" Custom bundles
 Plug 'michalliu/sourcebeautify.vim'
 
-" Autocompletion engine "
-Plug 'valloric/youcompleteme'
+" Autocompletion engine
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " HTML
 Plug 'vim-scripts/HTML-AutoCloseTag'
 
-" html / templates "
+" html / templates
 Plug 'mattn/emmet-vim'
-Plug 'marcweber/vim-addon-mw-utils' " interpret a file by function and cache file automatically - snipmate dependancies "
-Plug 'tomtom/tlib_vim' " utility functions for vim "
-Plug 'garbas/vim-snipmate'
+
+" utils and dependencies for snipmate
+" Plug 'marcweber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 " scss "
 Plug 'cakebaker/scss-syntax.vim'
 
-Plug 'scrooloose/syntastic'
-
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" twig syntax, snipmate
+" twig syntax
 Plug 'evidens/vim-twig'
-
 
 call plug#end()
 " end plugins "
 " ====================================================================================================== "
 
 
-" options "
-" dont be compatible with vi "
+
+
+
+
+" options
+" ====================================================================================================== "
+
+" dont be compatible with vi
 set nocompatible
-" enable syntax colors "
+
+" enable syntax colors
 syntax enable
 
 filetype plugin on
@@ -103,17 +112,24 @@ set path+=
 
 " Extended autocmpletion for commands
 set wildmenu
+
 " Autocmpletion hotkey
 set wildcharm=<TAB>
 
-" show current command in bottom right "
+" show current command in bottom right
 set showcmd
 
-" show line numbers and use relative lines "
+" show line numbers
 set number
+
+" use relative lines
 set relativenumber
 
-" enable mouse for scrolling "
+" open new splits to right and bottom
+set splitbelow
+set splitright
+
+" enable mouse for scrolling
 set mouse=a
 
 " Auto reload changed files
@@ -137,27 +153,31 @@ set showmatch
 " Make < and > match as well
 set matchpairs+=<:>
 
-" override terminal colors "
+" override terminal colors
 set t_Co=256
 
+" always show airline
 set laststatus=2
 
-" Lightline recommended settings "
+" Lightline recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" Syntastic ================================ "
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
+" Deoplete ================================
+let g:deoplete#enable_at_startup = 1
 
+" UltiSnips config ================================
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" airline options ================================ "
+" use tab to forward cycle
+" inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" load custom snippets location
+let g:UltiSnipsSnippetsDir="~/.vim/custom-snippets/UltiSnips"
+
+" airline options ================================
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -167,7 +187,7 @@ let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs a
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
 
-" colorscheme =================================================== "
+" colorscheme ===================================================
 set background=dark
 colorscheme synthwave
 
@@ -178,7 +198,7 @@ else
 endif
 
 
-" NERDTree settings =================================================== "
+" NERDTree settings ===================================================
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
@@ -186,7 +206,7 @@ let NERDTreeDirArrowCollapsible = '▼'
 " Disable bookmarks label, and hint about '?'
 let NERDTreeMinimalUI=1
 
-" ctrl p settings =================================================== "
+" ctrl p settings ===================================================
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
@@ -221,7 +241,7 @@ let s:git_orange = 'F54D27'
 " Leader Mappings ============================= "
 " ============================================= "
 
-" set a map leader for more key combos "
+" set a map leader for more key combos
 let mapleader = ','
 
 " shortcut to save "
@@ -233,12 +253,17 @@ nnoremap <leader><esc> :noh<cr>
 " select all and yank
 map <leader>a :%y+<cr>
 
-" CtrlP ============================= "
 " search through tags and jump to file with with ctrl-p
 nnoremap <leader>t :CtrlPTag<cr>
 " search buffers
 nnoremap <leader>b :CtrlPBuffer<cr>
+" additional shortcut for default
 nnoremap <leader>f :CtrlP<cr>
+
+" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>x :bn<CR>
+
 
 " reload config file
 nnoremap <leader>! :so $MYVIMRC<cr>
@@ -248,6 +273,10 @@ nnoremap <leader>R gg=G
 
 " leader w, for pane control
 nnoremap <leader>w <C-w>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<cr>
@@ -270,16 +299,17 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" scroll the viewport faster "
+" scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " copy to clipboard
 noremap YY "+y<CR>
 
+" insert line below
+nmap <CR><CR> o<Esc>
+
 " Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>x :bn<CR>
 nnoremap <space>b :Buffers<cr>
 nnoremap <space>f :Files<cr>
 
