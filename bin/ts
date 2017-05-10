@@ -3,4 +3,4 @@
 # tag replace
 
 
-taglist|fzf
+tag -tgRn | fzf
