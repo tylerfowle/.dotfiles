@@ -18,7 +18,7 @@ alias vim=nvim
 # tag
 alias taglist="tag -RNt"
 # alias for searching tagr
-alias tagr='cd `echo_lines|fzf|sed "s/.*=//"`'
+alias searchr='cd `tagr echo_lines|fzf|sed "s/.*=//"`'
 
 alias hangouts="https://hangouts.google.com"
 
