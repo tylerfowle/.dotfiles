@@ -137,6 +137,13 @@ prompt_virtualenv() {
   fi
 }
 
+# show current dir macos tags
+prompt_tags() {
+  color=cyan
+  prompt_segment $color $PRIMARY_FG
+  echo -n $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
+}
+
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
@@ -145,7 +152,10 @@ prompt_agnoster_main() {
   prompt_virtualenv
   prompt_dir
   prompt_end
-  print ''
+  print ""
+  prompt_tags
+  prompt_end
+  print ""
   prompt_git
   prompt_end
 }
