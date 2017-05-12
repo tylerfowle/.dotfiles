@@ -48,3 +48,5 @@ if [[ -a /usr/local/etc/profile.d/z.sh ]]
 then
   source /usr/local/etc/profile.d/z.sh
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
