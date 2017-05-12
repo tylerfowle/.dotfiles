@@ -139,9 +139,14 @@ prompt_virtualenv() {
 
 # show current dir macos tags
 prompt_tags() {
-  color=cyan
-  prompt_segment $color $PRIMARY_FG
-  echo -n $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
+  if [[ $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g') ]]; then
+    color=cyan
+    color=magenta
+    prompt_segment $color $PRIMARY_FG
+    echo -n $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
+    # prompt_end
+    # print ""
+  fi
 }
 
 ## Main prompt
@@ -154,8 +159,6 @@ prompt_agnoster_main() {
   prompt_end
   print ""
   prompt_tags
-  prompt_end
-  print ""
   prompt_git
   prompt_end
 }
