@@ -74,8 +74,8 @@ Plug 'mattn/emmet-vim'
 " Plug 'marcweber/vim-addon-mw-utils'
 " Plug 'tomtom/tlib_vim'
 " Plug 'garbas/vim-snipmate'
+Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
 
 " scss "
 Plug 'cakebaker/scss-syntax.vim'
@@ -101,7 +101,7 @@ set nocompatible
 " enable syntax colors
 syntax enable
 
-filetype plugin on
+" filetype plugin on
 set tabstop=4
 set shiftwidth=2
 set expandtab
@@ -168,12 +168,11 @@ set statusline+=%*
 let g:deoplete#enable_at_startup = 1
 
 " UltiSnips config ================================
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" use tab to forward cycle
-" inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsUsePythonVersion = 2
+set runtimepath+=~/.vim/ultisnips_rep
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " load custom snippets location
 let g:UltiSnipsSnippetsDir="~/.vim/custom-snippets/UltiSnips"
 
