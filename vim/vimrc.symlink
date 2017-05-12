@@ -42,7 +42,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-commentary'
 
-Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
 
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -69,6 +68,8 @@ Plug 'vim-scripts/HTML-AutoCloseTag'
 
 " html / templates
 Plug 'mattn/emmet-vim'
+
+Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
 
 " utils and dependencies for snipmate
 " Plug 'marcweber/vim-addon-mw-utils'
@@ -102,6 +103,7 @@ set nocompatible
 syntax enable
 
 " filetype plugin on
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=2
 set expandtab
@@ -168,13 +170,13 @@ set statusline+=%*
 let g:deoplete#enable_at_startup = 1
 
 " UltiSnips config ================================
-let g:UltiSnipsUsePythonVersion = 2
-set runtimepath+=~/.vim/ultisnips_rep
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets='<s-tab>'
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " load custom snippets location
-let g:UltiSnipsSnippetsDir="~/.vim/custom-snippets/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.vim/customsnippets/snips"
+let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 
 " airline options ================================
 let g:airline_powerline_fonts=1
@@ -313,4 +315,4 @@ nnoremap <space>b :Buffers<cr>
 nnoremap <space>f :Files<cr>
 
 " Emmet remap
-let g:user_emmet_leader_key='<tab>'
+" let g:user_emmet_leader_key='<tab>'
