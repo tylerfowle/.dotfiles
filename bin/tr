@@ -3,3 +3,4 @@
 # tag replace
 
 tag -r $1 .
+nohup tagr index &>/dev/null &
