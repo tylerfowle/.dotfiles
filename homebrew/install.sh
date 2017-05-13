@@ -20,6 +20,9 @@ brew install git
 echo "==> Installing vim"
 brew install vim
 
+echo "==> Installing neovim"
+brew install neovim/neovim/neovim
+
 echo "==> Installing wget"
 brew install wget
 
@@ -37,14 +40,12 @@ brew install fzf
 echo "==> Installing vim"
 brew install tag
 
-echo "==> Installing ranger"
+echo "==> Installing utilities"
 brew install ranger
-
-echo "==> Installing utils"
+brew install htop
 brew install ack
 brew install coreutils
 brew install jq
-brew install htop
 
 echo "==> Installing fun"
 brew install archey
