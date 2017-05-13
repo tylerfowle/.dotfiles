@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# tag replace
-
-
-tag -tgRn | fzf

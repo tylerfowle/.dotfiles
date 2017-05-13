@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# tag add
-
-tag -a $1 .
-nohup tagr index &>/dev/null &
