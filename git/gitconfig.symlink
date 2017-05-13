@@ -22,3 +22,6 @@
   editor = "vim"
 [color]
 	ui = auto
+[user]
+	name = tylerfowle
+	email = tylerfowle@gmail.com

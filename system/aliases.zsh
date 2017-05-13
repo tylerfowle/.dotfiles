@@ -15,9 +15,10 @@ alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 alias vim=nvim
 
-# tag
-alias taglist="tag -RNt"
+# tagr
+alias t=". tagr"
 
+# hangouts
 alias hangouts="https://hangouts.google.com"
 
 # reload config
