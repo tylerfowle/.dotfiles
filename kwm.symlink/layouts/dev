@@ -1,3 +1,0 @@
-kwmc tree root create parent
-kwmc tree split-mode 1
-kwmc tree split-ratio 0.5
