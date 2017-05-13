@@ -20,9 +20,6 @@ brew install git
 echo "==> Installing vim"
 brew install vim
 
-echo "==> Installing iterm2"
-brew cask install iterm2
-
 echo "==> Installing wget"
 brew install wget
 
@@ -37,12 +34,11 @@ brew install reattach-to-user-namespace
 echo "==> Installing fzf"
 brew install fzf
 
+echo "==> Installing vim"
+brew install tag
+
 echo "==> Installing ranger"
 brew install ranger
-
-echo "==> Installing kwm and khd"
-brew install koekeishiya/formulae/kwm
-brew install koekeishiya/formulae/khd
 
 echo "==> Installing utils"
 brew install ack
@@ -53,20 +49,29 @@ brew install htop
 echo "==> Installing fun"
 brew install archey
 
-echo "==> Installing hyper"
-brew cask install hyper
+
+# Cask
+#########################################
 
 echo "==> Installing apps"
+
 # productivity
 brew cask install atom
 brew cask install slack
+brew cask install discord
 brew cask install dropbox
 brew cask install virtualbox
 brew cask install 1password
-# customization
-brew cask install ubersicht
+brew cask install iterm2
+
+# utilities
+brew cask install scroll-reverser
+brew cask install xscope
+brew cask install bettertouchtool
+
 # browsers
 brew cask install firefox
 brew cask install google-chrome
-# extras
+
+# music
 brew cask install spotify
