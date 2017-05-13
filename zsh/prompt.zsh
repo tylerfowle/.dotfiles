@@ -143,7 +143,7 @@ prompt_tags() {
     color=cyan
     color=magenta
     prompt_segment $color $PRIMARY_FG
-    echo -n $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
+    print -n "tags:" $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
     # prompt_end
     # print ""
   fi
