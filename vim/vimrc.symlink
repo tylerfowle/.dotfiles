@@ -37,8 +37,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 
 " Plug 'tpope/vim-fugitive'
-"
-Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-surround' "ysiw to surround word
 
 Plug 'tpope/vim-commentary'
 
@@ -49,7 +49,7 @@ Plug 'ryanoasis/vim-devicons' " file drawer "
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Auto close tags
-" Plug 'raimondi/delimitmate'
+Plug 'raimondi/delimitmate'
 
 " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'airblade/vim-gitgutter'
@@ -64,7 +64,7 @@ Plug 'michalliu/sourcebeautify.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " HTML
-Plug 'vim-scripts/HTML-AutoCloseTag'
+" Plug 'vim-scripts/HTML-AutoCloseTag'
 
 " html / templates
 Plug 'mattn/emmet-vim'
@@ -83,6 +83,9 @@ Plug 'cakebaker/scss-syntax.vim'
 
 " twig syntax
 Plug 'evidens/vim-twig'
+
+" live markdown preview
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 call plug#end()
 " end plugins "
@@ -198,6 +201,11 @@ else
   let g:synthwave_termcolors=256 " 256 color mode
 endif
 
+" Markdown Preview ===================================================
+let vim_markdown_preview_hotkey='<C-m>' "remap hotkey
+let vim_markdown_preview_browser='Google Chrome' "use chrome
+let vim_markdown_preview_github=1  "use github flavored markdown
+let vim_markdown_preview_toggle=2  "update preview on write buffer
 
 " NERDTree settings ===================================================
 map <C-n> :NERDTreeToggle<CR>
