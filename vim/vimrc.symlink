@@ -69,7 +69,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " html / templates
 Plug 'mattn/emmet-vim'
 
-Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
+" Perform all your vim insert mode completions with Tab
+" Plug 'ervandew/supertab'
 
 " utils and dependencies for snipmate
 " Plug 'marcweber/vim-addon-mw-utils'
@@ -149,6 +150,11 @@ set cursorline
 " Ignore case in search patterns
 set ignorecase
 
+" automatically set indent of new line
+set autoindent
+set smartindent
+
+
 " Override the 'ignorecase' option if the search patter ncontains upper case characters
 set smartcase
 
@@ -171,15 +177,14 @@ set statusline+=%*
 
 " Deoplete ================================
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" work with snippets plz
+call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 " UltiSnips config ================================
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets='<s-tab>'
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<tab>'
 " load custom snippets location
-let g:UltiSnipsSnippetsDir="~/.vim/customsnippets/snips"
-let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 " airline options ================================
 let g:airline_powerline_fonts=1
@@ -255,6 +260,7 @@ let mapleader = ','
 
 " shortcut to save "
 nmap <leader>, :w<cr>
+" imap <C-S> <esc>:w<cr>i
 
 " clear highlighted search term, but keep in register
 nnoremap <leader><esc> :noh<cr>
