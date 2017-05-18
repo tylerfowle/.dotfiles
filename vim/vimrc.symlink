@@ -330,3 +330,5 @@ nnoremap <space>f :Files<cr>
 
 " Emmet remap
 " let g:user_emmet_leader_key='<tab>'
+let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
