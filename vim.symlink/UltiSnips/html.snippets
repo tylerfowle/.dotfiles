@@ -1,3 +1,62 @@
-snippet collection "idk"
-	<collection></collection>
+# ##################################################################
+# TWIG
+# ##################################################################
+snippet cb "contentblock - twig"
+{% if content_blocks.$1 is not empty %}$2
+{{ content_blocks.$1|raw }}$3
+{% endif %}
+endsnippet
+
+snippet cs "contentspace - twig"
+{% if content_spaces.$1 is not empty %}$2
+{{ content_spaces.$1|raw }}$3
+{% endif %}
+endsnippet
+
+snippet locations "locations - twig"
+{% include '@core/fdp_locations.twig' %}
+endsnippet
+
+snippet tnav "navigation"
+{% embed "@core/fdp_navigation.twig" %}
+{% block fdp_navigation %}
+{% set nav_type = 'nav_primary ${1}' %}
+{% set nav_classes = 'nav' %}
+{% set nav_list = fdp_navigation.nav_primary %}
+{{ parent() }}
+{% endblock %}
+{% endembed %}
+endsnippet
+
+snippet logo "logo"
+<!-- BEGIN ${1:nav}-logo -->
+<div class="${1:nav}-logo">
+{% if fdp_logos.${2:1} is not empty %}
+{{ fdp_logos.${2:1}.link|raw }}<img src="{{ fdp_logos.${2:1}.url }}" alt="{{ fdp_website_title }}"></a>
+{% else %}
+<a href="/">{{ fdp_website_title }}</a>
+{% endif %}
+</div>
+<!-- END ${1:nav}-logo -->
+$2
+endsnippet
+
+snippet date "date"
+{{ "now"|date("Y") }}
+endsnippet
+
+snippet policy "policy"
+{% include "@core/fdp_policies.twig" %}
+endsnippet 
+
+
+# ##################################################################
+# HTML
+# ##################################################################
+snippet cbb "contentblock - html"
+<!-- BEGIN .content-block $1 -->
+<div class="content-block $1">
+$2
+</div>
+<!-- END .content-block $1 -->$3
 endsnippet
