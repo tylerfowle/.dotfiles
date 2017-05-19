@@ -1,9 +1,11 @@
 " ======================================================================================================
+"
 " start plugins "
 call plug#begin('~/.vim/plugged')
 
 " colorscheme "
 Plug 'exitface/synthwave.vim'
+Plug 'joshdick/onedark.vim'
 
 " utilities "
 Plug 'vim-airline/vim-airline' " fancy statusline
@@ -16,6 +18,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 
@@ -73,6 +76,9 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 
 " indent guides
 Plug 'nathanaelkane/vim-indent-guides'
+
+" language pack to rule them all
+" Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 " end plugins "
@@ -161,30 +167,33 @@ set statusline+=%*
 
 
 
-" Deoplete ================================
+" Deoplete ===================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " work with snippets plz
 call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 
-" UltiSnips config ================================
+" UltiSnips config ===================================================
 let g:UltiSnipsExpandTrigger='<tab>'
 " load custom snippets location
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsEditSplit='vertical'
 
-" airline options ================================
+" airline options ===================================================
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='synthwave'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
-let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
+" let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
 
 " colorscheme ===================================================
 set background=dark
 colorscheme synthwave
+colorscheme onedark
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
@@ -216,25 +225,32 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 " customize nerdtree syntax colors
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
+" let s:brown       = "905532"
+" let s:aqua        = "3AFFDB"
+" let s:blue        = "689FB6"
+" let s:darkBlue    = "44788E"
+" let s:purple      = "834F79"
+" let s:lightPurple = "834F79"
+" let s:red         = "AE403F"
+" let s:beige       = "F5C06F"
+" let s:yellow      = "F09F17"
+" let s:orange      = "D4843E"
+" let s:darkOrange  = "F16529"
+" let s:pink        = "CB6F6F"
+" let s:salmon      = "EE6E73"
+" let s:green       = "8FAA54"
+" let s:lightGreen  = "31B53E"
+" let s:white       = "FFFFFF"
+" let s:rspec_red   = "FE405F"
+" let s:git_orange  = "F54D27"
 
+
+" indent guides ===================================================
+let g:indend_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 2
+let g:indent_guides_enable_on_vim_startup = 1
+" hi IndentGuidesOdd  ctermbg=black
+" hi IndentGuidesEven ctermbg=darkgrey
 
 
 " ============================================= "
@@ -285,7 +301,14 @@ nnoremap <leader>. :lcd %:p:h<cr>
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR>
 
+" open 3 splits
 nmap <leader>h :vsp<cr>:vsp<cr>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " ============================================= "
 " Custom Mappings ============================= "
@@ -320,3 +343,5 @@ nnoremap <space>f :Files<cr>
 " let g:user_emmet_leader_key='<tab>'
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+
