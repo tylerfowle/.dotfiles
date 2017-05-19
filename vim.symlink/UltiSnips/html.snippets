@@ -29,7 +29,6 @@ snippet tnav "navigation"
 endsnippet
 
 snippet logo "logo"
-<!-- BEGIN ${1:nav}-logo -->
 <div class="${1:nav}-logo">
 {% if fdp_logos.${2:1} is not empty %}
 {{ fdp_logos.${2:1}.link|raw }}<img src="{{ fdp_logos.${2:1}.url }}" alt="{{ fdp_website_title }}"></a>
@@ -37,8 +36,6 @@ snippet logo "logo"
 <a href="/">{{ fdp_website_title }}</a>
 {% endif %}
 </div>
-<!-- END ${1:nav}-logo -->
-$2
 endsnippet
 
 snippet date "date"
