@@ -94,7 +94,7 @@ call plug#end()
 set nocompatible
 
 " enable syntax colors
-syntax enable
+syntax on
 
 " filetype plugin on
 filetype plugin indent on
@@ -140,12 +140,11 @@ set cursorline
 " Ignore case in search patterns
 set ignorecase
 
-" automatically set indent of new line
+" Automatically set indent of new line
 set autoindent
 set smartindent
 
-
-" Override the 'ignorecase' option if the search patter ncontains upper case characters
+" Override the 'ignorecase' option if the search pattern contains upper case characters
 set smartcase
 
 " Show matching brackets
@@ -255,6 +254,14 @@ let g:indent_guides_enable_on_vim_startup = 1
 " hi IndentGuidesEven ctermbg=darkgrey
 
 
+" live reloading of vimrc
+augroup reload_vimrc
+autocmd!
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+
+
 " ============================================= "
 " Leader Mappings ============================= "
 " ============================================= "
@@ -345,5 +352,3 @@ nnoremap <space>f :Files<cr>
 " let g:user_emmet_leader_key='<tab>'
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-
