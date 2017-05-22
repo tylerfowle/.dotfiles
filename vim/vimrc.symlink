@@ -255,11 +255,18 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 
 " live reloading of vimrc
-augroup reload_vimrc
-autocmd!
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
+" augroup reload_vimrc
+" autocmd!
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" augroup END
 
+
+"auto reload vimrc once changed
+if has("autocmd")
+  autocmd! BufWritePost .vimrc source $MYVIMRC
+  " This fixes the color changes and things not working :D
+  autocmd! BufWritePost .vimrc filetype plugin indent on
+endif
 
 
 " ============================================= "
