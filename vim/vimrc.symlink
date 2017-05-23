@@ -125,14 +125,6 @@ set statusline+=%*
 
 
 
-
-
-" Emmet remap ===================================================
-" let g:user_emmet_leader_key='<tab>'
-" let g:user_emmet_expandabbr_key='<Tab>'
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-
 " Deoplete ===================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
@@ -144,6 +136,14 @@ let g:UltiSnipsExpandTrigger='<tab>'
 " load custom snippets location
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit='vertical'
+
+" Emmet remap ===================================================
+" let g:user_emmet_leader_key='<tab>'
+" let g:user_emmet_expandabbr_key='<Tab>'
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" remap emmet expand to hh
+imap hh <C-y>,
 
 " airline options ===================================================
 let g:airline_powerline_fonts=1
