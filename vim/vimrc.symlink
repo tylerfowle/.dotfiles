@@ -236,7 +236,7 @@ noremap <leader>x :bn<CR>
 nnoremap <leader>! :so $MYVIMRC<cr>
 
 " reindent entire file
-nnoremap <leader>R magg=G`az.
+nnoremap <leader>r magg=G`az.
 
 " leader w, for pane control
 nnoremap <leader>w <C-w>
@@ -251,8 +251,8 @@ nnoremap <leader>. :lcd %:p:h<cr>
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR>
 
-" open 3 splits
-nmap <leader>h :vsp<cr>:vsp<cr>
+" open v split
+nmap <leader>h :vsp<cr>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
