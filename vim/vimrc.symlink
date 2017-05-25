@@ -197,12 +197,6 @@ let g:indend_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 2
 let g:indent_guides_enable_on_vim_startup = 1
 
-"auto reload vimrc once changed
-if has("autocmd")
-  autocmd! BufWritePost .vimrc source $MYVIMRC
-  " This fixes the color changes and things not working :D
-  autocmd! BufWritePost .vimrc filetype plugin indent on
-endif
 
 
 " ============================================= "
@@ -288,4 +282,6 @@ nmap <CR><CR> o<Esc>
 " Buffer nav
 nnoremap <space>b :Buffers<cr>
 nnoremap <space>f :Files<cr>
+
+nnoremap <C-z> :redraw!<cr>
 

@@ -6,6 +6,31 @@ snippet ch "comment header"
 ////////////////////////////////////////////////////////////////////////////////
 endsnippet
 
+
+snippet collection "collection scss"
+.collection--list {
+  ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  li {}
+  a {}
+
+  .collection-item__content {}
+
+  .collection-item-label {}
+  .collection-item-description {}
+  .collection-item-image {}
+
+  // FDP-10889 override
+  .collection-item-image.image {
+	max-width: 100% !important;
+  }
+}
+endsnippet
+
+
 # media down snippets
 ############################################################################
 snippet xsd "xsmall-down"
