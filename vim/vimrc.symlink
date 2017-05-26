@@ -96,12 +96,20 @@ set title
 " Highlight line with cursor
 set cursorline
 
+" sets as fast terminal
+set ttyfast
+
 " Ignore case in search patterns
 set ignorecase
 
 " Automatically set indent of new line
 set autoindent
 set smartindent
+
+" configure folding
+set foldmethod=indent
+set foldlevel=1
+set foldclose=all
 
 " Override the 'ignorecase' option if the search pattern contains upper case characters
 set smartcase
