@@ -49,84 +49,59 @@ call plug#end()
 " options
 " ====================================================================================================== "
 
-" dont be compatible with vi
-set nocompatible
-
-" enable syntax colors
-syntax on
-
-" filetype plugin on
-filetype plugin indent on
-set tabstop=4
+set nocompatible          " dont be compatible with vi
+syntax enable             " enable syntax processing
+filetype plugin indent on " load filetype-specific indent files
+set encoding=utf8         " set encoding
+set tabstop=4             " number of visual spaces per TAB
 set shiftwidth=2
-set expandtab
-set encoding=utf8
+set expandtab             " tabs are spaces
+set path+=                " for searching
+set wildmenu              " visual autocomplete for command menu
+set wildcharm=<TAB>       " auto completetion hotkey
+set lazyredraw            " redraw only when we need to.
 
-" for searching "
-set path+=
+set showcmd " show current command in bottom right
 
-" Extended autocmpletion for commands
-set wildmenu
+set number " show line numbers
 
-" Autocmpletion hotkey
-set wildcharm=<TAB>
+set relativenumber " use relative lines
 
-" show current command in bottom right
-set showcmd
+set splitbelow " open new splits to bottom
+set splitright " open new splits to right
 
-" show line numbers
-set number
+set mouse=a " enable mouse for scrolling
 
-" use relative lines
-set relativenumber
+set autoread " auto reload changed files
 
-" open new splits to right and bottom
-set splitbelow
-set splitright
+set title " show file name in window title
 
-" enable mouse for scrolling
-set mouse=a
+set cursorline " highlight line with cursor
 
-" Auto reload changed files
-set autoread
+set ttyfast " sets as fast terminal
 
-" Show file name in window title
-set title
+set ignorecase " ignore case in search patterns
+set incsearch  " search as characters are entered
+set hlsearch   " highlight matches
 
-" Highlight line with cursor
-set cursorline
+set autoindent  " automatically set indent of new line
+set smartindent " do smart autoindenting when starting a new line
 
-" sets as fast terminal
-set ttyfast
-
-" Ignore case in search patterns
-set ignorecase
-
-" Automatically set indent of new line
-set autoindent
-set smartindent
-
-" configure folding
-set foldmethod=indent
-set foldlevel=1
+set foldenabled       " enable folding
+set foldmethod=indent " folding by indent
+set foldlevel=10      " open most folds by default
 set foldclose=all
 
-" Override the 'ignorecase' option if the search pattern contains upper case characters
-set smartcase
 
-" Show matching brackets
-set showmatch
+set smartcase " override the 'ignorecase' option if the search pattern contains upper case characters
+set showmatch " show matching brackets
+set matchpairs+=<:> " make < and > match as well
 
-" Make < and > match as well
-set matchpairs+=<:>
+set t_Co=256 " override terminal colors
 
-" override terminal colors
-set t_Co=256
+set laststatus=2 " always show airline
 
-" always show airline
-set laststatus=2
-
-" Lightline recommended settings
+" lightline recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
