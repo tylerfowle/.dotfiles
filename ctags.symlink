@@ -6,8 +6,10 @@
 --exclude=.sass-cache
 --exclude=.git
 --exclude=.DS_Store
+--exclude=tags
 --exclude=node_modules
 --exclude=vendors
+--exclude=min
 
 --langdef=css
 --langmap=css:.css
@@ -18,40 +20,39 @@
 --regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
 --regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
 
+--langdef=less
+--langmap=less:.less
+--regex-less=/^[ \t&]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
+--regex-less=/^[ \t&]*\.([A-Za-z0-9_-]+)/\1/c,class,classes/
+--regex-less=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
+--regex-less=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
+--regex-less=/^[ \t]*(@[A-Za-z0-9_-]+):/\1/v,variable,variables/
+--regex-javascript=/\/\/[ \t]*(FIXME|TODO)[ \t]*\:*(.*)/\1/T,Tag,Tags/
+
 --langdef=scss
---langmap=scss:.sass
---langmap=scss:+.scss
+--langmap=scss:.scss
 --regex-scss=/^[ \t]*@mixin ([A-Za-z0-9_-]+)/\1/m,mixin,mixins/
---regex-scss=/^[ \t]*@function ([A-Za-z0-9_-]+)/\1/f,function,functions/
 --regex-scss=/^[ \t]*\$([A-Za-z0-9_-]+)/\1/v,variable,variables/
 --regex-scss=/^([A-Za-z0-9_-]*)*\.([A-Za-z0-9_-]+) *[,{]/\2/c,class,classes/
---regex-scss=/^[ \t]*\.([A-Za-z0-9_-]+)/\1/c,class,classes/
---regex-scss=/^[ \t]+\.([A-Za-z0-9_-]+) *[,{]/\1/c,class,classes/
+--regex-scss=/^[ \t&]+\.([A-Za-z0-9_-]+) *[,{]/\1/c,class,classes/
 --regex-scss=/^(.*)*\#([A-Za-z0-9_-]+) *[,{]/\2/i,id,ids/
---regex-scss=/^[ \t]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
+--regex-scss=/^[ \t&]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
 --regex-scss=/(^([A-Za-z0-9_-])*([A-Za-z0-9_-]+)) *[,|\{]/\1/t,tag,tags/
 --regex-scss=/(^([^\/\/])*)[ \t]+([A-Za-z0-9_-]+)) *[,|\{]/\3/t,tag,tags/
 --regex-scss=/(^(.*, *)([A-Za-z0-9_-]+)) *[,|\{]/\3/t,tag,tags/
 --regex-scss=/(^[ \t]+([A-Za-z0-9_-]+)) *[,|\{]/\1/t,tag,tags/
 --regex-scss=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/d,media,media/
+--regex-javascript=/\/\/[ \t]*(FIXME|TODO)[ \t]*\:*(.*)/\1/T,Tag,Tags/
 
---langdef=html
---langmap=html:.htm.html
---regex-html=/<h1[^>]*>(.*)<\/h1>/\1/h,header/
---regex-html=/<h2[^>]*>(.*)<\/h2>/. \1/h,header/
---regex-html=/<h3[^>]*>(.*)<\/h3>/.   \1/h,header/
---regex-html=/<h4[^>]*>(.*)<\/h4>/.     \1/h,header/
---regex-html=/<h5[^>]*>(.*)<\/h5>/.       \1/h,header/
---regex-html=/<h6[^>]*>(.*)<\/h6>/.         \1/h,header/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+id[ \t]*=[ \t]*'([^']+)'/\1#\2/o,object/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+id[ \t]*=[ \t]*"([^"]+)"/\1#\2/o,object/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+id[ \t]*=[ \t]*([A-Za-z][A-Za-z0-9_:.-]*)[ \t>]/\1#\2/o,object/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+class[ \t]*=[ \t]*'([^']+)'/\1.\2/c,class/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+class[ \t]*=[ \t]*"([^"]+)"/\1.\2/c,class/
---regex-html=/<([a-zA-Z][a-zA-Z0-9]*)[^>]*[ \t]+class[ \t]*=[ \t]*([A-Za-z][A-Za-z0-9_:.-]*)[ \t>]/\1.\2/c,class/>])>])>>])">])'>
+--langmap=html:+.htm
+--langmap=html:+.twig
+--langmap=html:+.twig.html
+--langmap=html:+.html.twig
 --regex-html=/id="([A-Za-z0-9_-]+)"/\1/i,id,ids/
 --regex-html=/class="([A-Za-z0-9_-]+)"/\1/c,class,classes/
 
 --langdef=markdown
 --langmap=markdown:.md
 --regex-markdown=/^(#+[ \t]+.*)/\1/h,heading,headings/
+
+--langmap=vim:+(vimrc)
