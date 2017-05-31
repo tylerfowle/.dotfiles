@@ -65,7 +65,7 @@ set ttyfast               " faster redrawing
 set iskeyword+=-
 " }}}
 " Autocommands {{{
-autocmd BufWritePre,BufRead * silent! !ctags -R .
+autocmd BufWritePre * silent! !ctags -R .
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4             " number of visual spaces per TAB
@@ -84,7 +84,7 @@ set showcmd                   " show current command in bottom right
 set laststatus=2              " always show airline
 set wildmenu                  " visual autocomplete for command menu
 set wildcharm=<TAB>           " auto completetion hotkey
-set lazyredraw                " redraw only when we need to
+" set lazyredraw                " redraw only when we need to
 set list                      " show invisible characters
 set listchars=tab:→\ ,trail:⋅ " list chars
 " }}}
@@ -265,7 +265,14 @@ nnoremap <C-z> :redraw!<cr>
 " show tagbar
 nnoremap <c-b> :TagbarToggle<cr>
 
+" Tag Shortcuts {{{
+"
 " open ctags definition in vertical split
-map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+"
+" go to next tag
+nnoremap <c-[> :tn<cr>
+
+" "}}}
 
 " vim:foldmethod=marker:foldlevel=0

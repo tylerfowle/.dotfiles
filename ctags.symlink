@@ -2,14 +2,24 @@
 --exclude=*.inc.js
 --exclude=*.min.css
 --exclude=*.map
+--exclude=\*.cache
+--exclude=\*.dll
+--exclude=\*.swp
+
 --exclude=.backup
 --exclude=.sass-cache
 --exclude=.git
+--exclude=.svn
 --exclude=.DS_Store
+
 --exclude=tags
 --exclude=node_modules
 --exclude=vendors
 --exclude=min
+--exclude=mockup
+--exclude=mockups
+--exclude=designs
+--exclude=layouts
 
 --langdef=css
 --langmap=css:.css

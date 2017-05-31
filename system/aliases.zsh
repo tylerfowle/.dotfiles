@@ -60,3 +60,8 @@ function chpwd() {
   fi
 
 }
+
+# find [directory], in current directory, recursively, show size and sort by size
+function findr() {
+  find . -type d -name "$1" -print | xargs du -shc | gsort -h
+}
