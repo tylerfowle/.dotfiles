@@ -8,10 +8,11 @@ Plug 'joshdick/onedark.vim'
 " }}}
 " UI {{{
 Plug 'nathanaelkane/vim-indent-guides' " indent guides
-Plug 'vim-airline/vim-airline' " fancy statusline
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-Plug 'majutsushi/tagbar' " shows tags in a sidebar
+Plug 'vim-airline/vim-airline'         " fancy statusline
+Plug 'vim-airline/vim-airline-themes'  " themes for airline
+Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'majutsushi/tagbar'               " shows tags in a sidebar
+Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 " }}}
 " Utilities {{{
 Plug 'ctrlpvim/ctrlp.vim'
