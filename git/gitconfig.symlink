@@ -1,6 +1,6 @@
 # Local/private config goes in the include
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [push]
 	default = simple
 [alias]
@@ -19,7 +19,8 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lrb = ls-remote --heads origin
 [core]
-  editor = "vim"
+	editor = "vim"
+	excludesfile = /Users/tyler.fowle/.gitignore_global
 [color]
 	ui = auto
 [user]
