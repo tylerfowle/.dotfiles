@@ -257,7 +257,7 @@ nnoremap <C-y> 3<C-y>
 noremap YY "+y<CR>
 
 " insert line below
-nmap <CR><CR> o<Esc>
+nnoremap <CR><CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<cr>
@@ -265,14 +265,13 @@ nnoremap <C-z> :redraw!<cr>
 " show tagbar
 nnoremap <c-b> :TagbarToggle<cr>
 
-" Tag Shortcuts {{{
+" Tag Shortcuts
 "
 " open ctags definition in vertical split
 " map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "
 " go to next tag
-nnoremap <c-[> :tn<cr>
+" nnoremap <C-[> :tn<cr>
 
-" "}}}
 
 " vim:foldmethod=marker:foldlevel=0
