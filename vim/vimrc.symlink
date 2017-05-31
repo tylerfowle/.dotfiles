@@ -66,7 +66,7 @@ set ttyfast               " faster redrawing
 set iskeyword+=-
 " }}}
 " Autocommands {{{
-autocmd BufWritePre * silent! !ctags -R .
+autocmd BufWritePre * silent! !ctags -R . >/dev/null 2>&1
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4             " number of visual spaces per TAB
