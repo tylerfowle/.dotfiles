@@ -11,6 +11,7 @@ Plug 'nathanaelkane/vim-indent-guides' " indent guides
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter' " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'majutsushi/tagbar' " shows tags in a sidebar
 " }}}
 " Utilities {{{
 Plug 'ctrlpvim/ctrlp.vim'
@@ -56,10 +57,15 @@ call plug#end()
 " General Config {{{
 set nocompatible          " dont try to be compatible with vi
 syntax enable             " enable syntax processing
-filetype plugin indent on " load filetype-specific indent files
+filetype plugin on        " load filetype-specific indent files
+filetype indent on
 set encoding=utf8         " set encoding
 set t_Co=256              " explicitly tell vim that the terminal supports 256 colors
 set ttyfast               " faster redrawing
+set iskeyword+=-
+" }}}
+" Autocommands {{{
+autocmd BufWritePre,BufRead * silent! !ctags -R .
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4             " number of visual spaces per TAB
@@ -255,5 +261,11 @@ nmap <CR><CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<cr>
+
+" show tagbar
+nnoremap <c-b> :TagbarToggle<cr>
+
+" open ctags definition in vertical split
+map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " vim:foldmethod=marker:foldlevel=0
