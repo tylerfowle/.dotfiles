@@ -285,6 +285,26 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 " Tag Shortcuts {{{
+
+" search tag under cursor
+nnoremap ts <c-]>
+" go back to definition
+nnoremap tt <c-t>
+" go to next tag
+nnoremap tn :tabnext<cr>
+" go to previous tag
+nnoremap tp :tabnext<cr>
+" }}}
+" Terminal Shortcuts {{{
+
+" make esc work like other modes
+tnoremap <Esc> <C-\><C-n>
+" nav splits like normal
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
