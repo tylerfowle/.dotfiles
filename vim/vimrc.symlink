@@ -19,12 +19,13 @@ Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
-Plug 'tpope/vim-surround' " ysiw to surround word
-Plug 'tpope/vim-commentary' " easy commenting
-Plug 'raimondi/delimitmate' " Auto close tags
+Plug 'junegunn/vim-easy-align'         " ga to align by character
+Plug 'tpope/vim-repeat'                " enables repeating other supported plugins with the . command
+Plug 'tpope/vim-surround'              " ysiw to surround word
+Plug 'tpope/vim-commentary'            " easy commenting
+Plug 'raimondi/delimitmate'            " Auto close tags
 Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted in red.
+Plug 'google/vim-searchindex'          " show search position among all results
 " }}}
 " Syntax engines {{{
 " Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
@@ -64,7 +65,8 @@ filetype indent on
 set encoding=utf8         " set encoding
 set t_Co=256              " explicitly tell vim that the terminal supports 256 colors
 set ttyfast               " faster redrawing
-set iskeyword+=-
+set tags=./tags;
+set iskeyword+=-          " include - in keyword matching
 " }}}
 " Autocommands {{{
 autocmd BufWritePre * silent! !ctags -R . >/dev/null 2>&1
@@ -283,12 +285,6 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 " Tag Shortcuts {{{
-
-" open ctags definition in vertical split
-" map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"
-" go to next tag
-nnoremap <C-[> :tn<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
