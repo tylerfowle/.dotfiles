@@ -139,11 +139,11 @@ prompt_virtualenv() {
 
 # show current dir macos tags
 prompt_tags() {
-  if [[ $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g') ]]; then
+  if [[ $(dtags list) ]]; then
     color=cyan
     color=magenta
     prompt_segment $color $PRIMARY_FG
-    print -n "tags:" $(tag -l . | sed "s/.*\.//" | sed 's/[[:space:]]//g' | sed 's/[[:blank:]]//g')
+    print -n "tags:" $(dtags list)
     # prompt_end
     # print ""
   fi
