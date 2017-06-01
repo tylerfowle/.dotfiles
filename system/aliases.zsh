@@ -19,8 +19,8 @@ alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 alias editgitline='e /usr/local/bin/gitline.sh'
 
-# tagr
-alias t=". tagr"
+# dtags - tag and cd to directories
+alias t=". dtags"
 
 # hangouts
 alias hangouts="https://hangouts.google.com"
