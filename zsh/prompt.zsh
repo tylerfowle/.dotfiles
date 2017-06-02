@@ -145,11 +145,11 @@ prompt_tags() {
     CURRENT_BG='NONE'
     print ""
     prompt_segment $color $PRIMARY_FG
-    print -n " tags: $(dtags list) "
+    print -n " tags: "$(dtags list)" "
     # prompt_end
     # print ""
   else
-    print ""
+    # print ""
     CURRENT_BG='NONE'
   fi
 }
