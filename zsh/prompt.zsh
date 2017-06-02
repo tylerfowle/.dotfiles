@@ -42,7 +42,7 @@ source $DOTFILES/git/.git-prompt.sh
 
 CURRENT_BG='NONE'
 if [[ -z "$PRIMARY_FG" ]]; then
-	PRIMARY_FG=black
+  PRIMARY_FG=black
 fi
 
 # Characters
@@ -137,15 +137,20 @@ prompt_virtualenv() {
   fi
 }
 
-# show current dir macos tags
+# show current dir tags
 prompt_tags() {
   if [[ $(dtags list) ]]; then
     color=cyan
     color=magenta
+    CURRENT_BG='NONE'
+    print ""
     prompt_segment $color $PRIMARY_FG
-    print -n "tags:" $(dtags list)
+    print -n " tags: $(dtags list) "
     # prompt_end
     # print ""
+  else
+    print ""
+    CURRENT_BG='NONE'
   fi
 }
 
@@ -157,7 +162,6 @@ prompt_agnoster_main() {
   prompt_virtualenv
   prompt_dir
   prompt_end
-  print ""
   prompt_tags
   prompt_git
   prompt_end
