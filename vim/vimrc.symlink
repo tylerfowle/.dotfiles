@@ -30,6 +30,7 @@ Plug 'google/vim-searchindex'          " show search position among all results
 " Syntax engines {{{
 " Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
 " Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " }}}
 " Syntax support {{{
 Plug 'cakebaker/scss-syntax.vim'                              " scss syntax
@@ -206,6 +207,10 @@ nmap ga <Plug>(EasyAlign)
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" B and E for faster beginning and end
+nnoremap B 0
+nnoremap E $
 
 " copy to clipboard
 noremap YY "+y<CR>

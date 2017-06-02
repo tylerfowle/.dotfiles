@@ -149,7 +149,7 @@ prompt_tags() {
     # prompt_end
     # print ""
   else
-    # print ""
+    print ""
     CURRENT_BG='NONE'
   fi
 }
