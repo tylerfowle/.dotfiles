@@ -209,7 +209,7 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " B and E for faster beginning and end
-nnoremap B 0
+nnoremap B ^
 nnoremap E $
 
 " copy to clipboard
