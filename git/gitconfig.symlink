@@ -19,7 +19,7 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lrb = ls-remote --heads origin
 [core]
-	editor = "vim"
+	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
 [color]
 	ui = auto

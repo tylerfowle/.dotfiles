@@ -92,6 +92,7 @@ set wildcharm=<TAB>           " auto completetion hotkey
 " set lazyredraw                " redraw only when we need to
 set list                      " show invisible characters
 set listchars=tab:→\ ,trail:⋅ " list chars
+set fillchars=vert:│          " set vert split character to taller line
 " }}}
 " Splits {{{
 set splitbelow " open new splits to bottom

@@ -10,7 +10,6 @@ alias la="ls -Ga"
 alias ..="cd .."
 alias list="ls -1"
 alias sassvars='grep -Rnco "\$.*:" .'
-alias vim=nvim
 alias bluetooth="system_profiler SPBluetoothDataType"
 
 # Edit files quickly
