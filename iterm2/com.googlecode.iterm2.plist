@@ -556,9 +556,11 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/iterm2</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 685}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 521}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -598,9 +600,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>4019 498 599 388 2560 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>3687 489 796 473 2560 0 2560 1440 </string>
+	<string>2950 593 918 381 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3841 7 1270 1287 2560 0 2560 1417 </string>
+	<string>3421 14 1690 1399 2560 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1985,7 +1987,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-30T21:41:26Z</date>
+	<date>2017-06-02T14:04:45Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1998,6 +2000,10 @@
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
+	<key>SwitchPaneModifier</key>
+	<integer>9</integer>
+	<key>SwitchTabModifier</key>
+	<integer>4</integer>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>
