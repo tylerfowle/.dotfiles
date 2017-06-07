@@ -600,9 +600,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>4019 498 599 388 2560 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2950 593 918 381 2560 0 2560 1417 </string>
+	<string>2948 571 918 495 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3421 14 1690 1399 2560 0 2560 1417 </string>
+	<string>3415 6 1696 1407 2560 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1228,7 +1228,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>KnackNerdFontC-Regular 12</string>
+			<string>KnackNerdFontC-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1987,7 +1987,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-06-02T14:04:45Z</date>
+	<date>2017-06-05T13:52:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
