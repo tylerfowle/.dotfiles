@@ -64,3 +64,18 @@ function chpwd() {
 function findr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
+
+
+#keep the last focused finder window up to date when cd in terminal
+function chpwd() {
+  osascript -e 'on run pwd
+  set f to posix file pwd
+      tell app "Finder"
+          if number of Finder windows is 0 then
+          open f
+          else
+          set target of window 1 to f
+          end
+      end
+  end' "$PWD" > /dev/null
+}
