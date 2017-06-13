@@ -256,6 +256,9 @@ nnoremap <leader>f :CtrlP<cr>
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 
+" close current buffer but not current window
+noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
+
 " reload vimrc file
 nnoremap <leader>! :so $MYVIMRC<cr>
 
