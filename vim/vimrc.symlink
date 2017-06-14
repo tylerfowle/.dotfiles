@@ -167,7 +167,7 @@ let vim_markdown_preview_github=1                " use github flavored markdown
 let vim_markdown_preview_toggle=2                " update preview on write buffer
 " }}}
 " NERDTree  {{{
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR><c-w>=
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
@@ -246,9 +246,9 @@ nnoremap <leader><esc> :noh<cr>
 nmap <leader>a :%y+<cr>
 
 " search through tags and jump to file with with ctrl-p
-nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>tf :CtrlPTag<cr>
 " search buffers
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>bf :CtrlPBuffer<cr>
 " additional shortcut for default
 nnoremap <leader>f :CtrlP<cr>
 
@@ -278,7 +278,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>. :lcd %:p:h<cr>
 
 " Display current file in the NERDTree ont the left
-nmap <silent> <leader>n :NERDTreeFind<CR>
+nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 
 " open v split
 nmap <leader>h :vsp<cr>
