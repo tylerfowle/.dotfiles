@@ -12,6 +12,10 @@ alias list="ls -1"
 alias sassvars='grep -Rnco "\$.*:" .'
 alias bluetooth="system_profiler SPBluetoothDataType"
 
+# Editor - load vim session
+# move this into script if useful
+alias es="nvim -S"
+
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
 alias editdot="e ~/.dotfiles"

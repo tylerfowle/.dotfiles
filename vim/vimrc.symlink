@@ -298,13 +298,13 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Tag Shortcuts {{{
 
 " search tag under cursor
-nnoremap ts <c-]>
+nnoremap ts <c-]>z.
 " go back to definition
 nnoremap tt <c-t>
 " go to next tag
-nnoremap tn :tabnext<cr>
+nnoremap tn :tn<cr>
 " go to previous tag
-nnoremap tp :tabprevious<cr>
+nnoremap tp :tp<cr>
 " }}}
 " Terminal Shortcuts {{{
 
