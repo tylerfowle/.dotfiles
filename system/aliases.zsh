@@ -64,8 +64,13 @@ function chpwd() {
 
 }
 
+# find [string], in current directory, recursively, and fzf results
+function strfindr() {
+  grep --exclude-dir=.git -r . -e "$1" | fzf
+}
+
 # find [directory], in current directory, recursively, show size and sort by size
-function findr() {
+function filefindr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
 
@@ -74,12 +79,13 @@ function findr() {
 function chpwd() {
   osascript -e 'on run pwd
   set f to posix file pwd
-      tell app "Finder"
-          if number of Finder windows is 0 then
-          open f
-          else
-          set target of window 1 to f
-          end
+    tell app "Finder"
+      if number of Finder windows is 0 then
+        open f
+      else
+        set target of window 1 to f
       end
+    end
   end' "$PWD" > /dev/null
 }
+
