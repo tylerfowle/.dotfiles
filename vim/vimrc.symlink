@@ -26,6 +26,7 @@ Plug 'tpope/vim-commentary'            " easy commenting
 Plug 'raimondi/delimitmate'            " Auto close tags
 Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'          " show search position among all results
+Plug 'triglav/vim-visual-increment'    " use ctrl a/v to increment.decrement a visually selected block
 " }}}
 " Syntax engines {{{
 " Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
