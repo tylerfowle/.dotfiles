@@ -28,6 +28,38 @@ snippet tnav "navigation"
 {% endembed %}
 endsnippet
 
+snippet tnav.portal "navigation - portal"
+{% if fdp_navigation.nav_portal is not empty %}
+
+<!-- BEGIN nav -->
+{% embed "@core/fdp_navigation.twig" %}
+{% block fdp_navigation %}
+{% set nav_type = 'nav_primary ${1}' %}
+{% set nav_classes = 'nav' %}
+{% set nav_list = fdp_navigation.nav_portal %}
+{{ parent() }}
+{% endblock %}
+{% endembed %}
+<!-- END nav -->
+
+{% else %}
+
+<!-- BEGIN nav -->
+{% embed "@core/fdp_navigation.twig" %}
+{% block fdp_navigation %}
+{% set nav_type = 'nav_primary ${1}' %}
+{% set nav_classes = 'nav' %}
+{% set nav_list = fdp_navigation.nav_primary %}
+{{ parent() }}
+{% endblock %}
+{% endembed %}
+<!-- END nav -->
+
+{% endif %}
+endsnippet
+
+
+
 snippet logo "logo"
 <div class="${1:nav}-logo">
 {% if fdp_logos.${2:1} is not empty %}
