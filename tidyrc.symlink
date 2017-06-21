@@ -13,7 +13,7 @@ preserve-entities: yes
 quote-ampersand: no
 quote-marks: no
 show-body-only: yes
-indent: yes
+indent: auto
 indent-spaces: 2
 tab-size: 2
 wrap: 0
