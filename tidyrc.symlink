@@ -21,6 +21,7 @@ wrap-asp: no
 wrap-jste: no
 wrap-php: no
 wrap-sections: no
+vertical-space: yes
 tidy-mark: no
 new-blocklevel-tags: article,aside,command,canvas,dialog,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,meter
 new-inline-tags: video,audio,canvas,ruby,rt,rp,time,meter,progress,datalist,keygen,mark,output,source,wbr
