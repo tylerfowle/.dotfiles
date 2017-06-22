@@ -74,6 +74,11 @@ function filefindr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
 
+# html-beautify all "*.html" files in current directory
+function htb() {
+  for f in $(find . -name '*.html'); do html-beautify -r "$f"; done;
+}
+
 
 #keep the last focused finder window up to date when cd in terminal
 function chpwd() {
