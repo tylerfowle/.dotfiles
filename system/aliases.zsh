@@ -31,8 +31,8 @@ alias hangouts="https://hangouts.google.com"
 alias reload!='. ~/.zshrc'
 
 # gitline - github api script
-alias gitline='/Users/tyler.fowle/.dotfiles'
-alias gl='/Users/tyler.fowle/.dotfiles'
+alias gitline='/Users/tyler.fowle/Repos/gitline/gitline.sh'
+alias gl='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 
 # New Projects copy gulp3
 alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
@@ -76,20 +76,20 @@ function filefindr() {
 # html-beautify all "*.html" files in current directory
 function htb() {
   for f in $(find . -name '*.html'); do html-beautify -r "$f"; done;
-}
+  }
 
 
-#keep the last focused finder window up to date when cd in terminal
-function chpwd() {
-  osascript -e 'on run pwd
-  set f to posix file pwd
+  #keep the last focused finder window up to date when cd in terminal
+  function chpwd() {
+    osascript -e 'on run pwd
+    set f to posix file pwd
     tell app "Finder"
-      if number of Finder windows is 0 then
-        open f
-      else
-        set target of window 1 to f
-      end
+    if number of Finder windows is 0 then
+      open f
+    else
+      set target of window 1 to f
     end
-  end' "$PWD" > /dev/null
+  end
+end' "$PWD" > /dev/null
 }
 
