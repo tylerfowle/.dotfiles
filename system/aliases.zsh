@@ -20,7 +20,6 @@ alias es="nvim -S"
 alias editbash="e ~/.bash_profile"
 alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
-alias editgitline='e /usr/local/bin/gitline.sh'
 
 # dtags - tag and cd to directories
 alias t=". dtags"
@@ -32,8 +31,8 @@ alias hangouts="https://hangouts.google.com"
 alias reload!='. ~/.zshrc'
 
 # gitline - github api script
-alias gitline='/usr/local/bin/gitline.sh'
-alias gl='/usr/local/bin/gitline.sh'
+alias gitline='/Users/tyler.fowle/.dotfiles'
+alias gl='/Users/tyler.fowle/.dotfiles'
 
 # New Projects copy gulp3
 alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
