@@ -85,6 +85,7 @@ augroup goWatcher
   au!
   au BufWritePre *.go :GoImports
   au BufWritePre *.go :GoBuild
+  au BufWritePre *.go silent! :!go build
 augroup END
 
 " use github flavored markdown syntax by default
