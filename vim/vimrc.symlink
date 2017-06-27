@@ -41,6 +41,9 @@ Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
 " }}}
+" Languages {{{
+Plug 'fatih/vim-go'
+" }}}
 " NERDTree {{{
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
