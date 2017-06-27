@@ -81,6 +81,12 @@ set iskeyword+=-          " include - in keyword matching
 " regenerate ctags on save
 autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules . >/dev/null 2>&1
 
+augroup goWatcher
+  au!
+  au BufWritePre *.go :GoImports
+  au BufWritePre *.go :GoBuild
+augroup END
+
 " use github flavored markdown syntax by default
 augroup markdown
   au!
