@@ -97,9 +97,15 @@ augroup END
 " beautify html files on save
 command! Htb call HtmlFormatter()
 function! HtmlFormatter()
-:w
-silent! :!html-beautify -r %
-:e!
+  :w
+  silent! :!html-beautify -r %
+  :e!
+endfunction
+
+" prettydiff current file
+command! PrettyDiff call PrettyDiffer()
+function! PrettyDiffer()
+  silent! :!prettydiff %
 endfunction
 
 
