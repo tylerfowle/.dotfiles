@@ -79,7 +79,7 @@ set iskeyword+=-          " include - in keyword matching
 " Autocommands & Commands {{{
 
 " regenerate ctags on save
-autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules . >/dev/null 2>&1
+autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components . >/dev/null 2>&1
 
 augroup goWatcher
   au!
