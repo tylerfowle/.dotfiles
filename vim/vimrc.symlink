@@ -76,7 +76,7 @@ set ttyfast               " faster redrawing
 set tags=./tags;
 set iskeyword+=-          " include - in keyword matching
 " }}}
-" Autocommands {{{
+" Autocommands & Commands {{{
 
 " regenerate ctags on save
 autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules . >/dev/null 2>&1
@@ -93,6 +93,15 @@ augroup markdown
   au!
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+" beautify html files on save
+command! Htb call HtmlFormatter()
+function! HtmlFormatter()
+:w
+silent! :!html-beautify -r %
+:e!
+endfunction
+
 
 " }}}
 " Spaces & Tabs {{{
