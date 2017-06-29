@@ -105,8 +105,11 @@ endfunction
 " prettydiff current file
 command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
+  :w
   silent! :!prettydiff %
+  :e!
 endfunction
+
 
 
 " }}}
