@@ -98,16 +98,14 @@ augroup END
 command! Htb call HtmlFormatter()
 function! HtmlFormatter()
   :w
-  silent! :!html-beautify -r %
+  silent :!html-beautify -r %
   :e!
 endfunction
 
 " prettydiff current file
 command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
-  :w
-  silent! :!prettydiff %
-  :e!
+  silent :!prettydiff %
 endfunction
 
 
