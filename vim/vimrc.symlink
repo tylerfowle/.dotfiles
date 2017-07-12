@@ -47,7 +47,7 @@ Plug 'fatih/vim-go'
 " NERDTree {{{
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons' " file drawer "
+Plug 'ryanoasis/vim-devicons' " file drawer 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
 " Auto Complete {{{
