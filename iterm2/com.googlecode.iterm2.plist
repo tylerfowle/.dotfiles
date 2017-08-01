@@ -706,9 +706,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>4019 498 599 388 2560 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>3098 844 796 473 2560 0 2560 1417 </string>
+	<string>3098 936 796 473 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3471 8 1641 1405 2560 0 2560 1417 </string>
+	<string>1283 8 1270 1405 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874_selection</key>
@@ -905,13 +905,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15356595814228058</real>
+				<real>0.20392156862745098</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12867720425128937</real>
+				<real>0.17254901960784313</real>
 				<key>Red Component</key>
-				<real>0.11784578859806061</real>
+				<real>0.15686274509803921</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2103,7 +2103,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-06T18:18:06Z</date>
+	<date>2017-07-11T14:10:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
