@@ -57,13 +57,15 @@ brew install archey
 echo "==> Installing apps"
 
 # productivity
-brew cask install atom
 brew cask install slack
 brew cask install discord
 brew cask install dropbox
 brew cask install virtualbox
 brew cask install 1password
 brew cask install iterm2
+brew cask install cyberduck
+brew cask install virtualbox
+brew cask install sublime-text
 
 # utilities
 brew cask install scroll-reverser
