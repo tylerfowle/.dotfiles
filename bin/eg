@@ -19,6 +19,11 @@ try
   tell current session of current window
     write text "gulp"
     split vertically with same profile
+   end tell
+
+  tell the last session of current tab of current window
+    select
+    write text "git st"
   end tell
 
   tell first tab of current window
