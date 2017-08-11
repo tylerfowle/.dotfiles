@@ -10,6 +10,7 @@ try
 
   tell current session of current window
     write text "e"
+    set name to "NVIM:"
   end tell
 
   tell current window
@@ -17,12 +18,14 @@ try
   end tell
 
   tell current session of current window
+    set name to "GULP:"
     write text "gulp"
     split vertically with same profile
    end tell
 
   tell the last session of current tab of current window
     select
+    set name to "GIT:"
     write text "git st"
   end tell
 
