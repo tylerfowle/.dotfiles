@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#itermlauncher - open editor, create iterm layout, start gulp
+
+# create new tab and split it
+IFS='%'
+osascript -e '
+tell application "iTerm2"
+try
+
+  tell current session of current window
+    write text "e"
+  end tell
+
+  tell current window
+    create tab with default profile
+  end tell
+
+  tell current session of current window
+    write text "gulp"
+    split vertically with same profile
+  end tell
+
+  tell first tab of current window
+    select
+  end tell
+
+  end try
+end tell
+'
