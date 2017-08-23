@@ -9,7 +9,7 @@ tell application "iTerm2"
 try
 
   tell current session of current window
-    write text "e"
+    write text "es"
     set name to "NVIM:"
   end tell
 

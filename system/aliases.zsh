@@ -14,8 +14,9 @@ alias bluetooth="system_profiler SPBluetoothDataType"
 
 # Editor - load vim session
 # move this into script if useful
-alias es="nvim -S"
-alias esg="nvim -S ~/.vim/sessions/gulp.vim"
+
+# this has been moved to /bin
+# alias es="nvim -S"
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
