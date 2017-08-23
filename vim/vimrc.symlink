@@ -23,6 +23,7 @@ Plug 'junegunn/vim-easy-align'         " ga to align by character
 Plug 'tpope/vim-repeat'                " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-surround'              " ysiw to surround word
 Plug 'tpope/vim-commentary'            " easy commenting
+Plug 'tpope/vim-fugitive'              " git wrapper
 Plug 'raimondi/delimitmate'            " Auto close tags
 Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'          " show search position among all results
