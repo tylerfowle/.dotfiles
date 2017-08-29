@@ -1,1 +1,1 @@
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk --incognito --app=${1:-http://localhost:3000}
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk --app=${1:-https://www.youtube.com}
