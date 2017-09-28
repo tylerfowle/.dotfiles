@@ -78,3 +78,7 @@ brew cask install google-chrome
 
 # music
 brew cask install spotify
+
+# fonts
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
