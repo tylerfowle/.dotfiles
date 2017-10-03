@@ -54,14 +54,11 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Auto Complete {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
 Plug 'mattn/emmet-vim' " html / templates
+Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
 " }}}
 " Snippets {{{
 Plug 'sirver/ultisnips'                                       " snippet engine
 Plug 'honza/vim-snippets'                                     " alot of base snippets
-" }}}
-" NOT USING {{{
-" Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
-" Plug 'michalliu/sourcebeautify.vim' " Custom bundles
 " }}}
 call plug#end()
 " ========================================================================================================
@@ -170,13 +167,29 @@ let g:deoplete#enable_smart_case = 1
 call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 " }}}
 " UltiSnips  {{{
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"custom function to expand snippet
+let g:ulti_expand_or_jump_res = 0 "default value, just set once
+function! UltiTrigger()
+  call UltiSnips#ExpandSnippetOrJump()
+  return g:ulti_expand_or_jump_res
+endfunction
+
+" set default shortcut
+let g:UltiSnipsExpandTrigger='<C-j>'
+" set 'Enter' to call custom function else enter 'CR'
+inoremap <CR> <C-R>=(UltiTrigger() > 0)?"":"\n"<CR>
+
 " load custom snippets location
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit='vertical'
 " }}}
+" SuperTab  {{{
+let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabContextDefaultCompletionType = "<c-n>"
+" }}}
+
+
 " Airline {{{
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
