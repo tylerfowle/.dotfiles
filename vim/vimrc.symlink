@@ -168,17 +168,8 @@ call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 " }}}
 " UltiSnips  {{{
 
-"custom function to expand snippet
-let g:ulti_expand_or_jump_res = 0 "default value, just set once
-function! UltiTrigger()
-  call UltiSnips#ExpandSnippetOrJump()
-  return g:ulti_expand_or_jump_res
-endfunction
-
 " set default shortcut
-let g:UltiSnipsExpandTrigger='<C-j>'
-" set 'Enter' to call custom function else enter 'CR'
-inoremap <CR> <C-R>=(UltiTrigger() > 0)?"":"\n"<CR>
+let g:UltiSnipsExpandTrigger='<tab>'
 
 " load custom snippets location
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
