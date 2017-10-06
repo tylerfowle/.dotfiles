@@ -232,8 +232,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " }}}
 " indent guides {{{
 let g:indend_guides_guide_size = 1
-let g:indent_guides_color_change_percent = 2
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 " }}}
 " DelimitMate {{{
 let delimitMate_expand_cr = 1
@@ -328,8 +327,10 @@ nnoremap <leader>. :lcd %:p:h<cr>
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 
-" open v split
+" open h split
 nmap <leader>h :vsp<cr>
+" open v split
+nmap <leader>v :sp<cr>
 
 " }}}
 " FZF Shortcuts {{{

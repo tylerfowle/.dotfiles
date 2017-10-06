@@ -39,6 +39,9 @@ alias gl='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 # New Projects copy gulp3
 alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
 
+# fix ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 # print all colors to screen
 function colorcodes() {
   for i in {0..255}; do; printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"; done
