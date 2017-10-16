@@ -368,7 +368,8 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 " }}}
 
 " Abbreviations {{{
-ab marign margin
+abbr marign margin
+abbr widht width
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
