@@ -29,6 +29,9 @@ brew install wget
 echo "==> Installing z"
 brew install z
 
+echo "==> Installing todo.txt"
+brew install todo-txt
+
 echo "==> Installing tmux"
 brew install tmux
 # fix gulp notify in tmux

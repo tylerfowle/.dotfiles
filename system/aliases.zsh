@@ -26,8 +26,11 @@ alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 # dtags - tag and cd to directories
 alias t=". dtags"
 
-# hangouts
-alias hangouts="https://hangouts.google.com"
+# todo.txt - quick access to cli and to edit file
+alias d=todo.sh
+function ed() {
+  e $TODO_FILE
+}
 
 # reload config
 alias reload!='. ~/.zshrc'
