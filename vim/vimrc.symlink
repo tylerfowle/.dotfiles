@@ -285,7 +285,7 @@ nnoremap <c-b> :TagbarToggle<cr>
 
 " set a map leader for more key combos
 let mapleader = ','
-let maplocalleader = '.'
+let maplocalleader = ' '
 
 " shortcut to save "
 nmap <leader>, :w<cr>
