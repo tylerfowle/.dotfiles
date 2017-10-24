@@ -41,6 +41,7 @@ Plug 'lumiliet/vim-twig'                                      " twig syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
+Plug 'freitass/todo.txt-vim'                                  " todo.txt
 " }}}
 " Languages {{{
 Plug 'fatih/vim-go'
@@ -159,6 +160,8 @@ set autoread    " auto reload changed files
 set modelines=1 " check the last line for file specific settings
 set path+=      " for searching
 " }}}
+
+
 
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -370,6 +373,7 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 " Abbreviations {{{
 abbr marign margin
 abbr widht width
+abbr iamges images
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
