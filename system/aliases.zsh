@@ -29,7 +29,8 @@ alias t=". dtags"
 # todo.txt - quick access to cli and to edit file
 alias d=todo.sh
 function tasks() {
-  e $TODO_DIR
+  cd $TODO_DIR
+  e $TODO_FILE
 }
 
 # reload config
