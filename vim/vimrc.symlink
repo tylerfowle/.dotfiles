@@ -42,6 +42,7 @@ Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
 Plug 'freitass/todo.txt-vim'                                  " todo.txt
+Plug 'davidoc/taskpaper.vim'
 " }}}
 " Languages {{{
 Plug 'fatih/vim-go'
