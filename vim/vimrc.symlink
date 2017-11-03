@@ -82,7 +82,8 @@ set iskeyword+=-          " include - in keyword matching
 autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components . >/dev/null 2>&1
 
 " auto reload file when changed on disk
-au FocusGained,BufEnter * :checktime
+set updatetime=1000
+au CursorHold,FocusGained,BufEnter * checktime
 
 augroup goWatcher
   au!
