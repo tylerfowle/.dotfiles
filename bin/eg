@@ -16,7 +16,6 @@ try
   tell current session of current window
     tell application "System Events" to keystroke "D" using command down
     set name to "GULP:"
-    write text "rm -rf ./node_modules/"
     write text "s"
    end tell
 
