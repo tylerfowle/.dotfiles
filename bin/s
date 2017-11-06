@@ -9,16 +9,11 @@ echo ""
 [ -f "$PWD"/**/*.scss ] && sass=true  || sass=false
 [ -f "$PWD"/gulpfile.js ] && gulp=true  || gulp=false
 
-# starting editor
-echo -e "\033[92m==> starting atom \033[39m"
-# run e to start editor
-e
-
 if [ $gulp == true ]; then
   echo -e "\033[92m==> gulp found \033[39m"
   if [ -d "$PWD/node_modules/gulp" ]; then
     echo -e "\033[92m==> success - starting gulp \033[39m"
-    ## start default gulp task 
+    ## start default gulp task
     gulp
   else
     echo -e "\033[0;31m==> failed - gulp not installed \033[39m"
