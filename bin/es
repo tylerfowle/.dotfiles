@@ -15,6 +15,12 @@
 #   # => opens the specified directory in your editor
 # exec "$EDITOR" -a "${1:-.}"
 
+echo " ___    _ _ _             ___            _          "
+echo "| __|__| (_) |_ ___ _ _  / __| ___ _____(_)___ _ _  "
+echo "| _|/ _  | |  _/ _ \ '_| \__ \/ -_|_-<_-< / _ \ ' \ "
+echo "|___\__,_|_|\__\___/_|   |___/\___/__/__/_\___/_||_|"
+
+
 if [ ! -f ./Session.vim ]; then
 
   echo "no session found"
