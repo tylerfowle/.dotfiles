@@ -13,25 +13,19 @@ try
     set name to "NVIM:"
   end tell
 
-  tell current window
-    create tab with default profile
-  end tell
-
   tell current session of current window
+    tell application "System Events" to keystroke "D" using command down
     set name to "GULP:"
-    write text "gulp"
-    split vertically with same profile
+    write text "rm -rf ./node_modules/"
+    write text "s"
    end tell
 
-  tell the last session of current tab of current window
-    select
+  tell current session of current window
+    tell application "System Events" to keystroke "d" using command down
     set name to "GIT:"
-    write text "git st"
+    write text "clr && git st"
   end tell
 
-  tell first tab of current window
-    select
-  end tell
 
   end try
 end tell
