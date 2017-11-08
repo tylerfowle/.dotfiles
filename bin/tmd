@@ -12,8 +12,6 @@ tell current session of current window
 
   tell application "System Events" to keystroke "D" using command down
   set name to "COUNTDOWN"
-  set rows to 1
-  delay .5
   write text "termdown 30m"
 
 end tell
