@@ -269,6 +269,10 @@ nnoremap <C-y> 3<C-y>
 nnoremap B ^
 nnoremap E $
 
+" swap directions of { and } to match up with j and k
+nnoremap { }
+nnoremap } {
+
 " copy to clipboard
 noremap YY "+y<CR>
 
