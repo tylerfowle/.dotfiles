@@ -29,9 +29,7 @@ Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitesp
 Plug 'google/vim-searchindex'          " show search position among all results
 Plug 'triglav/vim-visual-increment'    " use ctrl a/v to increment.decrement a visually selected block
 " }}}
-" Syntax engines {{{
-" Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
-" Plug 'scrooloose/syntastic'
+" Syntax Engines {{{
 Plug 'w0rp/ale'
 " }}}
 " Syntax support {{{
@@ -44,6 +42,9 @@ Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode c
 Plug 'freitass/todo.txt-vim'                                  " todo.txt
 Plug 'davidoc/taskpaper.vim'
 " }}}
+" Colors {{{
+Plug 'shmargum/vim-sass-colors'                               " sass/scss color preview for hex and variables
+" }}}
 " Languages {{{
 Plug 'fatih/vim-go'
 " }}}
@@ -55,8 +56,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
 " Auto Complete {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
-Plug 'mattn/emmet-vim' " html / templates
-Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab
+Plug 'mattn/emmet-vim'                                        " html / templates
+Plug 'ervandew/supertab'                                      " Perform all your vim insert mode completions with Tab
 " }}}
 " Snippets {{{
 Plug 'sirver/ultisnips'                                       " snippet engine
