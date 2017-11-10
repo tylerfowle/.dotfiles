@@ -212,6 +212,9 @@ if has('termguicolors')
 else
   let g:synthwave_termcolors=256 " 256 color mode
 endif
+
+hi MatchParen guifg='#2b303b' guibg='#bd626b'
+
 " }}}
 
 " Vim Markdown Preview {{{
