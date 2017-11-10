@@ -99,6 +99,12 @@ augroup markdown
   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
+" use taskpaper filetype for .taskpaper.txt files
+" this is useful for ifttt integrations that dont let you change the filetime
+augroup taskpaper
+  au! BufRead,BufNewFile *.taskpaper.txt setlocal filetype=taskpaper
+augroup END
+
 " beautify html files on save
 command! Htb call HtmlFormatter()
 function! HtmlFormatter()
@@ -112,8 +118,6 @@ command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
   silent :!prettydiff %
 endfunction
-
-
 
 " }}}
 " Spaces & Tabs {{{
