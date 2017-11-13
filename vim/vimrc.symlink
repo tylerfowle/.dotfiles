@@ -43,7 +43,6 @@ Plug 'freitass/todo.txt-vim'                                  " todo.txt
 Plug 'davidoc/taskpaper.vim'
 " }}}
 " Colors {{{
-Plug 'shmargum/vim-sass-colors'                               " sass/scss color preview for hex and variables
 " }}}
 " Languages {{{
 Plug 'fatih/vim-go'
@@ -302,6 +301,12 @@ let maplocalleader = ' '
 
 " shortcut to save "
 nmap <leader>, :w<cr>
+
+" open current dir in finder
+nmap <leader>o :!open .<cr>
+
+" run savesite in current dir
+nmap <silent> <leader>k :silent !savesite<cr>
 
 " super save - save session in its current state, open agian with `vim -S`
 nnoremap <leader>s :mksession!<CR>
