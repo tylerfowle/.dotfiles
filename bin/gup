@@ -3,6 +3,8 @@
 
 if command -v pyfiglet; then
 pyfiglet -f slant GUP
+elif command -v figlet; then
+figlet -f slant GUP
 fi
 
 echo -e "\033[92m==> installing gulp\033[39m"

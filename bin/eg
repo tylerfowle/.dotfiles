@@ -4,6 +4,8 @@
 
 if command -v pyfiglet; then
 pyfiglet EG
+elif command -v figlet; then
+figlet EG
 fi
 
 # create new tab and split it

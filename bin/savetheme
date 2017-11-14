@@ -4,7 +4,9 @@
 # savetheme filename.html
 
 if command -v pyfiglet; then
-pyfiglet Savesite
+pyfiglet Savetheme
+elif command -v figlet; then
+figlet Savetheme
 fi
 
 IFS='%'

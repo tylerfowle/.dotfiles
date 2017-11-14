@@ -7,6 +7,8 @@
 
 if command -v pyfiglet; then
 pyfiglet Savesite
+elif command -v figlet; then
+figlet Savesite
 fi
 
 IFS='%'

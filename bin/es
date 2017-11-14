@@ -17,6 +17,8 @@
 
 if command -v pyfiglet; then
 pyfiglet Editor Session
+elif command -v figlet; then
+figlet Editor Session
 fi
 
 if [ ! -f ./Session.vim ]; then
