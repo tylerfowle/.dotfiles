@@ -2,7 +2,10 @@
 # save the active Chrome window source to file
 # usage
 # savetheme filename.html
-#
+
+if command -v pyfiglet; then
+pyfiglet Savesite
+fi
 
 IFS='%'
 appName="Google Chrome"

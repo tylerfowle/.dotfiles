@@ -1,11 +1,9 @@
 #!/bin/bash
 # gulp - install gulp and install/update npm
 
-echo "    ________  ______  "
-echo "   / ____/ / / / __ \ "
-echo "  / / __/ / / / /_/ / "
-echo " / /_/ / /_/ / ____/  "
-echo " \____/\____/_/       "
+if command -v pyfiglet; then
+pyfiglet -f slant GUP
+fi
 
 echo -e "\033[92m==> installing gulp\033[39m"
 npm install gulp --no-progress --quite --silent;
