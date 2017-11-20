@@ -279,6 +279,10 @@ nnoremap <C-y> 3<C-y>
 nnoremap B ^
 nnoremap E $
 
+" o and O will not continue comments
+nnoremap o o<Esc>^Da
+nnoremap O O<Esc>^Da
+
 " swap directions of { and } to match up with j and k
 nnoremap { }
 nnoremap } {

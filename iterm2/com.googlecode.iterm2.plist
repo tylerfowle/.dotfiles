@@ -1216,15 +1216,15 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1713 315 705 632 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1630 665 700 622 -2560 68 2560 1418 </string>
+	<string>-3840 864 700 622 -5120 68 2560 1418 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1950 439 606 469 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1269 897 796 473 -2560 68 2560 1418 </string>
+	<string>-1036 1035 958 451 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-4890 902 592 584 -5120 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2560 72 850 1414 -2560 68 2560 1418 </string>
+	<string>-2560 68 846 1418 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1114 137 570 352 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1423,13 +1423,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.21176470588235294</real>
+				<real>0.0625</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16862745098039217</real>
+				<real>0.033980582524271843</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.052919258191747573</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -1449,7 +1449,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.77539438100961555</real>
+			<real>0.48917643229166696</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -2593,6 +2593,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -2602,7 +2604,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-12T15:02:09Z</date>
+	<date>2017-11-09T19:04:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2615,6 +2617,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
+	<key>StretchTabsToFillBar</key>
+	<false/>
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>SwitchTabModifier</key>
@@ -5865,9 +5869,9 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.3.beta.1</string>
+	<string>3.1.5.beta.1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>

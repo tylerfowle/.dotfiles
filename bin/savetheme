@@ -1,11 +1,11 @@
+#!/bin/bash
+
 # FOR THEMES
 # save the active Chrome window source to file
 # usage
 # savetheme filename.html
 
-if command -v pyfiglet; then
-pyfiglet Savetheme
-elif command -v figlet; then
+if command -v figlet >/dev/null 2>&1; then
 figlet Savetheme
 fi
 

@@ -2,9 +2,7 @@
 
 #itermlauncher - open editor, create iterm layout, start gulp
 
-if command -v pyfiglet; then
-pyfiglet EG
-elif command -v figlet; then
+if command -v figlet >/dev/null 2>&1; then
 figlet EG
 fi
 

@@ -1,9 +1,7 @@
 #!/bin/bash
 # gulp - install gulp and install/update npm
 
-if command -v pyfiglet; then
-pyfiglet -f slant GUP
-elif command -v figlet; then
+if command -v figlet >/dev/null 2>&1; then
 figlet -f slant GUP
 fi
 

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if command -v pyfiglet; then
-pyfiglet STARTER
-elif command -v figlet; then
+if command -v figlet >/dev/null 2>&1; then
 figlet STARTER
 fi
 

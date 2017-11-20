@@ -15,9 +15,7 @@
 #   # => opens the specified directory in your editor
 # exec "$EDITOR" -a "${1:-.}"
 
-if command -v pyfiglet; then
-pyfiglet Editor Session
-elif command -v figlet; then
+if command -v figlet >/dev/null 2>&1; then
 figlet Editor Session
 fi
 
