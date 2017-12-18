@@ -24,6 +24,7 @@ Plug 'tpope/vim-repeat'                " enables repeating other supported plugi
 Plug 'tpope/vim-surround'              " ysiw to surround word
 Plug 'tpope/vim-commentary'            " easy commenting
 Plug 'tpope/vim-fugitive'              " git wrapper
+Plug 'tpope/vim-rhubarb'               " hub wrapper for fugitive / github
 Plug 'raimondi/delimitmate'            " Auto close tags
 Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'          " show search position among all results
@@ -81,10 +82,24 @@ set iskeyword+=-          " include - in keyword matching
 " regenerate ctags on save
 autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components . >/dev/null 2>&1
 
+" python formatting
+augroup python
+  au!
+  au BufNewFile,BufRead *.py
+  setlocal tabstop=4
+  setlocal softtabstop=4
+  setlocal shiftwidth=4
+  setlocal textwidth=79
+  setlocal expandtab
+  setlocal autoindent
+  setlocal fileformat=unix
+augroup END
+
 " auto reload file when changed on disk
 set updatetime=1000
 au CursorHold,FocusGained,BufEnter * checktime
 
+" go commands
 augroup goWatcher
   au!
   au BufWritePre *.go :GoImports
@@ -280,8 +295,8 @@ nnoremap B ^
 nnoremap E $
 
 " o and O will not continue comments
-nnoremap o o<Esc>^Da
-nnoremap O O<Esc>^Da
+" nnoremap o o<Esc>^Da
+" nnoremap O O<Esc>^Da
 
 " swap directions of { and } to match up with j and k
 nnoremap { }

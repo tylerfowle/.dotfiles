@@ -24,7 +24,7 @@ alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 
 # dtags - tag and cd to directories
-alias t=". dtags"
+alias dt=". dtags"
 
 # todo.txt - quick access to cli and to edit file
 alias d=todo.sh
