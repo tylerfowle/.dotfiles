@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #itermlauncher - open editor, create iterm layout, start gulp
-
 if command -v figlet >/dev/null 2>&1; then
 figlet EG
 fi
@@ -29,6 +28,15 @@ try
     write text "clr && git st"
   end tell
 
+  tell application "System Events"
+    key code 30 using {command down}
+  end
+
+  tell application "System Events"
+    repeat 25 times
+      key code 125 using {command down, control down}
+    end repeat
+  end
 
   end try
 end tell
