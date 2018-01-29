@@ -35,13 +35,15 @@ Plug 'w0rp/ale'
 " }}}
 " Syntax support {{{
 Plug 'othree/html5.vim'                                       " html5 syntax
+Plug 'othree/javascript-libraries-syntax.vim'                 " javascript libary syntax (jquery)
+Plug 'pangloss/vim-javascript'                                " javascript syntax
 Plug 'cakebaker/scss-syntax.vim'                              " scss syntax
 Plug 'lumiliet/vim-twig'                                      " twig syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
 Plug 'freitass/todo.txt-vim'                                  " todo.txt
-Plug 'davidoc/taskpaper.vim'
+Plug 'davidoc/taskpaper.vim'                                  " .taskpapaer syntax
 " }}}
 " Colors {{{
 " }}}

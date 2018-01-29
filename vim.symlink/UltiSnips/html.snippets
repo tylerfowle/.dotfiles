@@ -63,7 +63,7 @@ endsnippet
 snippet logo "logo"
 <div class="${1:nav}-logo">
 {% if fdp_logos.${2:1} is not empty %}
-{{ fdp_logos.${2:1}.link|raw }}<img src="{{ fdp_logos.${2:1}.url }}" alt="{{ fdp_website_title }}"></a>
+{{ fdp_logos.${2:1}.link|raw }}<img src="{{ fdp_logos.${2:1}.url }}" title="logo" alt="{{ fdp_website_title }}"></a>
 {% else %}
 <a href="/">{{ fdp_website_title }}</a>
 {% endif %}
