@@ -1172,7 +1172,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads/pink dust</string>
+	<string>~/Pictures/wallpaper</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{704, 426}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -1220,13 +1220,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1950 439 606 469 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1036 1035 958 451 -2560 68 2560 1418 </string>
+	<string>-937 437 918 381 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-4890 902 592 584 -5120 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2560 68 846 1418 -2560 68 2560 1418 </string>
+	<string>-1707 68 1706 1418 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1114 137 570 352 0 0 1920 1178 </string>
+	<string>0 0 955 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 6 717 872 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
@@ -1423,13 +1423,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0625</real>
+				<real>0.15447998046875</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.033980582524271843</real>
+				<real>0.083989114074938698</real>
 				<key>Red Component</key>
-				<real>0.052919258191747573</real>
+				<real>0.13079945367280746</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -2604,7 +2604,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-09T19:04:26Z</date>
+	<date>2018-01-30T17:02:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -5869,7 +5869,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.1</string>
+	<string>3.1.5.beta.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
