@@ -29,6 +29,7 @@ Plug 'raimondi/delimitmate'            " Auto close tags
 Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'          " show search position among all results
 Plug 'triglav/vim-visual-increment'    " use ctrl a/v to increment.decrement a visually selected block
+Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
@@ -272,6 +273,11 @@ let g:indent_guides_enable_on_vim_startup = 0
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 " }}}
+" Ack  {{{
+
+
+
+" }}}
 
 " General Shortcuts {{{
 
@@ -322,6 +328,12 @@ nnoremap <c-b> :TagbarToggle<cr>
 " set a map leader for more key combos
 let mapleader = ','
 let maplocalleader = ' '
+
+" :Ack - find in all
+nnoremap <leader>g :Ack
+
+" quick quit all
+nnoremap <leader>q :qa<cr>
 
 " shortcut to save "
 nmap <leader>, :w<cr>

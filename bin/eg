@@ -16,7 +16,7 @@ try
     tell application "System Events" to keystroke "d" using command down
     tell application "System Events" to key code 30 using {command down}
 
-    repeat 25 times
+    repeat 35 times
       tell application "System Events" to key code 125 using {command down, control down}
     end repeat
 
