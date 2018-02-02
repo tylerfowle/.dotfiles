@@ -17,6 +17,7 @@
 --exclude=Session.vim
 --exclude=node_modules
 --exclude=vendors
+--exclude=sassdoc
 --exclude=min
 --exclude=mockup
 --exclude=mockups
@@ -54,13 +55,13 @@
 --regex-javascript=/^[ \t]*(var|let|const)[ \t]+([A-Za-z0-9_$]+)[ \t]*=[ \t]*[^\[{]*;$/\2/V,Variable,Variables/
 
 
----langdef=css
----langmap=css:.css
----langmap=css:+.styl
----regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/\1/c,class,classes/
----regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
----regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
----regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
+--langdef=css
+--langmap=css:.css
+--langmap=css:+.styl
+--regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/\1/c,class,classes/
+--regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/\1/i,id,ids/
+--regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
+--regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
 
 
 --langdef=less
