@@ -1,11 +1,10 @@
 #!/bin/bash
 
-#itermlauncher - open editor, create iterm layout, start gulp
+#KEG - kill editor gulp - stop vim and close window, stop gulp and close window, you are left with one pane
 if command -v figlet >/dev/null 2>&1; then
-figlet EG
+figlet KEG
 fi
 
-# create new tab and split it
 IFS='%'
 osascript -e '
 tell application "iTerm2"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#itermlauncher - open editor, create iterm layout, start gulp
+#EG - editor gulp - open editor, create iterm layout, start gulp
 if command -v figlet >/dev/null 2>&1; then
 figlet EG
 fi
