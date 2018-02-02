@@ -330,7 +330,7 @@ let mapleader = ','
 let maplocalleader = ' '
 
 " :Ack - find in all
-nnoremap <leader>g :Ack
+nnoremap <leader>g :Ack 
 
 " quick quit all
 nnoremap <leader>q :qa<cr>
@@ -408,9 +408,9 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Tag Shortcuts {{{
 
 " search tag under cursor
-nnoremap ts <c-]>z.
+nnoremap tt <c-]>z.
 " go back to definition
-nnoremap tt <c-t>
+nnoremap tb <c-t>
 " go to next tag
 nnoremap tn :tn<cr>
 " go to previous tag
