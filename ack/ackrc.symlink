@@ -1,2 +1,3 @@
 --ignore-directory=is:node_modules
+--ignore-directory=is:subdesigns
 --ignore-file=is:tags
