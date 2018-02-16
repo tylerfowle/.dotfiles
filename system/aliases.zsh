@@ -8,15 +8,10 @@ alias repos='cd ~/Repos'
 # Other
 alias la="ls -Ga"
 alias ..="cd .."
+alias o="open ."
 alias list="ls -1"
 alias sassvars='grep -Rnco "\$.*:" .'
 alias bluetooth="system_profiler SPBluetoothDataType"
-
-# Editor - load vim session
-# move this into script if useful
-
-# this has been moved to /bin
-# alias es="nvim -S"
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
@@ -26,8 +21,7 @@ alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 # dtags - tag and cd to directories
 alias dt=". dtags"
 
-# todo.txt - quick access to cli and to edit file
-alias d=todo.sh
+# taskpaper - quick access to edit tasks in vim
 function tasks() {
   cd $TODO_DIR
   e $TODO_FILE
