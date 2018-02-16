@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 " Colorscheme {{{
 Plug 'exitface/synthwave.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 " }}}
 " UI {{{
 Plug 'nathanaelkane/vim-indent-guides' " indent guides
@@ -219,7 +220,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 " let g:airline_theme='synthwave'
 " let g:airline_theme='onedark'
-let g:airline_theme='solarized'
+" let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
@@ -230,6 +232,11 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " colorscheme {{{
 set background=dark
 colorscheme onedark
+
+" gruvbox setup
+colorscheme gruvbox
+let g:gruvbox_italic=1
+
 hi Normal guibg=none
 
 if has('termguicolors')
