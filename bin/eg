@@ -24,11 +24,13 @@ try
     write text "es"
 
     tell application "System Events" to key code 30 using {command down}
+    delay 1
 
     set name to "GULP:"
     write text "s"
 
     tell application "System Events" to key code 30 using {command down}
+    delay 1
 
     set name to "GIT:"
     write text "clr && git st"

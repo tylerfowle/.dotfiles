@@ -337,7 +337,8 @@ let mapleader = ','
 let maplocalleader = ' '
 
 " :Ack - find in all
-nnoremap <leader>g :Ack 
+" trailing space is intentional
+nnoremap <leader>gg :Ack 
 
 " quick quit all
 nnoremap <leader>q :qa<cr>
@@ -381,6 +382,9 @@ nnoremap <leader>! :so $MYVIMRC<cr>
 " mark cursor and put cursor back, center cursor in window
 nnoremap <leader>r magg=G`az.
 
+" mark cursor, close buffer, create new pane, open mark
+nnoremap <leader>gt maZZ<C-w>v`a
+
 " leader w, for pane control
 nnoremap <leader>w <C-w>
 " focus splits with ctrl + direction
@@ -395,10 +399,10 @@ nnoremap <leader>. :lcd %:p:h<cr>
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 
-" open h split
-nmap <leader>h :vsp<cr>
 " open v split
-nmap <leader>v :sp<cr>
+nmap <leader>v :vsp<cr>
+" open h split
+nmap <leader>h :sp<cr>
 
 " }}}
 " FZF Shortcuts {{{
