@@ -383,7 +383,7 @@ nnoremap <leader>! :so $MYVIMRC<cr>
 nnoremap <leader>r magg=G`az.
 
 " mark cursor, close buffer, create new pane, open mark
-nnoremap <leader>gt maZZ<C-w>v`a
+nnoremap <leader>gt mAZZ<C-w>v`A
 
 " leader w, for pane control
 nnoremap <leader>w <C-w>
