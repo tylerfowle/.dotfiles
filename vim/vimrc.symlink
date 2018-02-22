@@ -50,10 +50,10 @@ Plug 'davidoc/taskpaper.vim'                                  " .taskpapaer synt
 Plug 'fatih/vim-go'
 " }}}
 " NERDTree {{{
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons' " file drawer 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }    " visual file explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'                                          " git changes for nerdtree
+Plug 'ryanoasis/vim-devicons'                                               " file icons for nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                              " syntax highlighting for nerdtree
 " }}}
 " Auto Complete {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
@@ -62,7 +62,7 @@ Plug 'ervandew/supertab'                                      " Perform all your
 " }}}
 " Snippets {{{
 Plug 'sirver/ultisnips'                                       " snippet engine
-Plug 'honza/vim-snippets'                                     " alot of base snippets
+Plug 'honza/vim-snippets'                                     " collection of snippets
 " }}}
 call plug#end()
 " ========================================================================================================
