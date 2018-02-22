@@ -16,9 +16,7 @@ Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign co
 Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 " }}}
 " Utilities {{{
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'              " fuzzy file, buffer, mru, tag finder
 Plug 'junegunn/vim-easy-align'         " ga to align by character
 Plug 'tpope/vim-repeat'                " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-surround'              " ysiw to surround word
