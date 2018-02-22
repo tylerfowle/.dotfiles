@@ -13,7 +13,6 @@ Plug 'nathanaelkane/vim-indent-guides' " indent guides
 Plug 'vim-airline/vim-airline'         " fancy statusline
 Plug 'vim-airline/vim-airline-themes'  " themes for airline
 Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-" Plug 'majutsushi/tagbar'               " shows tags in a sidebar
 Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 " }}}
 " Utilities {{{
@@ -89,7 +88,7 @@ autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --
 " python formatting
 augroup python
   au!
-  au BufNewFile,BufRead *.py
+  au BufNewFile,BufRead silent! *.py
   setlocal tabstop=4
   setlocal softtabstop=4
   setlocal shiftwidth=4
@@ -100,7 +99,7 @@ augroup python
 augroup END
 
 " auto reload file when changed on disk
-set updatetime=1000
+set updatetime=750
 au CursorHold,FocusGained,BufEnter * checktime
 
 " go commands
