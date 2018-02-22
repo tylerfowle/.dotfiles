@@ -1,5 +1,5 @@
 # Jump to locations
-alias cdn='cd ~/Repos/fdp-design-container/projects/cdn'
+alias cdn='cd ~/Repos/fdp-devops/code/cdn'
 alias frame='cd ~/Repos/fed-framework'
 alias docker='cd ~/Repos/fdp-design-container'
 alias sites='cd ~/Sites'

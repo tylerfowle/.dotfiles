@@ -13,13 +13,10 @@ Plug 'nathanaelkane/vim-indent-guides' " indent guides
 Plug 'vim-airline/vim-airline'         " fancy statusline
 Plug 'vim-airline/vim-airline-themes'  " themes for airline
 Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-" Plug 'majutsushi/tagbar'               " shows tags in a sidebar
 Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 " }}}
 " Utilities {{{
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'              " fuzzy file, buffer, mru, tag finder
 Plug 'junegunn/vim-easy-align'         " ga to align by character
 Plug 'tpope/vim-repeat'                " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-surround'              " ysiw to surround word
@@ -53,10 +50,10 @@ Plug 'davidoc/taskpaper.vim'                                  " .taskpapaer synt
 Plug 'fatih/vim-go'
 " }}}
 " NERDTree {{{
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons' " file drawer 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }    " visual file explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'                                          " git changes for nerdtree
+Plug 'ryanoasis/vim-devicons'                                               " file icons for nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                              " syntax highlighting for nerdtree
 " }}}
 " Auto Complete {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
@@ -65,7 +62,7 @@ Plug 'ervandew/supertab'                                      " Perform all your
 " }}}
 " Snippets {{{
 Plug 'sirver/ultisnips'                                       " snippet engine
-Plug 'honza/vim-snippets'                                     " alot of base snippets
+Plug 'honza/vim-snippets'                                     " collection of snippets
 " }}}
 call plug#end()
 " ========================================================================================================
@@ -89,7 +86,7 @@ autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --
 " python formatting
 augroup python
   au!
-  au BufNewFile,BufRead *.py
+  au BufNewFile,BufRead silent! *.py
   setlocal tabstop=4
   setlocal softtabstop=4
   setlocal shiftwidth=4
@@ -100,7 +97,7 @@ augroup python
 augroup END
 
 " auto reload file when changed on disk
-set updatetime=1000
+set updatetime=750
 au CursorHold,FocusGained,BufEnter * checktime
 
 " go commands
@@ -166,21 +163,21 @@ set fillchars=vert:│          " set vert split character to taller line
 autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
 " }}}
 " Splits {{{
-set splitbelow " open new splits to bottom
-set splitright " open new splits to right
+set splitbelow   " open new splits to bottom
+set splitright   " open new splits to right
 " }}}
 " Searching {{{
-set ignorecase " ignore case in search patterns
-set smartcase       " override the 'ignorecase' option if the search pattern contains upper case characters
-set incsearch  " search as characters are entered
-set hlsearch   " highlight matches
+set ignorecase   " ignore case in search patterns
+set smartcase    " override the 'ignorecase' option if the search pattern contains upper case characters
+set incsearch    " search as characters are entered
+set hlsearch     " highlight matches
 " }}}
 " Indeting {{{
-set autoindent  " automatically set indent of new line
-set smartindent " do smart autoindenting when starting a new line
+set autoindent   " automatically set indent of new line
+set smartindent  " do smart autoindenting when starting a new line
 " }}}
 " Folding {{{
-set foldenable       " enable folding
+set foldenable        " enable folding
 set foldmethod=indent " fold based on indent level
 set foldlevel=10      " open most folds by default
 set foldnestmax=10    " 10 nested fold max
@@ -212,8 +209,6 @@ let g:UltiSnipsEditSplit='vertical'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 " let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " }}}
-
-
 " Airline {{{
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
@@ -229,6 +224,7 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 " }}}
+
 " colorscheme {{{
 set background=dark
 colorscheme onedark
@@ -404,17 +400,6 @@ nmap <leader>v :vsp<cr>
 " open h split
 nmap <leader>h :sp<cr>
 
-" }}}
-" FZF Shortcuts {{{
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" FZF Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 " Tag Shortcuts {{{
 
