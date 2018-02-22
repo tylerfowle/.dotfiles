@@ -339,7 +339,7 @@ nnoremap <leader>gg :Ack
 " quick quit all
 nnoremap <leader>q :qa<cr>
 
-" shortcut to save "
+" shortcut to save
 nmap <leader>, :w<cr>
 
 " open current dir in finder
