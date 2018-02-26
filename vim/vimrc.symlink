@@ -181,6 +181,11 @@ set foldenable        " enable folding
 set foldmethod=indent " fold based on indent level
 set foldlevel=10      " open most folds by default
 set foldnestmax=10    " 10 nested fold max
+
+
+
+
+
 set foldclose=all
 " }}}
 " Misc {{{
@@ -237,8 +242,6 @@ hi Normal guibg=none
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
-else
-  let g:synthwave_termcolors=256 " 256 color mode
 endif
 
 hi MatchParen guifg='#2b303b' guibg='#bd626b'
