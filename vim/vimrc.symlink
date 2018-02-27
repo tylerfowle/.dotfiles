@@ -28,6 +28,7 @@ Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitesp
 Plug 'google/vim-searchindex'          " show search position among all results
 Plug 'triglav/vim-visual-increment'    " use ctrl a/v to increment.decrement a visually selected block
 Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
+Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*.scss -then- :Fardo
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
