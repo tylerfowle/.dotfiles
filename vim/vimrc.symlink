@@ -424,6 +424,7 @@ nnoremap tp :tp<cr>
 " }}}
 " Terminal Shortcuts {{{
 
+if has('nvim')
 " make esc work like other modes
 tnoremap <Esc> <C-\><C-n>
 " nav splits like normal
@@ -431,6 +432,7 @@ tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
+endif
 
 " }}}
 
