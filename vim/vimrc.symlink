@@ -239,20 +239,15 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " colorscheme {{{
 set background=dark
-colorscheme onedark
 
 " gruvbox setup
 colorscheme gruvbox
-let g:gruvbox_italic=1
-
-if has('nvim')
-hi Normal guibg=none
-endif
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
 endif
 
+" customize matching paren colors
 hi MatchParen guifg='#2b303b' guibg='#bd626b'
 
 " }}}
