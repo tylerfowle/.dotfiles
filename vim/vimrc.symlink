@@ -245,7 +245,9 @@ colorscheme onedark
 colorscheme gruvbox
 let g:gruvbox_italic=1
 
+if has('nvim')
 hi Normal guibg=none
+endif
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
