@@ -41,10 +41,7 @@ Plug 'lumiliet/vim-twig'                                      " twig syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
-Plug 'freitass/todo.txt-vim'                                  " todo.txt
-Plug 'davidoc/taskpaper.vim'                                  " .taskpapaer syntax
-" }}}
-" Colors {{{
+Plug 'davidoc/taskpaper.vim'                                  " .taskpaper syntax
 " }}}
 " Languages {{{
 Plug 'fatih/vim-go'
@@ -56,7 +53,13 @@ Plug 'ryanoasis/vim-devicons'                                               " fi
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                              " syntax highlighting for nerdtree
 " }}}
 " Auto Complete {{{
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocompletion engine
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'mattn/emmet-vim'                                        " html / templates
 Plug 'ervandew/supertab'                                      " Perform all your vim insert mode completions with Tab
 " }}}
@@ -280,7 +283,10 @@ let g:indend_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 0
 " }}}
 " DelimitMate {{{
+
+if has('nvim')
 let delimitMate_expand_cr = 1
+endif
 let delimitMate_expand_space = 1
 " }}}
 " Ack  {{{
