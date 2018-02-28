@@ -10,7 +10,9 @@ alias la="ls -Ga"
 alias ..="cd .."
 alias o="open ."
 alias list="ls -1"
-alias sassvars='grep -Rnco "\$.*:" .'
+alias sassvarsfiles='grep -Rnco "\$.*:" .'
+alias sassvars='grep -Rh "\$.\S*:" .'
+
 alias bluetooth="system_profiler SPBluetoothDataType"
 
 # Edit files quickly
