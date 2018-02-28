@@ -347,8 +347,11 @@ let mapleader = ','
 let maplocalleader = ' '
 
 " :Ack - find in all
-" trailing space is intentional
+" trailing space is intentional!
 nnoremap <leader>gg :Ack 
+
+" sassvars
+nnoremap <leader>gs :e sassvars.scss<CR>:r !grep -Rh "\$\S*:" ./**/*.scss<CR>:noh<CR>
 
 " quick quit all
 nnoremap <leader>q :qa<cr>
