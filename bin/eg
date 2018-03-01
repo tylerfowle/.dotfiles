@@ -23,13 +23,13 @@ try
     set name to "NVIM:"
     write text "es"
 
-    delay 1
+    delay 20
     tell application "System Events" to key code 30 using {command down}
 
     set name to "GULP:"
     write text "s"
 
-    delay 1
+    delay 20
     tell application "System Events" to key code 30 using {command down}
 
     set name to "GIT:"
