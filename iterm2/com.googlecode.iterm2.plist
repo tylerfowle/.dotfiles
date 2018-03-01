@@ -1352,6 +1352,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EnableDivisionView</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<true/>
 	<key>GlobalKeyMap</key>
@@ -1565,11 +1567,11 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1950 439 606 469 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1310 427 937 464 -2560 68 2560 1418 </string>
+	<string>-1739 587 1018 447 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2330 902 592 584 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1280 68 1277 1418 -2560 68 2560 1418 </string>
+	<string>-2560 68 2560 1418 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 955 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3009,7 +3011,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>SwitchTabModifier</key>
@@ -3020,6 +3022,10 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
+	<key>TerminalMargin</key>
+	<integer>10</integer>
+	<key>TerminalVMargin</key>
+	<integer>10</integer>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Command History</string>
