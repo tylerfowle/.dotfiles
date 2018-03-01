@@ -13,6 +13,7 @@ Plug 'nathanaelkane/vim-indent-guides' " indent guides
 Plug 'vim-airline/vim-airline'         " fancy statusline
 Plug 'vim-airline/vim-airline-themes'  " themes for airline
 Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'kien/rainbow_parentheses.vim'    " color each matching pair
 Plug 'junegunn/vim-peekaboo'           " shows registers in a sidebar
 " }}}
 " Utilities {{{
@@ -39,6 +40,7 @@ Plug 'othree/javascript-libraries-syntax.vim'                 " javascript libar
 Plug 'pangloss/vim-javascript'                                " javascript syntax
 Plug 'cakebaker/scss-syntax.vim'                              " scss syntax
 Plug 'lumiliet/vim-twig'                                      " twig syntax
+Plug 'tmux-plugins/vim-tmux'                                  " tmux syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
 Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
@@ -85,6 +87,12 @@ set iskeyword+=-          " include - in keyword matching
 
 " regenerate ctags on save
 " autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components . >/dev/null 2>&1
+
+" rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " python formatting
 augroup python
@@ -201,8 +209,7 @@ set path+=      " for searching
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-let g:netrw_browse_split = 2
-let g:netrw_winsize = 20
+let g:netrw_winsize = 25
 
 " }}}
 " Deoplete {{{
