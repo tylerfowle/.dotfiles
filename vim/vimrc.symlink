@@ -72,7 +72,6 @@ call plug#end()
 " ========================================================================================================
 " }}}
 " General Config {{{
-set nocompatible          " dont try to be compatible with vi
 syntax enable             " enable syntax processing
 filetype plugin on        " load filetype-specific indent files
 filetype indent on
@@ -324,6 +323,7 @@ nnoremap E $
 " nnoremap O O<Esc>^Da
 
 " swap directions of { and } to match up with j and k
+" this is specific to my keyboard layout
 nnoremap { }
 nnoremap } {
 
