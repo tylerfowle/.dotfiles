@@ -42,7 +42,6 @@ Plug 'lumiliet/vim-twig'                                      " twig syntax
 Plug 'tmux-plugins/vim-tmux'                                  " tmux syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'JamshedVesuna/vim-markdown-preview'                     " live markdown preview
-Plug 'vim-utils/vim-troll-stopper'                            " Detect unicode characters
 Plug 'davidoc/taskpaper.vim'                                  " .taskpaper syntax
 " }}}
 " Languages {{{
@@ -158,6 +157,7 @@ set showcmd                   " show current command in bottom right
 set laststatus=2              " always show airline
 set wildmenu                  " visual autocomplete for command menu
 set wildcharm=<TAB>           " auto completetion hotkey
+set wildignore+=node_modules/*  " ignore node modules
 " set lazyredraw                " redraw only when we need to
 set list                      " show invisible characters
 set listchars=tab:→\ ,trail:⋅ " list chars
@@ -349,6 +349,10 @@ let maplocalleader = ' '
 " :Ack - find in all
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
+
+" maximize current pane, make all panes equal size
+nnoremap <leader>M <C-W>\|<C-W>_
+nnoremap <leader>m <C-W>=
 
 " sassvars
 nnoremap <leader>gs :e sassvars.scss<CR>:r !grep -Rh "\$\S*:" ./**/*.scss<CR>:noh<CR>
