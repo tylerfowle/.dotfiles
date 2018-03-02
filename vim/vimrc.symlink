@@ -78,13 +78,13 @@ filetype indent on
 set encoding=utf8         " set encoding
 set t_Co=256              " explicitly tell vim that the terminal supports 256 colors
 set ttyfast               " faster redrawing
-set tags=./tags;
+set tags=tags;
 set iskeyword+=-          " include - in keyword matching
 " }}}
 " Autocommands & Commands {{{
 
 " regenerate ctags on save
-" autocmd BufWritePre * silent! !ctags -R --exclude=.git --exclude=node_modules --exclude=bower_components . >/dev/null 2>&1
+autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_components} . >/dev/null 2>&1
 
 " python formatting
 augroup python
@@ -102,6 +102,9 @@ augroup END
 " auto reload file when changed on disk
 set updatetime=750
 au CursorHold,FocusGained,BufEnter * checktime
+
+" set the foldmethod to syntax for css and scss files
+au FileType css,scss setlocal foldmethod=syntax
 
 " go commands
 augroup goWatcher
