@@ -53,6 +53,7 @@ DETACHED="\u27a6"
 CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
+TAG="\uf02b"
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -145,7 +146,7 @@ prompt_tags() {
     CURRENT_BG='NONE'
     print ""
     prompt_segment $color $PRIMARY_FG
-    print -n " tags: "$(dtags list)" "
+    print -n " $TAG "$(dtags list)" "
     # prompt_end
     # print ""
   else
