@@ -29,6 +29,7 @@ Plug 'google/vim-searchindex'          " show search position among all results
 Plug 'triglav/vim-visual-increment'    " use ctrl a/v to increment.decrement a visually selected block
 Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*.scss -then- :Fardo
+Plug 'wakatime/vim-wakatime'           " time tracker
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
