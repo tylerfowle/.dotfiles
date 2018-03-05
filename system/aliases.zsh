@@ -21,7 +21,9 @@ alias editdot="e ~/.dotfiles"
 alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
 
 # dtags - tag and cd to directories
-alias dt=". dtags"
+# alias dt=". dtags"
+alias dtags="~/go/src/github.com/tylerfowle/dtags/dtags"
+alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
 
 # taskpaper - quick access to edit tasks in vim
 function tasks() {
