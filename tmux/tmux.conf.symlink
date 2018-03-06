@@ -1,173 +1,38 @@
 # -- prefix key -------------------------------------------------------------------
-# remap prefix to Control + a
+# remap prefix to Control + k
 set -g prefix C-k
-# bind 'C-a C-a' to type 'C-a'
+# bind 'C-k C-k' to type 'C-k'
 bind C-k send-prefix
 unbind C-b
 
-
-# -- fix gulp notify -------------------------------------------------------------------
-# https://github.com/mikaelbr/gulp-notify/issues/73
-
-set-option -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
-
+set -g mouse on
+set -g clock-mode-style 12
+set -g set-titles on
+set -g set-titles-string ''
 
 # -- display -------------------------------------------------------------------
-
-set -g base-index 1         # start windows numbering at 1
-setw -g pane-base-index 1   # make pane numbering consistent with windows
-
-setw -g automatic-rename on # rename window to reflect current program
-set -g renumber-windows on  # renumber windows when a window is closed
-
-set -g set-titles on                        # set terminal title
-set -g set-titles-string '#h'
-
-# activity
-set -g monitor-activity on
-set -g visual-activity on
-
+# rename window to reflect current program
+setw -g automatic-rename on
+# renumber windows when a window is closed
+set -g renumber-windows on
 # color
 set -g default-terminal "screen-256color"
 
-
-
-
 # -- mouse -------------------------------------------------------------------
-
 # enable mouse by default
 set-option -g mouse on
-# turn off with prefix M
-bind-key M set-option -g mouse off \; display "Mouse: Off"
-# turn on with prefix m
-bind-key m set-option -g mouse on \; display "Mouse: On"
 
-
-# -- keybinding -------------------------------------------------------------------
-
-# Reload tmux config
+# -- Reload tmux config ------------------------------------------------------
 bind r source-file ~/.tmux.conf \; display "Reloaded Config"
+bind q kill-session
 
-# pane traversal ijkl
-bind-key i select-pane -U
-bind-key j select-pane -L
-bind-key k select-pane -D
-bind-key l select-pane -R
+set -g pane-border-status bottom
+set -g pane-border-format '─'
+set -g pane-border-fg 'colour0'
+set -g pane-active-border-fg 'colour8'
 
-# resize panes with IJKL
-bind-key I resize-pane -U 10
-bind-key J resize-pane -L 10
-bind-key K resize-pane -D 10
-bind-key L resize-pane -R 10
-
-# swap panes
-bind-key u swap-pane -U
-bind-key o swap-pane -D
-
-# split windows
-bind-key h split-window -h -c '#{pane_current_path}'
-bind-key v split-window -v -c '#{pane_current_path}'
-
-# easier to remember than x
-bind-key W kill-pane
-
-
-# -- functions -------------------------------------------------------------------
-
-bind-key H run "cd ."
-
-
-# -- theme -------------------------------------------------------------------
-##### Colors
-# light green colors
-# 114
-# 150
-
-
-#set inactive/active window styles
-set -g window-style 'bg=colour0'
-
-# Split
-set-option -g pane-active-border-fg green
-set-option -g pane-active-border-bg default
-set-option -g pane-border-fg red
-# set-option -g pane-border-bg colour235
-
-# POWERLINE THEME
-#
-# Powerline Block - Tmux Theme
-# Created by Jim Myhrberg <contact@jimeh.me>.
-#
-# Inspired by vim-powerline: https://github.com/Lokaltog/powerline
-#
-# Requires terminal to be using a powerline compatible font, find one here:
-# https://github.com/Lokaltog/powerline-fonts
-#
-
-# Move status bar to top of window
-set -g status-position top
-
-# Status update interval
-set -g status-interval 1
-
-# Basic status bar colors
-set -g status-fg colour240
-set -g status-bg colour235  # same as window bg
-
-theme_primary_color="colour11"
-theme_secondary_color="colour1"
-
-# Left side of status bar
-set -g status-left-bg $theme_primary_color
-set -g status-left-fg colour233
-set -g status-left-length 150
-set -g status-left " #{pane_current_path} #[fg=$theme_primary_color,bg=colour235]"
-
-# Right side of status bar
-set -g status-right-bg $theme_primary_color
-set -g status-right-fg colour233
-set -g status-right-length 150
-set -g status-right ""
-
-# Window status
-set -g window-status-format "#[fg=$theme_primary_color,bg=colour235]#[fg=colour232,bg=$theme_primary_color] #S:#I:#P:#W#F "
-set -g window-status-current-format "#[fg=colour1,bg=colour235]#[fg=colour235,bg=$theme_secondary_color] #W#F #[fg=$theme_primary_color,bg=colour1]#[fg=colour232,bg=$theme_primary_color] #S:#I:#P "
-
-# Current window status
-set -g window-status-current-bg $theme_primary_color
-set -g window-status-current-fg colour233
-
-# Window with activity status
-set -g window-status-activity-bg $theme_primary_color # fg and bg are flipped here due to
-set -g window-status-activity-fg colour233 # a bug in tmux
-
-# Window separator
-set -g window-status-separator "#[fg=$theme_primary_color,bg=colour235]"
-
-# Window status alignment
-set -g status-justify right
-
-# Active pane border
-set -g pane-active-border-bg default
-set -g pane-active-border-fg $theme_primary_color
-
-# Pane number indicator
-set -g display-panes-colour colour233
-set -g display-panes-active-colour colour245
-
-# Clock mode
-set -g clock-mode-colour $theme_primary_color
-set -g clock-mode-style 24
-set -g clock-mode-style 1
-
-# Message
-set -g message-bg $theme_primary_color
-set -g message-fg black
-
-# Command message
-set -g message-command-bg colour233
-set -g message-command-fg black
-
-# Mode
-set -g mode-bg $theme_primary_color
-set -g mode-fg colour235
+set -g status-bg default
+set -g status-left ''
+set -g status-right ''
+set -g window-status-format '#[fg=white,bg=black] #W '
+set -g window-status-current-format '#[fg=black,bg=white] #W '
