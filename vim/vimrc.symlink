@@ -368,7 +368,7 @@ nmap <leader>, :w<cr>
 nmap <leader>o :!open .<cr>
 
 " run savesite in current dir
-nmap <silent> <leader>k :silent !savesite<cr>
+nmap <silent> <leader>k :silent !savesite<cr> :redraw!<cr>
 
 " super save - save session in its current state, open agian with `vim -S`
 nnoremap <leader>s :mksession!<CR>
@@ -398,7 +398,7 @@ nnoremap <leader>! :so $MYVIMRC<cr>
 
 " reindent entire file
 " mark cursor and put cursor back, center cursor in window
-nnoremap <leader>r magg=G`az.
+nnoremap <leader>r magg=G`azz
 
 " mark cursor, close buffer, create new pane, open mark
 nnoremap <leader>gt mAZZ<C-w>v`A
@@ -426,7 +426,7 @@ nmap <leader>h :sp<cr>
 " Tag Shortcuts {{{
 
 " search tag under cursor
-nnoremap tt <c-]>z.
+nnoremap tt <c-]>zz
 " go back to definition
 nnoremap tb <c-t>
 " go to next tag
