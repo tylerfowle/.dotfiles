@@ -261,6 +261,7 @@ hi MatchParen guifg='#2b303b' guibg='#bd626b'
 
 " Livedown - markdown preview {{{
 nnoremap <C-m> :LivedownToggle<CR>
+let g:instant_markdown_autostart = 0
 " }}}
 " NERDTree  {{{
 map <C-n> :NERDTreeToggle<CR><c-w>=
