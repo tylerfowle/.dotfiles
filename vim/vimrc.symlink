@@ -111,7 +111,7 @@ au FileType css,scss setlocal foldmethod=syntax
 augroup goWatcher
   au!
   au BufWritePre *.go :GoImports
-  au BufWritePre *.go :GoBuild
+  au BufWritePre *.go silent! :GoBuild
   au BufWritePre *.go silent! :!go build
 augroup END
 
@@ -122,18 +122,9 @@ augroup markdown
 augroup END
 
 " use taskpaper filetype for .taskpaper.txt files
-" this is useful for ifttt integrations that dont let you change the filetime
 augroup taskpaper
   au! BufRead,BufNewFile *.taskpaper.txt setlocal filetype=taskpaper
 augroup END
-
-" beautify html files on save
-command! Htb call HtmlFormatter()
-function! HtmlFormatter()
-  :w
-  silent :!html-beautify -r %
-  :e!
-endfunction
 
 " prettydiff current file
 command! PrettyDiff call PrettyDiffer()
@@ -148,27 +139,33 @@ set shiftwidth=2          " number of spaces to use for indent and unindent
 set expandtab             " tabs are spaces
 " }}}
 " UI {{{
-set nowrap                    " dont wrap long lines
-set hidden                    " hide buffers, dont unload them, this fixes losing syntax on buffer change
-set number                    " show line numbers
-set relativenumber            " use relative lines
-set title                     " show file name in window title
-set cursorline                " highlight line with cursor
-set showmatch                 " show matching brackets
-set matchpairs+=<:>           " make < and > match as well
-set mouse=a                   " enable mouse for scrolling
-set showcmd                   " show current command in bottom right
-set laststatus=2              " always show airline
-set wildmenu                  " visual autocomplete for command menu
-set wildcharm=<TAB>           " auto completetion hotkey
-set wildignore+=node_modules/*  " ignore node modules
-" set lazyredraw                " redraw only when we need to
-set list                      " show invisible characters
-set listchars=tab:→\ ,trail:⋅ " list chars
-set fillchars=vert:│          " set vert split character to taller line
+
+set nowrap                     " dont wrap long lines
+set hidden                     " hide buffers, dont unload them, this fixes losing syntax on buffer change
+set number                     " show line numbers
+set relativenumber             " use relative lines
+set title                      " show file name in window title
+set cursorline                 " highlight line with cursor
+set showmatch                  " show matching brackets
+set matchpairs+=<:>            " make < and > match as well
+set mouse=a                    " enable mouse for scrolling
+set showcmd                    " show current command in bottom right
+set laststatus=2               " always show airline
+set wildmenu                   " visual autocomplete for command menu
+set wildcharm=<TAB>            " auto completetion hotkey
+set wildignore+=node_modules/* " ignore node modules
+" set lazyredraw                 " redraw only when we need to
+set list                       " show invisible characters
+set listchars=tab:→\ ,trail:⋅  " list chars
+set fillchars=vert:│           " set vert split character to taller line
+
+" make comments italic
+autocmd ColorScheme * highlight Comment gui=italic
+
 " change vert slpit color to same as iterm2
 " the use of autocmd guarantees that it will override color scheme
 autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
+
 " }}}
 " Splits {{{
 set splitbelow   " open new splits to bottom
@@ -180,7 +177,7 @@ set smartcase    " override the 'ignorecase' option if the search pattern contai
 set incsearch    " search as characters are entered
 set hlsearch     " highlight matches
 " }}}
-" Indeting {{{
+" Indenting {{{
 set autoindent   " automatically set indent of new line
 set smartindent  " do smart autoindenting when starting a new line
 " }}}
@@ -242,6 +239,9 @@ let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in 
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+" }}}
+" Wakatime {{{
+let g:wakatime_ScreenRedraw = 1
 " }}}
 
 " colorscheme {{{
