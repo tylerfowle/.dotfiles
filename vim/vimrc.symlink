@@ -70,6 +70,9 @@ Plug 'ervandew/supertab'                                      " Perform all your
 Plug 'sirver/ultisnips'                                       " snippet engine
 Plug 'honza/vim-snippets'                                     " collection of snippets
 " }}}
+
+Plug '~/Repos/turtle.vim'
+
 call plug#end()
 " ========================================================================================================
 " }}}
@@ -133,6 +136,15 @@ function! PrettyDiffer()
   silent :!prettydiff %
 endfunction
 
+" open current buffer in chrome
+command! -nargs=? Chrome call Chromer(<f-args>)
+function! Chromer(...)
+  if a:0 < 1
+    silent :!open % -a Google\ Chrome
+  else
+    silent :exec  '!open /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --app=' . a:1
+  endif
+endfunction
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4             " number of visual spaces per TAB
@@ -288,7 +300,7 @@ let g:indent_guides_enable_on_vim_startup = 0
 " DelimitMate {{{
 
 if has('nvim')
-let delimitMate_expand_cr = 1
+  let delimitMate_expand_cr = 1
 endif
 let delimitMate_expand_space = 1
 " }}}
@@ -386,7 +398,7 @@ nnoremap <leader>tf :CtrlPTag<cr>
 " search buffers
 nnoremap <leader>bf :CtrlPBuffer<cr>
 " search mru
-nnoremap <leader>mf :CtrlPMRU<cr>
+nnoremap <leader>d :CtrlPMRU<cr>
 " additional shortcut for default
 nnoremap <leader>f :CtrlP<cr>
 
@@ -441,13 +453,13 @@ nnoremap tp :tp<cr>
 " Terminal Shortcuts {{{
 
 if has('nvim')
-" make esc work like other modes
-tnoremap <Esc> <C-\><C-n>
-" nav splits like normal
-tnoremap <C-h> <C-\><C-N><C-w>h
-tnoremap <C-j> <C-\><C-N><C-w>j
-tnoremap <C-k> <C-\><C-N><C-w>k
-tnoremap <C-l> <C-\><C-N><C-w>l
+  " make esc work like other modes
+  tnoremap <Esc> <C-\><C-n>
+  " nav splits like normal
+  tnoremap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-j> <C-\><C-N><C-w>j
+  tnoremap <C-k> <C-\><C-N><C-w>k
+  tnoremap <C-l> <C-\><C-N><C-w>l
 endif
 
 " }}}
