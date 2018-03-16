@@ -31,6 +31,7 @@ Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*.scss -then- :Fardo
 Plug 'wakatime/vim-wakatime'           " time tracker
 Plug 'floobits/floobits-neovim'        " floobits - collaborative editing
+Plug 'tylerfowle/turtle.vim'           " quickly add header comments
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
@@ -71,7 +72,6 @@ Plug 'sirver/ultisnips'                                       " snippet engine
 Plug 'honza/vim-snippets'                                     " collection of snippets
 " }}}
 
-Plug '~/Repos/turtle.vim'
 
 call plug#end()
 " ========================================================================================================
