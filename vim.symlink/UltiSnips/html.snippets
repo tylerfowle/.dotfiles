@@ -1,6 +1,11 @@
 # ##################################################################
 # TWIG
 # ##################################################################
+
+snippet cf "cf - clearfix"
+<div class="clearfix"></div>
+endsnippet
+
 snippet cb "contentblock - twig"
 {% if content_blocks.$1 is not empty %}$2
 {{ content_blocks.$1|raw }}$3
