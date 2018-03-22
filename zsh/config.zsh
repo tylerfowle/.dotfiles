@@ -42,7 +42,17 @@ vim_ins_mode="%{%F{yellow}%}[INSERT]%{$reset_color%}"
 vim_cmd_mode="%{%F{cyan}%}[NORMAL]%{$reset_color%}"
 vim_mode=$vim_ins_mode
 
+
 function zle-keymap-select {
+    if [ "$TERM" = "xterm-256color" ]; then
+        if [ $KEYMAP = vicmd ]; then
+            # the command mode for vi
+            echo -ne "\e[2 q"
+        else
+            # the insert mode for vi
+            echo -ne "\e[6 q"
+        fi
+    fi
   vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
   zle reset-prompt
 }
