@@ -1575,11 +1575,11 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>423 784 918 394 0 0 1920 1178 </string>
+	<string>423 705 796 473 0 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-2330 902 592 584 -2560 68 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>987 1200 2560 1418 987 1200 2560 1418 </string>
+	<string>958 0 958 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 955 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1906,7 +1906,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<real>0.11759927868843079</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -3026,7 +3026,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-20T20:39:30Z</date>
+	<date>2018-03-22T18:31:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
