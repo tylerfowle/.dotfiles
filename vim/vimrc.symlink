@@ -91,6 +91,9 @@ set iskeyword+=-          " include - in keyword matching
 " regenerate ctags on save
 autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_components} . >/dev/null 2>&1
 
+" install finter after saving
+autocmd BufWritePost finter.rb !./install
+
 " python formatting
 augroup python
   au!
