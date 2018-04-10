@@ -23,6 +23,10 @@ brew install vim
 echo "==> Installing neovim"
 brew install neovim/neovim/neovim
 
+echo "==> Installing docker"
+brew install docker docker-machine docker-compose
+brew cask install docker
+
 echo "==> Installing wget"
 brew install wget
 

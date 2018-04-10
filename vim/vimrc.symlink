@@ -93,6 +93,7 @@ autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_compo
 
 " install finter after saving
 autocmd BufWritePost finter.rb !./install
+autocmd BufWritePost *.rb silent! !bundle exec rake install
 
 " python formatting
 augroup python

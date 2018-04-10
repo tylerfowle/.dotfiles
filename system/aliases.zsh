@@ -1,8 +1,5 @@
 # Jump to locations
 alias cdn='cd ~/Repos/fdp-devops/code/cdn'
-alias frame='cd ~/Repos/fed-framework'
-alias docker='cd ~/Repos/fdp-design-container'
-alias sites='cd ~/Sites'
 alias repos='cd ~/Repos'
 
 # Other
@@ -12,8 +9,6 @@ alias o="open ."
 alias list="ls -1"
 alias sassvarsfiles='grep -Rnco "\$.*:" .'
 alias sassvars='grep -Rh "\$.\S*:" .'
-
-alias bluetooth="system_profiler SPBluetoothDataType"
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
