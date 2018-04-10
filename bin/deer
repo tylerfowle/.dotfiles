@@ -9,4 +9,4 @@ else
 fi
 
 # Run the docker command
-docker run -it -P -v "$dir_name":/src --rm tylerfowle/neovim nvim $file_name
+docker run -it -P -v "$dir_name":/src --rm tylerfowle/neovim
