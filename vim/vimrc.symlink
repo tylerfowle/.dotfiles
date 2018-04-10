@@ -230,7 +230,7 @@ let g:netrw_winsize = 25
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " make deoplete with with ultisnips
-call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 " }}}
 " UltiSnips  {{{
 
