@@ -57,7 +57,6 @@ brew install jq
 echo "==> Installing fun"
 brew install archey
 
-
 # Cask
 #########################################
 
@@ -75,9 +74,9 @@ brew cask install virtualbox
 brew cask install sublime-text
 
 # utilities
-brew cask install scroll-reverser
+brew cask install scroll-reverser # independent trackpad and mouse scroll direction
 brew cask install xscope
-brew cask install bettertouchtool
+brew cask install atext # text expansion
 
 # browsers
 brew cask install firefox
