@@ -270,6 +270,9 @@ set background=dark
 " gruvbox setup
 colorscheme gruvbox
 
+" set custom background color
+hi Normal guibg=#221926
+
 if has('termguicolors')
   set termguicolors " 24-bit terminal
 endif
@@ -476,5 +479,3 @@ abbr marign margin
 abbr widht width
 abbr iamges images
 " }}}
-
-" vim:foldmethod=marker:foldlevel=0
