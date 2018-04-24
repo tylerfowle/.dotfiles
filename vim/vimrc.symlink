@@ -375,6 +375,9 @@ let maplocalleader = ' '
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
 
+" turtle.vim comment header
+nnoremap <leader>c :Commentr
+
 " maximize current pane, make all panes equal size
 nnoremap <leader>M <C-W>\|<C-W>_
 nnoremap <leader>m <C-W>=
