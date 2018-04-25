@@ -51,3 +51,5 @@ then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.q.plugin.zsh ] && source ~/.q.plugin.zsh
+
