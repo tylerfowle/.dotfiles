@@ -89,7 +89,7 @@ set iskeyword+=-          " include - in keyword matching
 " Autocommands & Commands {{{
 
 " regenerate ctags on save
-autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_components} . >/dev/null 2>&1
+" autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_components} . >/dev/null 2>&1
 
 " install finter after saving
 autocmd BufWritePost finter.rb !./install
@@ -376,7 +376,7 @@ let maplocalleader = ' '
 nnoremap <leader>gg :Ack 
 
 " turtle.vim comment header
-nnoremap <leader>c :Commentr
+nnoremap <leader>c :Commentr<cr>
 
 " maximize current pane, make all panes equal size
 nnoremap <leader>M <C-W>\|<C-W>_
