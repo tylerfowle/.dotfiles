@@ -21,6 +21,8 @@ try
       tell application "System Events" to key code 125 using {command down, control down}
     end repeat
 
+    delay 1
+
     set name to "NVIM:"
     write text "es"
 

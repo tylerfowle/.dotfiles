@@ -271,7 +271,7 @@ set background=dark
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=#221926
+hi Normal guibg=#332e40
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal

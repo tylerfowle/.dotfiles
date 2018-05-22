@@ -17,6 +17,8 @@ try
 
     --quit vim
     tell application "System Events" to key code 53
+    tell application "System Events" to key code 53
+    tell application "System Events" to key code 53
     tell application "System Events" to key code 41 using {shift down}
     tell application "System Events" to key code 12
     tell application "System Events" to key code 0
