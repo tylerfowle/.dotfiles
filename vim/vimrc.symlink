@@ -364,6 +364,14 @@ nnoremap <C-z> :redraw!<cr>
 " show tagbar
 nnoremap <c-b> :TagbarToggle<cr>
 
+" center search in vertical middle of screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 " }}}
 " Leader Shortcuts {{{
 
