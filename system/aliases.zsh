@@ -32,7 +32,7 @@ alias gitline='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 alias gl='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 
 # New Projects copy gulp3
-alias dup='mkdir html && ditto ~/Repos/fed-framework/gulp3/ ./html'
+alias dup='ditto ~/Repos/fed-framework/gulp3/ ./'
 
 # fix ctags
 alias ctags="`brew --prefix`/bin/ctags"
