@@ -40,6 +40,7 @@ Plug 'w0rp/ale'
 Plug 'othree/html5.vim'                                       " html5 syntax
 Plug 'othree/javascript-libraries-syntax.vim'                 " javascript libary syntax (jquery)
 Plug 'pangloss/vim-javascript'                                " javascript syntax
+Plug 'JulesWang/css.vim'                                      " css syntax
 Plug 'cakebaker/scss-syntax.vim'                              " scss syntax
 Plug 'lumiliet/vim-twig'                                      " twig syntax
 Plug 'tmux-plugins/vim-tmux'                                  " tmux syntax
@@ -91,7 +92,7 @@ set iskeyword+=-          " include - in keyword matching
 " regenerate ctags on save
 " autocmd BufWritePre * silent! !ctags -R --exclude={.git,node_modules,bower_components} . >/dev/null 2>&1
 
-" install finter after saving
+" install fiddle after saving
 autocmd BufWritePost finter.rb !./install
 autocmd BufWritePost *.rb silent! !bundle exec rake install
 
@@ -364,13 +365,13 @@ nnoremap <C-z> :redraw!<cr>
 " show tagbar
 nnoremap <c-b> :TagbarToggle<cr>
 
-" center search in vertical middle of screen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
+" " center search in vertical middle of screen
+" nnoremap n nzz
+" nnoremap N Nzz
+" nnoremap * *zz
+" nnoremap # #zz
+" nnoremap g* g*zz
+" nnoremap g# g#zz
 
 " }}}
 " Leader Shortcuts {{{
