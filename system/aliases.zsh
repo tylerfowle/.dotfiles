@@ -12,8 +12,8 @@ alias sassvars='grep -Rh "\$.\S*:" .'
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
-alias editdot="e ~/.dotfiles"
-alias editvim="e ~/.dotfiles/vim/vimrc.symlink"
+alias editdot="cd ~/.dotfiles && e ~/.dotfiles"
+alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 
 # dtags - tag and cd to directories
 alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
