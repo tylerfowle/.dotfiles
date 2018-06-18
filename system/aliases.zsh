@@ -3,10 +3,11 @@ alias cdn='cd ~/Repos/fdp-devops/code/cdn'
 alias repos='cd ~/Repos'
 
 # Other
-alias la="ls -Ga"
 alias ..="cd .."
 alias o="open ."
+alias hal="ls -hal"
 alias list="ls -1"
+alias lf='colorls --sd -a'
 alias sassvarsfiles='grep -Rnco "\$.*:" .'
 alias sassvars='grep -Rh "\$.\S*:" .'
 

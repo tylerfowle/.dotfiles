@@ -272,7 +272,7 @@ set background=dark
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=#332e40
+hi Normal guibg=#292929
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
@@ -380,12 +380,15 @@ nnoremap <c-b> :TagbarToggle<cr>
 let mapleader = ','
 let maplocalleader = ' '
 
+" create file under from path under cursor relative to current buffer
+nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<cr><cr>
+
 " :Ack - find in all
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
 
 " turtle.vim comment header
-nnoremap <leader>c :Commentr<cr>
+nnoremap <leader>ch :Commentr<cr>
 
 " maximize current pane, make all panes equal size
 nnoremap <leader>M <C-W>\|<C-W>_
