@@ -1,8 +1,8 @@
 --exclude=stylesheet.css
---exclude=*.min.js
---exclude=*.inc.js
---exclude=*.min.css
---exclude=*.map
+--exclude=\*.min.js
+--exclude=\*.inc.js
+--exclude=\*.min.css
+--exclude=\*.map
 --exclude=\*.cache
 --exclude=\*.dll
 --exclude=\*.swp

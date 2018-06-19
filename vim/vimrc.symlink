@@ -31,7 +31,6 @@ Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*.scss -then- :Fardo
 Plug 'wakatime/vim-wakatime'           " time tracker
 Plug 'floobits/floobits-neovim'        " floobits - collaborative editing
-Plug 'majutsushi/tagbar'               " manage tags and show toolbar
 Plug 'tylerfowle/turtle.vim'           " quickly add header comments
 " }}}
 " Syntax Engines {{{
@@ -44,7 +43,6 @@ Plug 'pangloss/vim-javascript'                                " javascript synta
 Plug 'JulesWang/css.vim'                                      " css syntax
 Plug 'cakebaker/scss-syntax.vim'                              " scss syntax
 Plug 'lumiliet/vim-twig'                                      " twig syntax
-Plug 'tmux-plugins/vim-tmux'                                  " tmux syntax
 Plug 'jtratner/vim-flavored-markdown'                         " markdown syntax
 Plug 'shime/vim-livedown'                                     " live markdown preview 'npm install -g livedown
 Plug 'davidoc/taskpaper.vim'                                  " .taskpaper syntax
@@ -146,9 +144,9 @@ endfunction
 command! -nargs=? Chrome call Chromer(<f-args>)
 function! Chromer(...)
   if a:0 < 1
-    silent :!open % -a Google\ Chrome
+	silent :!open % -a Google\ Chrome
   else
-    silent :exec  '!open /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --app=' . a:1
+	silent :exec  '!open /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --app=' . a:1
   endif
 endfunction
 " }}}
@@ -271,7 +269,9 @@ set background=dark
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=#221926
+hi Normal guibg=#202020
+hi SignColumn guibg=#202020
+hi CursorLine guibg=#111111
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
@@ -360,9 +360,6 @@ nnoremap <CR><CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<cr>
-
-" show tagbar
-nnoremap <c-b> :TagbarToggle<cr>
 
 " }}}
 " Leader Shortcuts {{{
