@@ -31,6 +31,7 @@ Plug 'mileszs/ack.vim'                 " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*.scss -then- :Fardo
 Plug 'wakatime/vim-wakatime'           " time tracker
 Plug 'floobits/floobits-neovim'        " floobits - collaborative editing
+Plug 'majutsushi/tagbar'               " manage tags and show toolbar
 Plug 'tylerfowle/turtle.vim'           " quickly add header comments
 " }}}
 " Syntax Engines {{{
@@ -248,19 +249,17 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " }}}
 " Airline {{{
 let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-" let g:airline_theme='synthwave'
-" let g:airline_theme='onedark'
-" let g:airline_theme='solarized'
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 " }}}
+
 " Wakatime {{{
 let g:wakatime_ScreenRedraw = 1
 " }}}
@@ -272,21 +271,21 @@ set background=dark
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=#292929
+hi Normal guibg=#221926
 
 if has('termguicolors')
   set termguicolors " 24-bit terminal
 endif
 
 " customize matching paren colors
-hi MatchParen guifg='#2b303b' guibg='#bd626b'
-
+hi MatchParen guifg='#000000' guibg='#fc802d'
 " }}}
 
 " Livedown - markdown preview {{{
 nnoremap <C-m> :LivedownToggle<CR>
 let g:instant_markdown_autostart = 0
 " }}}
+
 " NERDTree  {{{
 map <C-n> :NERDTreeToggle<CR><c-w>=
 let NERDTreeShowHidden=1
@@ -365,14 +364,6 @@ nnoremap <C-z> :redraw!<cr>
 " show tagbar
 nnoremap <c-b> :TagbarToggle<cr>
 
-" " center search in vertical middle of screen
-" nnoremap n nzz
-" nnoremap N Nzz
-" nnoremap * *zz
-" nnoremap # #zz
-" nnoremap g* g*zz
-" nnoremap g# g#zz
-
 " }}}
 " Leader Shortcuts {{{
 
@@ -430,6 +421,9 @@ nnoremap <leader>f :CtrlP<cr>
 " Buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
+
+" tab stuff
+noremap <C-t> :tabe<CR>
 
 " close current buffer but not current window
 noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
