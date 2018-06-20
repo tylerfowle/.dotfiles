@@ -265,12 +265,16 @@ let g:wakatime_ScreenRedraw = 1
 " colorscheme {{{
 set background=dark
 
-" gruvbox setup
+
+" set a global var for custom bg color
+let g:tf_background='#202020'
+
+" set gruvbox as theme
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=#202020
-hi SignColumn guibg=#202020
+hi Normal guibg=g:tf_background
+hi SignColumn guibg=g:tf_background
 hi CursorLine guibg=#111111
 
 if has('termguicolors')
