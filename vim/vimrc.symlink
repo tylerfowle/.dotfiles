@@ -429,6 +429,9 @@ noremap <C-t> :tabe<CR>
 " close current buffer but not current window
 noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" close all buffers except the current
+noremap <leader>bc :%bd|e#<CR>
+
 " reload vimrc file
 nnoremap <leader>! :so $MYVIMRC<cr>
 
