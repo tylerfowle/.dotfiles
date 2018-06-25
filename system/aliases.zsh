@@ -19,6 +19,9 @@ alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 # dtags - tag and cd to directories
 alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
 
+# update all the devops repos
+alias pullthatshit="cd ~/Repos/fdp-devops && git checkout master && git pull origin master && cd ./code && find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
+
 # taskpaper - quick access to edit tasks in vim
 function tasks() {
   cd $TODO_DIR

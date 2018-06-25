@@ -32,6 +32,7 @@ Plug 'brooth/far.vim'                  " find and replace with :Far foo bar **/*
 Plug 'wakatime/vim-wakatime'           " time tracker
 Plug 'floobits/floobits-neovim'        " floobits - collaborative editing
 Plug 'tylerfowle/turtle.vim'           " quickly add header comments
+Plug 'AndrewRadev/switch.vim'          " switch boolean values with gs
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
@@ -311,13 +312,14 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\/'
 let g:indend_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 0
 " }}}
-" DelimitMate {{{
 
+" DelimitMate {{{
 if has('nvim')
   let delimitMate_expand_cr = 1
 endif
 let delimitMate_expand_space = 1
 " }}}
+
 " Ack  {{{
 
 
@@ -340,8 +342,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
+nnoremap <C-e> 4<C-e>
+nnoremap <C-y> 4<C-y>
 
 " B and E for faster beginning and end
 nnoremap B ^
@@ -366,6 +368,7 @@ nnoremap <CR><CR> o<Esc>
 nnoremap <C-z> :redraw!<cr>
 
 " }}}
+
 " Leader Shortcuts {{{
 
 " set a map leader for more key combos
@@ -423,6 +426,9 @@ nnoremap <leader>f :CtrlP<cr>
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 
+" toggle sidebar
+nnoremap <leader>; :SideBarEnterToggle<CR>
+
 " tab stuff
 noremap <C-t> :tabe<CR>
 
@@ -430,7 +436,7 @@ noremap <C-t> :tabe<CR>
 noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " close all buffers except the current
-noremap <leader>bc :%bd|e#<CR>
+nnoremap <leader>bc :%bd<bar>e#<CR>
 
 " reload vimrc file
 nnoremap <leader>! :so $MYVIMRC<cr>
@@ -449,6 +455,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" open file under cursor in vertical split
+nnoremap <leader>wf :vertical wincmd f<CR>
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<cr>
