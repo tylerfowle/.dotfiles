@@ -271,7 +271,8 @@ set background=dark
 let g:tf_background='#202020'
 
 " set gruvbox as theme
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme hopscotch
 
 " set custom background color
 hi Normal guibg=g:tf_background
