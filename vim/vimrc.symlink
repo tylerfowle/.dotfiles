@@ -281,7 +281,7 @@ hi MatchParen guifg=#000000 guibg=#fc802d
 " }}}
 
 " Livedown - markdown preview {{{
-nnoremap <leader>md :LivedownToggle<CR>
+nnoremap <leader>gm :LivedownToggle<CR>
 let g:instant_markdown_autostart = 0
 " }}}
 
@@ -379,9 +379,20 @@ nnoremap <leader>gg :Ack
 " turtle.vim comment header
 nnoremap <leader>ch :Commentr<cr>
 
-" maximize current pane, make all panes equal size
-nnoremap <leader>M <C-W>\|<C-W>_
-nnoremap <leader>m <C-W>=
+" maximize current pane
+" make all panes equal size
+let g:maximized_split = 1
+function! ToggleMaximizedSplit()
+  if g:maximized_split
+    :exe "normal \|_"
+    let g:maximized_split = 0
+  else
+    :exe "normal ="
+    let g:maximized_split = 1
+  endif
+endfunction
+" toggle between maximized pane, and all equal panes
+nnoremap <leader>m :call ToggleMaximizedSplit()<cr>
 
 " sassvars
 nnoremap <leader>gs :e sassvars.scss<CR>:r !grep -Rh "\$\S*:" ./**/*.scss<CR>:noh<CR>
