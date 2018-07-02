@@ -2621,7 +2621,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTab</key>
-	<true/>
+	<false/>
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
@@ -2697,7 +2697,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1971 2110 796 486 987 1200 2560 1418 </string>
+	<string>1204 1545 796 486 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -2934,13 +2934,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.16078431904315948</real>
+				<real>0.12549019607843137</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16078431904315948</real>
+				<real>0.12549019607843137</real>
 				<key>Red Component</key>
-				<real>0.16078431904315948</real>
+				<real>0.12549019607843137</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -4154,7 +4154,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-25T22:01:39Z</date>
+	<date>2018-06-27T17:43:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4180,7 +4180,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>TerminalMargin</key>
 	<integer>10</integer>
 	<key>TerminalVMargin</key>
@@ -9216,7 +9216,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0beta4</string>
+	<string>3.2.0beta5</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
