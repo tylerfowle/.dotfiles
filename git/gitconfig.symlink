@@ -8,6 +8,7 @@
 	ci = commit
 	br = branch
 	st = status
+    fp = fetch --prune
 	cob = checkout -b
 	brd = branch -d
 	brD = branch -D
@@ -19,6 +20,9 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lrb = ls-remote --heads origin
+    oops = reset head~1
+    f = !git fetch && git branch -a
+    rso = remote show origin
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
