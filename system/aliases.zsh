@@ -6,8 +6,8 @@ alias repos='cd ~/Repos'
 alias ..="cd .."
 alias o="open ."
 alias hal="ls -hal"
-alias list="ls -1"
-alias lf='colorls --sd -a'
+alias list='colorls --sd -a -1'
+alias list='colorls --sd -a'
 alias sassvarsfiles='grep -Rnco "\$.*:" .'
 alias sassvars='grep -Rh "\$.\S*:" .'
 
