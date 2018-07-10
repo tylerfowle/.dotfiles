@@ -10,6 +10,7 @@
 	st = status
 	cob = checkout -b
 	brd = branch -d
+	brD = branch -D
 	cim = commit -m
 	com = checkout master
 	pom = pull origin master
