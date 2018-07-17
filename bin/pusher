@@ -29,4 +29,4 @@ select yn in "Yes" "No"; do
 done
 
 # delete merged branches
-git checkout master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d && clear && git branch
+git checkout master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d && git branch
