@@ -29,11 +29,4 @@ select yn in "Yes" "No"; do
   esac
 done
 
-#ask if pusher should clean
-echo "Do you wish to clean?"
-select yn in "Yes" "No"; do
-  case $yn in
-    Yes ) clean; break;;
-    No ) echo -e "clean was \033[91mNOT \033[39mperformed"; exit;;
-  esac
-done
+clean
