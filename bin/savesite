@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # FOR COLOR CUSTOMIZATIONS
 # save the active Chrome window source to file
@@ -6,7 +6,7 @@
 # savesite filename.html
 
 if command -v figlet >/dev/null 2>&1; then
-figlet Savesite
+figlet savesite
 fi
 
 IFS='%'
@@ -36,6 +36,18 @@ echo ""
 
 curl $URL > $FILENAME
 
+# add stylesheet for theme right before </head>
 sed -i '' '/<\/head>/i\
 <link rel="stylesheet" href="css/stylesheet.css">\
+' $FILENAME
+
+# remove hardlinked css
+sed -i '' '/stylesheet.*designs.*.css/d' $FILENAME
+
+# remove hardlinked js
+sed -i '' '/script.*designs.*.js/d' $FILENAME
+
+# add theme js right before </body>
+sed -i '' '/<\/body>/i\
+<script src="js/site.min.js" type="text/javascript"></script>\
 ' $FILENAME
