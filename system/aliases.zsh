@@ -56,6 +56,17 @@ function filefindr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
 
+function w() {
+  case "$1" in
+	cd)
+	  cd $(ws pws ${@:2})
+	  return 0
+	  ;;
+  esac
+
+  ws $@
+}
+
 ##keep the last focused finder window up to date when cd in terminal
 #function chpwd() {
 #  osascript -e 'on run pwd
