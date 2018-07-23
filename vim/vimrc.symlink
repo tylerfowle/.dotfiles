@@ -48,6 +48,7 @@ Plug 'lumiliet/vim-twig'                                                        
 Plug 'jtratner/vim-flavored-markdown'                                                        " markdown syntax
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
 Plug 'davidoc/taskpaper.vim'                                                                 " .taskpaper syntax
+Plug 'junegunn/vim-journal'                                                                  " syntax for plain text notes, similiar to markdown
 " }}}
 " Languages {{{
 Plug 'fatih/vim-go'
