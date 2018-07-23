@@ -13,24 +13,40 @@ try
   tell current session of current window
 
     --command ] to rotate active pane
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 30 using {command down}
 
     --quit vim
+    --53 = escape, escape, escape
+    --shift + 41 = :
+    --12 = q
+    --0  = a
+    --76 = enter
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 53
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 53
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 53
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 41 using {shift down}
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 12
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 0
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 76
 
     delay 1
     --command w to close pane
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 13 using {command down}
 
     --control c then command w
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 8 using {control down}
     delay 1
+    tell application "iTerm2" to activate
     tell application "System Events" to key code 13 using {command down}
 
   end tell
