@@ -8,7 +8,6 @@
 	ci = commit
 	br = branch
 	st = status
-    fp = fetch --prune
 	cob = checkout -b
 	brd = branch -d
 	brD = branch -D
@@ -22,7 +21,9 @@
 	lrb = ls-remote --heads origin
     oops = reset head~1
     f = !git fetch && git branch -a
+    fp = !git fetch --prune && git branch -a
     rso = remote show origin
+    pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
