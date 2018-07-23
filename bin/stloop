@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if command -v figlet >/dev/null 2>&1; then
-figlet git st loop
-fi
-
-
-while true; do clr && git status; sleep 60; done
