@@ -282,7 +282,7 @@ hi MatchParen guifg=#000000 guibg=#fc802d
 " }}}
 
 " Livedown - markdown preview {{{
-nnoremap <leader>gm :LivedownToggle<CR>
+nnoremap <leader>gm :LivedownPreview<CR>
 let g:instant_markdown_autostart = 0
 " }}}
 
@@ -466,7 +466,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>wf :vertical wincmd f<CR>
 
 " Set working directory
-nnoremap <leader>. :lcd %:p:h<cr>
+nnoremap <leader>. :lcd %:p:h<CR>:CtrlPClearAllCaches<CR>
 
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
