@@ -447,9 +447,12 @@ nnoremap <leader>bc :%bd<bar>e#<CR>
 " reload vimrc file
 nnoremap <leader>! :so $MYVIMRC<cr>
 
-" reindent entire file
+" reindent entire buffer
 " mark cursor and put cursor back, center cursor in window
 nnoremap <leader>r magg=G`azz
+
+" compress multiple new lines into a single new line
+nnoremap <leader>cl :v_._,/./-j|noh<CR>
 
 " mark cursor, close buffer, create new pane, open mark
 nnoremap <leader>gt mAZZ<C-w>v`A
