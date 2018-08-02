@@ -281,11 +281,6 @@ hi CursorLine guibg=#111111
 hi MatchParen guifg=#000000 guibg=#fc802d
 " }}}
 
-" Livedown - markdown preview {{{
-nnoremap <leader>gm :LivedownPreview<CR>
-let g:instant_markdown_autostart = 0
-" }}}
-
 " NERDTree  {{{
 map <C-n> :NERDTreeToggle<CR><c-w>=
 let NERDTreeShowHidden=1
@@ -369,6 +364,11 @@ nnoremap <C-z> :redraw!<cr>
 " set a map leader for more key combos
 let mapleader = ','
 let maplocalleader = ' '
+
+" Livedown - markdown preview {{{
+nnoremap <leader>gm :LivedownPreview<CR>
+let g:instant_markdown_autostart = 0
+" }}}
 
 " create file under from path under cursor relative to current buffer
 nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<cr><cr>
@@ -510,4 +510,5 @@ endif
 abbr marign margin
 abbr widht width
 abbr iamges images
+abbr iamge image
 " }}}
