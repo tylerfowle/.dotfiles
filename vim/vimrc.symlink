@@ -355,7 +355,7 @@ noremap YY "+y<CR>
 nnoremap <CR><CR> o<Esc>
 
 " redraw vim
-nnoremap <C-z> :redraw!<cr>
+nnoremap <C-z> :redraw!<CR>
 
 " }}}
 
@@ -371,14 +371,14 @@ let g:instant_markdown_autostart = 0
 " }}}
 
 " create file under from path under cursor relative to current buffer
-nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<cr><cr>
+nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<CR><cr>
 
 " :Ack - find in all
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
 
 " turtle.vim comment header
-nnoremap <leader>ch :Commentr<cr>
+nnoremap <leader>ch :Commentr<CR>
 
 " maximize current pane
 " make all panes equal size
@@ -393,40 +393,40 @@ function! ToggleMaximizedSplit()
   endif
 endfunction
 " toggle between maximized pane, and all equal panes
-nnoremap <leader>m :call ToggleMaximizedSplit()<cr>
+nnoremap <leader>m :call ToggleMaximizedSplit()<CR>
 
 " sassvars
 nnoremap <leader>gs :e sassvars.scss<CR>:r !grep -Rh "\$\S*:" ./**/*.scss<CR>:noh<CR>
 
 " quick quit all
-nnoremap <leader>q :qa<cr>
+nnoremap <leader>q :qa<CR>
 
 " shortcut to save
-nmap <leader>, :w<cr>
+nmap <leader>, :w<CR>
 
 " open current dir in finder
-nmap <leader>o :!open .<cr>
+nmap <leader>o :!open .<CR>
 
 " run savesite in current dir
-nmap <silent> <leader>k :silent !savesite<cr> :redraw!<cr>
+nmap <silent> <leader>k :silent !savesite<CR> :redraw!<cr>
 
 " super save - save session in its current state, open agian with `vim -S`
 nnoremap <leader>s :mksession!<CR>
 
 " clear highlighted search term, but keep in register
-nnoremap <leader><esc> :noh<cr>
+nnoremap <leader><esc> :noh<CR>
 
 " select all and copy to clipboard
-nmap <leader>a :%y+<cr>
+nmap <leader>a :%y+<CR>
 
 " search through tags and jump to file with with ctrl-p
-nnoremap <leader>tf :CtrlPTag<cr>
+nnoremap <leader>tf :CtrlPTag<CR>
 " search buffers
-nnoremap <leader>bf :CtrlPBuffer<cr>
+nnoremap <leader>bf :CtrlPBuffer<CR>
 " search mru
-nnoremap <leader>d :CtrlPMRU<cr>
+nnoremap <leader>d :CtrlPMRU<CR>
 " additional shortcut for default
-nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>f :CtrlP<CR>
 
 " Buffer nav
 noremap <leader>z :bp<CR>
@@ -445,14 +445,14 @@ noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader>bc :%bd<bar>e#<CR>
 
 " reload vimrc file
-nnoremap <leader>! :so $MYVIMRC<cr>
+nnoremap <leader>! :so $MYVIMRC<CR>
 
 " reindent entire buffer
 " mark cursor and put cursor back, center cursor in window
 nnoremap <leader>r magg=G`azz
 
 " compress multiple new lines into a single new line
-nnoremap <leader>cl :v_._,/./-j|noh<CR>
+nnoremap <leader>cl :v_._,/./-j<CR>:noh<CR>
 
 " mark cursor, close buffer, create new pane, open mark
 nnoremap <leader>gt mAZZ<C-w>v`A
@@ -475,9 +475,9 @@ nnoremap <leader>. :lcd %:p:h<CR>:CtrlPClearAllCaches<CR>
 nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 
 " open v split
-nmap <leader>v :vsp<cr>
+nmap <leader>v :vsp<CR>
 " open h split
-nmap <leader>h :sp<cr>
+nmap <leader>h :sp<CR>
 
 " }}}
 " Tag Shortcuts {{{
@@ -487,9 +487,9 @@ nnoremap tt <c-]>zz
 " go back to definition
 nnoremap tb <c-t>
 " go to next tag
-nnoremap tn :tn<cr>
+nnoremap tn :tn<CR>
 " go to previous tag
-nnoremap tp :tp<cr>
+nnoremap tp :tp<CR>
 " }}}
 " Terminal Shortcuts {{{
 
