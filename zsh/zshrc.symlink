@@ -54,3 +54,9 @@ fi
 [ -f ~/.q.plugin.zsh ] && source ~/.q.plugin.zsh
 
 eval "$(pyenv init -)"
+
+# add zsh syntax highlighting
+if [[ -a ~/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]]
+then
+  source ~/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
