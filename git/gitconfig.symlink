@@ -11,7 +11,7 @@
 	cob = checkout -b
 	brd = branch -d
 	brD = branch -D
-	cim = commit -m
+	cm = commit -m
 	com = checkout master
 	pom = pull origin master
 	comp = !git checkout master && git pull origin master
@@ -24,6 +24,7 @@
     fp = !git fetch --prune && git branch -a
     rso = remote show origin
     pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+    diffw = diff --word-diff=color
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
