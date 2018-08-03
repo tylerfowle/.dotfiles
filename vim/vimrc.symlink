@@ -16,6 +16,7 @@ Plug 'junegunn/vim-peekaboo'                                                    
 " }}}
 " Utilities {{{
 Plug 'ctrlpvim/ctrlp.vim'                                                                    " fuzzy file, buffer, mru, tag finder
+Plug 'ton/vim-bufsurf'                                                                       " Navigate buffers based on history, like browser windows
 Plug 'junegunn/vim-easy-align'                                                               " ga to align by character
 Plug 'tpope/vim-repeat'                                                                      " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-surround'                                                                    " ysiw to surround word
@@ -428,9 +429,14 @@ nnoremap <leader>d :CtrlPMRU<CR>
 " additional shortcut for default
 nnoremap <leader>f :CtrlP<CR>
 
-" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>x :bn<CR>
+" Buffer navigation
+if !empty(glob("~/.dotfiles/vim.symlink/plugged/vim-bufsurf/plugin/bufsurf.vim"))
+  noremap <leader>z :BufSurfBack<CR>
+  noremap <leader>x :BufSurfForward<CR>
+else
+  noremap <leader>z :bp<CR>
+  noremap <leader>x :bn<CR>
+endif
 
 " toggle sidebar
 nnoremap <leader>; :SideBarEnterToggle<CR>
