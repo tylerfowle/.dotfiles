@@ -57,6 +57,29 @@ cp $FILENAME_LIVE $FILENAME_DEV
 
 # LIVE / CC
 ##################################################################
+
+# if in subdesigns directory
+# copy theme css so browsersync has access
+parentdir="$(basename "$(dirname "$PWD")")"
+if [ "$parentdir" = "subdesigns" ]; then
+
+# remove hardlinked css
+sed -i '' '/stylesheet.*designs.*.css/d' $FILENAME_DEV
+
+# make css directory if it doesnt exist
+if [ ! -d css ]; then
+echo "==> creating css directory"
+mkdir css
+fi
+echo "==> Copying ../../css/stylesheet.css over to ./css/theme.tmp.css"
+cp ../../css/stylesheet.css ./css/theme.tmp.css
+
+# add theme css right before head
+sed -i '' '/<\/head>/i\
+<link rel="stylesheet" href="css/theme.tmp.css">\
+' $FILENAME_LIVE
+fi;
+
 # add stylesheet for theme right before </head>
 sed -i '' '/<\/head>/i\
 <link rel="stylesheet" href="css/stylesheet.css">\

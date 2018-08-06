@@ -20,7 +20,9 @@ alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
 
 # update all the devops repos
-alias pullthatshit="cd ~/Repos/fdp-devops && git checkout master && git pull origin master && cd ./code && find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
+# alias pullthatshit="cd ~/Repos/fdp-devops && git checkout master && git pull origin master && cd ./code && find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
+alias pullthatshit="cd ~/Repos/fdp-devops && git checkout master && git pull origin master && cd ./code && find . -mindepth 1 -maxdepth 1 -type d -print | parallel git -C {} pull \;"
+alias para="find . -mindepth 1 -maxdepth 1 -type d -print | parallel 'echo \>\>\> {} && git -C {} pull' \;"
 
 # taskpaper - quick access to edit tasks in vim
 function tasks() {
