@@ -486,6 +486,13 @@ nmap <leader>v :vsp<CR>
 nmap <leader>h :sp<CR>
 
 " }}}
+
+" Text Objects {{{
+" in variable text object, includes $ before word
+vnoremap iv :<C-U>silent! normal! bbve<CR>
+onoremap iv :silent! normal bbve<CR>
+" }}}
+
 " Tag Shortcuts {{{
 
 " search tag under cursor

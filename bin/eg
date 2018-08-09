@@ -5,6 +5,8 @@ if command -v figlet >/dev/null 2>&1; then
 figlet EG
 fi
 
+HEIGHT=${1:-35}
+
 # create new tab and split it
 IFS='%'
 osascript -e '
@@ -20,7 +22,7 @@ try
     tell application "iTerm2" to activate
     tell application "System Events" to key code 30 using {command down}
 
-    repeat 35 times
+    repeat '$HEIGHT' times
       tell application "iTerm2" to activate
       tell application "System Events" to key code 125 using {command down, control down}
     end repeat
