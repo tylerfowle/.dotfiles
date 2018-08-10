@@ -22,10 +22,10 @@ Plug 'tpope/vim-repeat'                                                         
 Plug 'tpope/vim-surround'                                                                    " ysiw to surround word
 Plug 'tpope/vim-commentary'                                                                  " easy commenting
 Plug 'tpope/vim-fugitive'                                                                    " git wrapper
-Plug 'tpope/vim-rhubarb'                                                                     " hub wrapper for fugitive / github
 Plug 'raimondi/delimitmate'                                                                  " Auto close tags
 Plug 'bronson/vim-trailing-whitespace'                                                       " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'                                                                " show search position among all results
+Plug 'markonm/traces.vim'                                                                    " highlight patterns and ranges for Ex commands
 Plug 'triglav/vim-visual-increment'                                                          " use ctrl a/v to increment.decrement a visually selected block
 Plug 'mileszs/ack.vim'                                                                       " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                                                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
@@ -46,7 +46,7 @@ Plug 'pangloss/vim-javascript'                                                  
 Plug 'JulesWang/css.vim'                                                                     " css syntax
 Plug 'cakebaker/scss-syntax.vim'                                                             " scss syntax
 Plug 'lumiliet/vim-twig'                                                                     " twig syntax
-Plug 'jtratner/vim-flavored-markdown'                                                        " markdown syntax
+Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
 Plug 'davidoc/taskpaper.vim'                                                                 " .taskpaper syntax
 Plug 'junegunn/vim-journal'                                                                  " syntax for plain text notes, similiar to markdown
@@ -92,8 +92,7 @@ set iskeyword+=-          " include - in keyword matching
 " }}}
 " Autocommands & Commands {{{
 
-" install fiddle after saving
-autocmd BufWritePost finter.rb !./install
+" install ruby after saving
 autocmd BufWritePost *.rb silent! !bundle exec rake install
 
 " python formatting
@@ -127,7 +126,7 @@ augroup END
 " use github flavored markdown syntax by default
 augroup markdown
   au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  au BufRead,BufNewFile *.md,*.markdown :LivedownPreview
 augroup END
 
 " use taskpaper filetype for .taskpaper.txt files
@@ -368,7 +367,7 @@ let maplocalleader = ' '
 
 " Livedown - markdown preview {{{
 nnoremap <leader>gm :LivedownPreview<CR>
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 1
 " }}}
 
 " create file under from path under cursor relative to current buffer
