@@ -380,6 +380,14 @@ nnoremap <leader>gg :Ack
 " turtle.vim comment header
 nnoremap <leader>ch :Commentr<CR>
 
+" prompt to do math on word
+nnoremap <leader>c viwxi<C-R>=<C-R>"
+" with visual selection, do math
+vnoremap <leader>c xi<C-R>=<C-R>"<CR>
+
+" search for visual selection
+vnoremap // y/<C-R>"<CR>
+
 " maximize current pane
 " make all panes equal size
 let g:maximized_split = 1

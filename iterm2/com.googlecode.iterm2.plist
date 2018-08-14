@@ -2695,9 +2695,9 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-3840 864 700 622 -5120 68 2560 1418 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1597 1571 606 469 987 1200 2560 1418 </string>
+	<string>-1950 553 606 469 -2560 182 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1204 1545 796 486 987 1200 2560 1418 </string>
+	<string>1119 2096 796 486 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -4154,13 +4154,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-27T17:43:01Z</date>
+	<date>2018-08-09T16:03:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -9216,7 +9216,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0beta5</string>
+	<string>3.2.0beta6</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
