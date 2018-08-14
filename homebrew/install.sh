@@ -10,81 +10,68 @@ fi
 brew tap caskroom/cask
 brew install brew-cask
 brew tap caskroom/versions
+brew tap caskroom/fonts
 
-echo "==> Installing ruby"
-brew install ruby
 
-echo "==> Installing git"
-brew install git
 
-echo "==> Installing vim"
-brew install vim
+apps=(
+# git
+git
+# vim & neovim
+vim
+neovim/neovim/neovim
+# languages
+ruby
+go
+# docker
+docker
+docker-machine
+docker-compose
+# utilities
+z
+fzf
+ranger
+htop
+wget
+ack
+coreutils
+jq
+parallel
+terminal-notifier
+# fun
+archey
+figlet
+)
 
-echo "==> Installing neovim"
-brew install neovim/neovim/neovim
+casks=(
+# productivity
+docker
+slack
+discord
+dropbox
+virtualbox
+1password
+iterm2
+cyberduck
+virtualbox
+sublime-text
+# utilities
+# independent trackpad and mouse scroll direction
+scroll-reverser
+xscope
+# text expansion
+atext
+# browsers
+firefox
+google-chrome
+# music
+spotify
+# fonts
+font-hack-nerd-font
+)
 
-echo "==> Installing docker"
-brew install docker docker-machine docker-compose
-brew cask install docker
-
-echo "==> Installing wget"
-brew install wget
-
-echo "==> Installing z"
-brew install z
-
-echo "==> Installing todo.txt"
-brew install todo-txt
-
-echo "==> Installing tmux"
-brew install tmux
-# fix gulp notify in tmux
-brew install reattach-to-user-namespace
-
-echo "==> Installing fzf"
-brew install fzf
-
-echo "==> Installing vim"
-brew install tag
-
-echo "==> Installing utilities"
-brew install ranger
-brew install htop
-brew install ack
-brew install coreutils
-brew install jq
-
-echo "==> Installing fun"
-brew install archey
-
-# Cask
-#########################################
+echo "==> Installing packages"
+brew install "${apps[@]}"
 
 echo "==> Installing apps"
-
-# productivity
-brew cask install slack
-brew cask install discord
-brew cask install dropbox
-brew cask install virtualbox
-brew cask install 1password
-brew cask install iterm2
-brew cask install cyberduck
-brew cask install virtualbox
-brew cask install sublime-text
-
-# utilities
-brew cask install scroll-reverser # independent trackpad and mouse scroll direction
-brew cask install xscope
-brew cask install atext # text expansion
-
-# browsers
-brew cask install firefox
-brew cask install google-chrome
-
-# music
-brew cask install spotify
-
-# fonts
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
+brew cask install "${apps[@]}"
