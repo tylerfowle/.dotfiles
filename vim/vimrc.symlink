@@ -464,8 +464,9 @@ nnoremap <leader>! :so $MYVIMRC<CR>
 " mark cursor and put cursor back, center cursor in window
 nnoremap <leader>r magg=G`azz
 
-" move lines up and down
-nnoremap gp makdd{p==`ajdd}P==`a
+" move 1 line up from cursor to beginning of paragraph
+" move 1 line down from cursor to end of paragraph
+nnoremap gp makdd{p`ajdd}P=ip`a
 
 " compress multiple new lines into a single new line
 nnoremap <leader>cl :v_._,/./-j<CR>:noh<CR>
