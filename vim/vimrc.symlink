@@ -30,7 +30,8 @@ Plug 'triglav/vim-visual-increment'                                             
 Plug 'mileszs/ack.vim'                                                                       " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                                                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
 Plug 'wakatime/vim-wakatime'                                                                 " time tracker
-Plug 'tylerfowle/turtle.vim'                                                                 " quickly add header comments
+Plug '~/Repos/turtle.vim'                                                                    " quickly add header comments
+Plug '~/Repos/twiggy.vim'                                                                    " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
 if has('nvim')
   Plug 'floobits/floobits-neovim'                                                            " floobits - collaborative editing
@@ -124,10 +125,10 @@ augroup goWatcher
 augroup END
 
 " use github flavored markdown syntax by default
-augroup markdown
-  au!
-  au BufRead,BufNewFile *.md,*.markdown :LivedownPreview
-augroup END
+" augroup markdown
+"   au!
+"   au BufRead,BufNewFile *.md,*.markdown :LivedownPreview
+" augroup END
 
 " use taskpaper filetype for .taskpaper.txt files
 augroup taskpaper
@@ -502,6 +503,20 @@ nmap <leader>h :sp<CR>
 " in variable text object, includes $ before word
 vnoremap iv :<C-U>silent! normal! bbve<CR>
 onoremap iv :silent! normal bbve<CR>
+" }}}
+
+" Floobits shortcuts {{{
+nnoremap <leader>lj :FlooJoinWorkspace https://floobits.com/tylerfowle/workspace<CR>
+nnoremap <leader>ll :FlooLeaveWorkspace<CR>
+
+nnoremap <leader>ls :FlooSummon<CR>
+nnoremap <leader>lc :FlooClearHighlights<CR>
+
+nnoremap <leader>lf :FlooFollow<CR>
+nnoremap <leader>lt :FlooToggleFollowMode<CR>
+
+nnoremap <leader>lp :FlooShareDirPrivate %<CR>
+nnoremap <leader>lr :FlooRefreshWorkspace<CR>
 " }}}
 
 " Tag Shortcuts {{{

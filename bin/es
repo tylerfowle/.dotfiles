@@ -14,10 +14,7 @@
 #   $ e /usr/local
 #   # => opens the specified directory in your editor
 # exec "$EDITOR" -a "${1:-.}"
-
-if command -v figlet >/dev/null 2>&1; then
-figlet Editor Session
-fi
+echo "Editor Session 1.0.0"
 
 if [ ! -f ./Session.vim ]; then
 

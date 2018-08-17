@@ -1,5 +1,6 @@
 extends css
 
+# make this file more important
 priority 2
 
 snippet var "var map"
@@ -10,6 +11,10 @@ snippet ch "comment header"
 //##############################################################################
 // $1
 //##############################################################################
+endsnippet
+
+snippet trans "transform: translate(-50%,-50%);"
+transform: translate(${1:-50%}, ${2:-50%});
 endsnippet
 
 snippet dn "display: none;"
@@ -32,11 +37,9 @@ snippet aic "align-items: center;"
 align-items: center;
 endsnippet
 
-
 snippet lh "line-height"
 line-height: ${1:($2/$3)};$4
 endsnippet
-
 
 snippet fs "font-size"
 font-size: $1;$2
