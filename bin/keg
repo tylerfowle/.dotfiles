@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #KEG - kill editor gulp - stop vim and close window, stop gulp and close window, you are left with one pane
-if command -v figlet >/dev/null 2>&1; then
-figlet KEG
-fi
+ProgName="$(basename $0)"
+ProgVersion="1.1.0"
+
+echo "$ProgName $ProgVersion"
 
 IFS='%'
-osascript -e '
+osascript << EOF
 tell application "iTerm2"
 try
 
@@ -49,8 +50,15 @@ try
     tell application "iTerm2" to activate
     tell application "System Events" to key code 13 using {command down}
 
+    --control c then command w
+    tell application "iTerm2" to activate
+    tell application "System Events" to key code 8 using {control down}
+    delay 1
+    tell application "iTerm2" to activate
+    tell application "System Events" to key code 13 using {command down}
+
   end tell
 
-  end try
+end try
 end tell
-'
+EOF

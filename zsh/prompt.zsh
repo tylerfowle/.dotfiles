@@ -54,6 +54,7 @@ CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
 TAG="\uf02b"
+TREE="\uf1bb"
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -101,7 +102,7 @@ prompt_git() {
       ref="${ref} "
     fi
     if [[ "${ref/.../}" == "$ref" ]]; then
-      ref="$BRANCH $ref"
+      ref="$TREE $BRANCH $ref"
     else
       ref="$DETACHED ${ref/.../}"
     fi
