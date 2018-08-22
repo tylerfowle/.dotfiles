@@ -62,6 +62,6 @@ case $subcommand in
     sub_help
     ;;
   "" | *)
-    sub_main
+    sub_main $@
     ;;
 esac
