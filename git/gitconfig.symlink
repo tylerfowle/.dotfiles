@@ -19,12 +19,12 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lrb = ls-remote --heads origin
-    oops = reset head~1
-    f = !git fetch && git branch -a
-    fp = !git fetch --prune && git branch -a
-    rso = remote show origin
-    pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
-    diffw = diff --word-diff=color
+	oops = reset head~1
+	f = !git fetch && git branch -a
+	fp = !git fetch --prune && git branch -a
+	rso = remote show origin
+	pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+	diffw = diff --word-diff=color
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
