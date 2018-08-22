@@ -5,7 +5,8 @@ if command -v figlet >/dev/null 2>&1; then
 figlet EG
 fi
 
-HEIGHT=${1:-35}
+TERMHEIGHT=$(tput lines)
+HEIGHT=${1:-$TERMHEIGHT/6}
 
 # create new tab and split it
 IFS='%'
