@@ -37,8 +37,14 @@ alias reload!='. ~/.zshrc'
 alias gitline='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 alias gl='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 
-# New Projects copy gulp3
-alias dup='ditto ~/Repos/fed-framework/gulp3/ ./'
+# New Projects copy gulp framework
+# alias dup='ditto ~/Repos/fed-framework/gulp4/ ./'
+function dup() {
+  FILE=$1
+  FROM="/Repos/fed-framework/gulp4/$FILE"
+  TO="./$FILE"
+  ditto ~$FROM $TO
+}
 
 # fix ctags
 alias ctags="`brew --prefix`/bin/ctags"
@@ -57,29 +63,3 @@ function strfindr() {
 function filefindr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
-
-function w() {
-  case "$1" in
-	cd)
-	  cd $(ws pws ${@:2})
-	  return 0
-	  ;;
-  esac
-
-  ws $@
-}
-
-##keep the last focused finder window up to date when cd in terminal
-#function chpwd() {
-#  osascript -e 'on run pwd
-#  set f to posix file pwd
-#  tell app "Finder"
-#    if number of Finder windows is 0 then
-#      open f
-#    else
-#      set target of window 1 to f
-#    end
-#  end
-#  end' "$PWD" > /dev/null
-#}
-
