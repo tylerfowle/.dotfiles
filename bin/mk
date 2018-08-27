@@ -1,0 +1,109 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import subprocess
+import tempfile
+import ConfigParser
+import argparse
+
+ProgName="mk"
+ProgVersion="0.0.1"
+
+applescript_template = '''
+tell application "iTerm2"
+    set myterm to (current window)
+    %s
+end tell
+return
+'''
+
+print(ProgName + " " +  ProgVersion)
+
+
+def get_pane_snippet(index, cmds, path, name, split, final):
+    txt = '''
+        tell item %d of sessions of current tab of myterm
+            select
+        end tell
+        tell current session of myterm
+        ''' % index
+
+    txt += 'set name to "%s"\n' % name
+
+    if path:
+        txt += 'write text "cd %s"' % path
+
+    for cmd in cmds:
+        txt += 'write text "%s"\n' % cmd
+
+    if split or not final:
+        txt += '''split %s with default profile
+    ''' % ("vertically" if split and split.startswith('v') else "horizontally")
+
+    txt += 'end tell\n'
+
+    return txt
+
+
+def get_apple_script(config,path):
+    index = 0
+    panes_str = ''
+    # Construct the Applescript for each section of the config file.
+    for section in config.sections():
+        index += 1
+        name = section
+        path = path
+        cmds = []
+        split = None
+
+        if config.has_option(section, 'cmds'):
+            cmds = config.get(section, 'cmds')
+            cmds = [cmd for cmd in cmds.split('\n') if cmd]
+
+        if config.has_option(section, 'split'):
+            split = config.get(section, 'split')
+
+        panes_str += get_pane_snippet(index, cmds, path, name, split, index == len(config.sections()))
+
+
+    # Inject the AppleScript command in the code template
+    return applescript_template % panes_str
+
+
+def launch_apple_script(conf_file,path):
+    config = ConfigParser.ConfigParser()
+    config.read(conf_file)
+    body = get_apple_script(config,path)
+
+    # Create temporary Apple script file and launch it.
+    temp = tempfile.NamedTemporaryFile(delete=False)
+    temp.write(body)
+    temp.close()
+    cmd = "osascript {0}".format(temp.name)
+    subprocess.call(cmd, shell=True)
+    os.unlink(temp.name)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+            'config', nargs='?', help='name of the layout config in ~/.config/mk/ directory (e.g. config=develop will uses ~/.config/mk/develop.conf)', default='default')
+    parser.add_argument(
+            'path', nargs='?', help='path to dir to open pane in',default=os.getcwd())
+    args = parser.parse_args()
+
+    config_path = os.path.expanduser('~/.config/mk/{}.conf'.format(args.config))
+    path = os.path.expanduser(args.path)
+
+    if not os.path.exists(config_path):
+        print("No config file at {0}".format(config_path))
+        sys.exit(0)
+
+    launch_apple_script(config_path,path)
+
+
+if __name__ == '__main__':
+    main()
+
+# vim: tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent
