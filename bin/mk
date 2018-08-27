@@ -7,8 +7,11 @@ import tempfile
 import ConfigParser
 import argparse
 
+# todo:
+#     add height and width option to each section
+
 ProgName="mk"
-ProgVersion="0.0.1"
+ProgVersion="0.0.2"
 
 applescript_template = '''
 tell application "iTerm2"
@@ -21,6 +24,7 @@ return
 print(ProgName + " " +  ProgVersion)
 
 
+# create applescript for each section
 def get_pane_snippet(index, cmds, path, name, split, final):
     txt = '''
         tell item %d of sessions of current tab of myterm
@@ -46,10 +50,10 @@ def get_pane_snippet(index, cmds, path, name, split, final):
     return txt
 
 
+# concat all sections and inject into template
 def get_apple_script(config,path):
     index = 0
     panes_str = ''
-    # Construct the Applescript for each section of the config file.
     for section in config.sections():
         index += 1
         name = section
@@ -66,17 +70,15 @@ def get_apple_script(config,path):
 
         panes_str += get_pane_snippet(index, cmds, path, name, split, index == len(config.sections()))
 
-
-    # Inject the AppleScript command in the code template
     return applescript_template % panes_str
 
 
+# Create temporary Apple script file and launch it.
 def launch_apple_script(conf_file,path):
     config = ConfigParser.ConfigParser()
     config.read(conf_file)
     body = get_apple_script(config,path)
 
-    # Create temporary Apple script file and launch it.
     temp = tempfile.NamedTemporaryFile(delete=False)
     temp.write(body)
     temp.close()
