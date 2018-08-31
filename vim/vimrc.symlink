@@ -39,6 +39,8 @@ endif
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 " }}}
 " Syntax support {{{
 Plug 'othree/html5.vim'                                                                      " html5 syntax
@@ -222,6 +224,15 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 " }}}
 
+" ALE {{{
+let b:ale_linters = ['flake8']
+let b:ale_fixers = [
+\   'remove_trailing_lines',
+\   'isort',
+\   'yapf',
+\]
+" }}}
+
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
@@ -357,6 +368,9 @@ nnoremap <CR><CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<CR>
+
+" enable folding
+nnoremap <space> za
 
 " }}}
 
