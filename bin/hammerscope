@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+ProgName="hammerscope"
+ProgVersion="0.1.0"
+
+
+sub_main(){
+  KEYCODE=${1:-26}
+
+  IFS='%'
+  osascript << EOF
+tell application "xScope"
+	activate
+	tell application "System Events" to key code "$KEYCODE" using {command down}
+end tell
+EOF
+}
+
+
+sub_version(){
+  echo "$ProgName $ProgVersion"
+}
+
+sub_help(){
+  echo ""
+  echo "$ProgName $ProgVersion"
+  echo "Usage: $ProgName [path/to/directory/] [height]"
+  echo "    height - integer, number of times to move divider down for resizing pane"
+  echo ""
+}
+
+subcommand=$1
+case $subcommand in
+  "-v" | "--version")
+    sub_version
+    ;;
+  "-h" | "--help")
+    sub_help
+    ;;
+  "" | *)
+    sub_main $@
+    ;;
+esac
