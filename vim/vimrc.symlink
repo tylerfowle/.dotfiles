@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 " }}}
 " UI {{{
+Plug 'majutsushi/tagbar'                                                                     " Tagbar
 Plug 'nathanaelkane/vim-indent-guides', {'on': ['IndentGuidesToggle','IndentGuidesOn']}      " indent guides
 Plug 'vim-airline/vim-airline'                                                               " fancy statusline
 Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
@@ -225,12 +226,28 @@ let g:netrw_winsize = 25
 " }}}
 
 " ALE {{{
-let b:ale_linters = ['flake8']
-let b:ale_fixers = [
-\   'remove_trailing_lines',
-\   'isort',
-\   'yapf',
-\]
+
+let b:ale_linters = {
+      \ 'python': ['flake8'],
+      \ }
+let g:ale_fixers = {
+      \ '*': [
+      \ 'remove_trailing_lines',
+      \ 'trim_whitespace',
+      \ ]
+      \ }
+
+let b:ale_fixers = {
+      \ 'python': [
+      \ 'add_blank_lines_for_python_control_statements',
+      \ 'black',
+      \ 'remove_trailing_lines',
+      \ 'trim_whitespace',
+      \ 'isort',
+      \ 'yapf',
+      \ ]
+      \ }
+
 " }}}
 
 " Deoplete {{{
@@ -265,6 +282,27 @@ let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in 
 let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
+" }}}
+
+" Tagbar {{{
+let g:tagbar_type_css = {
+      \ 'ctagstype' : 'Css',
+      \ 'kinds'     : [
+      \ 'c:classes',
+      \ 's:selectors',
+      \ 'i:identities'
+      \ ]
+      \ }
+
+let g:tagbar_type_javascript = {
+    \ 'ctagstype' : 'JavaScript',
+    \ 'kinds'     : [
+        \ 'o:objects',
+        \ 'f:functions',
+        \ 'a:arrays',
+        \ 's:strings'
+    \ ]
+    \ }
 " }}}
 
 " Wakatime {{{
@@ -387,8 +425,15 @@ nnoremap <leader>gm :LivedownPreview<CR>
 let g:instant_markdown_autostart = 1
 " }}}
 
+" Ale maps {{{
+nnoremap <leader>gf :ALEFix<cr>
+" }}}
+
 " create file under from path under cursor relative to current buffer
 nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<CR><cr>
+
+" tagbar toggle
+nnoremap <leader>tb :TagbarToggle<CR>
 
 " :Ack - find in all
 " trailing space is intentional!
