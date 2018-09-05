@@ -39,8 +39,6 @@ endif
 " }}}
 " Syntax Engines {{{
 Plug 'w0rp/ale'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 " }}}
 " Syntax support {{{
 Plug 'othree/html5.vim'                                                                      " html5 syntax
@@ -71,10 +69,12 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'mattn/emmet-vim'                                                                       " html / templates
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'                                                                     " Perform all your vim insert mode completions with Tab
 " }}}
 " Snippets {{{
+Plug 'mattn/emmet-vim'                                                                       " html / templates
 Plug 'sirver/ultisnips'                                                                      " snippet engine
 Plug 'honza/vim-snippets'                                                                    " collection of snippets
 " }}}
@@ -285,8 +285,10 @@ let g:tf_background="#202020"
 colorscheme gruvbox
 
 " set custom background color
-hi Normal guibg=g:tf_background
-hi SignColumn guibg=g:tf_background
+if has('nvim')
+  hi Normal guibg=g:tf_background
+  hi SignColumn guibg=g:tf_background
+endif
 hi CursorLine guibg=#111111
 
 " customize matching paren colors
