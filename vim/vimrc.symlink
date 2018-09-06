@@ -35,9 +35,8 @@ Plug '~/Repos/turtle.vim'                                                       
 Plug '~/Repos/twiggy.vim'                                                                    " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
 Plug 'fisadev/FixedTaskList.vim'                                                             " Pending tasks list
-Plug 'ludovicchabant/vim-gutentags'                                                          " Auto generate tags files
 if has('nvim')
-  Plug 'floobits/floobits-neovim'                                                            " floobits - collaborative editing
+  Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']}                             " floobits - collaborative editing
 endif
 " }}}
 " Syntax Engines {{{
@@ -52,7 +51,6 @@ Plug 'cakebaker/scss-syntax.vim'                                                
 Plug 'lumiliet/vim-twig'                                                                     " twig syntax
 Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
-Plug 'davidoc/taskpaper.vim'                                                                 " .taskpaper syntax
 Plug 'junegunn/vim-journal'                                                                  " syntax for plain text notes, similiar to markdown
 " }}}
 " Languages {{{
@@ -87,6 +85,8 @@ Plug 'honza/vim-snippets'                                                       
 call plug#end()
 " ========================================================================================================
 " }}}
+
+
 " General Config {{{
 syntax enable             " enable syntax processing
 filetype plugin on        " load filetype-specific indent files
@@ -97,6 +97,8 @@ set ttyfast               " faster redrawing
 set tags=tags;
 set iskeyword+=-          " include - in keyword matching
 " }}}
+
+
 " Autocommands & Commands {{{
 
 " install ruby after saving
@@ -147,13 +149,15 @@ function! Chromer(...)
 endfunction
 " }}}
 
+
 " Spaces & Tabs {{{
 set tabstop=4             " number of visual spaces per TAB
 set shiftwidth=2          " number of spaces to use for indent and unindent
 set expandtab             " tabs are spaces
 " }}}
-" UI {{{
 
+
+" UI {{{
 set nowrap                     " dont wrap long lines
 set hidden                     " hide buffers, dont unload them, this fixes losing syntax on buffer change
 set number                     " show line numbers
@@ -173,31 +177,34 @@ set list                       " show invisible characters
 set listchars=tab:→\ ,trail:⋅  " list chars
 set fillchars=vert:│           " set vert split character to taller line
 let g:netrw_gx="<cWORD>"       " use whole words when opening URLs.
-
-
-
 " make comments italic
 autocmd ColorScheme * highlight Comment gui=italic
-
 " change vert slpit color to same as iterm2
 " the use of autocmd guarantees that it will override color scheme
 autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
-
 " }}}
+
+
 " Splits {{{
 set splitbelow   " open new splits to bottom
 set splitright   " open new splits to right
 " }}}
+
+
 " Searching {{{
 set ignorecase   " ignore case in search patterns
 set smartcase    " override the 'ignorecase' option if the search pattern contains upper case characters
 set incsearch    " search as characters are entered
 set hlsearch     " highlight matches
 " }}}
+
+
 " Indenting {{{
 set autoindent   " automatically set indent of new line
 set smartindent  " do smart autoindenting when starting a new line
 " }}}
+
+
 " Folding {{{
 set foldenable        " enable folding
 set foldmethod=indent " fold based on indent level
@@ -205,17 +212,21 @@ set foldlevel=10      " open most folds by default
 set foldnestmax=10    " 10 nested fold max
 set foldclose=all
 " }}}
+
+
 " Misc {{{
 set autoread    " auto reload changed files
 set modelines=1 " check the last line for file specific settings
 set path+=      " for searching
 " }}}
 
+
 " netrw {{{
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 " }}}
+
 
 " ALE {{{
 
@@ -241,6 +252,7 @@ let b:ale_fixers = {
       \ }
 
 " }}}
+
 
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -303,6 +315,7 @@ let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 " }}}
 
+
 " Tagbar {{{
 let g:tagbar_type_css = {
       \ 'ctagstype' : 'Css',
@@ -324,9 +337,11 @@ let g:tagbar_type_javascript = {
     \ }
 " }}}
 
+
 " Wakatime {{{
 let g:wakatime_ScreenRedraw = 1
 " }}}
+
 
 " colorscheme {{{
 set background=dark
@@ -352,6 +367,7 @@ hi CursorLine guibg=#111111
 hi MatchParen guifg=#000000 guibg=#fc802d
 " }}}
 
+
 " NERDTree  {{{
 map <C-n> :NERDTreeToggle<CR><c-w>=
 let NERDTreeShowHidden=1
@@ -374,6 +390,7 @@ let g:indend_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 0
 " }}}
 
+
 " DelimitMate {{{
 if has('nvim')
   let delimitMate_expand_cr = 1
@@ -381,11 +398,13 @@ endif
 let delimitMate_expand_space = 1
 " }}}
 
+
 " Ack  {{{
 
 
 
 " }}}
+
 
 " General Shortcuts {{{
 
@@ -432,6 +451,7 @@ nnoremap <C-z> :redraw!<CR>
 nnoremap <space> za
 
 " }}}
+
 
 " Leader Shortcuts {{{
 
@@ -508,16 +528,10 @@ nnoremap <leader><esc> :noh<CR>
 " select all and copy to clipboard
 nmap <leader>a :%y+<CR>
 
-" search through tags and jump to file with with ctrl-p
-nnoremap <leader>tf :CtrlPTag<CR>
-" search buffers
-nnoremap <leader>bf :CtrlPBuffer<CR>
-" search mru
-nnoremap <leader>d :CtrlPMRU<CR>
-" additional shortcut for default
+" CtrlP - find files
 nnoremap <leader>f :CtrlP<CR>
 
-" Buffer navigation
+" Buffer navigation like a browser
 if !empty(glob("~/.dotfiles/vim.symlink/plugged/vim-bufsurf/plugin/bufsurf.vim"))
   noremap <leader>z :BufSurfBack<CR>
   noremap <leader>x :BufSurfForward<CR>
@@ -578,12 +592,14 @@ nmap <leader>v :vsp<CR>
 nmap <leader>h :sp<CR>
 
 " }}}
+"
 
 " Text Objects {{{
 " in variable text object, includes $ before word
 vnoremap iv :<C-U>silent! normal! bbve<CR>
 onoremap iv :silent! normal bbve<CR>
 " }}}
+
 
 " Floobits shortcuts {{{
 nnoremap <leader>lj :FlooJoinWorkspace https://floobits.com/tylerfowle/workspace<CR>
@@ -599,6 +615,7 @@ nnoremap <leader>lp :FlooShareDirPrivate %<CR>
 nnoremap <leader>lr :FlooRefreshWorkspace<CR>
 " }}}
 
+
 " Tag Shortcuts {{{
 
 " search tag under cursor
@@ -610,6 +627,8 @@ nnoremap tn :tn<CR>
 " go to previous tag
 nnoremap tp :tp<CR>
 " }}}
+
+
 " Terminal Shortcuts {{{
 
 if has('nvim')
@@ -625,8 +644,8 @@ if has('nvim')
   noremap <leader>tt :10sp<CR>:terminal<CR>i
 
 endif
-
 " }}}
+
 
 " Abbreviations {{{
 abbr marign margin

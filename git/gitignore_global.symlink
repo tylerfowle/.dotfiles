@@ -1,5 +1,7 @@
 *.log
 *.tmp*
+tags.temp
+tags.lock
 *~
 .*.sw[a-p]
 .DS_Store
