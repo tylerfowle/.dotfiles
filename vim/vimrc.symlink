@@ -34,6 +34,8 @@ Plug 'wakatime/vim-wakatime'                                                    
 Plug '~/Repos/turtle.vim'                                                                    " quickly add header comments
 Plug '~/Repos/twiggy.vim'                                                                    " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
+Plug 'fisadev/FixedTaskList.vim'                                                             " Pending tasks list
+Plug 'ludovicchabant/vim-gutentags'                                                          " Auto generate tags files
 if has('nvim')
   Plug 'floobits/floobits-neovim'                                                            " floobits - collaborative editing
 endif
@@ -70,8 +72,9 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/context_filetype.vim'                                                           " Completion from other opened files
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }                                 " python completion source for deoplete via jedi
+Plug 'davidhalter/jedi-vim',                                                                 " auto completion is disabled
 Plug 'ervandew/supertab'                                                                     " Perform all your vim insert mode completions with Tab
 " }}}
 " Snippets {{{
@@ -241,10 +244,37 @@ let b:ale_fixers = {
 
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
+
+" complete with words from any opened file
+let g:context_filetype#same_filetypes = {}
+let g:context_filetype#same_filetypes._ = '_'
+
+
 " make deoplete with with ultisnips
 call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 " }}}
+
+
+" Jedi-vim {{{
+"
+" Disable autocompletion (using deoplete instead)
+let g:jedi#completions_enabled = 0
+
+" All these mappings work only for python code:
+" Go to definition
+let g:jedi#goto_command = ',jd'
+" Find ocurrences
+let g:jedi#usages_command = ',jo'
+" Find assignments
+let g:jedi#goto_assignments_command = ',ja'
+" Go to definition in new tab
+" nnoremap ,D :tab split<CR>:call jedi#goto()<CR>
+
+" }}}
+
+
 " UltiSnips  {{{
 
 " set default shortcut
