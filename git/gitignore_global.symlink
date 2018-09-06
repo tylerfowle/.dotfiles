@@ -1,4 +1,12 @@
 *.log
-tags
-Session.vim
+*.tmp*
+*~
+.*.sw[a-p]
 .DS_Store
+.netrwhist
+.sw[a-p]
+.vagrant
+Session.vim
+node_modules/
+npm-debug.log
+tags
