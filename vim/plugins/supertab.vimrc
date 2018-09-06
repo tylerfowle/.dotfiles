@@ -1,5 +1,7 @@
-snippet ch "comment header"
 " ##############################################################################
-" $1
+" SuperTab
+" https://github.com/ervandew/supertab
 " ##############################################################################
-endsnippet
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabContextDefaultCompletionType = "<c-n>"

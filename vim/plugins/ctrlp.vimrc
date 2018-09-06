@@ -1,5 +1,8 @@
-snippet ch "comment header"
 " ##############################################################################
-" $1
+" CtrlP
+" https://github.com/ctrlpvim/ctrlp.vim
 " ##############################################################################
-endsnippet
+
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_custom_ignore = 'node_modules\|vim.symlink\DS_Store\|git\/'
+

@@ -1,5 +1,6 @@
-snippet ch "comment header"
 " ##############################################################################
-" $1
+" Wakatime
+" https://github.com/wakatime/vim-wakatime
 " ##############################################################################
-endsnippet
+
+let g:wakatime_ScreenRedraw = 1
