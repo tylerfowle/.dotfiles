@@ -35,7 +35,7 @@ Plug 'wakatime/vim-wakatime'                                                    
 Plug '~/Repos/turtle.vim'                                                                    " quickly add header comments
 Plug '~/Repos/twiggy.vim'                                                                    " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
-Plug 'fisadev/FixedTaskList.vim'                                                             " Pending tasks list
+Plug 'vim-scripts/TaskList.vim'                                                              " tasks list: todo:, note:, fixme:
 if has('nvim')
   Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']}                             " floobits - collaborative editing
 endif

@@ -133,6 +133,7 @@ source $DOTFILES/vim/plugins/nerdtree.vimrc
 source $DOTFILES/vim/plugins/ctrlp.vimrc
 source $DOTFILES/vim/plugins/indent-guides.vimrc
 source $DOTFILES/vim/plugins/delimitmate.vimrc
+source $DOTFILES/vim/plugins/tasklist.vimrc
 
 
 " General Shortcuts {{{
