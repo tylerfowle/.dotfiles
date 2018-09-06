@@ -194,6 +194,10 @@ nnoremap <leader>gm :LivedownPreview<CR>
 let g:instant_markdown_autostart = 1
 " }}}
 
+" Python execution in neovim {{{
+nnoremap <leader>gp :vsp<CR>:term python3 %<CR>
+" }}}
+
 " Ale maps {{{
 nnoremap <leader>gf :ALEFix<cr>
 " }}}
