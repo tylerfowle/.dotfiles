@@ -71,9 +71,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'Shougo/context_filetype.vim'                                                           " Completion from other opened files
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }                                 " python completion source for deoplete via jedi
-Plug 'davidhalter/jedi-vim',                                                                 " auto completion is disabled
+Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }                " python completion source for deoplete via jedi
+Plug 'davidhalter/jedi-vim', { 'for': 'python'}                                              " auto completion is disabled
 Plug 'ervandew/supertab'                                                                     " Perform all your vim insert mode completions with Tab
 " }}}
 " Snippets {{{
