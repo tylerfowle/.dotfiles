@@ -195,7 +195,8 @@ let g:instant_markdown_autostart = 1
 " }}}
 
 " Python execution in neovim {{{
-nnoremap <leader>gp :vsp<CR>:term python3 %<CR>
+" nnoremap <leader>gp :vsp<CR>:term python2 %<CR>
+nnoremap <leader>e :ExecPython<cr>
 " }}}
 
 " Ale maps {{{

@@ -17,3 +17,14 @@ function! Chromer(...)
     silent :exec  '!open /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --app=' . a:1
   endif
 endfunction
+
+
+" execute the current file in python2 via neovim :term
+command! ExecPython call ExecPython()
+function! ExecPython()
+  :only
+  ClearTermBufs
+  :vsp
+  :term python2 %
+  wincmd p
+endfunction
