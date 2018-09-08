@@ -23,7 +23,6 @@ endfunction
 command! ExecPython call ExecPython()
 function! ExecPython()
   :only
-  ClearTermBufs
   :vsp
   :term python2 %
   wincmd p
