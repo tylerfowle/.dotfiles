@@ -22,8 +22,12 @@ endfunction
 " execute the current file in python2 via neovim :term
 command! ExecPython call ExecPython()
 function! ExecPython()
+  :normal! mA
   :only
-  :vsp
+  :silent! %bd!
+  :silent! e#
+  :below 10sp
   :term python2 %
   wincmd p
+  :normal! `A
 endfunction
