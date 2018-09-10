@@ -16,6 +16,16 @@ set iskeyword+=-          " include - in keyword matching
 " }}}
 
 
+" Session settings {{{
+
+set sessionoptions-=blank
+set sessionoptions-=folds
+set sessionoptions-=help
+set sessionoptions-=buffers
+
+" }}}
+
+
 source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
 
@@ -179,6 +189,10 @@ nnoremap <C-z> :redraw!<CR>
 
 " enable folding
 nnoremap <space> za
+
+" use tab for indenting in visual mode
+vnoremap <Tab> >gv|
+vnoremap <S-Tab> <gv
 
 " }}}
 
