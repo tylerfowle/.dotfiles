@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if command -v figlet >/dev/null 2>&1; then
-figlet STARTER
-fi
+echo "Starter 1.0.0"
 
 [ -f "$PWD"/**/*.scss ] && sass=true  || sass=false
 [ -f "$PWD"/gulpfile.js ] && gulp=true  || gulp=false
