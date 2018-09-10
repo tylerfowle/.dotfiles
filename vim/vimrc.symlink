@@ -99,6 +99,11 @@ set path+=      " for searching
 " }}}
 
 
+" Filetype {{{
+let g:python_highlight_all = 1
+" }}}
+
+
 " netrw {{{
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -201,7 +206,13 @@ vnoremap <S-Tab> <gv
 
 " set a map leader for more key combos
 let mapleader = ','
-let maplocalleader = ' '
+let maplocalleader = ';'
+
+nnoremap <localleader>r :so $MYVIMRC<CR>
+nnoremap <localleader>pu :PlugUpdate<CR>
+nnoremap <localleader>pp :PlugUpgrade<CR>
+nnoremap <localleader>pi :PlugInstall<CR>
+nnoremap <localleader>pc :PlugClean<CR>
 
 " Livedown - markdown preview {{{
 nnoremap <leader>gm :LivedownPreview<CR>
