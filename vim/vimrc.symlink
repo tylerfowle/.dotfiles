@@ -1,10 +1,12 @@
 " Tyler Fowle
+" DOTFILES
 
 
 source $DOTFILES/vim/config/plugins.vimrc
 
 
 " General Config {{{
+
 syntax enable             " enable syntax processing
 filetype plugin on        " load filetype-specific indent files
 filetype indent on
@@ -13,6 +15,7 @@ set t_Co=256              " explicitly tell vim that the terminal supports 256 c
 set ttyfast               " faster redrawing
 set tags=tags;
 set iskeyword+=-          " include - in keyword matching
+
 " }}}
 
 
@@ -30,9 +33,11 @@ source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
 
 " Spaces & Tabs {{{
+
 set tabstop=4             " number of visual spaces per TAB
 set shiftwidth=2          " number of spaces to use for indent and unindent
 set expandtab             " tabs are spaces
+
 " }}}
 
 
@@ -42,6 +47,7 @@ set hidden                     " hide buffers, dont unload them, this fixes losi
 set number                     " show line numbers
 set relativenumber             " use relative lines
 set title                      " show file name in window title
+set scrolloff=5                " keep the cursorline 5 lines away from top and bottom of screen
 set cursorline                 " highlight line with cursor
 set showmatch                  " show matching brackets
 set matchpairs+=<:>            " make < and > match as well
@@ -174,10 +180,6 @@ nnoremap <C-y> 4<C-y>
 nnoremap B ^
 nnoremap E $
 
-" o and O will not continue comments
-" nnoremap o o<Esc>^Da
-" nnoremap O O<Esc>^Da
-
 " swap directions of { and } to match up with j and k
 " this is specific to my keyboard layout
 nnoremap { }
@@ -187,7 +189,8 @@ nnoremap } {
 noremap YY "+y<CR>
 
 " insert line below
-nnoremap <CR><CR> o<Esc>
+nmap <C-Enter> O<Esc>
+nnoremap <CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<CR>
