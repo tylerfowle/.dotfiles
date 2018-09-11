@@ -26,7 +26,7 @@ function! ExecPython()
   :only
   :silent! %bd!
   :silent! e#
-  :below 10sp
+  :below vsp
   :term python2 %
   wincmd p
   :normal! `A
