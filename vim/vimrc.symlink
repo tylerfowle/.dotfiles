@@ -32,6 +32,7 @@ set sessionoptions-=buffers
 source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
 
+
 " Spaces & Tabs {{{
 
 set tabstop=4             " number of visual spaces per TAB
@@ -42,6 +43,7 @@ set expandtab             " tabs are spaces
 
 
 " UI {{{
+
 set nowrap                     " dont wrap long lines
 set hidden                     " hide buffers, dont unload them, this fixes losing syntax on buffer change
 set number                     " show line numbers
@@ -66,58 +68,74 @@ autocmd ColorScheme * highlight Comment gui=italic
 " change vert slpit color to same as iterm2
 " the use of autocmd guarantees that it will override color scheme
 autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
+
 " }}}
 
 
 " Splits {{{
+"
 set splitbelow   " open new splits to bottom
 set splitright   " open new splits to right
+
 " }}}
 
 
 " Searching {{{
+
 set ignorecase   " ignore case in search patterns
 set smartcase    " override the 'ignorecase' option if the search pattern contains upper case characters
 set incsearch    " search as characters are entered
 set hlsearch     " highlight matches
+
 " }}}
 
 
 " Indenting {{{
+
 set autoindent   " automatically set indent of new line
 set smartindent  " do smart autoindenting when starting a new line
+
 " }}}
 
 
 " Folding {{{
+
 set foldenable        " enable folding
 set foldmethod=indent " fold based on indent level
 set foldlevel=10      " open most folds by default
 set foldnestmax=10    " 10 nested fold max
 set foldclose=all
+
 " }}}
 
 
 " Misc {{{
+
 set autoread    " auto reload changed files
 set modelines=1 " check the last line for file specific settings
 set path+=      " for searching
+
 " }}}
 
 
 " Filetype {{{
+
 let g:python_highlight_all = 1
+
 " }}}
 
 
 " netrw {{{
+
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+
 " }}}
 
 
 " colorscheme {{{
+
 set background=dark
 
 if has('termguicolors')
