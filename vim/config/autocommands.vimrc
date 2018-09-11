@@ -5,6 +5,9 @@
 " install ruby after saving
 autocmd BufWritePost *.rb silent! !bundle exec rake install
 
+" Python
+autocmd FileType python set cursorcolumn
+
 " python formatting
 augroup python
   au!
