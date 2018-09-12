@@ -248,8 +248,10 @@ nnoremap <leader>e :ExecPython<cr>
 
 " Ale maps {{{
 nnoremap <leader>gf :ALEFix<cr>
-nnoremap <localleader>f :ALEFix<cr>
 " }}}
+
+" Prettydiff
+nnoremap <localleader>f :PrettyDiff<cr>
 
 " create file under from path under cursor relative to current buffer
 nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<CR><cr>
