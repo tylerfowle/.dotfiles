@@ -173,6 +173,7 @@ source $DOTFILES/vim/plugins/ctrlp.vimrc
 source $DOTFILES/vim/plugins/indent-guides.vimrc
 source $DOTFILES/vim/plugins/delimitmate.vimrc
 source $DOTFILES/vim/plugins/tasklist.vimrc
+source $DOTFILES/vim/plugins/vim-partial.vimrc
 
 
 " General Shortcuts {{{
@@ -262,6 +263,7 @@ nnoremap <leader>tb :TagbarToggle<CR>
 " :Ack - find in all
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
+
 
 " turtle.vim comment header
 nnoremap <leader>ch :Commentr<CR>

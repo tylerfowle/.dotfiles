@@ -5,7 +5,7 @@
 " prettydiff current file
 command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
-  silent :!prettydiff %
+  silent :!gprettydiff %
 endfunction
 
 " open current buffer in chrome
