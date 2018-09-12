@@ -207,14 +207,11 @@ nnoremap } {
 noremap YY "+y<CR>
 
 " insert line below
-nmap <C-Enter> O<Esc>
 nnoremap <CR> o<Esc>
 
 " redraw vim
 nnoremap <C-z> :redraw!<CR>
 
-" enable folding
-nnoremap <space> za
 
 " use tab for indenting in visual mode
 vnoremap <Tab> >gv|
@@ -229,6 +226,10 @@ vnoremap <S-Tab> <gv
 let mapleader = ','
 let maplocalleader = ';'
 
+" enable folding
+nnoremap <localleader><space> za
+
+" vim plug
 nnoremap <localleader>r :so $MYVIMRC<CR>
 nnoremap <localleader>pu :PlugUpdate<CR>
 nnoremap <localleader>pp :PlugUpgrade<CR>
@@ -236,7 +237,7 @@ nnoremap <localleader>pi :PlugInstall<CR>
 nnoremap <localleader>pc :PlugClean<CR>
 
 " Livedown - markdown preview {{{
-nnoremap <leader>gm :LivedownPreview<CR>
+nnoremap <localleader>m :LivedownPreview<CR>
 let g:instant_markdown_autostart = 1
 " }}}
 
@@ -247,6 +248,7 @@ nnoremap <leader>e :ExecPython<cr>
 
 " Ale maps {{{
 nnoremap <leader>gf :ALEFix<cr>
+nnoremap <localleader>f :ALEFix<cr>
 " }}}
 
 " create file under from path under cursor relative to current buffer
