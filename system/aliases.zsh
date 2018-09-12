@@ -65,10 +65,3 @@ function strfindr() {
 function filefindr() {
   find . -type d -name "$1" -print | xargs du -shc | gsort -h
 }
-
-
-# prettydiff with options
-function gprettydiff() {
-  ~/go/src/github.com/prettydiff/prettydiff/bin/prettydiff source:"$1" mode:"beautify" readmethod:"file" output:"$1" commline:"true" cssinsertlines:"true" insize:"2" preserve:"0" wrap:"0" braceline:"true" methodchain:"chain" summaryonly:"true" tagmerge:"false" spaceclose:"true" noleadzero:"true" html:"true" styleguide:"grunt" space:"false" $2
-}
-
