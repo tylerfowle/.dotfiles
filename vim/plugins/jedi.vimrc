@@ -15,3 +15,4 @@ let g:jedi#usages_command = ',jo'
 let g:jedi#goto_assignments_command = ',ja'
 " Go to definition in new tab
 " nnoremap ,D :tab split<CR>:call jedi#goto()<CR>
+let g:jedi#rename_command = ""

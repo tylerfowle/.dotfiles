@@ -5,13 +5,10 @@
 " install ruby after saving
 autocmd BufWritePost *.rb silent! !bundle exec rake install
 
-" Python
-autocmd FileType python set cursorcolumn
-
-" python formatting
+" python
 augroup python
   au!
-  au BufNewFile,BufRead silent! *.py
+  au BufNewFile, BufRead FileType python
   setlocal tabstop=4
   setlocal softtabstop=4
   setlocal shiftwidth=4
@@ -19,6 +16,7 @@ augroup python
   setlocal expandtab
   setlocal autoindent
   setlocal fileformat=unix
+  set cursorcolumn
 augroup END
 
 " auto reload file when changed on disk
