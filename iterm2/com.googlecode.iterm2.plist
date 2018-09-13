@@ -2697,7 +2697,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1901 2084 918 394 987 1200 2560 1418 </string>
+	<string>1900 2205 918 394 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-1237 1630 592 584 -1573 1200 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -3379,7 +3379,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraMonoNerdFontC-Regular 14</string>
+			<string>FuraMonoNerdFontC-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -3468,7 +3468,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0395025414156629</real>
+			<real>1.0280132247740967</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
