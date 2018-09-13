@@ -2,6 +2,7 @@
 " Functions
 " ##############################################################################
 
+
 " prettydiff current file
 command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
@@ -10,6 +11,7 @@ function! PrettyDiffer()
   :checktime
   :e %
 endfunction
+
 
 " open current buffer in chrome
 command! -nargs=? Chrome call Chromer(<f-args>)
@@ -33,4 +35,18 @@ function! ExecPython()
   :term python2 %
   wincmd p
   :normal! `A
+endfunction
+
+
+" maximize current pane
+" make all panes equal size
+let g:maximized_split = 1
+function! ToggleMaximizedSplit()
+  if g:maximized_split
+    :exe "normal \|_"
+    let g:maximized_split = 0
+  else
+    :exe "normal ="
+    let g:maximized_split = 1
+  endif
 endfunction
