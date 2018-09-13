@@ -5,6 +5,7 @@
 source $DOTFILES/vim/config/plugins.vimrc
 source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
+source $DOTFILES/vim/config/filetypes.vimrc
 
 
 " Vars {{{
@@ -413,7 +414,17 @@ if has('nvim')
   tnoremap <C-l> <C-\><C-N><C-w>l
 
   " create a terminal below that is 10 high and default to insert mode
-  noremap <leader>tt :10sp<CR>:terminal<CR>i
+  " noremap <leader>tt :10sp<CR>:term<CR>file Context<CR>i
+
+  highlight TermCursor ctermfg=black guifg=black
+  noremap <leader>tt :call OpenTerminal()<CR>
+  function! OpenTerminal()
+    10sp
+    :term
+    file TERM
+    :set ft=terminal
+    :startinsert
+  endfunction
 
 endif
 " }}}
