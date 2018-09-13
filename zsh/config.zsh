@@ -9,7 +9,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt NO_BG_NICE # don't nice background tasks
+setopt NO_BG_NICE # dont nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS # allow functions to have local options
@@ -24,7 +24,7 @@ setopt IGNORE_EOF
 
 setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_IGNORE_ALL_DUPS  # dont record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 # don't expand aliases _before_ completion has finished
