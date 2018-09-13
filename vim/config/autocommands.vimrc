@@ -2,6 +2,7 @@
 " Autocommands
 " ##############################################################################
 
+
 " make comments italic
 autocmd ColorScheme * highlight Comment gui=italic
 
@@ -11,20 +12,6 @@ autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
 
 " install ruby after saving
 autocmd BufWritePost *.rb silent! !bundle exec rake install
-
-" python
-augroup python
-  au!
-  au BufNewFile, BufRead FileType python
-  setlocal tabstop=4
-  setlocal softtabstop=4
-  setlocal shiftwidth=4
-  setlocal textwidth=79
-  setlocal expandtab
-  setlocal autoindent
-  setlocal fileformat=unix
-  set cursorcolumn
-augroup END
 
 " auto reload file when changed on disk
 set updatetime=750
