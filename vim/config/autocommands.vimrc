@@ -2,6 +2,13 @@
 " Autocommands
 " ##############################################################################
 
+" make comments italic
+autocmd ColorScheme * highlight Comment gui=italic
+
+" change vert split color to same as iterm2
+" the use of autocmd guarantees that it will override color scheme
+autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
+
 " install ruby after saving
 autocmd BufWritePost *.rb silent! !bundle exec rake install
 
