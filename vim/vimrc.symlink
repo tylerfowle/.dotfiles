@@ -176,6 +176,7 @@ source $DOTFILES/vim/plugins/indent-guides.vimrc
 source $DOTFILES/vim/plugins/delimitmate.vimrc
 source $DOTFILES/vim/plugins/tasklist.vimrc
 source $DOTFILES/vim/plugins/vim-partial.vimrc
+source $DOTFILES/vim/plugins/neoformat.vimrc
 
 
 " General Shortcuts {{{
@@ -253,7 +254,8 @@ nnoremap <leader>gf :ALEFix<cr>
 nnoremap <localleader>f :PrettyDiff<cr>
 
 " create file under from path under cursor relative to current buffer
-nnoremap <silent> <leader>cf :!touch %:p:h/<cfile>.scss<CR><cr>
+nnoremap <silent> <leader>cf :e <cfile>.scss<CR>
+nnoremap <localleader>cf :e <cfile><CR>
 
 " tagbar toggle
 nnoremap <leader>tb :TagbarToggle<CR>
