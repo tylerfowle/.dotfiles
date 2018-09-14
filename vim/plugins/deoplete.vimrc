@@ -24,18 +24,14 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " Default rank is 100, higher is better.
 
 call deoplete#custom#source('omni',          'mark', '⌾')
-call deoplete#custom#source('flow',          'mark', '⌁')
-call deoplete#custom#source('padawan',       'mark', '⌁')
-call deoplete#custom#source('TernJS',        'mark', '⌁')
 call deoplete#custom#source('go',            'mark', '⌁')
 call deoplete#custom#source('jedi',          'mark', '⌁')
 call deoplete#custom#source('vim',           'mark', '⌁')
 call deoplete#custom#source('neosnippet',    'mark', '⌘')
-call deoplete#custom#source('ultisnips',     'mark', '⌘ snip')
+call deoplete#custom#source('ultisnips',     'mark', 'Ц')
 call deoplete#custom#source('tag',           'mark', '⌦')
 call deoplete#custom#source('around',        'mark', '↻')
 call deoplete#custom#source('buffer',        'mark', 'ℬ')
-call deoplete#custom#source('tmux-complete', 'mark', '⊶')
 call deoplete#custom#source('syntax',        'mark', '♯')
 call deoplete#custom#source('member',        'mark', '.')
 
