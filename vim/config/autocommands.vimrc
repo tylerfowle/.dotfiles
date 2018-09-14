@@ -2,6 +2,8 @@
 " Autocommands
 " ##############################################################################
 
+" auto enter insert mode when entering a term buffer
+autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " make comments italic
 autocmd ColorScheme * highlight Comment gui=italic
