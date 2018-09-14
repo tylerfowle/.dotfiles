@@ -54,7 +54,8 @@ endif
 
 " Syntax Engines {{{
 
-Plug 'w0rp/ale'
+Plug 'w0rp/ale'          " linting and fixing
+Plug 'sbdchd/neoformat'  " formatter
 
 " }}}
 
@@ -69,11 +70,6 @@ Plug 'lumiliet/vim-twig'                                                        
 Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
 Plug 'junegunn/vim-journal'                                                                  " syntax for plain text notes, similiar to markdown
-
-" }}}
-
-" Languages {{{
-
 Plug 'fatih/vim-go'
 
 " }}}
