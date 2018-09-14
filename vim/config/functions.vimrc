@@ -7,7 +7,7 @@
 command! PrettyDiff call PrettyDiffer()
 function! PrettyDiffer()
   :w
-  silent :!prettydiff %
+  silent :!gprettydiff %
   :checktime
   :e %
 endfunction
