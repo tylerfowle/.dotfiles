@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'                                                  
 Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
 Plug 'airblade/vim-gitgutter'                                                                " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'junegunn/vim-peekaboo'                                                                 " shows registers in a sidebar
+Plug 'https://github.com/shmargum/vim-sass-colors.git'
 
 " }}}
 
