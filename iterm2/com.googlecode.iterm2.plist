@@ -2647,7 +2647,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/iterm2</string>
+	<string>~/Downloads/nord-iterm2-0.2.0/src/xml</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{704, 426}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2697,7 +2697,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1115 1720 796 486 987 1200 2560 1418 </string>
+	<string>1115 2176 770 429 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 306 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -4143,8 +4143,10 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-18T19:48:24Z</date>
+	<date>2018-09-19T13:28:12Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>Secure Input</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
@@ -4159,7 +4161,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>SwitchTabModifier</key>
@@ -4169,7 +4171,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TerminalMargin</key>
 	<integer>10</integer>
 	<key>TerminalVMargin</key>
