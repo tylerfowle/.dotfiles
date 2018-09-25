@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 " Colorscheme {{{
 
-" Plug 'exitface/synthwave.vim'
+Plug 'exitface/synthwave.vim'
 Plug 'morhetz/gruvbox'
 
 " }}}
@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline'                                                  
 Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
 Plug 'airblade/vim-gitgutter'                                                                " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'junegunn/vim-peekaboo'                                                                 " shows registers in a sidebar
-Plug 'https://github.com/shmargum/vim-sass-colors.git'
+" Plug 'shmargum/vim-sass-colors'                                                              " sass color and $var highlighting - this doesnt work great
 
 " }}}
 
@@ -33,6 +33,7 @@ Plug 'tpope/vim-repeat'                                                         
 Plug 'tpope/vim-surround'                                                                    " ysiw to surround word
 Plug 'tpope/vim-commentary'                                                                  " easy commenting
 Plug 'tpope/vim-fugitive'                                                                    " git wrapper
+Plug 'tpope/vim-ragtag'                                                                      " html mappings
 Plug 'raimondi/delimitmate'                                                                  " Auto close tags
 Plug 'bronson/vim-trailing-whitespace'                                                       " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'                                                                " show search position among all results
@@ -65,12 +66,13 @@ Plug 'sbdchd/neoformat'  " formatter
 Plug 'othree/html5.vim'                                                                      " html5 syntax
 Plug 'othree/javascript-libraries-syntax.vim'                                                " javascript libary syntax (jquery)
 Plug 'pangloss/vim-javascript'                                                               " javascript syntax
+Plug 'kchmck/vim-coffee-script'                                                              " coffeescript syntax
 Plug 'JulesWang/css.vim'                                                                     " css syntax
 Plug 'cakebaker/scss-syntax.vim'                                                             " scss syntax
 Plug 'lumiliet/vim-twig'                                                                     " twig syntax
+Plug 'godlygeek/tabular'                                                                     " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
-Plug 'junegunn/vim-journal'                                                                  " syntax for plain text notes, similiar to markdown
 Plug 'fatih/vim-go'
 
 " }}}

@@ -13,4 +13,4 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeIgnore = ['\.DS_Store$','node_modules','\~$']
+let g:NERDTreeIgnore = ['\.DS_Store$','node_modules','*.pyc','\~$']
