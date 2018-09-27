@@ -19,9 +19,6 @@ autocmd BufWritePost *.rb silent! !bundle exec rake install
 set updatetime=750
 au CursorHold,FocusGained,BufEnter * checktime
 
-" set the foldmethod to syntax for css and scss files
-au FileType css,scss setlocal foldmethod=syntax
-
 " go commands
 augroup goWatcher
   au!
