@@ -33,6 +33,16 @@ set iskeyword+=-          " include - in keyword matching
 " }}}
 
 
+" macvim settings {{{
+
+if has('gui_macvim')
+  set guioptions=
+  set guifont=Fira\ Mono:h12
+endif
+
+" }}}
+
+
 " Session settings {{{
 
 set sessionoptions-=blank

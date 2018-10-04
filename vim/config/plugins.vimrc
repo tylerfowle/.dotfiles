@@ -47,9 +47,9 @@ Plug '~/Repos/twiggy.vim'                                                       
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
 Plug 'vim-scripts/TaskList.vim'                                                              " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                                                               " makes creating partial files easy: <leader>x in visual mode
-Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}                                             " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
 
 if has('nvim')
+  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}                                             " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
   Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']}                             " floobits - collaborative editing
 endif
 
