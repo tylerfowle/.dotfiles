@@ -22,8 +22,8 @@ set -g mouse on
 
 
 # split panes
-bind d split-window -h
-bind D split-window -v
+bind v split-window -h
+bind h split-window -v
 
 
 # Reload tmux configuration
