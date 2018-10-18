@@ -71,8 +71,11 @@ Plug 'kchmck/vim-coffee-script'                                                 
 Plug 'JulesWang/css.vim'                                                                     " css syntax
 Plug 'cakebaker/scss-syntax.vim'                                                             " scss syntax
 Plug 'lumiliet/vim-twig'                                                                     " twig syntax
+Plug 'jwalton512/vim-blade'                                                                  " blade syntax
+Plug 'posva/vim-vue'
 Plug 'godlygeek/tabular'                                                                     " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
+Plug 'mzlogin/vim-markdown-toc'                                                              " markdown - generate table of contents with :GenTocGFM
 Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
 Plug 'fatih/vim-go'
 

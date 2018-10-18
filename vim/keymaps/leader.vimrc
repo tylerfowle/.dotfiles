@@ -77,6 +77,7 @@ nmap <leader>a :%y+<CR>
 
 " CtrlP - find files
 nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader><space> :CtrlPLine<CR>
 
 " Buffer navigation like a browser
 if !empty(glob("~/.dotfiles/vim.symlink/plugged/vim-bufsurf/plugin/bufsurf.vim"))

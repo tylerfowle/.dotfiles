@@ -12,6 +12,10 @@ snippet cb "contentblock - twig"
 {% endif %}
 endsnippet
 
+snippet poweredby "poweredby"
+{% include "@core/fdp_powered_by.twig" %}
+endsnippet
+
 snippet cs "contentspace - twig"
 {% if content_spaces.$1 is not empty %}$2
 {{ content_spaces.$1|raw }}$3
