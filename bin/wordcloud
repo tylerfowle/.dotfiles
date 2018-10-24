@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cat ./build/**/*.* > cloud.tmp.txt
+wordcloud_cli --text cloud.tmp.txt --imagefile cloud.tmp.png --color white --height 400 --width 600
+open cloud.tmp.png
