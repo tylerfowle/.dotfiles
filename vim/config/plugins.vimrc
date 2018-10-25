@@ -99,6 +99,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }                                  " javascript
+Plug 'carlitux/deoplete-ternjs'                                                              " javascript
 Plug 'zchee/deoplete-jedi', { 'for': 'python', 'do': ':UpdateRemotePlugins' }                " python completion source for deoplete via jedi
 Plug 'davidhalter/jedi-vim', { 'for': 'python'}                                              " auto completion is disabled
 Plug 'ervandew/supertab'                                                                     " Perform all your vim insert mode completions with Tab

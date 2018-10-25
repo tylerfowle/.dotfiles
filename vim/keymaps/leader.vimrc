@@ -11,6 +11,8 @@ nnoremap <localleader>pp :PlugUpgrade<CR>
 nnoremap <localleader>pi :PlugInstall<CR>
 nnoremap <localleader>pc :PlugClean<CR>
 
+" Jump to next warning/error
+nnoremap <localleader>n :ALENext<CR>
 
 " Livedown - markdown preview {{{
 nnoremap <localleader>m :LivedownPreview<CR>
