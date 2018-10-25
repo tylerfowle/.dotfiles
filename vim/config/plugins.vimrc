@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 
 " Colorscheme {{{
 
-Plug 'exitface/synthwave.vim'
 Plug 'morhetz/gruvbox'
 
 " }}}
@@ -20,7 +19,6 @@ Plug 'vim-airline/vim-airline'                                                  
 Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
 Plug 'airblade/vim-gitgutter'                                                                " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'junegunn/vim-peekaboo'                                                                 " shows registers in a sidebar
-" Plug 'shmargum/vim-sass-colors'                                                              " sass color and $var highlighting - this doesnt work great
 
 " }}}
 
@@ -72,7 +70,7 @@ Plug 'JulesWang/css.vim'                                                        
 Plug 'cakebaker/scss-syntax.vim'                                                             " scss syntax
 Plug 'lumiliet/vim-twig'                                                                     " twig syntax
 Plug 'jwalton512/vim-blade'                                                                  " blade syntax
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue'                                                                         " vuejs syntax
 Plug 'godlygeek/tabular'                                                                     " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
 Plug 'mzlogin/vim-markdown-toc'                                                              " markdown - generate table of contents with :GenTocGFM
