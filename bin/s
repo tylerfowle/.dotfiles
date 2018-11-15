@@ -1,11 +1,59 @@
 #!/bin/bash
 
-echo "Starter 1.0.0"
+echo "Starter 1.1.0"
 
-[ -f "$PWD"/**/*.scss ] && sass=true  || sass=false
-[ -f "$PWD"/gulpfile.js ] && gulp=true  || gulp=false
+[ -f "$PWD/**/*.scss" ] && sass=true || sass=false
+[ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
+[ -f "$PWD/package.json" ] && package=true || package=false
+[ -d "$PWD/build" ] && build=true || build=false
+[ -d "$PWD/templates/layouts" ] && twig=true || twig=false
+[ "$(type jq)" ] && jq_available=true || jq_available=false
 
-if [ $gulp == true ]; then
+echo "sass: $sass"
+echo "gulp: $gulp"
+echo "package: $package"
+echo "build/: $build"
+echo "templates/layouts/: $twig"
+echo "jq availability: $jq_available"
+
+
+
+
+# check if scripts exist in package.json file
+if [ $package == true ]; then
+  if [ $jq_available == true ]; then
+
+    if [ $(jq ".scripts" package.json) == null ]; then
+      scripts_exist=false
+      new_package=$(jq '. + { "scripts": {} }' <<< $(jq "." package.json))
+      echo "$new_package" > package.json
+    else
+      scripts_exist=true
+    fi
+
+    if [ $(jq ".scripts.start" package.json) == null ]; then
+      scripts_start_exist=false
+      new_package=$(jq '. + { "scripts": {"start": "gulp"} }' <<< $(jq "." package.json))
+      echo "$new_package" > package.json
+    else
+      scripts_start_exist=true
+    fi
+
+    echo "$scripts_exist"
+    echo "$scripts_start_exist"
+  fi
+fi
+
+
+
+# launch build tools: gulp, npm scripts, codekit
+if [ $package == true ]; then
+  echo -e "\033[92m==> package.json found \033[39m"
+  echo -e "\033[92m==> running npm start \033[39m"
+
+  ## npm start
+  npm start
+elif [ $gulp == true ]; then
   echo -e "\033[92m==> gulp found \033[39m"
   if [ -d "$PWD/node_modules/gulp" ]; then
     echo -e "\033[92m==> success - starting gulp \033[39m"

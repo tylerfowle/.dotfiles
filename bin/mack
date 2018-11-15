@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+excludes=(
+! -path "**/.git/*"
+! -path "**/node_modules/*"
+! -path "**/vendor/*"
+! -path "**/subdesigns/*"
+! -path "**/jquery/*"
+! -name "*jquery*"
+! -name "*.min.js"
+! -name "*modernizr*"
+! -name "*anythingslider*"
+)
+
+includes=(
+-name "$1"
+)
+
+search='data:.*#'
+
+
+flags='-x'"$2"
+
+# build excludes
+for item in "${excludes[@]}"; do
+  exc+="${item} "
+done
+
+
+# build includes
+for item in "${includes[@]}"; do
+  inc+="${item} "
+done
+
+find . ${inc} ${exc} | ack ${flags} ${search} \;
