@@ -16,7 +16,7 @@ includes=(
 -name "$1"
 )
 
-search='data:.*#'
+search='url.*#'
 
 
 flags='-x'"$2"

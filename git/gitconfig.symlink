@@ -25,6 +25,8 @@
 	rso = remote show origin
 	pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
 	diffw = diff --word-diff=color
+	deff = diff -- . ':(exclude)*package-lock.json' ':(exclude)*yarn.lock'
+    nuke = !git stash && git clean -fdx
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global

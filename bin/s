@@ -49,10 +49,17 @@ fi
 # launch build tools: gulp, npm scripts, codekit
 if [ $package == true ]; then
   echo -e "\033[92m==> package.json found \033[39m"
-  echo -e "\033[92m==> running npm start \033[39m"
+  if [ -d "$PWD/node_modules" ]; then
+    echo -e "\033[92m==> node_modules already installed \033[39m"
+    echo -e "\033[92m==> running npm start \033[39m"
+    ## npm start
+    npm start
+  else
+    echo -e "\033[92m==> node_modules not found \033[39m"
+    echo -e "\033[92m==> running npm install \033[39m"
+    npm install
+  fi
 
-  ## npm start
-  npm start
 elif [ $gulp == true ]; then
   echo -e "\033[92m==> gulp found \033[39m"
   if [ -d "$PWD/node_modules/gulp" ]; then
