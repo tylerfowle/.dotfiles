@@ -16,7 +16,7 @@ includes=(
 -name "$1"
 )
 
-search='url.*#'
+search='specialeasing'
 
 
 flags='-x'"$2"
