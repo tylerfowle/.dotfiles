@@ -1,7 +1,7 @@
 " Leader Shortcuts {{{
 
 " open _settings.scss
-nnoremap <localleader>s 100<C-l>:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
+nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
 
 " enable folding
 nnoremap <localleader><space> za
