@@ -1,25 +1,23 @@
-#!/usr/bin/env node
-var fs = require('fs');
+#!/usr/bin/env bash
 
+dirs=(
+./designs/np_refuge/
+./layouts/5158/5880/
+./layouts/9162/5825/
+./layouts/9162/5827/
+./layouts/9162/5830/
+./layouts/9162/5831/
+./layouts/9162/5844/
+./layouts/9162/5845/
+./layouts/9162/5846/
+./layouts/9162/5847/
+)
 
-function listDirectories(dir){
-  let dirs = []
-  return fs.readdirSync(dir, function(err, f) {
-    dirs = fs.statSync(f).isDirectory();
-  });
-}
-
-
-let dirs = {
-  designs: listDirectories('./designs/'),
-  layouts: listDirectories('./layouts/')
-}
-
-
-console.log(dirs.designs);
-console.log(dirs.layouts);
-
-dirs.layouts.forEach(function(f){
-  console.log(__dirname,f);
-  console.log(listDirectories(__dirname,f));
-});
+for d in "${dirs[@]}"; do
+  echo "${d}"
+  (
+    cd "${d}"
+    npm install
+    gulp prod
+  )
+done
