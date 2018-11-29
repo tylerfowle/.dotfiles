@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starter 1.1.0"
+echo "Starter 2.0.0"
 
 [ -f "$PWD/**/*.scss" ] && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
@@ -15,36 +15,6 @@ echo "package: $package"
 echo "build/: $build"
 echo "templates/layouts/: $twig"
 echo "jq availability: $jq_available"
-
-
-
-
-# check if scripts exist in package.json file
-if [ $package == true ]; then
-  if [ $jq_available == true ]; then
-
-    if [ $(jq ".scripts" package.json) == null ]; then
-      scripts_exist=false
-      new_package=$(jq '. + { "scripts": {} }' <<< $(jq "." package.json))
-      echo "$new_package" > package.json
-    else
-      scripts_exist=true
-    fi
-
-    if [ $(jq ".scripts.start" package.json) == null ]; then
-      scripts_start_exist=false
-      new_package=$(jq '. + { "scripts": {"start": "gulp"} }' <<< $(jq "." package.json))
-      echo "$new_package" > package.json
-    else
-      scripts_start_exist=true
-    fi
-
-    echo "$scripts_exist"
-    echo "$scripts_start_exist"
-  fi
-fi
-
-
 
 # launch build tools: gulp, npm scripts, codekit
 if [ $package == true ]; then

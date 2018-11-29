@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
-dirs=(
-./designs/np_refuge/
-./layouts/5158/5880/
-./layouts/9162/5825/
-./layouts/9162/5827/
-./layouts/9162/5830/
-./layouts/9162/5831/
-./layouts/9162/5844/
-./layouts/9162/5845/
-./layouts/9162/5846/
-./layouts/9162/5847/
-)
+packs=$(find . -name package.json -not -path "**/node_modules/*")
+count=0
 
-for d in "${dirs[@]}"; do
-  echo "${d}"
+for f in $packs; do
+  count=$((count + 1))
   (
-    cd "${d}"
-    npm install
-    gulp prod
+  echo $count
+  dirnam="$(dirname "$f")"
+  dir="${dirnam#*/*/}"
+
+  jq ".name=\"${dir}\"" "${f}" | sponge "${f}"
+
+  #     dir="$(dirname "${d}")"
+  #     cd "$dir"
+  #     echo "$dir"
+  #     yarn install --silent
+  #     yarn upgrade
+  #     echo "$dir"
+  #     echo "$dir" >> ~/Desktop/yarn-audit.logs
+  #     yarn audit >> ~/Desktop/yarn-audit.logs
   )
 done
