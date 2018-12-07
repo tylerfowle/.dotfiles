@@ -41,3 +41,6 @@ nnoremap <C-z> :redraw!<CR>
 " use tab for indenting in visual mode
 vnoremap <Tab> >gv|
 vnoremap <S-Tab> <gv
+
+" open github issues with issues # under cursor
+nnoremap gh :!open -a "/Applications/Google Chrome.app" 'https://github.com/firespring/fdp_cdn/issues/'<cword><CR>

@@ -21,6 +21,11 @@ nnoremap <localleader>m :LivedownPreview<CR>
 let g:instant_markdown_autostart = 1
 " }}}
 
+" Quickfix {{{
+nnoremap <localleader>j :cn<CR>
+nnoremap <localleader>k :cp<CR>
+" }}}
+
 " Python execution in neovim {{{
 " nnoremap <leader>gp :vsp<CR>:term python2 %<CR>
 nnoremap <leader>e :ExecPython<cr>
