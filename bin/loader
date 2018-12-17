@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+function noder() {
 packs=$(find . -name package.json -not -path "**/node_modules/*")
 count=0
 
@@ -22,3 +23,22 @@ for f in $packs; do
   #     yarn audit >> ~/Desktop/yarn-audit.logs
   )
 done
+}
+
+
+
+
+function looper() {
+dirs=$(find . -type d -name "np_*")
+
+for d in $dirs; do
+  (
+  cd $d
+  pwd
+  . fpm $1
+  )
+done
+}
+
+
+looper
