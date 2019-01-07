@@ -27,6 +27,7 @@
 	diffw = diff --word-diff=color
 	deff = diff -- . ':(exclude)*package-lock.json' ':(exclude)*yarn.lock'
     nuke = !git stash && git clean -fdx
+    c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
 [core]
 	editor = "nvim"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
