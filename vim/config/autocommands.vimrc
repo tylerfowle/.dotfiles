@@ -26,3 +26,7 @@ augroup goWatcher
   au BufWritePre *.go silent! :GoBuild
   au BufWritePre *.go silent! :!go build
 augroup END
+
+" leave paste mode automatically
+" https://github.com/neovim/neovim/issues/7994
+au InsertLeave * set nopaste
