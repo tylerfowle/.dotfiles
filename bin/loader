@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function noder() {
+function loader() {
 packs=$(find . -name package.json -not -path "**/node_modules/*" -not -path "**/**/subdesigns/**/*")
 count=0
 
@@ -31,16 +31,16 @@ done
 
 
 function looper() {
-dirs=$(find . -type d -name "np_*")
+dirs=$(find . -type d -maxdepth 1)
 
 for d in $dirs; do
   (
   cd $d
   pwd
-  . fpm $1
+  ditto ~/Repos/fdp-devops/code/cdn/salt-tools/subdesign/package.json ./package.json
   )
 done
 }
 
 
-noder
+looper
