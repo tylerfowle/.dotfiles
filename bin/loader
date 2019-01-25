@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
 function noder() {
-packs=$(find . -name package.json -not -path "**/node_modules/*")
+packs=$(find . -name package.json -not -path "**/node_modules/*" -not -path "**/**/subdesigns/**/*")
 count=0
 
 for f in $packs; do
   count=$((count + 1))
   (
-  echo $count
   dirnam="$(dirname "$f")"
   dir="${dirnam#*/*/}"
+  dir="$(basename "$dir")"
+
+  echo $count $dirnam $dir
 
   jq ".name=\"${dir}\"" "${f}" | sponge "${f}"
 
@@ -41,4 +43,4 @@ done
 }
 
 
-looper
+noder

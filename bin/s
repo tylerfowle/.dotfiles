@@ -28,6 +28,7 @@ if [ $package == true ]; then
     echo -e "\033[92m==> node_modules not found \033[39m"
     echo -e "\033[92m==> running npm install \033[39m"
     npm install
+    npm start
   fi
 
 elif [ $gulp == true ]; then
