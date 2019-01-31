@@ -6,6 +6,11 @@ logFile=cashier.npm.log
 IFS=$'\n'
 startTime=$(date +%s)
 
+unchecked='[ ]'
+modified='\033[31m[✗]\033[39m'
+skipped='\033[33m[•]\033[39m'
+passed='\033[32m[✓]\033[39m'
+
 sub_list() {
   find "${1:-.}" -type f -name "$cacheFile"
 }
@@ -36,7 +41,7 @@ sub_build(){
   isDesign=false
 
   elapsedTime=$(( $(date +%s) - $startTime ))
-  echo "$elapsedTime - basePath: $basePath"
+  echo -e "$unchecked basePath: $basePath"
 
   if [[ "${basePath##*/}" == "cdn" ]]; then
     isCDN=true
@@ -57,7 +62,7 @@ sub_build(){
       )
     done
 
-    for l in "$basePath"/layouts/*/; do
+    for l in "$basePath"/layouts/**/*; do
       (
       sub_build "$l"
       )
@@ -74,6 +79,8 @@ sub_build(){
 
   # skip if no package.json
   if [ ! -f "$basePath"/package.json ]; then
+    echo -ne "\033[1A\r\033[K"
+    echo -e "$skipped basePath: $basePath"
     return
   fi
 
@@ -85,24 +92,28 @@ sub_build(){
   fi
 
   cacheTime=$(cat "$basePath"/"$cacheFile")
-  allFiles=$(find "$basePath" -type f -name "*" -not -name "*.log" -not -name "*.lock" -not -path "**/subdesigns/*")
+  allFiles=$(find "$basePath" -type f -name "*" -not -name "*.log" -not -name "*.lock" -not -path "**/subdesigns/*" -not -path "**/.*/*")
 
   for f in $allFiles; do
-    echo -ne "\r\033[K$elapsedTime - $f"
+    echo -ne "\r\033[K$f"
     fileTime=$(date -r "$f" +%s)
 
     # compare last modified time to time in cache
     if [ "$fileTime" -gt "$cacheTime" ]; then
-      echo ""
       echo "modified: $f"
       modified=true
     fi
   done
-  echo -ne "\r\033[K"
+
+
 
   if [ "$modified" = true ]; then
-    echo "$elapsedTime - >> modified"
+    echo -ne "\033[1A\r\033[K"
+    echo -e "$modified basePath: $basePath"
     run_script "$basePath"
+  else
+    echo -ne "\033[1A\r\033[K"
+    echo -e "$passed basePath: $basePath"
   fi
 
 }
