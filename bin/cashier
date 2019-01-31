@@ -2,86 +2,111 @@
 ProgName="$(basename $0)"
 ProgVersion="0.0.1"
 cacheFile=cashier.cache.log
+logFile=cashier.npm.log
+IFS=$'\n'
+startTime=$(date +%s)
 
 sub_list() {
-  find ${1:-.} -type f -name "$cacheFile"
+  find "${1:-.}" -type f -name "$cacheFile"
 }
 
 sub_clean() {
-  find ${1:-.} -type f -name "$cacheFile" -exec rm {} \;
+  find "${1:-.}" -type f -name "$cacheFile" -exec rm {} \;
+  find "${1:-.}" -type f -name "$logFile" -exec rm {} \;
 }
 
 run_script() {
   (
-  cd "$1"
+  if [ -d "$1" ]; then
+    cd "$1"
+  fi
+
   if [ -f package.json ]; then
-    npm run build
+    npm run build > "$logFile"
+    date +%s > "$cacheFile"
   fi
   )
 }
 
 sub_build(){
-  currentTime=$(date +%s)
-  loopDir=${1:-*/}
+  basePath="${1:-$PWD}"
+  modified=false
+  isCDN=false
+  isParent=false
+  isDesign=false
 
-  # loop directories
-  for d in $loopDir/*; do
+  elapsedTime=$(( $(date +%s) - $startTime ))
+  echo "$elapsedTime - basePath: $basePath"
 
-    if [ ! -d "$d" ]; then
-      continue
+  if [[ "${basePath##*/}" == "cdn" ]]; then
+    isCDN=true
+  elif [[ "${basePath##*/}" =~ designs|layouts|subdesigns ]]; then
+    isParent=true
+  else
+    isDesign=true
+  fi
+
+  # echo "isCDN: $isCDN"
+  # echo "isParent: $isParent"
+  # echo "isDesign: $isDesign"
+
+  if [ "$isCDN" == true ]; then
+    for d in "$basePath"/designs/*/; do
+      (
+      sub_build "$d"
+      )
+    done
+
+    for l in "$basePath"/layouts/*/; do
+      (
+      sub_build "$l"
+      )
+    done
+  fi
+
+  if [ "$isParent" == true ]; then
+    for d in "$basePath"/*/; do
+      (
+      sub_build "$d"
+      )
+    done
+  fi
+
+  # skip if no package.json
+  if [ ! -f "$basePath"/package.json ]; then
+    return
+  fi
+
+  # check if cache file exists
+  if [ ! -f "$basePath"/"$cacheFile" ]; then
+    echo ">> create cache"
+    run_script "$basePath"
+    exit
+  fi
+
+  cacheTime=$(cat "$basePath"/"$cacheFile")
+  allFiles=$(find "$basePath" -type f -name "*" -not -name "*.log" -not -name "*.lock" -not -path "**/subdesigns/*")
+
+  for f in $allFiles; do
+    echo -ne "\r\033[K$elapsedTime - $f"
+    fileTime=$(date -r "$f" +%s)
+
+    # compare last modified time to time in cache
+    if [ "$fileTime" -gt "$cacheTime" ]; then
+      echo ""
+      echo "modified: $f"
+      modified=true
     fi
-
-    if [ -d "$d/subdesigns" ]; then
-      sub_build "$d/subdesigns"
-    fi
-
-    # set modified to false for each dir
-    modified=false
-
-    # check if cache file exists
-    if [ -f "$d"/"$cacheFile" ]; then
-
-      cacheTime=$(cat "$d"/"$cacheFile")
-
-      # loop through all files in directory
-      for f in "$d"*; do
-
-        # skip cache file
-        if [ "${f##*/}" == "$cacheFile" ]; then
-          continue
-        fi
-
-        fileTime=$(date -r "$f" +%s)
-
-        # compare last modified time to time in cache
-        if [ "$fileTime" -gt "$cacheTime" ]; then
-          echo "modified: $f"
-          modified=true
-        fi
-
-      done
-
-      # if any files modified time is greater than cache, delete cache file and run script
-      if [ "$modified" = true ]; then
-        echo ">>>>>>>>>>>> run script"
-        run_script "$d"
-        # add new cache after script completes
-        echo "$currentTime" > "$d"/"$cacheFile"
-      else
-        echo ">> skipping: $d"
-      fi
-
-      # never cached before, create now
-    else
-      echo ">> no cache found: $d"
-      echo ">>>>>>>>>>>> run script"
-      run_script "$d"
-      # add new cache after script completes
-      echo "$currentTime" > "$d"/"$cacheFile"
-    fi
-
   done
+  echo -ne "\r\033[K"
+
+  if [ "$modified" = true ]; then
+    echo "$elapsedTime - >> modified"
+    run_script "$basePath"
+  fi
+
 }
+
 
 
 
