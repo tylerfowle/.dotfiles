@@ -7,8 +7,12 @@ IFS=$'\n'
 startTime=$(date +%s)
 
 unchecked='[ ]'
-modified='\033[31m[✗]\033[39m'
+failed='\033[31m[✗]\033[39m'
+
+modified='\033[33m[±]\033[39m'
 skipped='\033[33m[•]\033[39m'
+
+create='\033[34m[‣]\033[39m'
 passed='\033[32m[✓]\033[39m'
 
 sub_list() {
@@ -86,7 +90,8 @@ sub_build(){
 
   # check if cache file exists
   if [ ! -f "$basePath"/"$cacheFile" ]; then
-    echo ">> create cache"
+    echo -ne "\033[1A\r\033[K"
+    echo -e "$create basePath: $basePath"
     run_script "$basePath"
     exit
   fi
