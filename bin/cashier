@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+ProgName="$(basename $0)"
+ProgVersion="0.0.1"
+cacheFile=cashier.cache.log
+
+sub_list() {
+  find ${1:-.} -type f -name "$cacheFile"
+}
+
+sub_clean() {
+  find ${1:-.} -type f -name "$cacheFile" -exec rm {} \;
+}
+
+run_script() {
+  (
+  cd "$1"
+  if [ -f package.json ]; then
+    npm run build
+  fi
+  )
+}
+
+sub_build(){
+  currentTime=$(date +%s)
+  loopDir=${1:-*/}
+
+  # loop directories
+  for d in $loopDir/*; do
+
+    if [ ! -d "$d" ]; then
+      continue
+    fi
+
+    if [ -d "$d/subdesigns" ]; then
+      sub_build "$d/subdesigns"
+    fi
+
+    # set modified to false for each dir
+    modified=false
+
+    # check if cache file exists
+    if [ -f "$d"/"$cacheFile" ]; then
+
+      cacheTime=$(cat "$d"/"$cacheFile")
+
+      # loop through all files in directory
+      for f in "$d"*; do
+
+        # skip cache file
+        if [ "${f##*/}" == "$cacheFile" ]; then
+          continue
+        fi
+
+        fileTime=$(date -r "$f" +%s)
+
+        # compare last modified time to time in cache
+        if [ "$fileTime" -gt "$cacheTime" ]; then
+          echo "modified: $f"
+          modified=true
+        fi
+
+      done
+
+      # if any files modified time is greater than cache, delete cache file and run script
+      if [ "$modified" = true ]; then
+        echo ">>>>>>>>>>>> run script"
+        run_script "$d"
+        # add new cache after script completes
+        echo "$currentTime" > "$d"/"$cacheFile"
+      else
+        echo ">> skipping: $d"
+      fi
+
+      # never cached before, create now
+    else
+      echo ">> no cache found: $d"
+      echo ">>>>>>>>>>>> run script"
+      run_script "$d"
+      # add new cache after script completes
+      echo "$currentTime" > "$d"/"$cacheFile"
+    fi
+
+  done
+}
+
+
+
+# boilerplate below
+
+# print the name & version
+sub_version(){
+  echo "$ProgName $ProgVersion"
+}
+
+# help
+sub_help(){
+  printf "$ProgName $ProgVersion\n\n"
+  printf "Usage:\n"
+  printf "\t$ProgName <subcommand> [options]\n\n"
+  printf "Subcommands:\n"
+
+  print_columns "help,--help,-h" "display this help"
+  print_columns "version,--version,-v" "display the version information"
+  print_columns "[command_name]" "run the [command_name]"
+  printf "\n"
+}
+
+print_columns(){
+  printf "\t%-30s %-30s\n" "$1" "$2"
+}
+
+subcommand=$1
+case $subcommand in
+  "" | "-h" | "--help")
+    sub_help
+    ;;
+  "-v" | "--version")
+    sub_version
+    ;;
+  *)
+    shift
+    sub_${subcommand} $@
+    if [ $? = 127 ]; then
+      echo "Error: '$subcommand' is not a known subcommand." >&2
+      echo "       Run '$ProgName --help' for a list of known subcommands." >&2
+      exit 1
+    fi
+    ;;
+esac
+
