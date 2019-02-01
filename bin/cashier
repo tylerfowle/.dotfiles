@@ -41,8 +41,8 @@ run_script() {
     ) 2>&1)
 
     if [ "$runNPM" != "" ]; then
-      echo "$runNPM"
       echo -ne "\033[1A\r\033[K"
+      echo "$runNPM"
       echo -e "$failed root: $1"
     else
       echo -ne "\033[1A\r\033[K"
@@ -145,7 +145,7 @@ sub_build(){
   # skip if no package.json
   if [ ! -f "$basePath"/package.json ]; then
     echo -ne "\033[1A\r\033[K"
-    echo -e "$skipped root: $basePath"
+    # echo -e "$skipped root: $basePath"
     return
   fi
 
