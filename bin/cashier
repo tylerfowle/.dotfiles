@@ -9,7 +9,7 @@ startTime=$(date +%s)
 unchecked='[ ]'
 failed='\033[31m[✗]\033[39m'
 
-modified='\033[33m[±]\033[39m'
+changed='\033[33m[±]\033[39m'
 skipped='\033[33m[•]\033[39m'
 
 create='\033[34m[‣]\033[39m'
@@ -32,7 +32,7 @@ run_script() {
 
   if [ -f package.json ]; then
     npm run build > "$logFile"
-    date +%s > "$cacheFile"
+    echo "$(date +%s)" > "$cacheFile"
   fi
   )
 }
@@ -99,22 +99,24 @@ sub_build(){
   cacheTime=$(cat "$basePath"/"$cacheFile")
   allFiles=$(find "$basePath" -type f -name "*" -not -name "*.log" -not -name "*.lock" -not -path "**/subdesigns/*" -not -path "**/.*/*")
 
+  echo ""
   for f in $allFiles; do
-    echo -ne "\r\033[K$f"
+    echo -ne "\033[1A\r\033[K"
+    echo -e "$f"
     fileTime=$(date -r "$f" +%s)
 
     # compare last modified time to time in cache
     if [ "$fileTime" -gt "$cacheTime" ]; then
-      echo "modified: $f"
       modified=true
     fi
   done
-
+  echo -ne "\033[1A\r\033[K"
+  sleep 1
 
 
   if [ "$modified" = true ]; then
     echo -ne "\033[1A\r\033[K"
-    echo -e "$modified basePath: $basePath"
+    echo -e "$changed basePath: $basePath"
     run_script "$basePath"
   else
     echo -ne "\033[1A\r\033[K"
