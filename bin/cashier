@@ -20,6 +20,7 @@ sub_list() {
 }
 
 sub_clean() {
+  echo "cleaning..."
   find "${1:-.}" -type f -name "$cacheFile" -exec rm {} \;
   find "${1:-.}" -type f -name "$logFile" -exec rm {} \;
 }
@@ -31,22 +32,44 @@ run_script() {
   fi
 
   if [ -f package.json ]; then
-    npm run build > "$logFile"
-    echo "$(date +%s)" > "$cacheFile"
+
+    runNPM=""
+    runNPM=$((
+    (
+    npm run build
+    ) 1>"$logFile"
+    ) 2>&1)
+
+    if [ "$runNPM" != "" ]; then
+      echo "$runNPM"
+      echo -ne "\033[1A\r\033[K"
+      echo -e "$failed root: $1"
+    else
+      echo -ne "\033[1A\r\033[K"
+      echo -e "$passed root: $1"
+      echo "$(date +%s)" > "$cacheFile"
+    fi
+
   fi
   )
 }
 
 sub_build(){
   modified=false
+  runClean=false
   isCDN=false
   isParent=false
   isDesign=false
 
   checkSubdesigns=false
-  while getopts 'ts' flag; do
+  checkLayouts=false
+  checkDesigns=false
+  while getopts 'csldt' flag; do
     case "${flag}" in
+      c) runClean=true ;;
       s) checkSubdesigns=true ;;
+      l) checkLayouts=true ;;
+      d) checkDesigns=true ;;
       t) TYPE="${OPTARG}" ;;
       *) echo "flag not found"
         exit 1 ;;
@@ -56,7 +79,10 @@ sub_build(){
 
   basePath="${1:-$PWD}"
 
-  elapsedTime=$(( $(date +%s) - $startTime ))
+  if [ $runClean = true ]; then
+    sub_clean
+  fi
+
   echo -e "$unchecked root: $basePath"
 
   if [[ "${basePath##*/}" == "cdn" ]]; then
@@ -72,17 +98,31 @@ sub_build(){
   # echo "isDesign: $isDesign"
 
   if [ "$isCDN" == true ]; then
-    for d in "$basePath"/designs/*/; do
-      (
-      sub_build "$d"
-      )
-    done
+    if [ $checkDesigns = true ]; then
+      for d in "$basePath"/designs/*/; do
+        (
+        sub_build "$d"
+        )
+      done
+    elif [ $checkLayouts = true ]; then
+      for l in "$basePath"/layouts/**/*; do
+        (
+        sub_build "$l"
+        )
+      done
+    else
+      for d in "$basePath"/designs/*/; do
+        (
+        sub_build "$d"
+        )
+      done
 
-    for l in "$basePath"/layouts/**/*; do
-      (
-      sub_build "$l"
-      )
-    done
+      for l in "$basePath"/layouts/**/*; do
+        (
+        sub_build "$l"
+        )
+      done
+    fi
   fi
 
   if [ "$isParent" == true ]; then
@@ -119,7 +159,17 @@ sub_build(){
 
   cacheTime=$(cat "$basePath"/"$cacheFile")
   ignoredPaths=("**/subdesigns/*" "**/node_modules/*")
-  allFiles=$(find "$basePath" -type f -name "*" -not -name "*.log" -not -name "*.lock" -not -path "$ignoredPaths" -not -path "**/.*/*")
+  ignoredFiles=("*.log" "*.lock" "*.jpg")
+  allFiles=$(find "$basePath" -type f -name "*" \
+    -not -name ".*" \
+    -not -name "*.log" \
+    -not -name "*.lock" \
+    -not -name "*.jpg" \
+    -not -name "*.gif" \
+    -not -name "*.png" \
+    -not -path "**/subdesigns/*" \
+    -not -path "**/node_modules/*" \
+    -not -path "**/.*/*")
 
   echo ""
   for f in $allFiles; do
