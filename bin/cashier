@@ -5,6 +5,7 @@ cacheFile=cashier.cache.log
 logFile=cashier.npm.log
 IFS=$'\n'
 startTime=$(date +%s)
+failedPackages=()
 
 unchecked='[ ]'
 failed='\033[31m[✗]\033[39m'
@@ -44,6 +45,7 @@ run_script() {
       echo -ne "\033[1A\r\033[K"
       echo "$runNPM"
       echo -e "$failed root: $1"
+      failedPackages+=("$1")
     else
       echo -ne "\033[1A\r\033[K"
       echo -e "$passed root: $1"
@@ -64,13 +66,12 @@ sub_build(){
   checkSubdesigns=false
   checkLayouts=false
   checkDesigns=false
-  while getopts 'csldt' flag; do
+  while getopts 'csld' flag; do
     case "${flag}" in
       c) runClean=true ;;
       s) checkSubdesigns=true ;;
       l) checkLayouts=true ;;
       d) checkDesigns=true ;;
-      t) TYPE="${OPTARG}" ;;
       *) echo "flag not found"
         exit 1 ;;
     esac
@@ -99,11 +100,19 @@ sub_build(){
 
   if [ "$isCDN" == true ]; then
     if [ $checkDesigns = true ]; then
-      for d in "$basePath"/designs/*/; do
-        (
-        sub_build "$d"
-        )
-      done
+      if [ $checkSubdesigns = true ]; then
+        for d in "$basePath"/designs/*/subdesigns/*; do
+          (
+          sub_build "$d"
+          )
+        done
+      else
+        for d in "$basePath"/designs/*/; do
+          (
+          sub_build "$d"
+          )
+        done
+      fi
     elif [ $checkLayouts = true ]; then
       for l in "$basePath"/layouts/**/*; do
         (
@@ -111,11 +120,19 @@ sub_build(){
         )
       done
     else
-      for d in "$basePath"/designs/*/; do
-        (
-        sub_build "$d"
-        )
-      done
+      if [ $checkSubdesigns = true ]; then
+        for d in "$basePath"/designs/*/subdesigns/*; do
+          (
+          sub_build "$d"
+          )
+        done
+      else
+        for d in "$basePath"/designs/*/; do
+          (
+          sub_build "$d"
+          )
+        done
+      fi
 
       for l in "$basePath"/layouts/**/*; do
         (
@@ -158,8 +175,6 @@ sub_build(){
   fi
 
   cacheTime=$(cat "$basePath"/"$cacheFile")
-  ignoredPaths=("**/subdesigns/*" "**/node_modules/*")
-  ignoredFiles=("*.log" "*.lock" "*.jpg")
   allFiles=$(find "$basePath" -type f -name "*" \
     -not -name ".*" \
     -not -name "*.log" \
@@ -248,3 +263,5 @@ case $subcommand in
     ;;
 esac
 
+# when script finished
+echo "${failedPackages[@]}"
