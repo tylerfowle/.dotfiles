@@ -3,9 +3,9 @@ ProgName="$(basename $0)"
 ProgVersion="0.0.1"
 cacheFile=cashier.cache.log
 logFile=cashier.npm.log
+failedFile=$HOME/.cashier/cashier.failed.log
 IFS=$'\n'
 startTime=$(date +%s)
-failedPackages=()
 
 unchecked='[ ]'
 failed='\033[31m[✗]\033[39m'
@@ -15,6 +15,28 @@ skipped='\033[33m[•]\033[39m'
 
 create='\033[34m[‣]\033[39m'
 passed='\033[32m[✓]\033[39m'
+
+mkdir -p $HOME/.cashier
+echo "" > "$failedFile"
+
+trap on_exit INT
+
+function on_exit() {
+  echo ""
+  echo "failed packages:"
+  cat "$failedFile"
+}
+
+# disable line wrap
+tput rmam
+
+sub_cash() {
+  caffeinate -i find . -type f -name 'package.json' \
+    -mindepth 1 \
+    -not -path "**/salt-tools/*" \
+    -not -path "**/node_modules/*" \
+    -exec dirname {} \; | parallel 'cd {}; cashier build'
+}
 
 sub_list() {
   find "${1:-.}" -type f -name "$cacheFile"
@@ -42,10 +64,10 @@ run_script() {
     ) 2>&1)
 
     if [ "$runNPM" != "" ]; then
-      echo -ne "\033[1A\r\033[K"
+      # echo -ne "\033[1A\r\033[K"
       echo "$runNPM"
       echo -e "$failed root: $1"
-      failedPackages+=("$1")
+      echo "$1" >> "$failedFile"
     else
       echo -ne "\033[1A\r\033[K"
       echo -e "$passed root: $1"
@@ -161,14 +183,14 @@ sub_build(){
 
   # skip if no package.json
   if [ ! -f "$basePath"/package.json ]; then
-    echo -ne "\033[1A\r\033[K"
+    # echo -ne "\033[1A\r\033[K"
     # echo -e "$skipped root: $basePath"
     return
   fi
 
   # check if cache file exists
   if [ ! -f "$basePath"/"$cacheFile" ]; then
-    echo -ne "\033[1A\r\033[K"
+    # echo -ne "\033[1A\r\033[K"
     echo -e "$create root: $basePath"
     run_script "$basePath"
     exit
@@ -186,14 +208,10 @@ sub_build(){
     -not -path "**/node_modules/*" \
     -not -path "**/.*/*")
 
-  echo ""
+  # echo ""
   for f in $allFiles; do
-    echo -ne "\033[1A\r\033[K"
-    # disable line wrap
-    tput rmam
-    echo -e "$f"
-    # enable line wrap
-    tput smam
+    # echo -ne "\033[1A\r\033[K"
+    # echo -e "$f"
     fileTime=$(date -r "$f" +%s)
 
     # compare last modified time to time in cache
@@ -201,12 +219,12 @@ sub_build(){
       modified=true
     fi
   done
-  echo -ne "\033[1A\r\033[K"
+  # echo -ne "\033[1A\r\033[K"
   sleep 1
 
 
   if [ "$modified" = true ]; then
-    echo -ne "\033[1A\r\033[K"
+    # echo -ne "\033[1A\r\033[K"
     echo -e "$changed root: $basePath"
     run_script "$basePath"
   else
@@ -263,5 +281,5 @@ case $subcommand in
     ;;
 esac
 
-# when script finished
-echo "${failedPackages[@]}"
+# enable line wrap
+tput smam
