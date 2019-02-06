@@ -1,0 +1,262 @@
+#!/usr/bin/env bash
+ProgName=$(basename $0)
+
+cdnPath=$HOME/Repos/fdp-devops/code/cdn
+saltPath=$HOME/Repos/fdp-devops/code/cdn/salt-tools
+
+# find . -type f -name stylesheet.scss -path "**/subdesigns/*" -exec sed -i '' "s%../../../scss/%../../../../build/scss/%" {} +
+
+# accepts path of dir to run setup on
+function setupDir() {
+
+  for f in $1; do
+    (
+    rootPath=$(realpath --relative-to="${PWD}" "${HOME}"/Repos/fdp-devops/code/cdn)
+
+    config_eslint="module.exports = require(\"${rootPath}/.eslintrc.js\");"
+    config_babel="module.exports = require(\"${rootPath}/babel.config.js\");"
+    config_browserlist="module.exports = require(\"${rootPath}/browserlist.js\");"
+    config_stylelint="module.exports = require(\"${rootPath}/stylelint.config.js\");"
+    config_webpack="module.exports = require(\"${rootPath}/webpack.config.js\");"
+
+    # echo "$config_eslint"
+    # echo "$config_babel"
+    # echo "$config_browserlist"
+    # echo "$config_stylelint"
+    # echo "$config_webpack"
+
+    dir=${f##*/}
+    parentPath=${f%/*}
+    parent=${parentPath##*/}
+    grandparentPath=${parentPath%/*}
+    grandparent=${grandparentPath##*/}
+
+    # echo "dir $dir"
+    # echo "parentPath $parentPath"
+    # echo "parent $parent"
+    # echo "grandparentPath $grandparentPath"
+    # echo "grandparent $grandparent"
+
+    # set package name to directory name
+    if [ "$parent" = "subdesigns" ]; then
+      packageName="$grandparent-$dir"
+    else
+      packageName="$dir"
+    fi
+
+    packageFile="$f/package.json"
+
+    # copy files over
+    cp "${saltPath}"/package.json "${packageFile}"
+
+    # set package.json name to unique
+    jq ".name=\"${packageName}\"" "${packageFile}" | sponge "${packageFile}"
+    # set package.json name to unique
+    jq ".config.rootPath=\"${rootPath}/\"" "${packageFile}" | sponge "${packageFile}"
+
+    echo "$config_eslint" > .eslintrc.js
+    echo "$config_babel" > babel.config.js
+    echo "$config_browserlist" > browserlist.js
+    echo "$config_stylelint" > stylelint.config.js
+    echo "$config_webpack" > webpack.config.js
+
+    if [ ! -d "$f/build" ]; then
+      status="no build dir found"
+      mkdir "$f/build"
+    else
+      status="build already exists"
+    fi
+
+    [ -d "$f/scss" ] && mv "$f/scss" "$f/build/scss"
+    [ -d "$f/_scss" ] && mv "$f/_scss" "$f/build/scss"
+    [ -d "$f/js" ] && mv "$f/js" "$f/build/js"
+    [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js"
+
+    echo "$rootPath -- $status --- $grandparent - $parent - $dir --- $packageName >> $f"
+
+    )
+  done
+
+}
+
+
+function isRoot() {
+  for d in designs/*/; do
+    (
+    cd "$d"
+    [ -f "package.json" ] && setupDir "$PWD"
+    )
+  done
+
+  for d in layouts/*/*/; do
+    (
+    cd "$d"
+    [ -f "package.json" ] && setupDir "$PWD"
+    )
+  done
+
+  if [ "$1" = true ]; then
+    echo ">>>>"
+    echo ">>>>"
+    echo ">>>>"
+    echo ">>>>"
+
+    for d in designs/*/subdesigns/*/; do
+      (
+      cd "$d"
+      [ -f "package.json" ] && setupDir "$PWD"
+      )
+    done
+
+    for d in layouts/*/*/subdesigns/*/; do
+      (
+      cd "$d"
+      [ -f "package.json" ] && setupDir "$PWD"
+      )
+    done
+  fi
+}
+
+function isCDN() {
+  echo "parent is cdn, loop current dir, and setup children"
+  for d in */; do
+    (
+    cd "$d"
+    [ -f "package.json" ] && setupDir "$PWD"
+    )
+  done
+
+  if [ "$1" = true ]; then
+    echo "check subdesigns"
+    for d in */subdesigns/*/; do
+      (
+      cd "$d"
+      [ -f "package.json" ] && setupDir "$PWD"
+      )
+    done
+  fi
+
+}
+
+function isDesign() {
+  echo "is design, layout, or subdesign, setup here"
+  [ -f "package.json" ] && setupDir "$PWD"
+
+  if [ "$1" = true ]; then
+    echo "check subdesigns"
+    for d in subdesigns/*/; do
+      (
+      cd "$d"
+      [ -f "package.json" ] && setupDir "$PWD"
+      )
+    done
+  fi
+
+}
+
+function isLayoutRoot() {
+  echo "is layout root"
+  for d in */*/; do
+    (
+    cd "$d"
+    [ -f "package.json" ] && setupDir "$PWD"
+    )
+  done
+
+  if [ "$1" = true ]; then
+    echo "check subdesigns"
+    for d in */*/subdesigns/*/; do
+      (
+      cd "$d"
+      [ -f "package.json" ] && setupDir "$PWD"
+      )
+    done
+  fi
+}
+
+
+function sub_find() {
+
+  checkSubdesigns=false
+  while getopts 's' flag; do
+    case "${flag}" in
+      s) checkSubdesigns=true ;;
+      *) echo "flag not found"
+        exit 1 ;;
+    esac
+    shift $((OPTIND - 1))
+  done
+
+  curdir=${PWD##*/}
+  parentPath=${PWD%/*}
+  parent=${parentPath##*/}
+  grandparentPath=${parentPath%/*}
+  grandparent=${grandparentPath##*/}
+
+  isCDN=false
+  isDesign=false
+  isLayout=false
+  isSubdesign=false
+
+  # check current directory
+  case "$curdir" in
+    "cdn")
+      isRoot $checkSubdesigns
+      ;;
+    "layouts")
+      isLayoutRoot $checkSubdesigns
+      ;;
+    *)
+      # check parent
+      case "$parent" in
+        "cdn")
+          isCDN $checkSubdesigns
+          ;;
+        "designs")
+          isDesign $checkSubdesigns
+          ;;
+        "subdesigns")
+          isDesign $checkSubdesigns
+          ;;
+        *)
+          # check grandparent
+          case "$grandparent" in
+            "layouts")
+              isDesign $checkSubdesigns
+              ;;
+            *)
+              echo "cannot find grandparent"
+          esac
+      esac
+  esac
+
+
+}
+
+
+# help
+sub_help(){
+  echo "Usage: $ProgName <subcommand> [options]\n"
+  echo "Subcommands:"
+  echo "    find - find directories in current path with package.json files and run setup on them"
+  echo "For help with each subcommand run:"
+  echo "$ProgName <subcommand> -h|--help"
+  echo ""
+}
+
+# subcommands
+subcommand=$1
+case $subcommand in
+  "" | "-h" | "--help")
+    sub_help
+    ;;
+  *)
+    shift
+    sub_${subcommand} $@
+    if [ $? = 127 ]; then
+      echo "Error: '$subcommand' is not a known subcommand." >&2
+      echo "       Run '$ProgName --help' for a list of known subcommands." >&2
+      exit 1
+    fi
+    ;;
+esac
