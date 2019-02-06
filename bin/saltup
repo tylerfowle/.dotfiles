@@ -13,11 +13,11 @@ function setupDir() {
     (
     rootPath=$(realpath --relative-to="${PWD}" "${HOME}"/Repos/fdp-devops/code/cdn)
 
-    config_eslint="module.exports = require(\"${rootPath}/.eslintrc.js\");"
-    config_babel="module.exports = require(\"${rootPath}/babel.config.js\");"
-    config_browserlist="module.exports = require(\"${rootPath}/browserlist.js\");"
-    config_stylelint="module.exports = require(\"${rootPath}/stylelint.config.js\");"
-    config_webpack="module.exports = require(\"${rootPath}/webpack.config.js\");"
+    config_eslint="module.exports = require(\"${rootPath}/salt-tools/.eslintrc.js\");"
+    config_babel="module.exports = require(\"${rootPath}/salt-tools/babel.config.js\");"
+    config_browserlist="module.exports = require(\"${rootPath}/salt-tools/browserlist.js\");"
+    config_stylelint="module.exports = require(\"${rootPath}/salt-tools/stylelint.config.js\");"
+    config_webpack="module.exports = require(\"${rootPath}/salt-tools/webpack.config.js\");"
 
     # echo "$config_eslint"
     # echo "$config_babel"
