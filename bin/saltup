@@ -73,6 +73,8 @@ function setupDir() {
     [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js" && movedJS=true
 
     # fix paths
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../build/%\"../../../../build/%" {} +
+
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../../scss/%\"../../../../../build/scss/%" {} +
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../scss/%\"../../../../build/scss/%" {} +
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../scss/%\"../../../build/scss/%" {} +
