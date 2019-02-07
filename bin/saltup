@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 ProgName=$(basename $0)
 
-cdnPath=$HOME/Repos/fdp-devops/code/cdn
-saltPath=$HOME/Repos/fdp-devops/code/cdn/salt-tools
-
 # find . -type f -name stylesheet.scss -path "**/subdesigns/*" -exec sed -i '' "s%../../../scss/%../../../../build/scss/%" {} +
 
 # accepts path of dir to run setup on
@@ -37,9 +34,12 @@ function setupDir() {
     # echo "grandparentPath $grandparentPath"
     # echo "grandparent $grandparent"
 
+    subPath="**/subdesigns/*"
+
     # set package name to directory name
     if [ "$parent" = "subdesigns" ]; then
       packageName="$grandparent-$dir"
+      subPath="*"
     else
       packageName="$dir"
     fi
@@ -47,7 +47,7 @@ function setupDir() {
     packageFile="$f/package.json"
 
     # copy files over
-    cp "${saltPath}"/package.json "${packageFile}"
+    cp "${rootPath}"/salt-tools/package.json "${packageFile}"
 
     # set package.json name to unique
     jq ".name=\"${packageName}\"" "${packageFile}" | sponge "${packageFile}"
@@ -61,22 +61,31 @@ function setupDir() {
     echo "$config_webpack" > webpack.config.js
 
     if [ ! -d "$f/build" ]; then
-      status="no build dir found"
       mkdir "$f/build"
-    else
-      status="build already exists"
     fi
 
-    [ -d "$f/scss" ] && mv "$f/scss" "$f/build/scss"
-    [ -d "$f/_scss" ] && mv "$f/_scss" "$f/build/scss"
-    [ -d "$f/js" ] && mv "$f/js" "$f/build/js"
-    [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js"
+    movedSCSS=false
+    movedJS=false
 
-    echo "$rootPath -- $status --- $grandparent - $parent - $dir --- $packageName >> $f"
+    [ -d "$f/scss" ] && mv "$f/scss" "$f/build/scss" && movedSCSS=true
+    [ -d "$f/_scss" ] && mv "$f/_scss" "$f/build/scss" && movedSCSS=true
+    [ -d "$f/js" ] && mv "$f/js" "$f/build/js" && movedJS=true
+    [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js" && movedJS=true
+
+    # fix paths
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../../scss/%\"../../../../../build/scss/%" {} +
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../scss/%\"../../../../build/scss/%" {} +
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../scss/%\"../../../build/scss/%" {} +
+
+    echo "$rootPath -> $grandparent -> $parent -> $dir -> $packageName >> $f"
 
     )
   done
 
+}
+
+function sub_cat() {
+  find . -name "stylesheet.scss" -not -path "node_modules" -exec cat {} \;
 }
 
 
@@ -247,7 +256,10 @@ sub_help(){
 # subcommands
 subcommand=$1
 case $subcommand in
-  "" | "-h" | "--help")
+  "")
+    sub_find
+    ;;
+  "-h" | "--help")
     sub_help
     ;;
   *)
