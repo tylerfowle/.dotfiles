@@ -9,15 +9,24 @@ echo "Starter 2.0.0"
 [ -d "$PWD/templates/layouts" ] && twig=true || twig=false
 [ "$(type jq)" ] && jq_available=true || jq_available=false
 
-echo "sass: $sass"
-echo "gulp: $gulp"
 echo "package: $package"
+echo "gulp: $gulp"
+echo "sass: $sass"
 echo "build/: $build"
 echo "templates/layouts/: $twig"
-echo "jq availability: $jq_available"
+echo "jq available: $jq_available"
 
 # launch build tools: gulp, npm scripts, codekit
 if [ $package == true ]; then
+
+  #test if npm start task exists
+  if [[ $(jq '.scripts.start' package.json) == "null" ]]; then
+    echo -e "\033[31m==> no task named: start \033[39m"
+    jq '.scripts.start="gulp"' package.json | sponge package.json
+  else
+    echo -e "\033[92m==> found task: start \033[39m"
+  fi
+
   echo -e "\033[92m==> package.json found \033[39m"
   if [ -d "$PWD/node_modules" ]; then
     echo -e "\033[92m==> node_modules already installed \033[39m"
@@ -27,22 +36,14 @@ if [ $package == true ]; then
   else
     echo -e "\033[92m==> node_modules not found \033[39m"
     echo -e "\033[92m==> running npm install \033[39m"
+    echo -e "\033[92m==> running npm start \033[39m"
     npm install
     npm start
   fi
 
 elif [ $gulp == true ]; then
-  echo -e "\033[92m==> gulp found \033[39m"
-  if [ -d "$PWD/node_modules/gulp" ]; then
-    echo -e "\033[92m==> success - starting gulp \033[39m"
-    ## start default gulp task
-    gulp
-  else
-    echo -e "\033[0;31m==> failed - gulp not installed \033[39m"
-    echo -e "\033[92m==> running gup... \033[39m"
-    ## run gup functions
-    gup
-  fi
+  echo -e "\033[31m==> found gulpfile.js, but no package.json exists \033[39m"
+
 elif [ $sass == true ]; then
   echo -e "\033[92m==> codekit found \033[39m"
   ## open codekit with current directory
