@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starter 2.0.0"
+echo "Starter 2.1.0"
 
 [ -f "$PWD/**/*.scss" ] && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
