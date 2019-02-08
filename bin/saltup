@@ -62,18 +62,18 @@ function setupDir() {
 
     if [ ! -d "$f/build" ]; then
       mkdir "$f/build"
+
+      movedSCSS=false
+      movedJS=false
+      [ -d "$f/scss" ] && mv "$f/scss" "$f/build/scss" && movedSCSS=true
+      [ -d "$f/_scss" ] && mv "$f/_scss" "$f/build/scss" && movedSCSS=true
+      [ -d "$f/js" ] && mv "$f/js" "$f/build/js" && movedJS=true
+      [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js" && movedJS=true
     fi
-
-    movedSCSS=false
-    movedJS=false
-
-    [ -d "$f/scss" ] && mv "$f/scss" "$f/build/scss" && movedSCSS=true
-    [ -d "$f/_scss" ] && mv "$f/_scss" "$f/build/scss" && movedSCSS=true
-    [ -d "$f/js" ] && mv "$f/js" "$f/build/js" && movedJS=true
-    [ -d "$f/_js" ] && mv "$f/_js" "$f/build/js" && movedJS=true
 
     # fix paths
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../build/%\"../../../../build/%" {} +
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\'../../../build/%\'../../../../build/%" {} +
 
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../../scss/%\"../../../../../build/scss/%" {} +
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../scss/%\"../../../../build/scss/%" {} +
