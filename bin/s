@@ -2,7 +2,7 @@
 
 echo "Starter 2.3.0"
 
-find . -name "*.scss" && sass=true || sass=false
+find . -name "*.scss" &> /dev/null && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
 [ -f "$PWD/package.json" ] && package=true || package=false
 [ -d "$PWD/build" ] && build=true || build=false
