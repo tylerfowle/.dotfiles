@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starter 2.3.0"
+echo "Starter 2.3.1"
 
 find . -name "*.scss" &> /dev/null && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
