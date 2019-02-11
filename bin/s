@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Starter 2.2.0"
+echo "Starter 2.3.0"
 
-[ -f "$PWD/**/*.scss" ] && sass=true || sass=false
+find . -name "*.scss" && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
 [ -f "$PWD/package.json" ] && package=true || package=false
 [ -d "$PWD/build" ] && build=true || build=false
@@ -40,7 +40,7 @@ if [ $package == true ]; then
   fi
 
 elif [ $gulp == true ]; then
-  echo -e "\033[31m==> found gulpfile.js, but no package.json exists \033[39m"
+  echo -e "\033[31m==> error: found gulpfile.js, but no package.json exists \033[39m"
 
 elif [ $sass == true ]; then
   echo -e "\033[92m==> codekit found \033[39m"
