@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "nu 0.0.2"
+echo "nu 0.0.3"
 
 webID="$1"
 
@@ -21,10 +21,11 @@ fi
 rootPath=$(jq ".config.rootPath" "${webID}/package.json" )
 echo "$rootPath"
 
+cd "$webID"
+
 if [ "$rootPath" != "null" ]; then
-  cd "$webID"
   saltup find
   lerna link convert
 fi
 
-mk default "$webID"
+mk
