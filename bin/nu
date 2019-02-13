@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+webID="$1"
+
+if [ ! -d "_starter" ]
+then
+  echo "No Starter Found!"
+  exit 1
+fi
+
+# if ID exists
+if [ -d "$webID" ]; then
+  echo "ID ${webID} already exists!"
+else
+  echo "Starting A New CC"
+  ditto _starter "$webID"
+fi
+
+# check if rootPath var exists in package.json - this means its a lerna configured design
+rootPath=$(jq ".config.rootPath" "${webID}/package.json" )
+echo "$rootPath"
+
+if [ "$rootPath" != "null" ]; then
+  cd "$webID"
+  saltup find
+  lerna link convert
+fi
+
+mk default "$webID"
