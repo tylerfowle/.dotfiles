@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "nu 0.0.2"
 
 webID="$1"
 
