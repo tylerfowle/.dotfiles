@@ -145,13 +145,9 @@ prompt_tags() {
     color=cyan
     color=magenta
     CURRENT_BG='NONE'
-    print ""
     prompt_segment $color $PRIMARY_FG
     print -n " $TAG "$(dtags list)" "
-    # prompt_end
-    # print ""
   else
-    print ""
     CURRENT_BG='NONE'
   fi
 }
@@ -160,12 +156,15 @@ prompt_tags() {
 prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
+  prompt_tags
+  CURRENT_BG='NONE'
+  prompt_git
+  CURRENT_BG='NONE'
+  print " "
+  CURRENT_BG='NONE'
   prompt_status
   prompt_virtualenv
   prompt_dir
-  prompt_end
-  prompt_tags
-  prompt_git
   prompt_end
 }
 
