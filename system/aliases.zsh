@@ -26,6 +26,13 @@ alias egd="eg d $@"
 # alias pullthatshit="cd ~/Repos/fdp-devops && git checkout master && git pull origin master && cd ./code && find . -mindepth 1 -maxdepth 1 -type d -print | parallel git -C {} pull \;"
 alias para="find . -mindepth 1 -maxdepth 1 -type d -print | parallel 'echo \>\>\> {} && git -C {} pull' \;"
 
+# collapse muliples lines to one
+function cml() {
+  for f in $(find . -name "${1:-*.scss}" -type f); do
+    cat -s $f | sponge $f
+  done;
+}
+
 # taskpaper - quick access to edit tasks in vim
 function tasks() {
   cd $TODO_DIR
