@@ -22,6 +22,12 @@
 	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
+	<key>Coprocess MRU</key>
+	<array>
+		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9248/5860/scss/layouts/_landing.scss</string>
+		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9944/6043/scss/layouts/_homepage.scss</string>
+		<string>echo neovim /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9991/6070/scss/layouts/_homepage.scss</string>
+	</array>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Hopscotch</key>
@@ -2697,7 +2703,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1221 2038 918 423 987 1200 2560 1418 </string>
+	<string>1210 1919 796 486 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 306 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -3419,6 +3425,15 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<real>0.82989895343780518</real>
 				<key>Red Component</key>
 				<real>0.90061241388320923</real>
+			</dict>
+			<key>Semantic History</key>
+			<dict>
+				<key>action</key>
+				<string>coprocess</string>
+				<key>editor</key>
+				<string>com.sublimetext.3</string>
+				<key>text</key>
+				<string>echo e \1</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -4143,7 +4158,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-06T21:01:31Z</date>
+	<date>2019-03-01T18:58:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -5078,7 +5093,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6beta4</string>
+	<string>3.2.7beta3</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>

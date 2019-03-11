@@ -4,22 +4,16 @@ excludes=(
 ! -path "**/.git/*"
 ! -path "**/node_modules/*"
 ! -path "**/vendor/*"
-! -path "**/subdesigns/*"
-! -path "**/jquery/*"
-! -name "*jquery*"
-! -name "*.min.js"
-! -name "*modernizr*"
-! -name "*anythingslider*"
 )
 
 includes=(
 -name "$1"
 )
 
-search='specialeasing'
+search="$2"
 
 
-flags='-x'"$2"
+flags='-x'"$3"
 
 # build excludes
 for item in "${excludes[@]}"; do

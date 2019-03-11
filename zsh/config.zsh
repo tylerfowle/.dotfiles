@@ -6,8 +6,8 @@ fpath=($DOTFILES/functions $fpath)
 autoload -U $DOTFILES/functions/*(:t)
 
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=150000
+SAVEHIST=150000
 
 setopt NO_BG_NICE # dont nice background tasks
 setopt NO_HUP
@@ -32,43 +32,5 @@ setopt HIST_REDUCE_BLANKS
 # setopt complete_aliases
 unsetopt complete_aliases
 
-# set to vi mode
-bindkey -v
-
 # kill the lag
 export KEYTIMEOUT=1
-
-vim_ins_mode="%{%F{yellow}%}[INSERT]%{$reset_color%}"
-vim_cmd_mode="%{%F{cyan}%}[NORMAL]%{$reset_color%}"
-vim_mode=$vim_ins_mode
-
-
-function zle-keymap-select {
-    if [ "$TERM" = "xterm-256color" ]; then
-        if [ $KEYMAP = vicmd ]; then
-            # the command mode for vi
-            echo -ne "\e[2 q"
-        else
-            # the insert mode for vi
-            echo -ne "\e[6 q"
-        fi
-    fi
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-
-function zle-line-finish {
-  vim_mode=$vim_ins_mode
-}
-zle -N zle-line-finish
-
-# Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
-# Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
-
-function TRAPINT() {
-  vim_mode=$vim_ins_mode
-  return $(( 128 + $1 ))
-}
-
-RPROMPT='${vim_mode}'
