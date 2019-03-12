@@ -1,6 +1,8 @@
+# zmodload zsh/zprof # top of your .zshrc file
+
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
-
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -9,13 +11,6 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-
-if [[ -a ~/.fzf.zsh ]]
-then
-  source ~/.fzf.zsh
-fi
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # all of our zsh files
 typeset -U config_files
@@ -45,13 +40,6 @@ done
 
 unset config_files
 
-
-# add z - quickly jump to directories
-if [[ -a /usr/local/etc/profile.d/z.sh ]]
-then
-  source /usr/local/etc/profile.d/z.sh
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.q.plugin.zsh ] && source ~/.q.plugin.zsh
 
@@ -62,3 +50,5 @@ if [[ -a ~/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]]
 then
   source ~/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# zprof # bottom of .zshrc

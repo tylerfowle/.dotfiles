@@ -24,6 +24,7 @@
 	<integer>1</integer>
 	<key>Coprocess MRU</key>
 	<array>
+		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/designs/np_aria/subdesigns/8968/scss/components/_overrides.scss</string>
 		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9248/5860/scss/layouts/_landing.scss</string>
 		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9944/6043/scss/layouts/_homepage.scss</string>
 		<string>echo neovim /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9991/6070/scss/layouts/_homepage.scss</string>
@@ -2703,11 +2704,11 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1210 1919 796 486 987 1200 2560 1418 </string>
+	<string>1210 1891 796 486 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 306 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>987 1200 2560 1418 987 1200 2560 1418 </string>
+	<string>-1573 1200 1280 1418 -1573 1200 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>958 0 958 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -4158,7 +4159,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-01T18:58:17Z</date>
+	<date>2019-03-06T20:11:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -5093,7 +5094,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.7beta3</string>
+	<string>3.2.7beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
