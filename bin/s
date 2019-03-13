@@ -7,12 +7,14 @@ find . -name "*.scss" &> /dev/null && sass=true || sass=false
 [ -f "$PWD/package.json" ] && package=true || package=false
 [ -d "$PWD/build" ] && build=true || build=false
 [ -d "$PWD/templates/layouts" ] && twig=true || twig=false
+[ -d "$HOME/Repos/fdp-devops/code/cdn/node_modules" ] && rootInstalled=true || rootInstalled=false
 
 echo "package: $package"
 echo "gulp: $gulp"
 echo "sass: $sass"
 echo "build/: $build"
 echo "templates/layouts/: $twig"
+echo "root installed: $rootInstalled"
 
 # launch build tools: gulp, npm scripts, codekit
 if [ $package == true ]; then
@@ -27,14 +29,26 @@ if [ $package == true ]; then
 
   echo -e "\033[92m==> package.json found \033[39m"
   if [ -d "$PWD/node_modules" ]; then
-    echo -e "\033[92m==> node_modules already installed \033[39m"
+    echo -e "\033[92m==> local node_modules already installed \033[39m"
     echo -e "\033[92m==> running npm start \033[39m"
+    # check if node modules are install in root of cdn
+    # if not lerna bootstrap
+    if [ $rootInstalled = false ]; then
+      echo -e "\033[92m==> running lerna bootstrap \033[39m"
+      lerna bootstrap
+    fi
     ## npm start
     npm start
   else
-    echo -e "\033[92m==> node_modules not found \033[39m"
+    echo -e "\033[92m==> local node_modules not found \033[39m"
     echo -e "\033[92m==> running npm install \033[39m"
     echo -e "\033[92m==> running npm start \033[39m"
+    # check if node modules are install in root of cdn
+    # if not lerna bootstrap
+    if [ $rootInstalled = false ]; then
+      echo -e "\033[92m==> running lerna bootstrap \033[39m"
+      lerna bootstrap
+    fi
     npm install
     npm start
   fi
