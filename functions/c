@@ -23,8 +23,6 @@ if [ -d "$cdnPath/designs/np_$1" ]; then
   cd "$cdnPath/designs/np_$1"
 elif [ -d "$cdnPath/designs/pp_$1" ]; then
   cd "$cdnPath/designs/pp_$1"
-elif [ -d "$cdnPath/layouts/$1" ]; then
-  cd "$cdnPath/layouts/$1"
 else
-  cd "$cdnPath"
+  find . -iname "$1"
 fi
