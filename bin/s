@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Starter 2.3.1"
+echo "Starter 2.4.0"
+echo "-------------"
 
 find . -name "*.scss" &> /dev/null && sass=true || sass=false
 [ -f "$PWD/gulpfile.js" ] && gulp=true || gulp=false
@@ -9,12 +10,21 @@ find . -name "*.scss" &> /dev/null && sass=true || sass=false
 [ -d "$PWD/templates/layouts" ] && twig=true || twig=false
 [ -d "$HOME/Repos/fdp-devops/code/cdn/node_modules" ] && rootInstalled=true || rootInstalled=false
 
+
+if [ "$1" ]; then
+  startupCommand="$1"
+else
+  startupCommand="npm start"
+fi
+
 echo "package: $package"
 echo "gulp: $gulp"
 echo "sass: $sass"
 echo "build/: $build"
 echo "templates/layouts/: $twig"
 echo "root installed: $rootInstalled"
+echo "startup command: $startupCommand"
+
 
 # launch build tools: gulp, npm scripts, codekit
 if [ $package == true ]; then
@@ -30,19 +40,19 @@ if [ $package == true ]; then
   echo -e "\033[92m==> package.json found \033[39m"
   if [ -d "$PWD/node_modules" ]; then
     echo -e "\033[92m==> local node_modules already installed \033[39m"
-    echo -e "\033[92m==> running npm start \033[39m"
+    echo -e "\033[92m==> running startup command: [$startupCommand] \033[39m"
     # check if node modules are install in root of cdn
     # if not lerna bootstrap
     if [ $rootInstalled = false ]; then
       echo -e "\033[92m==> running lerna bootstrap \033[39m"
       lerna bootstrap
     fi
-    ## npm start
-    npm start
+    ## startup command
+    $startupCommand
   else
     echo -e "\033[92m==> local node_modules not found \033[39m"
     echo -e "\033[92m==> running npm install \033[39m"
-    echo -e "\033[92m==> running npm start \033[39m"
+    echo -e "\033[92m==> running startup command: [$startupCommand] \033[39m"
     # check if node modules are install in root of cdn
     # if not lerna bootstrap
     if [ $rootInstalled = false ]; then
@@ -50,7 +60,7 @@ if [ $package == true ]; then
       lerna bootstrap
     fi
     npm install
-    npm start
+    $startupCommand
   fi
 
 elif [ $gulp == true ]; then

@@ -1,7 +1,7 @@
 autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
-source $DOTFILES/git/.git-prompt.sh
+# source $DOTFILES/git/.git-prompt.sh
 
 # directory_name() {
 #   echo "%{$fg_bold[magenta]%}%c%{$reset_color%}"
@@ -113,7 +113,7 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $PRIMARY_FG ' %~ '
+  prompt_segment white $PRIMARY_FG ' %~ '
 }
 
 # Status:
