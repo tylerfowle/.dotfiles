@@ -22,13 +22,6 @@
 	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
-	<key>Coprocess MRU</key>
-	<array>
-		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/designs/np_aria/subdesigns/8968/scss/components/_overrides.scss</string>
-		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9248/5860/scss/layouts/_landing.scss</string>
-		<string>echo e /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9944/6043/scss/layouts/_homepage.scss</string>
-		<string>echo neovim /Users/tyler.fowle/Repos/fdp-devops/code/cdn/layouts/9991/6070/scss/layouts/_homepage.scss</string>
-	</array>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Hopscotch</key>
@@ -2704,13 +2697,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1597 1571 606 469 987 1200 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1210 1891 796 486 987 1200 2560 1418 </string>
+	<string>1210 1863 918 514 987 1200 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 306 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1573 1200 1280 1418 -1573 1200 2560 1418 </string>
+	<string>987 1200 2560 1418 987 1200 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>958 0 958 1178 0 0 1920 1178 </string>
+	<string>958 750 951 428 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 6 717 872 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
@@ -3434,7 +3427,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>editor</key>
 				<string>com.sublimetext.3</string>
 				<key>text</key>
-				<string>echo e \1</string>
+				<string>echo cd \1</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -4159,7 +4152,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-06T20:11:31Z</date>
+	<date>2019-03-13T21:14:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -5094,7 +5087,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.7beta4</string>
+	<string>3.2.8beta1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>

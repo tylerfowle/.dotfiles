@@ -8,6 +8,7 @@
 	ci = commit
 	br = branch
 	st = status
+	s = status -s
 	cob = checkout -b
 	brd = branch -d
 	brD = branch -D
