@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo "172.16.10.12    $1" >> /etc/hosts
