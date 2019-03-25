@@ -88,13 +88,6 @@ prompt_end() {
 
 # Git: branch/detached head, dirty status
 prompt_git() {
-  if [[ "${PWD##*/}" =~ "cdn|designs|layouts" ]]; then
-    ref=$(git rev-parse --abbrev-ref HEAD)
-    prompt_segment white $PRIMARY_FG
-    print -Pn " $ref"
-    return
-  fi
-
   local color ref
   is_dirty() {
     test -n "$(git status --porcelain --ignore-submodules)"
