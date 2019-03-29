@@ -12,14 +12,12 @@
 #    c holm<tab>/bo<tab>
 #
 # ...to quickly jump into holman/boom, for example.
-#
-# This also accounts for how Go structures its projects. For example, it will
-# autocomplete both on $PROJECTS, and also assume you want to autocomplete on
-# your Go projects in $GOPATH/src.
 
 cdnPath="$HOME/Repos/fdp-devops/code/cdn"
 
-if [ -d "$cdnPath/designs/np_$1" ]; then
+if [ -d "$cdnPath/designs/$1" ]; then
+  cd "$cdnPath/designs/$1"
+elif [ -d "$cdnPath/designs/np_$1" ]; then
   cd "$cdnPath/designs/np_$1"
 elif [ -d "$cdnPath/designs/pp_$1" ]; then
   cd "$cdnPath/designs/pp_$1"
