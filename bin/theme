@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+ProgName="$(basename $0)"
+ProgVersion="1.0.0"
+
+
+URL=$(/usr/bin/osascript << EOT
+tell application "System Events"
+  try
+    tell application "Google Chrome"
+      return URL of active tab of front window
+    end tell
+  end try
+end tell
+EOT
+)
+
+url=$(curl -s "$URL")
+
+websiteId=$(curl "$URL" -s -I | grep -Fi Firespring-Website-Id)
+websiteId=${websiteId##*: }
+
+stylesheet=$(echo "$url" | sed '/stylesheet.*designs.*.css/!d')
+design=$(echo "$stylesheet" | sed 's|^.*designs/||g')
+design=$(echo "$design" | sed 's|/css.*$||g')
+
+subdesign=$(echo "$stylesheet" | grep -o 'design-.*')
+subdesign=$(echo "$subdesign" | sed 's/\..*\.css">//g')
+subdesign=$(echo "$subdesign" | sed 's/^design-//g')
+
+# cat "$tmpfile" | pbcopy
+
+if [ "$subdesign" ]; then
+  subdesign="/subdesigns/$subdesign"
+fi
+
+
+echo "https://my.firespring.com/website/${websiteId}/site-structure"
+echo "$HOME/Repos/fdp-devops/code/cdn/designs/$design$subdesign"
+
+echo "$design$subdesign" | pbcopy

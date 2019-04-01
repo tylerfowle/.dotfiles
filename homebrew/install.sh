@@ -14,7 +14,7 @@ brew tap caskroom/fonts
 
 
 
-apps=(
+packages=(
 # git
 git
 # vim & neovim
@@ -43,7 +43,7 @@ archey
 figlet
 )
 
-casks=(
+apps=(
 # productivity
 docker
 slack
@@ -71,7 +71,7 @@ font-hack-nerd-font
 )
 
 echo "==> Installing packages"
-brew install "${apps[@]}"
+brew install "${packages[@]}"
 
 echo "==> Installing apps"
 brew cask install "${apps[@]}"
