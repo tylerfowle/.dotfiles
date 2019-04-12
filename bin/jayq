@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+jq ".etiquette.version=\"${1}\"" "${2}/package.json" | sponge "${2}/package.json"
