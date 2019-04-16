@@ -190,10 +190,19 @@ source $DOTFILES/vim/plugins/vim-partial.vimrc
 source $DOTFILES/vim/plugins/neoformat.vimrc
 
 
-
 source $DOTFILES/vim/keymaps/general.vimrc
 source $DOTFILES/vim/keymaps/leader.vimrc
 source $DOTFILES/vim/keymaps/terminal.vimrc
+
+
+" markdown highlight syntax overrides {{{
+hi! link htmlH1 GruvboxGreenBold
+hi! link htmlH2 GruvboxPurpleBold
+hi! link htmlH3 GruvboxAquaBold
+hi! link htmlH4 GruvboxYellowBold
+hi! link htmlH5 GruvboxOrangeBold
+hi! link htmlH6 GruvboxRedBold
+" }}}
 
 
 " Abbreviations {{{

@@ -43,9 +43,9 @@ alias gl='/Users/tyler.fowle/Repos/gitline/gitline.sh'
 # alias dup='ditto ~/Repos/fed-framework/gulp4/ ./'
 function dup() {
   FILE=$1
-  FROM="/Repos/fed-framework/gulp4/$FILE"
+  FROM=~/Repos/fed-salt/$FILE
   TO="./$FILE"
-  ditto ~$FROM $TO
+  ditto $FROM $TO
 }
 
 # fix ctags
