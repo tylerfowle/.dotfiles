@@ -2868,6 +2868,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<string></string>
 		</dict>
 	</dict>
+	<key>HapticFeedbackForEsc</key>
+	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
 	<key>HideFromDockAndAppSwitcher</key>
@@ -2959,7 +2961,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>227 306 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>987 1200 2560 1418 987 1200 2560 1418 </string>
+	<string>958 0 958 1178 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>958 750 951 428 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -4294,7 +4296,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NoSyncLastTipTime</key>
 	<real>575491900.19776201</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>32</integer>
+	<integer>36</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4952,8 +4954,10 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-15T20:37:30Z</date>
+	<date>2019-04-18T15:41:28Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
 	<false/>
@@ -4966,6 +4970,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
+	<false/>
+	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
@@ -4998,6 +5004,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseUnevenTabs</key>
+	<false/>
+	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>Window Arrangements</key>
 	<dict>
@@ -5887,7 +5895,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.0beta2</string>
+	<string>3.3.0beta3</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
