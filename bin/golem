@@ -5,10 +5,8 @@ ProgVersion="0.0.1"
 
 
 sub_up () {
-  cd ~/Repos/wiki/
-  gollum --port 4567 > /dev/null 2>&1 &
   cd ~/Repos/tasks
-  gollum --port 5678 > /dev/null 2>&1 &
+  gollum --port 4567 > /dev/null 2>&1 &
 }
 
 sub_halt() {
