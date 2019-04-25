@@ -40,6 +40,8 @@ sub_help(){
   print_columns "version,--version,-v" "display the version information"
   print_columns "up" "startup the wiki and task gollum servers"
   print_columns "halt" "kill all gollum processes"
+  print_columns "restart" "run halt, then up processes"
+  print_columns "status" "show gollum processes"
   printf "\n"
 }
 
