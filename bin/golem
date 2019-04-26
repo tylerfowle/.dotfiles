@@ -6,7 +6,7 @@ ProgVersion="0.0.1"
 
 sub_up () {
   cd ~/Repos/tasks
-  gollum --port 4567 > /dev/null 2>&1 &
+  gollum --port 4567 --host 127.0.0.1 > /dev/null 2>&1 &
 }
 
 sub_halt() {
