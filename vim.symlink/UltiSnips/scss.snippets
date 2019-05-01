@@ -74,13 +74,22 @@ $2
 }
 endsnippet
 
+snippet fontmixin "updated font mixin"
+//font - size, line-height, weight
+@mixin font(\$size: 16, \$line: 18, \$weight: normal) {
+  font-size: unquote(\$size + 'px');
+  line-height: unquote(\$line + 'px');
+  font-weight: (\$weight);
+}
+endsnippet
+
 snippet collection "collection scss"
 .collection--list {
   margin: 0;
   ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
   li {}
   a {}
@@ -93,7 +102,7 @@ snippet collection "collection scss"
 
   // FDP-10889 override
   .collection-item-image.image {
-	max-width: 100% !important;
+    max-width: 100% !important;
   }
 }
 endsnippet
