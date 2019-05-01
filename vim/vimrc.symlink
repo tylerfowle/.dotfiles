@@ -182,6 +182,7 @@ hi MatchParen guifg=#000000 guibg=#fc802d
 
 
 source $DOTFILES/vim/plugins/ale.vimrc
+source $DOTFILES/vim/plugins/coc.vimrc
 " source $DOTFILES/vim/plugins/deoplete.vimrc
 " source $DOTFILES/vim/plugins/jedi.vimrc
 source $DOTFILES/vim/plugins/ultisnips.vimrc
