@@ -178,6 +178,10 @@ hi CursorLine guibg=#111111
 " customize matching paren colors
 hi MatchParen guifg=#000000 guibg=#fc802d
 
+" limelight colors
+let g:limelight_conceal_ctermfg = '#555555'
+let g:limelight_conceal_guifg = '#555555'
+
 " }}}
 
 

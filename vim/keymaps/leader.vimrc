@@ -6,6 +6,9 @@ nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:
 " enable folding
 nnoremap <localleader><space> za
 
+" limelight toggle
+nnoremap <localleader>l :Limelight!!<cr>
+
 " vim plug
 nnoremap <localleader>r :so $MYVIMRC<CR>
 nnoremap <localleader>pu :PlugUpdate<CR>
