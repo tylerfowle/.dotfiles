@@ -12,6 +12,9 @@ source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
 source $DOTFILES/vim/config/filetypes.vimrc
 
+" python paths
+let g:python3_host_prog='/Users/tyler.fowle/.pyenv/shims/python3'
+let g:python_host_prog='/Users/tyler.fowle/.pyenv/shims/python'
 
 " Vars {{{
 
@@ -179,8 +182,8 @@ hi MatchParen guifg=#000000 guibg=#fc802d
 
 
 source $DOTFILES/vim/plugins/ale.vimrc
-source $DOTFILES/vim/plugins/deoplete.vimrc
-source $DOTFILES/vim/plugins/jedi.vimrc
+" source $DOTFILES/vim/plugins/deoplete.vimrc
+" source $DOTFILES/vim/plugins/jedi.vimrc
 source $DOTFILES/vim/plugins/ultisnips.vimrc
 source $DOTFILES/vim/plugins/supertab.vimrc
 source $DOTFILES/vim/plugins/airline.vimrc

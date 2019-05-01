@@ -16,6 +16,9 @@ alias editbash="e ~/.bash_profile"
 alias editdot="cd ~/.dotfiles && e ~/.dotfiles"
 alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 
+# neovim alias
+alias neovim="~/Downloads/nvim-osx64/bin/neovim"
+
 # dtags - tag and cd to directories
 alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
 
