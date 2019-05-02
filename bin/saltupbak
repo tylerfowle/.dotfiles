@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 ProgName=$(basename $0)
+ProgVersion="v1.1.0"
 
 # find . -type f -name stylesheet.scss -path "**/subdesigns/*" -exec sed -i '' "s%../../../scss/%../../../../build/scss/%" {} +
 
@@ -51,14 +52,24 @@ function setupDir() {
 
     # set package.json name to unique
     jq ".name=\"${packageName}\"" "${packageFile}" | sponge "${packageFile}"
-    # set package.json name to unique
-    jq ".config.rootPath=\"${rootPath}/\"" "${packageFile}" | sponge "${packageFile}"
+
+    # rewrite npm_package_config_rootPath to static string
+    # this is needed because npm config variables are not cross platform
+    sed -i '' 's|$npm_package_config_rootPath|'"${rootPath}"'|g' "${packageFile}"
+
+    # needed to regenerate package-lock.json
+    npm install
 
     echo "$config_eslint" > .eslintrc.js
     echo "$config_babel" > babel.config.js
     echo "$config_browserlist" > browserlist.js
     echo "$config_stylelint" > stylelint.config.js
     echo "$config_webpack" > webpack.config.js
+
+    # remove gulpfile
+    if [ -f gulpfile.js ]; then
+      rm gulpfile.js
+    fi
 
     if [ ! -d "$f/build" ]; then
       mkdir "$f/build"
@@ -79,6 +90,8 @@ function setupDir() {
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../../scss/%\"../../../../build/scss/%" {} +
     find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../scss/%\"../../../build/scss/%" {} +
 
+    find . -type f -name "stylesheet.scss" -path "${subPath}" -exec sed -i '' "s%\"../../_sasstemplate/%\"../../../_sasstemplate/%" {} +
+
     echo "$rootPath -> $grandparent -> $parent -> $dir -> $packageName >> $f"
 
     )
@@ -90,6 +103,9 @@ function sub_cat() {
   find . -name "stylesheet.scss" -not -path "node_modules" -exec cat {} \;
 }
 
+function sub_lrb() {
+  lerna run build --scope "*${1}*" -- -s
+}
 
 function isRoot() {
   for d in designs/*/; do
@@ -247,9 +263,12 @@ function sub_find() {
 
 # help
 sub_help(){
+  echo "$ProgName $ProgVersion"
+  echo ""
   echo "Usage: $ProgName <subcommand> [options]\n"
   echo "Subcommands:"
   echo "    find - find directories in current path with package.json files and run setup on them"
+  echo "    lrb - 'lerna run build --scope \"*[args]*\"  -- -s': build with arg as scope, quietly"
   echo "For help with each subcommand run:"
   echo "$ProgName <subcommand> -h|--help"
   echo ""
