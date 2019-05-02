@@ -14,13 +14,13 @@ Plug 'srcery-colors/srcery-vim'
 
 " UI {{{
 
-Plug 'majutsushi/tagbar'                                                                     " Tagbar
+Plug 'majutsushi/tagbar', {'on': ['Tagbar']}                                                 " Tagbar
 Plug 'nathanaelkane/vim-indent-guides', {'on': ['IndentGuidesToggle','IndentGuidesOn']}      " indent guides
 Plug 'vim-airline/vim-airline'                                                               " fancy statusline
 Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
 Plug 'airblade/vim-gitgutter'                                                                " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'junegunn/vim-peekaboo'                                                                 " shows registers in a sidebar
-Plug 'junegunn/limelight.vim'                                                                " dim paragraphs above and below
+Plug 'junegunn/limelight.vim', {'on': ['Limelight', 'Limelight!!']}                          " dim paragraphs above and below
 
 " }}}
 
@@ -45,7 +45,7 @@ Plug 'wakatime/vim-wakatime'                                                    
 Plug '~/Repos/turtle.vim'                                                                    " quickly add header comments
 Plug '~/Repos/twiggy.vim'                                                                    " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                                                " switch boolean values with gs
-Plug 'vim-scripts/TaskList.vim'                                                              " tasks list: todo:, note:, fixme:
+Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}                                          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                                                               " makes creating partial files easy: <leader>x in visual mode
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}                                 " intellisense completion
 
@@ -70,15 +70,15 @@ Plug 'othree/javascript-libraries-syntax.vim'                                   
 Plug 'pangloss/vim-javascript'                                                               " javascript syntax
 Plug 'kchmck/vim-coffee-script'                                                              " coffeescript syntax
 Plug 'JulesWang/css.vim'                                                                     " css syntax
-Plug 'cakebaker/scss-syntax.vim'                                                             " scss syntax
-Plug 'lumiliet/vim-twig'                                                                     " twig syntax
+Plug 'cakebaker/scss-syntax.vim', {'for': ['scss','sass']}                                   " scss syntax
+Plug 'lumiliet/vim-twig', {'for': ['html.twig']}                                             " twig syntax
 Plug 'jwalton512/vim-blade'                                                                  " blade syntax
 Plug 'posva/vim-vue'                                                                         " vuejs syntax
 Plug 'godlygeek/tabular'                                                                     " alignment - vim-markdown says it needs it
-Plug 'plasticboy/vim-markdown'                                                               " markdown syntax
-Plug 'mzlogin/vim-markdown-toc'                                                              " markdown - generate table of contents with :GenTocGFM
-Plug 'shime/vim-livedown'                                                                    " live markdown preview 'npm install -g livedown
-Plug 'fatih/vim-go'
+Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}                                   " markdown syntax
+Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}                                  " markdown - generate table of contents with :GenTocGFM
+Plug 'shime/vim-livedown', {'on': ['LivedownPreview','LivedownToggle']}                      " live markdown preview 'npm install -g livedown
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " }}}
 
