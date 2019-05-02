@@ -1,6 +1,6 @@
 autoload -Uz colors && colors
 
-export EDITOR='neovim'
+export EDITOR=neovim
 export HTML_TIDY=$HOME/.tidyrc
 export TODO_DIR=$HOME/Repos/tasks
 export TODO_FILE=$TODO_DIR/inbox.md

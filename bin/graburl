@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+ProgName="$(basename $0)"
+ProgVersion="0.0.1"
+
+function getUrl() {
+wurl=$(/usr/bin/osascript << EOT
+tell application "Google Chrome"
+    return URL of active tab of front window
+  end tell
+EOT
+)
+}
+
+function getTitle() {
+wtitle=$(/usr/bin/osascript << EOT
+tell application "Google Chrome"
+    return title of active tab of front window
+  end tell
+EOT
+)
+}
+
+case $1 in
+  "-t" | "--title")
+    getTitle
+    echo "$wtitle"
+    ;;
+  "-c" | "--clipboard")
+    getUrl
+    echo "$wurl" | pbcopy
+    ;;
+  "-m" | "--markdown")
+    getUrl
+    getTitle
+    echo "[$wtitle]($wurl)"
+    ;;
+  * | "-r" | "--raw")
+    getUrl
+    echo "$wurl"
+    ;;
+esac

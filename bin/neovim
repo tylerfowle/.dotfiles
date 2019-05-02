@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-~/Downloads/nvim-osx64/bin/neovim $1
