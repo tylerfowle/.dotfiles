@@ -1,3 +1,7 @@
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
 " Remap keys for gotos {{{
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -39,7 +43,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -47,3 +50,9 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
