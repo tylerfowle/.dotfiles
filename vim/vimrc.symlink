@@ -1,12 +1,6 @@
 " Tyler Fowle
 " DOTFILES
 
-
-" load local .vimrc files in dirs
-set exrc
-" don't execute shell scripts unless owned by me
-set secure
-
 source $DOTFILES/vim/config/plugins.vimrc
 source $DOTFILES/vim/config/autocommands.vimrc
 source $DOTFILES/vim/config/functions.vimrc
