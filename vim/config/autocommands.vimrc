@@ -12,8 +12,11 @@ autocmd ColorScheme * highlight Comment gui=italic
 " the use of autocmd guarantees that it will override color scheme
 autocmd ColorScheme * hi VertSplit cterm=NONE guifg=#686868
 
+" set syntax to ruby for gemfile, vagrantfile, berksfile
+au BufRead,BufNewFile {Gemfile,Vagrantfile,Berksfile} set ft=ruby
+
 " install ruby after saving
-autocmd BufWritePost *.rb silent! !bundle exec rake install
+" autocmd BufWritePost *.rb silent! !bundle exec rake install
 
 " auto reload file when changed on disk
 set updatetime=750
