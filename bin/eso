@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+e "$1"/build/scss/base/_overrides.scss
