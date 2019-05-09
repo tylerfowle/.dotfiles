@@ -57,8 +57,8 @@ set sessionoptions-=buffers
 
 " Spaces & Tabs {{{
 
-set tabstop=4             " number of visual spaces per TAB
-set shiftwidth=4          " number of spaces to use for indent and unindent
+set tabstop=2             " number of visual spaces per TAB
+set shiftwidth=2          " number of spaces to use for indent and unindent
 set expandtab             " tabs are spaces
 
 " }}}

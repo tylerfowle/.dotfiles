@@ -33,3 +33,10 @@ augroup END
 " leave paste mode automatically
 " https://github.com/neovim/neovim/issues/7994
 au InsertLeave * set nopaste
+
+" ft specific indent
+autocmd FileType html setlocal shiftwidth=4 tabstop=4
+autocmd FileType php setlocal shiftwidth=4 tabstop=4
+autocmd FileType inc setlocal shiftwidth=4 tabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+autocmd FileType php setlocal matchpairs-=<:>
