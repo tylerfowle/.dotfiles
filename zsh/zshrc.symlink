@@ -46,6 +46,12 @@ unset config_files
 
 eval "$(pyenv init -)"
 
+# add zsh git flow completion
+if [[ -a ~/git-flow-completion/git-flow-completion.zsh ]]
+then
+  source ~/git-flow-completion/git-flow-completion.zsh
+fi
+
 # add zsh syntax highlighting
 if [[ -a ~/Repos/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]]
 then
