@@ -48,6 +48,7 @@ Plug 'AndrewRadev/switch.vim'                                                   
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}                                          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                                                               " makes creating partial files easy: <leader>x in visual mode
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}                                 " intellisense completion
+Plug 'rizzatti/dash.vim'                                                                     " dash.app lookup
 
 if has('nvim')
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}                                             " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca

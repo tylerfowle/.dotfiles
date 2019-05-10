@@ -180,6 +180,13 @@ nnoremap <leader>lr :FlooRefreshWorkspace<CR>
 " }}}
 
 
+" Dash maps {{{
+
+nnoremap <leader>d <Plug>DashSearch<CR>
+
+" }}}
+
+
 " Tag Shortcuts {{{
 
 " search tag under cursor
