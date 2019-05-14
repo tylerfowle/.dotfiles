@@ -3,6 +3,8 @@
 	path = ~/.gitconfig.local
 [push]
 	default = simple
+[color]
+	ui = auto
 [alias]
 	co = checkout
 	ci = commit
@@ -30,21 +32,16 @@
     nuke = !git stash && git clean -fdx
     c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
 [core]
-	editor = "nvim"
+	editor = "$EDITOR"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
-[color]
-	ui = auto
+	pager = less -FRSX
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol,-blank-at-eof
+	fileMode = false
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
 [user]
-	name = tylerfowle
+	name = Tyler Fowle
 	email = tylerfowle@gmail.com
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[diff "minjs"]
-	textconv = js-beautify
-	cachetextconv = true
-[diff "mincss"]
-	textconv = js-beautify --css
-	cachetextconv = true
+[Github]
+	user = tyler.fowle
