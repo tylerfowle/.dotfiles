@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ssh -A tfowle.sbf.engineering << EOF
+cd sbf
+rake website:ruby:gulp:scss:run
+EOF
