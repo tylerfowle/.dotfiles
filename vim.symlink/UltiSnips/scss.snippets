@@ -204,4 +204,32 @@ snippet xlu "xlarge-up"
 endsnippet
 
 
+snippet tk "type"
+@include tk-type(
+  $family: '${1:zillaslab}',
+  $type: '${2:body}',
+  $font-size: ${3:$baseFontSize},
+  $line-height: '${4:1.5em}',
+  $bold:${5:null},
+  $italic:${6:null},
+  $letter-spacing:${7:null},
+  $font-weight:${8:null}
+);
+endsnippet
 
+snippet tk "heading"
+@include tk-heading(
+  $name: '${1:headline-100-sans|headline-80-sans|headline-60-sans|headline-50-sans|headline-40-sans|headline-30-sans|headline-24-sans|headline-18-sans|headline-12-sans|headline-12-sans-bold}',
+  $name: '${2:headline-100-serif|headline-80-serif|headline-60-serif|headline-50-serif|headline-40-serif|headline-24-serif}',
+  $em-reference: ${3:$baseFontSize},
+  $margin: '${4:default}'
+);
+endsnippet
+
+snippet tk "body"
+@include tk-body(
+  $name: '${1:default-sans|large-sans|large-quote-sans|small-sans|mini-sans}',
+  $name: '${2:default-serif|large-serif|large-quote-serif|small-serif}',
+  $em-reference: ${3:$baseFontSize}
+);
+endsnippet
