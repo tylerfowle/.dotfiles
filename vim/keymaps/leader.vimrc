@@ -3,6 +3,10 @@
 " open _settings.scss
 nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
 
+" Tabularize
+nnoremap <leader>t :Tabularize /\|
+vnoremap <leader>t :Tabularize /\|
+
 " enable folding
 nnoremap <localleader><space> za
 
@@ -97,11 +101,11 @@ nnoremap <leader><space> :CtrlPLine<CR>
 
 " Buffer navigation like a browser
 if !empty(glob("~/.dotfiles/vim.symlink/plugged/vim-bufsurf/plugin/bufsurf.vim"))
-  noremap <leader>z :BufSurfBack<CR>
-  noremap <leader>x :BufSurfForward<CR>
+    noremap <leader>z :BufSurfBack<CR>
+    noremap <leader>x :BufSurfForward<CR>
 else
-  noremap <leader>z :bp<CR>
-  noremap <leader>x :bn<CR>
+    noremap <leader>z :bp<CR>
+    noremap <leader>x :bn<CR>
 endif
 
 " toggle sidebar
