@@ -3,6 +3,10 @@
 " open _settings.scss
 nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
 
+" time snips
+nnoremap <localleader>dd :r !date<cr>I##<space><esc>o<esc>
+nnoremap <localleader>dt :r !date +"\%T"<cr>A<space>\|<space>
+
 " Tabularize
 nnoremap <leader>t :Tabularize /\|
 vnoremap <leader>t :Tabularize /\|
