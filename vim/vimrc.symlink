@@ -213,6 +213,9 @@ hi! link htmlH6 GruvboxRedBold
 
 " }}}
 
+" custom markdown highlighting
+au FileType markdown :silent! call matchadd('GruvboxGreenBold', 'DONE')
+au FileType markdown :silent! call matchadd('GruvboxYellowBold', 'TODO')
 
 " Abbreviations {{{
 
