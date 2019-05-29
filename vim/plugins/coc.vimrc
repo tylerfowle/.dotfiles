@@ -14,8 +14,9 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Using CocList {{{
 
-nnoremap <silent> <space>l  :<C-u>CocList<cr>
 nnoremap <silent> <space><space>  :<C-u>CocList<cr>
+nnoremap <silent> <space>l  :<C-u>CocList<cr>
+nnoremap <silent> <space>m  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>d  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
