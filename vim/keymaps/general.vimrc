@@ -43,4 +43,12 @@ vnoremap <Tab> >gv|
 vnoremap <S-Tab> <gv
 
 " open github issues with issues # under cursor
-nnoremap gh :!open -a "/Applications/Google Chrome.app" 'https://github.com/firespring/fdp_cdn/issues/'<cword><CR>
+" nnoremap gh :!open -a "/Applications/Google Chrome.app" 'https://github.com/firespring/fdp_cdn/issues/'<cword><CR>
+
+" git gutter
+" jump to chunk
+nmap <leader>gh <Plug>GitGutterPrevHunk
+nmap <leader>gn <Plug>GitGutterNextHunk
+nmap <leader>ga <Plug>GitGutterStageHunk
+nmap <leader>gu <Plug>GitGutterUndoHunk
+nmap <leader>gv <Plug>GitGutterPreviewHunk
