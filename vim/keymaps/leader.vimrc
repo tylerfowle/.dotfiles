@@ -4,8 +4,9 @@
 nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
 
 " time snips
-nnoremap <localleader>dd :r !date<cr>I##<space><esc>o<esc>
-nnoremap <localleader>dt :r !date +"\%T"<cr>A<space>\|<space>
+nnoremap <leader>dd :r !date<cr>I##<space><esc>o<esc>
+nnoremap <leader>dn :r !date +"\%T"<cr>A<space>\|<space>
+nmap <leader>dt }j"zyt {k"xyt j:r !timediff <c-r>z <c-r>x<cr> A \| Total<esc>
 
 " Tabularize
 nnoremap <leader>t :Tabularize /\|
@@ -190,7 +191,7 @@ nnoremap <leader>lr :FlooRefreshWorkspace<CR>
 
 " Dash maps {{{
 
-nnoremap <leader>d <Plug>DashSearch<CR>
+nnoremap <leader>ds <Plug>DashSearch<CR>
 
 " }}}
 
