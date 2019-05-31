@@ -198,6 +198,7 @@ nnoremap <leader>ds <Plug>DashSearch<CR>
 
 " Tag Shortcuts {{{
 
+nnoremap tg :silent ! ctags -R --languages=ruby --exclude=.git --exclude=log .<cr>
 " search tag under cursor
 nnoremap tt <c-]>zz
 " go back to definition
