@@ -59,7 +59,7 @@ nnoremap <silent> <leader>cf :e <cfile>.scss<CR>
 nnoremap <localleader>cf :e <cfile><CR>
 
 " tagbar toggle
-nnoremap <leader>tb :TagbarToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 
 " :Ack - find in all
 " trailing space is intentional!
