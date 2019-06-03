@@ -17,7 +17,7 @@ alias editdot="cd ~/.dotfiles && e ~/.dotfiles"
 alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 
 # dtags - tag and cd to directories
-alias dt=". ~/go/src/github.com/tylerfowle/dtags/dt"
+alias dt=". ~/.config/dtags/dt"
 
 alias egd="eg d $@"
 
