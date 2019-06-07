@@ -1,3 +1,4 @@
 --ignore-directory=is:node_modules
 --ignore-directory=is:subdesigns
+--ignore-directory=is:plugged
 --ignore-file=is:tags
