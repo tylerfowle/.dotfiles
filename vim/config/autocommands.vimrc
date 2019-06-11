@@ -30,6 +30,9 @@ augroup goWatcher
   au BufWritePre *.go silent! :!go build
 augroup END
 
+" refresh chrome on scss save
+autocmd BufWrite {*.scss,*.erb} silent! :!refresh-chrome
+
 " leave paste mode automatically
 " https://github.com/neovim/neovim/issues/7994
 au InsertLeave * set nopaste

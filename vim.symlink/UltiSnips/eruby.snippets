@@ -2,15 +2,12 @@ snippet blk "blk_cms_page"
 <%= @blk_cms_page.content(${1:0}) %>
 endsnippet
 
-snippet svg "use svg"
-<use xlink:href="<%= IndexHelper.svg_path('tk-icon-${1:sb-mark-divider}') %>" />
-endsnippet
-
-snippet svg "SVG - Divider Gradient Defs"
-<defs>
-  <linearGradient x1="38.8270045%" y1="50%" x2="100%" y2="50%" id="gradient">
-    <stop stop-color="#D8D8D8" offset="0%"></stop>
-    <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
-  </linearGradient>
-</defs>
+snippet svg "SVG - .sb-hr > .sb-mark"
+<div class="sb-hr">
+	<div class="sb-mark">
+		<svg class="icon icon-sb-mark" aria-labelledby="title">
+			<use xlink:href="<%= IndexHelper.svg_path('tk-icon-sb-mark', 'primary') %>"></use>
+		</svg>
+	</div>
+</div>
 endsnippet
