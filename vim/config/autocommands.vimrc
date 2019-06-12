@@ -31,7 +31,7 @@ augroup goWatcher
 augroup END
 
 " refresh chrome on scss save
-autocmd BufWrite {*.scss,*.erb} silent! :!refresh-chrome
+autocmd BufWrite {*.scss,*.erb} if rchrome | silent! :!refresh-chrome | endif
 
 " leave paste mode automatically
 " https://github.com/neovim/neovim/issues/7994

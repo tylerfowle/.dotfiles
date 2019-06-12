@@ -3,11 +3,9 @@ snippet blk "blk_cms_page"
 endsnippet
 
 snippet svg "SVG - .sb-hr > .sb-mark"
-<div class="sb-hr">
-	<div class="sb-mark">
-		<svg class="icon icon-sb-mark" aria-labelledby="title">
-			<use xlink:href="<%= IndexHelper.svg_path('tk-icon-sb-mark', 'primary') %>"></use>
-		</svg>
-	</div>
+<div class="sb-hr${1: fade}">
+	<svg class="icon-sb-mark" aria-labelledby="title">
+		<use xlink:href="<%= IndexHelper.svg_path('tk-icon-sb-mark', 'primary') %>"></use>
+	</svg>
 </div>
 endsnippet

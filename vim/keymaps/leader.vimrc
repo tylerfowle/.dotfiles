@@ -28,6 +28,10 @@ nnoremap <localleader>pc :PlugClean<CR>
 "background toggle light and dark
 map <localleader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
+" toggle refresh-chrome
+let g:rchrome=1
+nnoremap <localleader>rc :silent! let rchrome = ( rchrome == 1? 0 : 1 )<CR>:echo rchrome<cr>
+
 " Jump to next/previous warning/error
 nnoremap <localleader>n :ALENext<CR>
 nnoremap <localleader>h :ALEPrevious<CR>
