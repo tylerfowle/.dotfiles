@@ -14,7 +14,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Using CocList {{{
 
-nnoremap <silent> <space><space>  :<C-u>CocList<cr>
 nnoremap <silent> <space>l  :<C-u>CocList<cr>
 nnoremap <silent> <space>m  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>d  :<C-u>CocList diagnostics<cr>
@@ -33,7 +32,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 
 " Resume latest coc list
-nnoremap <silent> <space>;  :<C-u>CocListResume<CR>
+nnoremap <silent> <space><space>  :<C-u>CocListResume<CR>
 nnoremap <silent> <space>r  :<C-u>CocListResume<CR>
 
 " }}}

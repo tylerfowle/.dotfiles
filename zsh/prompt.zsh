@@ -155,6 +155,10 @@ prompt_tags() {
   fi
 }
 
+prompt_touchbar() {
+   print -n "$(~/.iterm2/it2setkeylabel set status "$(test -d .git && (git rev-parse --abbrev-ref HEAD) || (echo -n "Not a repo"))")"
+}
+
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
@@ -168,6 +172,7 @@ prompt_agnoster_main() {
   prompt_status
   prompt_virtualenv
   prompt_dir
+  # prompt_touchbar
   prompt_end
 }
 

@@ -8,18 +8,14 @@ then
 fi
 
 brew tap caskroom/cask
-brew install brew-cask
 brew tap caskroom/versions
-brew tap caskroom/fonts
-
-
 
 packages=(
 # git
 git
 # vim & neovim
 vim
-neovim/neovim/neovim
+neovim
 # languages
 ruby
 go
@@ -28,22 +24,30 @@ docker
 docker-machine
 docker-compose
 # utilities
-z
 fzf
 ranger
 htop
 wget
 ack
 coreutils
+moreutils
 jq
 parallel
 terminal-notifier
 # fun
 archey
 figlet
+
+markdown
+grip
+ripgrep
+ctags
+zsh
+zsh-completions
+brew-cask-completion
 )
 
-apps=(
+caskapps=(
 # productivity
 docker
 slack
@@ -53,9 +57,13 @@ virtualbox
 1password
 iterm2
 cyberduck
-virtualbox
+sequel-pro
 sublime-text
+visual-studio-code
 # utilities
+google-backup-and-sync
+hammerspoon
+karabiner-elements
 # independent trackpad and mouse scroll direction
 scroll-reverser
 xscope
@@ -66,12 +74,15 @@ firefox
 google-chrome
 # music
 spotify
-# fonts
-font-hack-nerd-font
 )
 
 echo "==> Installing packages"
 brew install "${packages[@]}"
 
 echo "==> Installing apps"
-brew cask install "${apps[@]}"
+brew cask install "${caskapps[@]}"
+
+# Post Install brew
+
+# install fzf keybindings and completions
+/usr/local/opt/fzf/install
