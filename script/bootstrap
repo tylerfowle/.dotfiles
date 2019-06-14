@@ -144,13 +144,18 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if source bin/dot > /tmp/dotfiles-dot 2>&1
+  if source bin/dot > /tmp/dotfiles-dot
   then
     success "dependencies installed"
   else
     fail "error installing dependencies"
   fi
+
+  info "post install setup"
+  # install fzf keybindings and completions
+  /usr/local/opt/fzf/install
 fi
 
 echo ''
 echo '  All installed!'
+

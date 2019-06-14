@@ -1,5 +1,5 @@
-#!/bin/sh
-#
+#!/usr/bin/env bash
+
 # Check for Homebrew
 if test ! $(which brew)
 then
@@ -9,6 +9,8 @@ fi
 
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew update
+brew upgrade
 
 packages=(
 # git
@@ -83,8 +85,3 @@ brew install "${packages[@]}"
 
 echo "==> Installing apps"
 brew cask install "${caskapps[@]}"
-
-# Post Install brew
-
-# install fzf keybindings and completions
-/usr/local/opt/fzf/install
