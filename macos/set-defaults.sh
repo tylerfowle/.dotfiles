@@ -49,8 +49,8 @@ defaults write com.apple.dock wvous-tr-corner -int 12
 defaults write com.apple.dock wvous-bl-corner -int 2
 # defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Bottom left screen corner
-defaults write com.apple.dock wvous-br-corner -int 4
+# Bottom right screen corner
+defaults write com.apple.dock wvous-br-corner -int 10
 # defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Require password immediately after sleep or screen saver begins
@@ -71,9 +71,6 @@ defaults write com.apple.dock autohide -bool true
 
 # hide everything on the desktop
 defaults write com.apple.finder CreateDesktop false
-
-# hide the menubar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
