@@ -7,81 +7,85 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew update
-brew upgrade
+cd ./homebrew
+brew bundle
+cd ../
 
-packages=(
+# brew tap caskroom/cask
+# brew tap caskroom/versions
+# brew update
+# brew upgrade
+
+# packages=(
+# # git
 # git
-git
-# vim & neovim
-vim
-neovim
-# languages
-ruby
-go
-python2
-python
+# # vim & neovim
+# vim
+# neovim
+# # languages
+# ruby
+# go
+# python2
+# python
+# # docker
 # docker
-docker
-docker-machine
-docker-compose
-# utilities
-fzf
-ranger
-htop
-wget
-ack
-coreutils
-moreutils
-jq
-parallel
-terminal-notifier
-# fun
-archey
-figlet
+# docker-machine
+# docker-compose
+# # utilities
+# fzf
+# ranger
+# htop
+# wget
+# ack
+# coreutils
+# moreutils
+# jq
+# parallel
+# terminal-notifier
+# # fun
+# archey
+# figlet
 
-markdown
-grip
-ripgrep
-ctags
-zsh
-zsh-completions
-brew-cask-completion
-)
+# markdown
+# grip
+# ripgrep
+# ctags
+# zsh
+# zsh-completions
+# brew-cask-completion
+# )
 
-caskapps=(
-# productivity
-docker
-slack
-discord
-dropbox
-virtualbox
-1password
-iterm2
-cyberduck
-sequel-pro
-sublime-text
-visual-studio-code
-# utilities
-google-backup-and-sync
-hammerspoon
-karabiner-elements
-# independent trackpad and mouse scroll direction
-scroll-reverser
-xscope
-# text expansion
-atext
-# browsers
-firefox
-google-chrome
-# music
-spotify
-)
+# caskapps=(
+# # productivity
+# docker
+# slack
+# discord
+# dropbox
+# virtualbox
+# 1password
+# iterm2
+# cyberduck
+# sequel-pro
+# sublime-text
+# visual-studio-code
+# # utilities
+# google-backup-and-sync
+# hammerspoon
+# karabiner-elements
+# # independent trackpad and mouse scroll direction
+# scroll-reverser
+# xscope
+# # text expansion
+# atext
+# # browsers
+# firefox
+# google-chrome
+# # music
+# spotify
+# )
 
-echo "==> Installing packages"
-brew install "${packages[@]}"
+# echo "==> Installing packages"
+# brew install "${packages[@]}"
 
-echo "==> Installing apps"
-brew cask install "${caskapps[@]}"
+# echo "==> Installing apps"
+# brew cask install "${caskapps[@]}"
