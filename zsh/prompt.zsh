@@ -172,7 +172,7 @@ prompt_agnoster_main() {
   prompt_status
   prompt_virtualenv
   prompt_dir
-  prompt_touchbar
+  # prompt_touchbar
   prompt_end
 }
 
