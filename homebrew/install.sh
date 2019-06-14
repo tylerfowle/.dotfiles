@@ -19,6 +19,8 @@ neovim
 # languages
 ruby
 go
+python2
+python
 # docker
 docker
 docker-machine
