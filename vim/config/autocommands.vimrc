@@ -38,8 +38,4 @@ autocmd BufWrite {*.scss,*.erb} if rchrome | silent! :!refresh-chrome | endif
 au InsertLeave * set nopaste
 
 " ft specific indent
-autocmd FileType html setlocal shiftwidth=4 tabstop=4
-autocmd FileType php setlocal shiftwidth=4 tabstop=4
-autocmd FileType inc setlocal shiftwidth=4 tabstop=4
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-autocmd FileType php setlocal matchpairs-=<:>
+autocmd FileType {html,php,inc,javascript,ruby,erb} setlocal shiftwidth=4 tabstop=4

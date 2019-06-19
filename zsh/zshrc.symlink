@@ -45,7 +45,7 @@ unset config_files
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.q.plugin.zsh ] && source ~/.q.plugin.zsh
 
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # add zsh git flow completion
 if [[ -a ~/git-flow-completion/git-flow-completion.zsh ]]

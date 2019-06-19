@@ -187,7 +187,7 @@ source $DOTFILES/vim/plugins/coc.vimrc
 " source $DOTFILES/vim/plugins/deoplete.vimrc
 " source $DOTFILES/vim/plugins/jedi.vimrc
 source $DOTFILES/vim/plugins/ultisnips.vimrc
-source $DOTFILES/vim/plugins/supertab.vimrc
+" source $DOTFILES/vim/plugins/supertab.vimrc
 source $DOTFILES/vim/plugins/airline.vimrc
 source $DOTFILES/vim/plugins/tagbar.vimrc
 source $DOTFILES/vim/plugins/wakatime.vimrc

@@ -91,7 +91,8 @@ nnoremap <leader>q :qa<CR>
 nmap <leader>, :w<CR>
 
 " open current dir in finder
-nmap <leader>o :!open .<CR>
+nmap <leader>o :silent! !open .<CR>
+nmap <leader>oo :silent! !code .<CR>
 
 " run savesite in current dir
 nmap <silent> <leader>k :silent !savesite<CR> :redraw!<cr>
