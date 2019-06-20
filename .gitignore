@@ -7,3 +7,4 @@ gitconfig.local
 
 .netrwhist
 vim.symlink/plugged
+vim.symlink/sessions

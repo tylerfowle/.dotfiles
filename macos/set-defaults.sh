@@ -13,10 +13,14 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 defaults write com.apple.dock autohide -bool true
 
 # Save screenshots to the desktop
+mkdir ~/Screenshots
 defaults write com.apple.screencapture location ~/Screenshots
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
+
+# show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
 
 # Show path in Finder title bar
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -80,10 +84,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 25
 # Kill affected applications                                                  #
 ###############################################################################
 
-# for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-# "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-# "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-# "Twitter" "iCal"; do
-#   killall "${app}" &> /dev/null
-# done
+killall SystemUIServer
+killall Dock
+killall Finder
+killall Terminal
+
 echo "Done setting defaults. Note that some of these changes require a logout/restart to take effect."
