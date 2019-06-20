@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+def time_calc(num1, num2)
+    (num2.to_f + num1.to_f).round(2)
+end
+
+puts time_calc(ARGV[0], ARGV[1]) unless ARGV.length != 2
