@@ -5,8 +5,7 @@ refresh=$(/usr/bin/osascript << EOT
 tell application "Google Chrome"
     set window_list to every window # get the windows
     repeat with the_window in window_list # for every window
-        reload every tab of the_window whose URL contains "localhost"
-        reload every tab of the_window whose URL contains "tfowle.sbf.engineering"
+        reload every tab of the_window whose URL contains "tfowle.sbf.engineering/"
     end repeat
 end tell
 

@@ -33,6 +33,7 @@ map <localleader>bg :let &background = ( &background == "dark"? "light" : "dark"
 " toggle refresh-chrome
 let g:rchrome=1
 nnoremap <localleader>rc :silent! let rchrome = ( rchrome == 1? 0 : 1 )<CR>:echo rchrome<cr>
+nnoremap <localleader>rr :silent! !refresh-chrome<cr>
 
 " Jump to next/previous warning/error
 nnoremap <localleader>n :ALENext<CR>
@@ -124,7 +125,9 @@ endif
 nnoremap <leader>; :SideBarEnterToggle<CR>
 
 " tab stuff
+" create new tab
 noremap <C-t> :tabe<CR>
+noremap gr gT
 
 " close current buffer but not current window
 noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>

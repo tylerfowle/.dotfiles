@@ -42,8 +42,8 @@ Plug 'triglav/vim-visual-increment'                          " use ctrl a/v to i
 Plug 'mileszs/ack.vim'                                       " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
 " Plug 'wakatime/vim-wakatime'                                 " time tracker
-Plug '~/Repos/turtle.vim'                                    " quickly add header comments
-Plug '~/Repos/twiggy.vim'                                    " twig variable automation
+Plug 'tylerfowle/turtle.vim'                                 " quickly add header comments
+Plug 'tylerfowle/twiggy.vim'                                 " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                " switch boolean values with gs
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
