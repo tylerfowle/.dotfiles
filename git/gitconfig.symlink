@@ -28,9 +28,9 @@
 	rso = remote show origin
 	pup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
 	diffw = diff --word-diff=color
-    deff = !git diff -- ':!package-lock.json' ':!yarn.lock'
-    nuke = !git stash && git clean -fdx
-    c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
+	deff = !git diff -- ':!package-lock.json' ':!yarn.lock'
+	nuke = !git stash && git clean -fdx
+	c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
 [core]
 	editor = "$EDITOR"
 	excludesfile = /Users/tyler.fowle/.gitignore_global
@@ -41,7 +41,7 @@
 	autosetupmerge = always
 	autosetuprebase = always
 [user]
-	name = Tyler Fowle
+	name = tylerfowle
 	email = tylerfowle@gmail.com
 [Github]
 	user = tyler.fowle
