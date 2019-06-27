@@ -154,33 +154,7 @@ let g:netrw_winsize = 25
 " }}}
 
 
-" colorscheme {{{
-
-set background=dark
-
-if has('termguicolors')
-  set termguicolors " 24-bit terminal
-endif
-
-" set gruvbox as theme
-colorscheme gruvbox
-
-" set custom background color
-if has('nvim')
-  hi Normal guibg=g:tf_background
-  hi SignColumn guibg=g:tf_background
-endif
-hi CursorLine guibg=#111111
-
-" customize matching paren colors
-hi MatchParen guifg=#000000 guibg=#fc802d
-
-" limelight colors
-let g:limelight_conceal_ctermfg = '#555555'
-let g:limelight_conceal_guifg = '#555555'
-
-" }}}
-
+" imports {{{
 
 source $DOTFILES/vim/plugins/ale.vimrc
 source $DOTFILES/vim/plugins/coc.vimrc
@@ -199,10 +173,40 @@ source $DOTFILES/vim/plugins/tasklist.vimrc
 source $DOTFILES/vim/plugins/vim-partial.vimrc
 source $DOTFILES/vim/plugins/neoformat.vimrc
 
-
 source $DOTFILES/vim/keymaps/general.vimrc
 source $DOTFILES/vim/keymaps/leader.vimrc
 source $DOTFILES/vim/keymaps/terminal.vimrc
+
+" }}}
+
+
+" colorscheme {{{
+
+set background=dark
+
+if has('termguicolors')
+  set termguicolors " 24-bit terminal
+endif
+
+" set gruvbox as theme
+colorscheme gruvbox
+
+" set custom background color
+if has('nvim')
+  hi Normal guibg=g:tf_background
+  hi SignColumn guibg=g:tf_background
+  hi CursorLine guibg=g:tf_background
+  hi Folded guibg=g:tf_background
+
+  " customize matching paren colors
+  hi MatchParen guifg=#000000 guibg=#fc802d
+endif
+
+" limelight colors
+let g:limelight_conceal_ctermfg = '#555555'
+let g:limelight_conceal_guifg = '#555555'
+
+" }}}
 
 
 " markdown highlight syntax overrides {{{
