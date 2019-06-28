@@ -4,9 +4,9 @@
 nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
 
 " time snips
-nnoremap <leader>dt :r !date<cr>I##<space><esc>o<esc>
-nnoremap <leader>dd :r !date<cr>I##<space><esc>o11:11 \| firestarter<esc>o11:30 \| lunch<esc>:Tabularize /\|<cr>
-nnoremap <leader>dn :r !date +"\%T"<cr>A<space>\|<space>
+nmap <leader>dt :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc>
+nmap <leader>dd :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc><leader>dnin<tab><esc>o11:11 \| firestarter<esc>o11:30 \| ⬆ lunch<esc>:Tabularize /\|<cr>j
+nmap <leader>dn :r !date +"\%T"<cr>A<space>\|<space>
 nmap <leader>td }j"zyt {k"xyt j:r !timediff <c-r>z <c-r>x<cr> A \| Total<esc>
 nmap <leader>tc }j"zyt {k"xyt j:r !timecalc <c-r>z <c-r>x<cr> A \| Total<esc>
 
