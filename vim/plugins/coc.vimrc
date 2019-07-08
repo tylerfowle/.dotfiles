@@ -13,6 +13,8 @@ nmap <silent> gr <Plug>(coc-references)
 
 
 " Using CocList {{{
+" old ctrlp keybind - added because muscle memory
+nnoremap <silent> <leader>f  :<C-u>CocList files<cr>
 
 nnoremap <silent> <space>l  :<C-u>CocList<cr>
 nnoremap <silent> <space>m  :<C-u>CocList mru<cr>
