@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker run -ti --rm -v ${PWD}:/mnt/workspace --name deovim tylerfowle/deovim
