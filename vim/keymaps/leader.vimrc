@@ -5,7 +5,7 @@ nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:
 
 " time snips
 nmap <leader>dt :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc>
-nmap <leader>dd :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc><leader>dnin<tab><esc>o11:11 \| firestarter<esc>o11:30 \| ⬆ lunch<esc>:Tabularize /\|<cr>j
+nmap <leader>dd :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc><leader>dnin<tab><esc>o11:30 \| ⬆ lunch<esc>:Tabularize /\|<cr>j
 nmap <leader>dn :r !date +"\%T"<cr>A<space>\|<space>
 nmap <leader>td }j"zyt {k"xyt j:r !timediff <c-r>z <c-r>x<cr> A \| Total<esc>
 nmap <leader>tc }j"zyt {k"xyt j:r !timecalc <c-r>z <c-r>x<cr> A \| Total<esc>
@@ -208,7 +208,7 @@ nnoremap <leader>ds <Plug>DashSearch<CR>
 
 " Tag Shortcuts {{{
 
-nnoremap tg :silent ! ctags -R --languages=ruby --exclude=.git --exclude=log .<cr>
+nnoremap tg :silent ! ctags -R --languages=ruby,scss --exclude=.git --exclude=log .<cr>
 " search tag under cursor
 nnoremap tt <c-]>zz
 " go back to definition
