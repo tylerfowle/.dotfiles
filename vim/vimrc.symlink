@@ -133,6 +133,7 @@ set foldclose=all
 set autoread         " auto reload changed files
 set modelines=1      " check the last line for file specific settings
 set path+=build/scss " for searching
+set path+=./**/
 
 " }}}
 

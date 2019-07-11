@@ -74,13 +74,15 @@ Plug 'JulesWang/css.vim'                                                " css sy
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss','sass']}              " scss syntax
 Plug 'lumiliet/vim-twig', {'for': ['html.twig']}                        " twig syntax
 Plug 'vim-ruby/vim-ruby'                                                " ruby syntax
+Plug 'tpope/vim-rails'                                                  " rails
 Plug 'jwalton512/vim-blade'                                             " blade syntax
 Plug 'posva/vim-vue'                                                    " vuejs syntax
 Plug 'godlygeek/tabular'                                                " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}              " markdown syntax
 Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}             " markdown - generate table of contents with :GenTocGFM
 Plug 'shime/vim-livedown', {'on': ['LivedownPreview','LivedownToggle']} " live markdown preview 'npm install -g livedown
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                      " go
+Plug 'mustache/vim-mustache-handlebars'                                 " mustache syntax
 
 " }}}
 
