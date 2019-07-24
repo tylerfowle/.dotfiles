@@ -165,11 +165,10 @@ nnoremap <leader>. :lcd %:p:h<CR>:CtrlPClearAllCaches<CR>
 
 " Display current file in the NERDTree ont the left
 nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
+map <C-n> :NERDTreeToggle<CR><c-w>=
 
-" open v split
+" oped v split
 nmap <leader>v :vsp<CR>
-" open h split
-nmap <leader>h :sp<CR>
 
 " }}}
 "

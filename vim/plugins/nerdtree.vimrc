@@ -3,7 +3,6 @@
 " https://github.com/scrooloose/nerdtree
 " ##############################################################################
 
-map <C-n> :NERDTreeToggle<CR><c-w>=
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
