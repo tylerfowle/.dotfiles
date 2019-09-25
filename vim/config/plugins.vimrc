@@ -48,7 +48,6 @@ Plug 'AndrewRadev/switch.vim'                                " switch boolean va
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " intellisense completion
-Plug 'rizzatti/dash.vim'                                     " dash.app lookup
 
 if has('nvim')
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}               " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
@@ -69,20 +68,20 @@ Plug 'sbdchd/neoformat'  " formatter
 Plug 'othree/html5.vim'                                                 " html5 syntax
 Plug 'othree/javascript-libraries-syntax.vim'                           " javascript libary syntax (jquery)
 Plug 'pangloss/vim-javascript'                                          " javascript syntax
-Plug 'kchmck/vim-coffee-script'                                         " coffeescript syntax
 Plug 'JulesWang/css.vim'                                                " css syntax
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss','sass']}              " scss syntax
 Plug 'lumiliet/vim-twig', {'for': ['html.twig']}                        " twig syntax
 Plug 'vim-ruby/vim-ruby'                                                " ruby syntax
 Plug 'tpope/vim-rails'                                                  " rails
-Plug 'jwalton512/vim-blade'                                             " blade syntax
-Plug 'posva/vim-vue'                                                    " vuejs syntax
 Plug 'godlygeek/tabular'                                                " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}              " markdown syntax
 Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}             " markdown - generate table of contents with :GenTocGFM
 Plug 'shime/vim-livedown', {'on': ['LivedownPreview','LivedownToggle']} " live markdown preview 'npm install -g livedown
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                      " go
 Plug 'mustache/vim-mustache-handlebars'                                 " mustache syntax
+" Plug 'kchmck/vim-coffee-script'                                         " coffeescript syntax
+" Plug 'jwalton512/vim-blade'                                             " blade syntax
+" Plug 'posva/vim-vue'                                                    " vuejs syntax
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                      " go
 
 " }}}
 
