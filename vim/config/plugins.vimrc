@@ -41,7 +41,6 @@ Plug 'markonm/traces.vim'                                    " highlight pattern
 Plug 'triglav/vim-visual-increment'                          " use ctrl a/v to increment.decrement a visually selected block
 Plug 'mileszs/ack.vim'                                       " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
-Plug 'wakatime/vim-wakatime'                                 " time tracker
 Plug 'tylerfowle/turtle.vim'                                 " quickly add header comments
 Plug 'tylerfowle/twiggy.vim'                                 " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                " switch boolean values with gs
