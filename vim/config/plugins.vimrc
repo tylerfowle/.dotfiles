@@ -78,6 +78,7 @@ Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}              " markdo
 Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}             " markdown - generate table of contents with :GenTocGFM
 Plug 'shime/vim-livedown', {'on': ['LivedownPreview','LivedownToggle']} " live markdown preview 'npm install -g livedown
 Plug 'mustache/vim-mustache-handlebars'                                 " mustache syntax
+Plug 'posva/vim-vue'                                                     " vue syntax
 " Plug 'kchmck/vim-coffee-script'                                         " coffeescript syntax
 " Plug 'jwalton512/vim-blade'                                             " blade syntax
 " Plug 'posva/vim-vue'                                                    " vuejs syntax
