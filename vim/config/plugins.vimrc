@@ -26,7 +26,6 @@ Plug 'junegunn/limelight.vim', {'on': ['Limelight', 'Limelight!!']}             
 
 " Utilities {{{
 
-Plug 'ctrlpvim/ctrlp.vim'                                    " fuzzy file, buffer, mru, tag finder
 Plug 'ton/vim-bufsurf'                                       " Navigate buffers based on history, like browser windows
 Plug 'junegunn/vim-easy-align'                               " ga to align by character
 Plug 'tpope/vim-repeat'                                      " enables repeating other supported plugins with the . command
@@ -42,8 +41,6 @@ Plug 'triglav/vim-visual-increment'                          " use ctrl a/v to i
 Plug 'mileszs/ack.vim'                                       " ack for vim - replaces vimgrep
 Plug 'brooth/far.vim'                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
 Plug 'wakatime/vim-wakatime'                                 " time tracker
-Plug 'tylerfowle/turtle.vim'                                 " quickly add header comments
-Plug 'tylerfowle/twiggy.vim'                                 " twig variable automation
 Plug 'AndrewRadev/switch.vim'                                " switch boolean values with gs
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
