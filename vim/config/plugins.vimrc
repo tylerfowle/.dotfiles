@@ -33,7 +33,7 @@ Plug 'tpope/vim-surround'                                    " ysiw to surround 
 Plug 'tpope/vim-commentary'                                  " easy commenting
 Plug 'tpope/vim-fugitive'                                    " git wrapper
 Plug 'tpope/vim-ragtag'                                      " html mappings
-Plug 'raimondi/delimitmate'                                  " Auto close tags
+" Plug 'raimondi/delimitmate'                                  " Auto close tags
 Plug 'bronson/vim-trailing-whitespace'                       " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'                                " show search position among all results
 Plug 'markonm/traces.vim'                                    " highlight patterns and ranges for Ex commands
@@ -75,7 +75,8 @@ Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}              " markdo
 Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}             " markdown - generate table of contents with :GenTocGFM
 Plug 'shime/vim-livedown', {'on': ['LivedownPreview','LivedownToggle']} " live markdown preview 'npm install -g livedown
 Plug 'mustache/vim-mustache-handlebars'                                 " mustache syntax
-Plug 'posva/vim-vue'                                                     " vue syntax
+Plug 'posva/vim-vue'                                                    " vue syntax
+Plug 'StanAngeloff/php.vim'                                             " php syntax
 " Plug 'kchmck/vim-coffee-script'                                         " coffeescript syntax
 " Plug 'jwalton512/vim-blade'                                             " blade syntax
 " Plug 'posva/vim-vue'                                                    " vuejs syntax
