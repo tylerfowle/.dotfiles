@@ -9,18 +9,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " }}}
 
 " UI {{{
 
-Plug 'majutsushi/tagbar', {'on': ['Tagbar']}                                                 " Tagbar
-Plug 'nathanaelkane/vim-indent-guides', {'on': ['IndentGuidesToggle','IndentGuidesOn']}      " indent guides
-Plug 'vim-airline/vim-airline'                                                               " fancy statusline
-Plug 'vim-airline/vim-airline-themes'                                                        " themes for airline
-Plug 'airblade/vim-gitgutter'                                                                " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-Plug 'junegunn/vim-peekaboo'                                                                 " shows registers in a sidebar
-Plug 'junegunn/limelight.vim', {'on': ['Limelight', 'Limelight!!']}                          " dim paragraphs above and below
+Plug 'majutsushi/tagbar', {'on': ['Tagbar']}                                            " Tagbar
+Plug 'nathanaelkane/vim-indent-guides', {'on': ['IndentGuidesToggle','IndentGuidesOn']} " indent guides
+Plug 'vim-airline/vim-airline'                                                          " fancy statusline
+Plug 'vim-airline/vim-airline-themes'                                                   " themes for airline
+Plug 'airblade/vim-gitgutter'                                                           " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'junegunn/vim-peekaboo'                                                            " shows registers in a sidebar
+Plug 'junegunn/limelight.vim', {'on': ['Limelight', 'Limelight!!']}                     " dim paragraphs above and below
 
 " }}}
 
