@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+mkdir -p ~/.config/speedtester
+python speedtester >> ~/.config/speedtester/results.csv
