@@ -172,6 +172,7 @@ source $DOTFILES/vim/plugins/delimitmate.vimrc
 source $DOTFILES/vim/plugins/tasklist.vimrc
 source $DOTFILES/vim/plugins/vim-partial.vimrc
 source $DOTFILES/vim/plugins/neoformat.vimrc
+source $DOTFILES/vim/plugins/vista.vimrc
 
 source $DOTFILES/vim/keymaps/general.vimrc
 source $DOTFILES/vim/keymaps/leader.vimrc

@@ -15,7 +15,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 " UI {{{
 
-Plug 'majutsushi/tagbar', {'on': ['Tagbar']}                                            " Tagbar
+" Plug 'majutsushi/tagbar', {'on': ['Tagbar']}                                            " Tagbar
 Plug 'nathanaelkane/vim-indent-guides', {'on': ['IndentGuidesToggle','IndentGuidesOn']} " indent guides
 Plug 'vim-airline/vim-airline'                                                          " fancy statusline
 Plug 'vim-airline/vim-airline-themes'                                                   " themes for airline
@@ -34,7 +34,7 @@ Plug 'tpope/vim-surround'                                    " ysiw to surround 
 Plug 'tpope/vim-commentary'                                  " easy commenting
 Plug 'tpope/vim-fugitive'                                    " git wrapper
 Plug 'tpope/vim-ragtag'                                      " html mappings
-" Plug 'raimondi/delimitmate'                                  " Auto close tags
+" Plug 'raimondi/delimitmate'                                          " Auto close tags
 Plug 'bronson/vim-trailing-whitespace'                       " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'google/vim-searchindex'                                " show search position among all results
 Plug 'markonm/traces.vim'                                    " highlight patterns and ranges for Ex commands
@@ -46,6 +46,7 @@ Plug 'AndrewRadev/switch.vim'                                " switch boolean va
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " intellisense completion
+Plug 'liuchengxu/vista.vim'                                  " tagbar replacer
 
 if has('nvim')
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}               " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca

@@ -61,6 +61,9 @@ nnoremap <leader>gf :ALEFix<cr>
 " Prettydiff
 nnoremap <localleader>f :PrettyDiff<cr>
 
+" Vista window
+nnoremap <localleader>v :Vista!!<cr>
+
 " create file under from path under cursor relative to current buffer
 nnoremap <silent> <leader>cf :e <cfile>.scss<CR>
 nnoremap <localleader>cf :e <cfile><CR>
