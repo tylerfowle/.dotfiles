@@ -1,7 +1,8 @@
 " Leader Shortcuts {{{
 
 " open _settings.scss
-nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
+" nnoremap <localleader>s 100<C-w>l:vsplit<cr>:set wfw<cr>:vertical resize 80<cr>:find **/_settings.scss<cr>
+nnoremap <localleader>s :silent !stylelint --fix %<cr>
 
 " time snips
 nmap <leader>dt :r !date "+\%a \%b \%d \%Y"<cr>I##<space><esc>o<esc>

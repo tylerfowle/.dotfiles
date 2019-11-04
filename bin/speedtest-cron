@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-mkdir -p ~/.config/speedtester
-speedtester >> ~/.config/speedtester/results.csv
+mkdir -p /Users/tyler.fowle/.config/speedtester
+/Users/tyler.fowle/.dotfiles/bin/speedtester >> ~/.config/speedtester/results.csv
