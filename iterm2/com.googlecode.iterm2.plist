@@ -2952,7 +2952,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>590 2165 400 129 -334 1200 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>636 1968 620 392 -334 1200 2560 1417 </string>
+	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>222 1510 796 486 -581 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -5254,11 +5254,11 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7beta1</string>
+		<string>3.3.0beta11</string>
 		<string>3.2.9</string>
 		<string>3.3.5beta3</string>
 		<string>3.3.2beta1</string>
-		<string>3.3.0beta11</string>
+		<string>3.3.7beta1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -5276,7 +5276,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NoSyncInstallationId</key>
 	<string>9BA30681-4340-4105-B813-733530078B17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>20</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6076,7 +6076,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-31T18:45:31Z</date>
+	<date>2019-11-05T22:11:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
