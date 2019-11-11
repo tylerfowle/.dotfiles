@@ -14,8 +14,16 @@ snippet rcs "Rails - contentspace"
 <%= cms_content(${1:0}) %>
 endsnippet
 
-snippet rimg "Rails - image source" i
+snippet imgrah "Rails - image helper" i
 <%= webpack_image_path('${0:${VISUAL:image.png}}') %>
+endsnippet
+
+snippet imgras "Rails - image src" i
+<img src="<%= webpack_image_path('${0:${VISUAL:image.png}}') %>" alt="${1:alt-text-here}" class="${2:classes-here}">
+endsnippet
+
+snippet imgrus "Ruby - image src" i
+<img src="<%= IndexHelper.img_path('${0:${VISUAL:image.png}}') %>" alt="${1:alt-text-here}" class="${2:classes-here}">
 endsnippet
 
 snippet var "Rails - variable"

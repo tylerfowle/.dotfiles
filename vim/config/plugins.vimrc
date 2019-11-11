@@ -33,6 +33,7 @@ Plug 'tpope/vim-repeat'                                      " enables repeating
 Plug 'tpope/vim-surround'                                    " ysiw to surround word
 Plug 'tpope/vim-commentary'                                  " easy commenting
 Plug 'tpope/vim-fugitive'                                    " git wrapper
+Plug 'tpope/vim-rhubarb'                                     " github extension for fugitive
 Plug 'tpope/vim-ragtag'                                      " html mappings
 " Plug 'raimondi/delimitmate'                                          " Auto close tags
 Plug 'bronson/vim-trailing-whitespace'                       " This plugin causes all trailing whitespace to be highlighted in red.
