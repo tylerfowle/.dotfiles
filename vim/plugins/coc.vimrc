@@ -2,6 +2,10 @@
 set nobackup
 set nowritebackup
 
+" COC-Explorer {{{
+nmap ge :CocCommand explorer<CR>
+" }}}
+
 " Remap keys for gotos {{{
 
 nmap <silent> gd <Plug>(coc-definition)

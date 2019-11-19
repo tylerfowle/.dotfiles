@@ -36,7 +36,7 @@ noremap YY "+y<CR>
 nnoremap <CR> o<Esc>
 
 " redraw vim
-nnoremap <C-z> :redraw!<CR>
+" nnoremap <C-z> :redraw!<CR>
 
 " use tab for indenting in visual mode
 vnoremap <Tab> >gv|
