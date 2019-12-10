@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+inputpath=$1
+if [ -d "${inputpath}" ]; then
+    cd "${inputpath}";
+elif [ -f "${inputpath}" ]; then
+    e "${inputpath}";
+else
+    echo "invalid input";
+    exit 1
+fi
