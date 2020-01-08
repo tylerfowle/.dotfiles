@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+red=$'\e[1;31m'
+grn=$'\e[1;32m'
+blu=$'\e[1;34m'
+mag=$'\e[1;35m'
+cyn=$'\e[1;36m'
+yel=$'\e[1;33m'
+gry=$'\e[1;90m'
+normal=$'\e[0m'
+
+for d in */ ; do
+    echo -e "${gry}******************************************** $normal"
+    cd "$d"
+    echo "$PWD"
+
+    if [ -d .git ]; then
+
+        if [ -z "$(git status --porcelain)" ]; then
+            echo -e "${grn}clean${normal}"
+        else
+            echo -e "${red}changes detected${normal}"
+            git status -s
+        fi
+
+    else
+        echo -e "${yel}not a repo$normal"
+    fi;
+
+    cd ../
+done
+echo -e "${gry}******************************************** $normal"
