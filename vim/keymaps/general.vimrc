@@ -47,8 +47,10 @@ vnoremap <S-Tab> <gv
 
 " git gutter
 " jump to chunk
-nmap <leader>gh <Plug>GitGutterPrevHunk
-nmap <leader>gn <Plug>GitGutterNextHunk
-nmap <leader>ga <Plug>GitGutterStageHunk
-nmap <leader>gu <Plug>GitGutterUndoHunk
-nmap <leader>gv <Plug>GitGutterPreviewHunk
+nmap <leader>gp <Plug>(GitGutterPrevHunk)
+nmap <leader>gn <Plug>(GitGutterNextHunk)
+
+nmap <leader>ga <Plug>(GitGutterStageHunk)
+nmap <leader>gu <Plug>(GitGutterUndoHunk)
+
+nmap <leader>gv <Plug>(GitGutterPreviewHunk)

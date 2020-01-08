@@ -2956,7 +2956,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>222 1510 796 486 -581 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-334 1205 853 940 -334 1200 2560 1417 </string>
+	<string>-334 1200 2560 1417 -334 1200 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874_selection</key>
@@ -5254,16 +5254,22 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.0beta11</string>
-		<string>3.2.9</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.2beta1</string>
+		<string>3.3.7beta4</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.0beta11</string>
+		<string>3.3.5beta3</string>
 		<string>3.3.7beta1</string>
+		<string>3.3.2beta1</string>
+		<string>3.2.9</string>
+	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>FuraCode Nerd Font Mono</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Menlo</string>
+		<string>undefined Nerd Font</string>
+		<string>FuraCode Nerd Font Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
@@ -5277,7 +5283,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NoSyncInstallationId</key>
 	<string>9BA30681-4340-4105-B813-733530078B17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>22</integer>
+	<integer>26</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6077,11 +6083,11 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-19T17:14:35Z</date>
+	<date>2020-01-06T19:03:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -7014,7 +7020,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7beta3</string>
+	<string>3.3.7beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
