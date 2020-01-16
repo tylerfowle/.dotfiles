@@ -94,17 +94,22 @@ prompt_git() {
   }
   ref="$vcs_info_msg_0_"
   if [[ -n "$ref" ]]; then
-    if is_dirty; then
-      color=yellow
-      ref="${ref} $PLUSMINUS"
+    if [[ "$PWD" =~ Volumes ]]; then
+        color=white
+        ref="${ref} nost"
     else
-      color=green
-      ref="${ref} "
-    fi
-    if [[ "${ref/.../}" == "$ref" ]]; then
-      ref="$TREE $BRANCH $ref"
-    else
-      ref="$DETACHED ${ref/.../}"
+        if is_dirty; then
+            color=yellow
+            ref="${ref} $PLUSMINUS"
+        else
+            color=green
+            ref="${ref} "
+        fi
+        if [[ "${ref/.../}" == "$ref" ]]; then
+            ref="$TREE $BRANCH $ref"
+        else
+            ref="$DETACHED ${ref/.../}"
+        fi
     fi
     prompt_segment $color $PRIMARY_FG
     print -Pn " $ref"
