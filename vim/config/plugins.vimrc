@@ -47,6 +47,14 @@ Plug 'jbgutierrez/vim-partial'                               " makes creating pa
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " intellisense completion
 Plug 'liuchengxu/vista.vim'                                  " tagbar replacer
 
+" FZF
+if isdirectory('/usr/local/opt/fzf')
+  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+else
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  Plug 'junegunn/fzf.vim'
+endif
+
 if has('nvim')
   Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}               " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
   Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']} " floobits - collaborative editing

@@ -4,7 +4,7 @@ set nowritebackup
 
 " COC-Explorer {{{
 nmap ge :CocCommand explorer<CR>
-nmap <leader>n :CocCommand explorer<CR>
+nmap <leader>n :CocCommand explorer --file-columns=selection:clip:indent:icon:filename;fullpath;size;modified;readonly<CR>
 " }}}
 
 " Remap keys for gotos {{{

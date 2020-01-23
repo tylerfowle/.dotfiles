@@ -22,6 +22,29 @@
 	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
+	<key>Coprocess MRU</key>
+	<array>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/frontend/less/views/ambassadors.less</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/lib/braintree.js</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-ruby/application/frontend/assets/js/give/give.js</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/application.js</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-salesforce-sync/lib/salesforce/promo.rb</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/utilities/LookupUtility.inc</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/dams/DonationDAM.inc</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/3rdparty/sbf-client-php/lib/SBF/Enum/Donation/Promo.php</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-api/v2/enums/donation/promo_code.rb</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-client-ruby/lib/stbaldricks/entities/donation/promo_code.rb</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/library/google-api-php-client/src/contrib/Google_BooksService.php</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/app/controllers/donation_widget_controller.rb</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-design-toolkit/src/assets/toolkit/js/toolkit/modules/donation-widget.js</string>
+		<string>echo e /Users/tyler.fowle/.dotfiles/vim/keymaps/leader.vimrc</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-design-toolkit/src/assets/toolkit/scss/variables/components/_breakpoints.scss</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-ruby/script/check_certificate.sh</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-api/script/check_certificate.sh</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-rails/app/assets/filling_funding_gap/filling_funding_gap.scss</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/widget.js</string>
+		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/widget.scss</string>
+	</array>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Hopscotch</key>
@@ -2956,7 +2979,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>222 1510 796 486 -581 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-334 1200 2560 1417 -334 1200 2560 1417 </string>
+	<string>-246 1200 2428 1417 -334 1200 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874_selection</key>
@@ -3602,7 +3625,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Screen</key>
 			<integer>1</integer>
 			<key>Scrollback Lines</key>
-			<integer>5000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3907,6 +3930,19 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			</dict>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.0</real>
+				<key>Red Component</key>
+				<real>0.0</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -3914,7 +3950,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -4719,13 +4755,13 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1944427490234375</real>
+				<real>0.18823529411764706</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0016318284906446934</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.19410146992825617</real>
+				<real>0.18823529411764706</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -4791,15 +4827,15 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.25</real>
+				<real>0.12941176470588237</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.69999999999999996</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9268307089805603</real>
+				<real>0.69999999999999996</real>
 				<key>Red Component</key>
-				<real>0.70213186740875244</real>
+				<real>0.69999999999999996</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -5176,7 +5212,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Screen</key>
 			<integer>1</integer>
 			<key>Scrollback Lines</key>
-			<integer>5000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -5220,6 +5256,19 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.2196078431372549</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.53725490196078429</real>
+				<key>Red Component</key>
+				<real>0.38823529411764707</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -5227,7 +5276,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -5239,7 +5288,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Tab Color</key>
-			<false/>
+			<true/>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
@@ -5263,27 +5312,33 @@ Gulp:Restore Window Arrangement as Tabs</string>
 		<string>3.2.9</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
-	<array>
-		<string>FuraCode Nerd Font Mono</string>
-	</array>
+	<array/>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>undefined Nerd Font</string>
+		<string>FuraMono Nerd Font Mono</string>
+		<string>FuraCode Nerd Font</string>
 		<string>FuraCode Nerd Font Mono</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{-334, 1200}, {2560, 1440}}</string>
+		<key>topLeft</key>
+		<string>{643, 2392}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{638, 935}</string>
+		<string>{530, 845}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9BA30681-4340-4105-B813-733530078B17</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>26</integer>
+	<integer>27</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6017,6 +6072,19 @@ Gulp:Restore Window Arrangement as Tabs</string>
 		<string>overlay</string>
 		<string>padding</string>
 	</array>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>nkkkkk</string>
+		<string>suggested_giving</string>
+		<string>money</string>
+		<string>.scss</string>
+		<string>advocacy-</string>
+		<string>frontend</string>
+		<string>fonr</string>
+		<string>gulp:run</string>
+		<string>partial</string>
+		<string>delete</string>
+	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>582153728.16199505</real>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
@@ -6083,7 +6151,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-06T19:03:33Z</date>
+	<date>2020-01-20T15:59:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
