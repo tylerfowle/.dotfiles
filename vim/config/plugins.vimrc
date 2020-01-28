@@ -21,6 +21,7 @@ Plug 'vim-airline/vim-airline-themes'                                           
 Plug 'airblade/vim-gitgutter'                                                           " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'junegunn/vim-peekaboo'                                                            " shows registers in a sidebar
 Plug 'junegunn/limelight.vim', {'on': ['Limelight', 'Limelight!!']}                     " dim paragraphs above and below
+Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
 
 " }}}
 
