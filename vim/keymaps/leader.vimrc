@@ -98,13 +98,15 @@ nmap <leader>, :w<CR>
 
 " open current dir in finder
 nmap <leader>o :silent! !open .<CR>
+" open current dir in vscode
 nmap <leader>oo :silent! !code .<CR>
 
 " run savesite in current dir
 nmap <silent> <leader>k :silent !savesite<CR> :redraw!<cr>
 
-" super save - save session in its current state, open agian with `vim -S`
-nnoremap <leader>s :mksession!<CR>
+" SUPER SAVE
+" save session in its current state, open agian with `vim -S`
+nnoremap <leader>S :mksession!<CR>
 
 " clear highlighted search term, but keep in register
 nnoremap <leader><esc> :noh<CR>
@@ -171,11 +173,12 @@ nnoremap <leader>. :lcd %:p:h<CR>:CtrlPClearAllCaches<CR>
 " nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 " map <C-n> :NERDTreeToggle<CR><c-w>=
 
-" oped v split
+" oped v splits
 nmap <leader>v :vsp<CR>
+nmap <leader>s :sp<CR>
 
 " }}}
-"
+
 
 " Text Objects {{{
 " in variable text object, includes $ before word
