@@ -1,6 +1,12 @@
+--ignore-directory=is:public
+--ignore-directory=is:.tmpdir
+
 --ignore-directory=is:node_modules
+
 --ignore-directory=is:vendor_bundle_alpine
 --ignore-directory=is:vendor_bundle
+
 --ignore-directory=is:subdesigns
 --ignore-directory=is:plugged
+
 --ignore-file=is:tags

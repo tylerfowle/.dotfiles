@@ -13,6 +13,8 @@ alias sassvars='grep -Rh "\$.\S*:" .'
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
+alias edittmux="cd ~/Repos/tmux/ && e ~/Repos/tmux/tmux.conf"
+alias editmux=edittmux
 alias editdot="cd ~/.dotfiles && e ~/.dotfiles"
 alias editvim="cd ~/.dotfiles && e ~/.dotfiles/vim/vimrc.symlink"
 
