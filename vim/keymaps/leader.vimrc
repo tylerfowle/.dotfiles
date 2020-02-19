@@ -106,7 +106,7 @@ nmap <silent> <leader>k :silent !savesite<CR> :redraw!<cr>
 
 " SUPER SAVE
 " save session in its current state, open agian with `vim -S`
-nnoremap <leader>S :mksession!<CR>
+nnoremap <leader>s :mksession!<CR>
 
 " clear highlighted search term, but keep in register
 nnoremap <leader><esc> :noh<CR>
@@ -166,16 +166,13 @@ nnoremap <C-H> <C-W><C-H>
 " open file under cursor in vertical split
 nnoremap <leader>wf :vertical wincmd f<CR>
 
-" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>:CtrlPClearAllCaches<CR>
 
-" Display current file in the NERDTree ont the left
+" Display current file in the NERDTree on the left
 " nmap <silent> <leader>n :NERDTreeFind<CR><c-w>=
 " map <C-n> :NERDTreeToggle<CR><c-w>=
 
-" oped v splits
+" open v splits
 nmap <leader>v :vsp<CR>
-nmap <leader>s :sp<CR>
 
 " }}}
 
@@ -188,6 +185,7 @@ onoremap iv :silent! normal bbve<CR>
 
 
 " Floobits shortcuts {{{
+"
 nnoremap <leader>lj :FlooJoinWorkspace https://floobits.com/tylerfowle/workspace<CR>
 nnoremap <leader>ll :FlooLeaveWorkspace<CR>
 
@@ -199,6 +197,7 @@ nnoremap <leader>lt :FlooToggleFollowMode<CR>
 
 nnoremap <leader>lp :FlooShareDirPrivate %<CR>
 nnoremap <leader>lr :FlooRefreshWorkspace<CR>
+
 " }}}
 
 

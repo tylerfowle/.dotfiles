@@ -43,3 +43,5 @@
 [user]
 	name = tylerfowle
 	email = tylerfowle@gmail.com
+[hub]
+	protocol = ssh

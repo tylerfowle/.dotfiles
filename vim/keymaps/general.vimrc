@@ -19,6 +19,7 @@ nmap ga <Plug>(EasyAlign)
 " scroll the viewport faster
 nnoremap <C-e> 4<C-e>
 nnoremap <C-y> 4<C-y>
+nnoremap <C-d> 4<C-y>
 
 " B and E for faster beginning and end
 nnoremap B ^
