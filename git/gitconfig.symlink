@@ -30,6 +30,7 @@
 	diffw = diff --word-diff=color
 	deff = !git diff -- ':!package-lock.json' ':!yarn.lock'
 	nuke = !git stash && git clean -fdx
+	df = "!f() { git diff HEAD~\"$1\" --name-only; }; f"
 	c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
 [core]
 	editor = "$EDITOR"

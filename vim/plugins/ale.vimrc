@@ -6,7 +6,8 @@
 let b:ale_linters = {
       \ 'bash': ['shellcheck'],
       \ 'python': ['flake8'],
-      \ 'php': ['phpcs']
+      \ 'php': ['phpcs'],
+      \ 'javascript': ['semistandard']
       \ }
 
 let g:ale_fixers = {

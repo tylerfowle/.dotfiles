@@ -12,7 +12,6 @@ normal=$'\e[0m'
 for d in */ ; do
     echo -e "${gry}******************************************** $normal"
     cd "$d"
-    echo "$PWD"
 
     if [ -d .git ]; then
 

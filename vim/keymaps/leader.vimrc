@@ -130,7 +130,7 @@ nnoremap <leader>; :SideBarEnterToggle<CR>
 " tab stuff
 " create new tab
 noremap <C-t> :tabe<CR>
-noremap gr gT
+noremap gr gt
 
 " close current buffer but not current window
 noremap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
