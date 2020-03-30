@@ -286,17 +286,15 @@ nnoremap ;; @:
 
 
 
+nnoremap <space>v :!rg --files --hidden -g "\!.git/*" > files.cache<cr>
 
-
-" au VimEnter * :te rg --files --hidden --glob "\!.git/*" >> files.cache
-au VimEnter * :silent !bash -c '\! [ \! -f files.cache ] && rg --files --hidden --glob "\!.git/*" > files.cache'
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 let $FZF_DEFAULT_OPTS="--reverse " " top to bottom
 
 " use rg by default
 if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'cat files.cache'
+    let $FZF_DEFAULT_COMMAND = 'cat files.cache'
   set grepprg=rg\ --vimgrep
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif

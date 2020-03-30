@@ -17,6 +17,13 @@ nmap <silent> gr <Plug>(coc-references)
 " }}}
 
 
+" Coc Bookmarks {{{
+nmap <Leader>bj <Plug>(coc-bookmark-next)
+nmap <Leader>bk <Plug>(coc-bookmark-prev)
+nmap <Leader>bb <Plug>(coc-bookmark-annotate)
+" }}}
+
+
 " Using CocList {{{
 " old ctrlp keybind - added because muscle memory
 nnoremap <silent> <leader>f  :<C-u>CocList files<cr>
@@ -51,11 +58,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 
