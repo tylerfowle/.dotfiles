@@ -4,7 +4,8 @@ set nowritebackup
 
 " COC-Explorer {{{
 nmap ge :CocCommand explorer<CR>
-nmap <leader>n :CocCommand explorer --file-columns=selection:clip:indent:icon:filename;fullpath;size;modified;readonly<CR>
+" nmap <leader>n :CocCommand explorer --file-columns=selection:clip:indent:icon:filename;fullpath;size;modified;readonly<CR>
+nmap <leader>n :CocCommand explorer<CR>
 " }}}
 
 " Remap keys for gotos {{{
@@ -19,7 +20,9 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Coc Bookmarks {{{
 nmap <Leader>bj <Plug>(coc-bookmark-next)
+nmap <Leader>bn <Plug>(coc-bookmark-next)
 nmap <Leader>bk <Plug>(coc-bookmark-prev)
+nmap <Leader>bp <Plug>(coc-bookmark-prev)
 nmap <Leader>bb <Plug>(coc-bookmark-annotate)
 " }}}
 
@@ -29,13 +32,13 @@ nmap <Leader>bb <Plug>(coc-bookmark-annotate)
 nnoremap <silent> <leader>f  :<C-u>CocList files<cr>
 
 nnoremap <silent> <space>l  :<C-u>CocList<cr>
-nnoremap <silent> <space>m  :<C-u>CocList mru<cr>
+nnoremap <silent> <space>m  :<C-u>CocList marks<cr>
 nnoremap <silent> <space>d  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent> <space>f  :<C-u>CocList files<cr>
-nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
+nnoremap <silent> <space>b  :<C-u>CocList bookmark<cr>
 nnoremap <silent> <space>q  :<C-u>CocList quickfix<cr>
 nnoremap <silent> <space>w  :<C-u>CocList -I words<cr>
 nnoremap <silent> <space>g  :<C-u>CocList -I grep<cr>

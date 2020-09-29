@@ -47,6 +47,7 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " intellisense completion
 Plug 'liuchengxu/vista.vim'                                  " tagbar replacer
+Plug 'vifm/vifm.vim'                                         " vifm file browser
 " Plug 'wellle/context.vim', { 'branch': '23-nvim-no-redraw' } " breadcrumbs-ish
 " Plug 'andymass/vim-matchup' " breadcrumbs
 
