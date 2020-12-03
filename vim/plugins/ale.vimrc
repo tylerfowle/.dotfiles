@@ -25,7 +25,7 @@ let b:ale_fixers = {
       \ 'trim_whitespace',
       \ 'isort',
       \ 'yapf',
-      \ 'phpcbf'
+      \ 'phpcbf',
       \ 'eslint'
       \ ]
       \ }
