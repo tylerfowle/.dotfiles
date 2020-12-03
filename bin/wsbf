@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cd /Volumes/home/sbf
+onchange 'sbf-frontend/compile-completed.txt' -v --poll 1000 -- refresh-chrome
