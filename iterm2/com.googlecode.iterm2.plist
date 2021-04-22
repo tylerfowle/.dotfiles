@@ -26,29 +26,6 @@
 	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
-	<key>Coprocess MRU</key>
-	<array>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/frontend/less/views/ambassadors.less</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/lib/braintree.js</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-ruby/application/frontend/assets/js/give/give.js</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/application.js</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-salesforce-sync/lib/salesforce/promo.rb</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/utilities/LookupUtility.inc</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/dams/DonationDAM.inc</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/3rdparty/sbf-client-php/lib/SBF/Enum/Donation/Promo.php</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-api/v2/enums/donation/promo_code.rb</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-client-ruby/lib/stbaldricks/entities/donation/promo_code.rb</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-php/src/application/library/google-api-php-client/src/contrib/Google_BooksService.php</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/app/controllers/donation_widget_controller.rb</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-design-toolkit/src/assets/toolkit/js/toolkit/modules/donation-widget.js</string>
-		<string>echo e /Users/tyler.fowle/.dotfiles/vim/keymaps/leader.vimrc</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-design-toolkit/src/assets/toolkit/scss/variables/components/_breakpoints.scss</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-ruby/script/check_certificate.sh</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-api/script/check_certificate.sh</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-website-rails/app/assets/filling_funding_gap/filling_funding_gap.scss</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/widget.js</string>
-		<string>echo e /Users/tyler.fowle/sbf/sbf/sbf-donate/webpack/widget.scss</string>
-	</array>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Hopscotch</key>
@@ -2939,6 +2916,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
+	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
+	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2983,13 +2962,17 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>746 2166 400 129 -334 1200 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>636 1968 620 392 -334 1200 2560 1417 </string>
+	<string>1410 768 620 392 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>222 1510 796 486 -581 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-334 1200 2560 1417 -334 1200 2560 1417 </string>
+	<string>1713 1440 1280 1417 433 1440 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>541 640 580 440 0 0 2560 1417 </string>
+	<string>1146 0 1146 1417 0 0 3440 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1720 0 1720 1417 0 0 3440 1417 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>433 1993 1374 234 433 1440 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_CC3354E0-324B-42BC-8C01-53A80B580874_selection</key>
@@ -5549,16 +5532,19 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7beta4</string>
-		<string>3.3.7beta3</string>
+		<string>3.3.7beta1</string>
 		<string>3.3.0beta11</string>
 		<string>3.3.8beta5</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.7beta1</string>
+		<string>3.3.7beta3</string>
 		<string>3.3.2beta1</string>
+		<string>3.4.0beta2</string>
+		<string>3.4.0beta4</string>
+		<string>3.3.5beta3</string>
 		<string>3.3.9beta1</string>
-		<string>3.2.9</string>
 		<string>3.3.10beta1</string>
+		<string>3.3.7beta4</string>
+		<string>3.2.9</string>
+		<string>3.3.11beta1</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -5580,16 +5566,20 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{48, 1077}</string>
+		<string>{473, 589}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncIgnoreSystemWindowRestoration</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9BA30681-4340-4105-B813-733530078B17</string>
+	<key>NoSyncLastOSVersion</key>
+	<string>Version 10.14.6 (Build 18G5033)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>70</integer>
+	<integer>99</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5715,6 +5705,14 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selectionLength</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5734,6 +5732,14 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>parentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -5859,6 +5865,14 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>selection</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>autoNameFormat</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5935,6 +5949,14 @@ Gulp:Restore Window Arrangement as Tabs</string>
 				<true/>
 				<key>name</key>
 				<string>style</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6362,6 +6384,8 @@ Gulp:Restore Window Arrangement as Tabs</string>
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncRestoreWindowsCount</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>582153728.16199505</real>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
@@ -6424,23 +6448,21 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=82</string>
+	<string>https://iterm2.com/appcasts/testing_modern.xml?shard=82</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-05T15:14:09Z</date>
+	<date>2021-01-04T15:01:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>SUSkippedVersion</key>
-	<string>3.3.10beta2</string>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>4264246944</integer>
+	<integer>215595599</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -8984,7 +9006,7 @@ Gulp:Restore Window Arrangement as Tabs</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta1</string>
+	<string>3.4.0beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
