@@ -59,10 +59,10 @@ else
     Plug 'junegunn/fzf.vim'
 endif
 
-if has('nvim')
-  Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}               " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
-  Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']} " floobits - collaborative editing
-endif
+" if has('nvim')
+  " Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}               " use nvim to type in chrome, require chrome plugin: https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca
+  " Plug 'floobits/floobits-neovim', {'on': ['FlooJoinWorkspace']} " floobits - collaborative editing
+" endif
 
 " }}}
 
