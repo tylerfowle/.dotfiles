@@ -15,7 +15,10 @@ then
   source ~/.localrc
 fi
 
-source $HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br
+if [[ -a $HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br ]]
+then
+    source $HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br
+fi
 
 # all of our zsh files
 typeset -U config_files

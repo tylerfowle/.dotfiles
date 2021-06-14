@@ -34,7 +34,7 @@
 	c = "!f() { git checkout \"$1\" 2>/dev/null || git checkout -b \"$1\"; }; f"
 [core]
 	editor = "$EDITOR"
-	excludesfile = /Users/tyler.fowle/.gitignore_global
+	excludesfile = /Users/tylerfowle/.gitignore_global
 	pager = less -FRSX
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol,-blank-at-eof
 	fileMode = false
