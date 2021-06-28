@@ -5,6 +5,7 @@ alias repos='cd ~/Repos'
 # Other
 alias ..="cd .."
 alias o="open ."
+alias c="code ."
 alias hal="ls -hal"
 alias list='colorls --sd -a -1'
 alias lf='colorls --sd -a'

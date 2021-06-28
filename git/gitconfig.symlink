@@ -1,6 +1,12 @@
 # Local/private config goes in the include
 [include]
 	path = ~/.gitconfig.local
+[diff "minjs"]
+	textconv = js-beautify
+	cachetextconv = true
+[diff "mincss"]
+	textconv = js-beautify --css
+	cachetextconv = true
 [push]
 	default = simple
 [color]
@@ -41,8 +47,5 @@
 [branch]
 	autosetupmerge = always
 	autosetuprebase = always
-[user]
-	name = tylerfowle
-	email = tylerfowle@gmail.com
 [hub]
 	protocol = ssh
