@@ -34,9 +34,6 @@
 	excludesfile = /Users/tyler.fowle/.gitignore_global
 [color]
 	ui = auto
-[user]
-	name = tylerfowle
-	email = tylerfowle@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
