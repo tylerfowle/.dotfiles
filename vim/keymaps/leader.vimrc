@@ -56,7 +56,7 @@ nnoremap <leader>e :ExecPython<cr>
 " }}}
 
 " Ale maps {{{
-nnoremap <leader>gf :ALEFix<cr>
+nnoremap <leader>af :ALEFix<cr>
 " }}}
 
 " Prettydiff
@@ -182,6 +182,9 @@ nmap <leader>v :vsp<CR>
 vnoremap iv :<C-U>silent! normal! bbve<CR>
 onoremap iv :silent! normal bbve<CR>
 " }}}
+
+" Create file with leader gf if it doesnt already exist
+:noremap <leader>gf :e <cfile><cr>
 
 
 " Floobits shortcuts {{{

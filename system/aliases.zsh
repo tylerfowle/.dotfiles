@@ -11,6 +11,7 @@ alias list='colorls --sd -a -1'
 alias lf='colorls --sd -a'
 alias sassvarsfiles='grep -Rnco "\$.*:" .'
 alias sassvars='grep -Rh "\$.\S*:" .'
+alias today="date '+%A, %B %d, %Y' | pbcopy"
 
 # Edit files quickly
 alias editbash="e ~/.bash_profile"
