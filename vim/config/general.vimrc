@@ -13,4 +13,7 @@ set iskeyword+=-          " include - in keyword matching
 set directory^=$HOME/nvim/tmp
 set backupdir^=$HOME/nvim/tmp
 
+set autoread         " auto reload changed files
+set modelines=1      " check the last line for file specific settings
+
 " }}}

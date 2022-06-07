@@ -1,4 +1,5 @@
 " UI {{{
+
 set nowrap                     " dont wrap long lines
 set hidden                     " hide buffers, dont unload them, this fixes losing syntax on buffer change
 set number                     " show line numbers
@@ -17,6 +18,15 @@ set wildignore+=node_modules/* " ignore node modules
 set list                       " show invisible characters
 set listchars=tab:→\ ,trail:⋅  " list chars
 set fillchars=vert:│           " set vert split character to taller line
+" }}}
+
+
+" Spaces & Tabs {{{
+
+set tabstop=4             " number of visual spaces per TAB
+set shiftwidth=4          " number of spaces to use for indent and unindent
+set expandtab             " tabs are spaces
+
 " }}}
 
 

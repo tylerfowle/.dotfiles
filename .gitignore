@@ -1,6 +1,8 @@
 .DS_Store
 
 *.local
+Session.vim
+files.cache
 
 gitconfig.local.symlink
 gitconfig.local
