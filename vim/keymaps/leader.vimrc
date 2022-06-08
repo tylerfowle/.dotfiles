@@ -76,6 +76,8 @@ nnoremap <leader>tt :TagbarToggle<CR>
 " trailing space is intentional!
 nnoremap <leader>gg :Ack 
 
+nnoremap <leader>f :Ag <cr>
+
 " turtle.vim comment header
 nnoremap <leader>ch :Commentr<CR>
 

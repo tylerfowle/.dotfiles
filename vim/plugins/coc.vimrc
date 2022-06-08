@@ -29,7 +29,7 @@ nmap <Leader>bb <Plug>(coc-bookmark-annotate)
 
 " Using CocList {{{
 " old ctrlp keybind - added because muscle memory
-nnoremap <silent> <leader>f  :<C-u>CocList files<cr>
+" nnoremap <silent> <leader>f  :<C-u>CocList files<cr>
 
 nnoremap <silent> <space>l  :<C-u>CocList<cr>
 nnoremap <silent> <space>m  :<C-u>CocList marks<cr>
