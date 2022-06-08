@@ -40,8 +40,8 @@ Plug 'google/vim-searchindex'                                " show search posit
 Plug 'markonm/traces.vim'                                    " highlight patterns and ranges for Ex commands
 Plug 'triglav/vim-visual-increment'                          " use ctrl a/v to increment.decrement a visually selected block
 Plug 'mileszs/ack.vim'                                       " ack for vim - replaces vimgrep
-Plug 'brooth/far.vim'                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
-Plug 'wakatime/vim-wakatime'                                 " time tracker
+" Plug 'brooth/far.vim'                                        " find and replace with :Far foo bar **/*.scss -then- :Fardo
+" Plug 'wakatime/vim-wakatime'                                 " time tracker
 Plug 'AndrewRadev/switch.vim'                                " switch boolean values with gs
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}          " tasks list: todo:, note:, fixme:
 Plug 'jbgutierrez/vim-partial'                               " makes creating partial files easy: <leader>x in visual mode
@@ -81,8 +81,8 @@ Plug 'pangloss/vim-javascript'                                          " javasc
 Plug 'JulesWang/css.vim'                                                " css syntax
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss','sass']}              " scss syntax
 Plug 'lumiliet/vim-twig', {'for': ['html.twig']}                        " twig syntax
-Plug 'vim-ruby/vim-ruby'                                                " ruby syntax
-Plug 'tpope/vim-rails'                                                  " rails
+" Plug 'vim-ruby/vim-ruby'                                                " ruby syntax
+" Plug 'tpope/vim-rails'                                                  " rails
 Plug 'godlygeek/tabular'                                                " alignment - vim-markdown says it needs it
 Plug 'plasticboy/vim-markdown', {'for': ['markdown','md']}              " markdown syntax
 Plug 'mzlogin/vim-markdown-toc', {'for': ['markdown','md']}             " markdown - generate table of contents with :GenTocGFM
